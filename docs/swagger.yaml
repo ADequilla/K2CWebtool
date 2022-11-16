@@ -100,7 +100,11 @@ definitions:
     type: object
   models.ClientProfileRequest:
     properties:
-      search_client:
+      cid:
+        type: string
+      mobile:
+        type: string
+      username:
         type: string
     type: object
   models.ClientProfileResponse:
@@ -115,29 +119,29 @@ definitions:
         type: string
       Classification:
         type: string
-      CostumerID:
-        type: string
       Enable:
         type: string
       FullName:
         type: string
       Merchant:
         type: string
-      MobileNo:
-        type: string
       Type:
         type: string
       Unit:
-        type: string
-      Username:
         type: string
       account_name:
         type: string
       account_number:
         type: string
+      cid:
+        type: string
       insti_name:
         type: string
       is_enabled:
+        type: string
+      mobile:
+        type: string
+      username:
         type: string
     type: object
   models.CommissionRequest:
@@ -158,6 +162,34 @@ definitions:
       Customer_Income:
         type: number
       Transaction_Type:
+        type: string
+    type: object
+  models.ConcernTypeRequest:
+    properties:
+      search_concerntype:
+        type: string
+    type: object
+  models.ConcernTypeResponse:
+    properties:
+      Comflexity_Level:
+        type: string
+      Concern:
+        type: string
+      Turn_Around_Time:
+        type: string
+    type: object
+  models.CsrHotlineRequest:
+    properties:
+      search_csrhotline:
+        type: string
+    type: object
+  models.CsrHotlineResponse:
+    properties:
+      Contact_Number:
+        type: string
+      Institution_Desc:
+        type: string
+      Network_Provider:
         type: string
     type: object
   models.FailedEnrollmentRequest:
@@ -208,7 +240,13 @@ definitions:
     type: object
   models.HierarchyRequest:
     properties:
-      search_hierarchy:
+      b.branch_desc:
+        type: string
+      c.center_desc:
+        type: string
+      i.inst_desc:
+        type: string
+      u.unit_desc:
         type: string
     type: object
   models.HierarchyResponse:
@@ -394,58 +432,73 @@ definitions:
     type: object
   models.RemittanceLogRequest:
     properties:
-      search_log:
+      created_date:
+        example: StartSendDate
+        type: string
+      last_updated_date:
+        example: EndSendDate
+        type: string
+      sender_mobile_number:
+        type: string
+      sent_mobile_ref_id:
+        example: MobileReference
+        type: string
+      source_branch:
+        type: string
+      status:
+        type: string
+      target_branch:
         type: string
     type: object
   models.RemittanceLogResponse:
     properties:
-      Amount:
-        type: string
-      C_core_Ref_ID:
-        type: string
       Cancelled_By_Fullname:
         type: string
-      Core_Ref_ID:
-        type: string
-      DateTime_Cancelled:
-        type: string
-      DateTime_Receive:
-        type: string
-      DateTime_Send:
-        type: string
       Disbursed_By_Fullname:
-        type: string
-      M_mobile_Ref_ID:
-        type: string
-      Mobile_Ref_ID:
         type: string
       Processed_By_Fullname:
         type: string
       Receiver_Name:
         type: string
-      Remittance _Ref_ID:
+      amount:
         type: string
-      Sender_Mobile_Number:
+      cancelled_date:
         type: string
-      Sender_Name:
+      claimed_core_ref_id:
         type: string
-      Source_Branch:
+      claimed_mobile_ref_id:
         type: string
-      Status:
+      created_date:
         type: string
-      Target_Branch:
+      last_updated_date:
+        type: string
+      reference_number _Ref_ID:
+        type: string
+      sender_mobile_number:
+        type: string
+      sender_name:
+        type: string
+      sent_core_ref_id:
+        type: string
+      sent_mobile_ref_id:
+        type: string
+      source_branch:
+        type: string
+      status:
+        type: string
+      target_branch:
         type: string
     type: object
   models.RemittanceStatusResponse:
     properties:
-      cancelled:
-        type: integer
-      claimed:
-        type: integer
-      pending:
-        type: integer
-      sent:
-        type: integer
+      CANCELLED:
+        type: string
+      CLAIMED:
+        type: string
+      PENDING:
+        type: string
+      SENT:
+        type: string
     type: object
   models.ResponseModel:
     properties:
@@ -457,7 +510,9 @@ definitions:
     type: object
   models.RolesManagementRequest:
     properties:
-      search_role:
+      role_desc:
+        type: string
+      role_name:
         type: string
     type: object
   models.RolesManagementResponse:
@@ -485,7 +540,23 @@ definitions:
     type: object
   models.SmsLogRequest:
     properties:
-      search_smslog:
+      activity:
+        example: MessageType
+        type: string
+      cid:
+        example: Cid
+        type: string
+      msg_rsp_date:
+        example: EnrolledDateEnd
+        type: string
+      msg_sent_date:
+        example: EnrolledDateStart
+        type: string
+      msg_status:
+        example: Message
+        type: string
+      msisdn:
+        example: MobileNumber
         type: string
     type: object
   models.SmsLogResponse:
@@ -636,7 +707,17 @@ definitions:
     type: object
   models.UserManagementRequest:
     properties:
-      search_name:
+      branch_names:
+        type: string
+      check_status:
+        type: string
+      given_name:
+        type: string
+      last_name:
+        type: string
+      middle_name:
+        type: string
+      user_name:
         type: string
     type: object
   models.UserManagementResponse:
@@ -868,6 +949,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.CommissionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_concerntype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ConcernType Input
+        in: body
+        name: corncerntypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ConcernTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_csrhotline/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CsrHotline Input
+        in: body
+        name: csrhotlineInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CsrHotlineRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CsrHotlineResponse'
         "400":
           description: Bad Request
           schema:
@@ -1240,7 +1373,7 @@ paths:
       tags:
       - Webtool
   /get_remittancestatus/:
-    get:
+    post:
       consumes:
       - application/json
       description: Fetch User Data

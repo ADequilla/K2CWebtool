@@ -3,13 +3,18 @@ package models
 ///clientprofile
 
 type ClientProfileRequest struct {
-	SearchClient string `json:"search_client"`
+	Username string `json:"username"`
+	MobileNo string `json:"mobile"`
+	Costumer string `json:"cid"`
 }
 
 ///hierarchy
 
 type HierarchyRequest struct {
-	SearchHierarchy string `json:"search_hierarchy"`
+	Inst_desc   string `json:"i.inst_desc"`
+	Unit_desc   string `json:"u.unit_desc"`
+	Branch_desc string `json:"b.branch_desc"`
+	Center_desc string `json:"c.center_desc"`
 }
 
 ///listfailedenrollment
@@ -33,19 +38,31 @@ type UsedDeviceRequest struct {
 ///remittancelog
 
 type RemittanceLogRequest struct {
-	SearchLog string `json:"search_log"`
+	Created_date         string `json:"created_date" example:"StartSendDate"`
+	Last_updated_date    string `json:"last_updated_date" example:"EndSendDate"`
+	Sender_mobile_number string `json:"sender_mobile_number"`
+	Sent_mobile_ref_id   string `json:"sent_mobile_ref_id" example:"MobileReference"`
+	Status               string `json:"status"`
+	Source_branch        string `json:"source_branch"`
+	Target_branch        string `json:"target_branch"`
 }
 
 ///rolemanagement
 
 type RolesManagementRequest struct {
-	SearchRole string `json:"search_role"`
+	Role_name string `json:"role_name"`
+	Role_desc string `json:"role_desc"`
 }
 
 //smslog
 
 type SmsLogRequest struct {
-	SearchSmslog string `json:"search_smslog"`
+	Cid           string `json:"cid" example:"Cid"`
+	Msg_sent_date string `json:"msg_sent_date" example:"EnrolledDateStart"`
+	Msg_rsp_date  string `json:"msg_rsp_date" example:"EnrolledDateEnd"`
+	Msisdn        string `json:"msisdn" example:"MobileNumber"`
+	Activity      string `json:"activity" example:"MessageType"`
+	Msg_status    string `json:"msg_status" example:"Message"`
 }
 
 ///transactionlog
@@ -57,7 +74,12 @@ type TransLogRequest struct {
 ///usermanagement
 
 type UserManagementRequest struct {
-	SearchName string `json:"search_name"`
+	User_name    string `json:"user_name"`
+	Given_name   string `json:"given_name"`
+	MiddleName   string `json:"middle_name"`
+	Last_name    string `json:"last_name"`
+	Branch_names string `json:"branch_names"`
+	Check_status string `json:"check_status"`
 }
 
 ///feestructure
@@ -172,4 +194,16 @@ type PartnerListRequest struct {
 
 type SplashScreenRequest struct {
 	SearchSplashscreen string `json:"search_splashscreen"`
+}
+
+///csrhotline
+
+type CsrHotlineRequest struct {
+	SearchCsrhotline string `json:"search_csrhotline"`
+}
+
+///concerntype
+
+type ConcernTypeRequest struct {
+	SearchConcerntype string `json:"search_concerntype"`
 }

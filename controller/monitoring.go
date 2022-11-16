@@ -29,12 +29,9 @@ func GetClientProfile(c *fiber.Ctx) error {
 		})
 	}
 
-	clientprofileinput := c.Params("clientprofileInput")
-	fmt.Println("ClientprofileInput:", clientprofileinput)
+	cfModel := []models.ClientProfileResponse{}
 
-	cfModel := []models.UserManagementResponse{}
-
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.clientprofile(?)", clientprofileInput.SearchClient).Scan(&cfModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_clientprofile").Find(&cfModel, clientprofileInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -68,12 +65,9 @@ func GetRemittanceLog(c *fiber.Ctx) error {
 		})
 	}
 
-	remittanceloginput := c.Params("remittancelogInput")
-	fmt.Println("RemittanceLogInput:", remittanceloginput)
-
 	rlModel := []models.RemittanceLogResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.remittancetranslog(?)", remittancelogInput.SearchLog).Scan(&rlModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_remittancelog").Find(&rlModel, remittancelogInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -95,7 +89,7 @@ func GetRemittanceLog(c *fiber.Ctx) error {
 // @Produce		  	json
 // @Success		  	200 {object} models.RemittanceStatusResponse
 // @Failure 		400 {object} models.ResponseModel
-// @Router			/get_remittancestatus/ [get]
+// @Router			/get_remittancestatus/ [post]
 func GetRemittanceStatus(c *fiber.Ctx) error {
 	rsModel := []models.RemittanceStatusResponse{}
 
@@ -133,12 +127,9 @@ func GetSmsLog(c *fiber.Ctx) error {
 		})
 	}
 
-	smsloginput := c.Params("smslogInput")
-	fmt.Println("SmsLogInput:", smsloginput)
-
 	slModel := []models.SmsLogResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.smslog(?)", smslogInput.SearchSmslog).Scan(&slModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_smslog").Find(&slModel, smslogInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

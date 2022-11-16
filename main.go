@@ -50,7 +50,7 @@ func AppRoutes(app *fiber.App) {
 	//Monitoring
 	app.Post("/get_clientprofile/", controller.GetClientProfile)
 	app.Post("/get_remittancelog/", controller.GetRemittanceLog)
-	app.Get("/get_remittancestatus/", controller.GetRemittanceStatus)
+	app.Post("/get_remittancestatus/", controller.GetRemittanceStatus)
 	app.Post("/get_smslog/", controller.GetSmsLog)
 	app.Post("/get_transactionLog/", controller.GetTransLog)
 	app.Post("/get_listuseddevice/", controller.GetUsedDevice)
@@ -77,5 +77,9 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_banklist/", controller.GetBankList)
 	app.Post("/get_partnerlist/", controller.GetPartnerList)
 	app.Post("/get_splashscreen/", controller.GetSplashScreen)
+
+	///CustomerService
+	app.Post("/get_csrhotline/", controller.GetCsrHotline)
+	app.Post("/get_concerntype/", controller.GetConcernType)
 
 }

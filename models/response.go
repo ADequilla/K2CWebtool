@@ -7,9 +7,9 @@ import (
 ///clientprofile
 
 type ClientProfileResponse struct {
-	CostumerID     string `json:"CostumerID"`
-	Username       string `json:"Username"`
-	MobileNo       string `json:"MobileNo"`
+	Cid            string `json:"cid"`
+	Username       string `json:"username"`
+	Mobile         string `json:"mobile"`
 	FullName       string `json:"FullName"`
 	Birthday       string `json:"Birthday"`
 	Insti_name     string `json:"insti_name"`
@@ -82,33 +82,33 @@ type UsedDeviceResponse struct {
 ///remittancelog
 
 type RemittanceLogResponse struct {
-	Mobile_Ref_ID         string    `json:"Mobile_Ref_ID"`
-	Core_Ref_ID           string    `json:"Core_Ref_ID"`
-	Remittance_Ref_ID     string    `json:"Remittance _Ref_ID"`
-	SenderName            string    `json:"Sender_Name"`
-	Receiver_Name         string    `json:"Receiver_Name"`
-	Amount                string    `json:"Amount"`
-	Sender_Mobile_Number  string    `json:"Sender_Mobile_Number"`
-	DateTime_Send         time.Time `json:"DateTime_Send"`
-	SourceBranch          string    `json:"Source_Branch"`
-	Processed_By_Fullname string    `json:"Processed_By_Fullname"`
-	DateTime_Receive      time.Time `json:"DateTime_Receive"`
-	Target_Branch         string    `json:"Target_Branch"`
-	Disbursed_By_Fullname string    `json:"Disbursed_By_Fullname"`
-	DateTime_Cancelled    time.Time `json:"DateTime_Cancelled"`
-	Cancelled_By_Fullname string    `json:"Cancelled_By_Fullname"`
-	Status                string    `json:"Status"`
-	C_core_Ref_ID         string    `json:"C_core_Ref_ID"`
-	M_mobile_Ref_ID       string    `json:"M_mobile_Ref_ID"`
+	Sent_mobile_ref_id    string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id      string `json:"sent_core_ref_id"`
+	Reference_number      string `json:"reference_number _Ref_ID"`
+	Sender_name           string `json:"sender_name"`
+	Receiver_Name         string `json:"Receiver_Name"`
+	Amount                string `json:"amount"`
+	Sender_Mobile_Number  string `json:"sender_mobile_number"`
+	Created_date          string `json:"created_date"`
+	Source_branch         string `json:"source_branch"`
+	Processed_By_Fullname string `json:"Processed_By_Fullname"`
+	Last_updated_date     string `json:"last_updated_date"`
+	Target_branch         string `json:"target_branch"`
+	Disbursed_By_Fullname string `json:"Disbursed_By_Fullname"`
+	Cancelled_date        string `json:"cancelled_date"`
+	Cancelled_By_Fullname string `json:"Cancelled_By_Fullname"`
+	Status                string `json:"status"`
+	Claimed_core_ref_id   string `json:"claimed_core_ref_id"`
+	Claimed_mobile_ref_id string `json:"claimed_mobile_ref_id"`
 }
 
 ///remittancestatus
 
 type RemittanceStatusResponse struct {
-	Pending   int `json:"pending"`
-	Sent      int `json:"sent"`
-	Claimed   int `json:"claimed"`
-	Cancelled int `json:"cancelled"`
+	PENDING   string `json:"PENDING"`
+	SENT      string `json:"SENT"`
+	CLAIMED   string `json:"CLAIMED"`
+	CANCELLED string `json:"CANCELLED"`
 }
 
 ///rolemanagement
@@ -121,14 +121,14 @@ type RolesManagementResponse struct {
 ///smslog
 
 type SmsLogResponse struct {
-	MsgId       string `json:"msg_id"`
-	MsgSentDate string `json:"msg_sent_date"`
-	Msisdn      string `json:"msisdn"`
-	Cid         string `json:"cid"`
-	Name        string `json:"name"`
-	MsgCommand  string `json:"msg_command"`
-	Activity    string `json:"activity"`
-	Msg_Status  string `json:"msg_status"`
+	Msg_id        string `json:"msg_id"`
+	Msg_sent_date string `json:"msg_sent_date"`
+	Msisdn        string `json:"msisdn"`
+	Cid           string `json:"cid"`
+	Name          string `json:"name"`
+	Msg_command   string `json:"msg_command"`
+	Activity      string `json:"activity"`
+	Msg_status    string `json:"msg_status"`
 }
 
 //transactionlog
@@ -358,4 +358,20 @@ type SplashScreenResponse struct {
 	SubMessage string `json:"Sub_Message"`
 	ImageUrl   string `json:"Image_Url"`
 	Show       string `json:"Show"`
+}
+
+//csrhotline
+
+type CsrHotlineResponse struct {
+	ContactNumber   string `json:"Contact_Number"`
+	NetworkProvider string `json:"Network_Provider"`
+	InstitutionDesc string `json:"Institution_Desc"`
+}
+
+//corncerntype
+
+type ConcernTypeResponse struct {
+	Concern         string `json:"Concern"`
+	TurnAroundTime  string `json:"Turn_Around_Time"`
+	ComflexityLevel string `json:"Comflexity_Level"`
 }

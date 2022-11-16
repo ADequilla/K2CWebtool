@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"webtool-api/middleware"
 	"webtool-api/models"
@@ -29,12 +28,9 @@ func GetUserManagements(c *fiber.Ctx) error {
 		})
 	}
 
-	userinput := c.Params("userInput")
-	fmt.Println("UserInput:", userinput)
-
 	umModel := []models.UserManagementResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.usermanagement(?)", userInput.SearchName).Scan(&umModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_usermanagement").Find(&umModel, userInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -70,12 +66,9 @@ func GetRolesManagements(c *fiber.Ctx) error {
 		})
 	}
 
-	rolesinput := c.Params("rolesInput")
-	fmt.Println("RolesInput:", rolesinput)
-
 	rmModel := []models.RolesManagementResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.rolesmanagement(?)", rolesInput.SearchRole).Scan(&rmModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_rolemanagement").Find(&rmModel, rolesInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -106,12 +99,9 @@ func GetHierarchy(c *fiber.Ctx) error {
 		})
 	}
 
-	hierarchyinput := c.Params("hierarchyInput")
-	fmt.Println("HierarchyInput:", hierarchyinput)
-
 	hModel := []models.HierarchyResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.hierarchy(?)", hierarchyInput.SearchHierarchy).Scan(&hModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_hierarchy").Find(&hModel, hierarchyInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

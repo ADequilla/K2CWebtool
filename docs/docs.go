@@ -341,6 +341,86 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_concerntype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ConcernType Input",
+                        "name": "corncerntypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ConcernTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ConcernTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_csrhotline/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CsrHotline Input",
+                        "name": "csrhotlineInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CsrHotlineRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CsrHotlineResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_failedenrollment/": {
             "post": {
                 "description": "Fetch User Data",
@@ -902,7 +982,7 @@ const docTemplate = `{
             }
         },
         "/get_remittancestatus/": {
-            "get": {
+            "post": {
                 "description": "Fetch User Data",
                 "consumes": [
                     "application/json"
@@ -1368,7 +1448,13 @@ const docTemplate = `{
         "models.ClientProfileRequest": {
             "type": "object",
             "properties": {
-                "search_client": {
+                "cid": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "username": {
                     "type": "string"
                 }
             }
@@ -1391,9 +1477,6 @@ const docTemplate = `{
                 "Classification": {
                     "type": "string"
                 },
-                "CostumerID": {
-                    "type": "string"
-                },
                 "Enable": {
                     "type": "string"
                 },
@@ -1403,16 +1486,10 @@ const docTemplate = `{
                 "Merchant": {
                     "type": "string"
                 },
-                "MobileNo": {
-                    "type": "string"
-                },
                 "Type": {
                     "type": "string"
                 },
                 "Unit": {
-                    "type": "string"
-                },
-                "Username": {
                     "type": "string"
                 },
                 "account_name": {
@@ -1421,10 +1498,19 @@ const docTemplate = `{
                 "account_number": {
                     "type": "string"
                 },
+                "cid": {
+                    "type": "string"
+                },
                 "insti_name": {
                     "type": "string"
                 },
                 "is_enabled": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "username": {
                     "type": "string"
                 }
             }
@@ -1456,6 +1542,50 @@ const docTemplate = `{
                     "type": "number"
                 },
                 "Transaction_Type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ConcernTypeRequest": {
+            "type": "object",
+            "properties": {
+                "search_concerntype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ConcernTypeResponse": {
+            "type": "object",
+            "properties": {
+                "Comflexity_Level": {
+                    "type": "string"
+                },
+                "Concern": {
+                    "type": "string"
+                },
+                "Turn_Around_Time": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CsrHotlineRequest": {
+            "type": "object",
+            "properties": {
+                "search_csrhotline": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CsrHotlineResponse": {
+            "type": "object",
+            "properties": {
+                "Contact_Number": {
+                    "type": "string"
+                },
+                "Institution_Desc": {
+                    "type": "string"
+                },
+                "Network_Provider": {
                     "type": "string"
                 }
             }
@@ -1534,7 +1664,16 @@ const docTemplate = `{
         "models.HierarchyRequest": {
             "type": "object",
             "properties": {
-                "search_hierarchy": {
+                "b.branch_desc": {
+                    "type": "string"
+                },
+                "c.center_desc": {
+                    "type": "string"
+                },
+                "i.inst_desc": {
+                    "type": "string"
+                },
+                "u.unit_desc": {
                     "type": "string"
                 }
             }
@@ -1823,7 +1962,28 @@ const docTemplate = `{
         "models.RemittanceLogRequest": {
             "type": "object",
             "properties": {
-                "search_log": {
+                "created_date": {
+                    "type": "string",
+                    "example": "StartSendDate"
+                },
+                "last_updated_date": {
+                    "type": "string",
+                    "example": "EndSendDate"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string",
+                    "example": "MobileReference"
+                },
+                "source_branch": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "target_branch": {
                     "type": "string"
                 }
             }
@@ -1831,34 +1991,10 @@ const docTemplate = `{
         "models.RemittanceLogResponse": {
             "type": "object",
             "properties": {
-                "Amount": {
-                    "type": "string"
-                },
-                "C_core_Ref_ID": {
-                    "type": "string"
-                },
                 "Cancelled_By_Fullname": {
                     "type": "string"
                 },
-                "Core_Ref_ID": {
-                    "type": "string"
-                },
-                "DateTime_Cancelled": {
-                    "type": "string"
-                },
-                "DateTime_Receive": {
-                    "type": "string"
-                },
-                "DateTime_Send": {
-                    "type": "string"
-                },
                 "Disbursed_By_Fullname": {
-                    "type": "string"
-                },
-                "M_mobile_Ref_ID": {
-                    "type": "string"
-                },
-                "Mobile_Ref_ID": {
                     "type": "string"
                 },
                 "Processed_By_Fullname": {
@@ -1867,22 +2003,46 @@ const docTemplate = `{
                 "Receiver_Name": {
                     "type": "string"
                 },
-                "Remittance _Ref_ID": {
+                "amount": {
                     "type": "string"
                 },
-                "Sender_Mobile_Number": {
+                "cancelled_date": {
                     "type": "string"
                 },
-                "Sender_Name": {
+                "claimed_core_ref_id": {
                     "type": "string"
                 },
-                "Source_Branch": {
+                "claimed_mobile_ref_id": {
                     "type": "string"
                 },
-                "Status": {
+                "created_date": {
                     "type": "string"
                 },
-                "Target_Branch": {
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "reference_number _Ref_ID": {
+                    "type": "string"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sender_name": {
+                    "type": "string"
+                },
+                "sent_core_ref_id": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string"
+                },
+                "source_branch": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "target_branch": {
                     "type": "string"
                 }
             }
@@ -1890,17 +2050,17 @@ const docTemplate = `{
         "models.RemittanceStatusResponse": {
             "type": "object",
             "properties": {
-                "cancelled": {
-                    "type": "integer"
+                "CANCELLED": {
+                    "type": "string"
                 },
-                "claimed": {
-                    "type": "integer"
+                "CLAIMED": {
+                    "type": "string"
                 },
-                "pending": {
-                    "type": "integer"
+                "PENDING": {
+                    "type": "string"
                 },
-                "sent": {
-                    "type": "integer"
+                "SENT": {
+                    "type": "string"
                 }
             }
         },
@@ -1919,7 +2079,10 @@ const docTemplate = `{
         "models.RolesManagementRequest": {
             "type": "object",
             "properties": {
-                "search_role": {
+                "role_desc": {
+                    "type": "string"
+                },
+                "role_name": {
                     "type": "string"
                 }
             }
@@ -1963,8 +2126,29 @@ const docTemplate = `{
         "models.SmsLogRequest": {
             "type": "object",
             "properties": {
-                "search_smslog": {
-                    "type": "string"
+                "activity": {
+                    "type": "string",
+                    "example": "MessageType"
+                },
+                "cid": {
+                    "type": "string",
+                    "example": "Cid"
+                },
+                "msg_rsp_date": {
+                    "type": "string",
+                    "example": "EnrolledDateEnd"
+                },
+                "msg_sent_date": {
+                    "type": "string",
+                    "example": "EnrolledDateStart"
+                },
+                "msg_status": {
+                    "type": "string",
+                    "example": "Message"
+                },
+                "msisdn": {
+                    "type": "string",
+                    "example": "MobileNumber"
                 }
             }
         },
@@ -2194,7 +2378,22 @@ const docTemplate = `{
         "models.UserManagementRequest": {
             "type": "object",
             "properties": {
-                "search_name": {
+                "branch_names": {
+                    "type": "string"
+                },
+                "check_status": {
+                    "type": "string"
+                },
+                "given_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "middle_name": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
