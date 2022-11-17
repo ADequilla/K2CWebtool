@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"webtool-api/middleware"
 	"webtool-api/models"
@@ -163,12 +162,9 @@ func GetTransLog(c *fiber.Ctx) error {
 		})
 	}
 
-	transloginput := c.Params("translogInput")
-	fmt.Println("TransLogInput:", transloginput)
-
 	translogModel := []models.TransLogResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.translog(?)", translogInput.SearchTranslog).Scan(&translogModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_translog").Find(&translogModel, translogInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -202,12 +198,9 @@ func GetUsedDevice(c *fiber.Ctx) error {
 		})
 	}
 
-	useddeviceinput := c.Params("useddeviceInput")
-	fmt.Println("UsedDeviceInput:", useddeviceinput)
-
 	useddeviceModel := []models.UsedDeviceResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.listuseddevice(?)", useddeviceInput.SearchUsedDevice).Scan(&useddeviceModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_listuseddevice").Find(&useddeviceModel, useddeviceInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -241,12 +234,9 @@ func GetFailedEnrollment(c *fiber.Ctx) error {
 		})
 	}
 
-	failedenrollmentinput := c.Params("failedenrollmentInput")
-	fmt.Println("FailedEnrollmentInput:", failedenrollmentinput)
-
 	failedenrollmentModel := []models.FailedEnrollmentResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.listfailedenrollment(?)", failedenrollmentInput.SearchFailedenrollment).Scan(&failedenrollmentModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_failedenrollment").Find(&failedenrollmentModel, failedenrollmentInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -280,12 +270,9 @@ func GetListofAgent(c *fiber.Ctx) error {
 		})
 	}
 
-	listofagentinput := c.Params("listofagentInput")
-	fmt.Println("ListofAgentInput:", listofagentinput)
-
 	listofagentModel := []models.ListofAgentResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.listofagent(?)", listofagentInput.SearchListofagent).Scan(&listofagentModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_listofagent").Find(&listofagentModel, listofagentInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

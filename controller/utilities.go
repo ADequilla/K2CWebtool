@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"webtool-api/middleware"
 	"webtool-api/models"
@@ -29,12 +28,9 @@ func GetFeeStructure(c *fiber.Ctx) error {
 		})
 	}
 
-	feestructureinput := c.Params("feetructureInput")
-	fmt.Println("FeeStructureInput:", feestructureinput)
-
 	feestructureModel := []models.FeeStructureResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.feestructure(?)", feestructureInput.SearchFeeStructure).Scan(&feestructureModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_feestracture").Find(&feestructureModel, feestructureInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -68,12 +64,9 @@ func GetParamConfig(c *fiber.Ctx) error {
 		})
 	}
 
-	paramconfiginput := c.Params("paramconfigInput")
-	fmt.Println("ParamConfigInput:", paramconfiginput)
-
 	paramconfigModel := []models.ParamConfigResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.paramconfig(?)", paramconfigInput.SearchParamConfig).Scan(&paramconfigModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_paramconfig").Find(&paramconfigModel, paramconfigInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -107,12 +100,9 @@ func GetAtmLoc(c *fiber.Ctx) error {
 		})
 	}
 
-	atmlocinput := c.Params("atmlocInput")
-	fmt.Println("AtmLocInput:", atmlocinput)
-
 	atmlocModel := []models.AtmLocResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.atmloc(?)", atmlocInput.SearchAtmloc).Scan(&atmlocModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_atmloc").Find(&atmlocModel, atmlocInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -146,12 +136,9 @@ func GetProductServices(c *fiber.Ctx) error {
 		})
 	}
 
-	productservicesinput := c.Params("productservicesInput")
-	fmt.Println("ProductServicesInput:", productservicesinput)
-
 	productservicesModel := []models.ProductServicesResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.productservices(?)", productservicesInput.SearchProductServices).Scan(&productservicesModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_productservice").Find(&productservicesModel, productservicesInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -185,12 +172,9 @@ func GetServiceDowntime(c *fiber.Ctx) error {
 		})
 	}
 
-	servicedowntimeinput := c.Params("servicedowntimeInput")
-	fmt.Println("ServiceDowntimeInput:", servicedowntimeinput)
-
 	servicedowntimeModel := []models.ServiceDowntimeResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.servicedowntime(?)", servicedowntimeInput.SearchServicedowntime).Scan(&servicedowntimeModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_servicedowntime").Find(&servicedowntimeModel, servicedowntimeInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -224,12 +208,9 @@ func GetBankNews(c *fiber.Ctx) error {
 		})
 	}
 
-	banknewsinput := c.Params("banknewsInput")
-	fmt.Println("BankNewsInput:", banknewsinput)
-
 	banknewsModel := []models.BankNewsResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.banknews(?)", banknewsInput.SearchBanknews).Scan(&banknewsModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_banknew").Find(&banknewsModel, banknewsInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -263,12 +244,9 @@ func GetInstitution(c *fiber.Ctx) error {
 		})
 	}
 
-	institutioninput := c.Params("institutionInput")
-	fmt.Println("InstitutionInput:", institutioninput)
-
 	institutionModel := []models.InstitutionResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.institution(?)", institutionInput.SearchInstitution).Scan(&institutionModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_insti").Find(&institutionModel, institutionInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -302,12 +280,9 @@ func GetBranch(c *fiber.Ctx) error {
 		})
 	}
 
-	branchbinput := c.Params("branchInput")
-	fmt.Println("BranchInput:", branchbinput)
-
 	branchModel := []models.BranchResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.branch(?)", branchInput.SearchBranch).Scan(&branchModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_branch").Find(&branchModel, branchInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -341,12 +316,9 @@ func GetUnit(c *fiber.Ctx) error {
 		})
 	}
 
-	unitinput := c.Params("unitInput")
-	fmt.Println("UnitInput:", unitinput)
-
 	unitModel := []models.UnitResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.unit(?)", unitInput.SearchUnit).Scan(&unitModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_unit").Find(&unitModel, unitInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -380,12 +352,9 @@ func GetCenter(c *fiber.Ctx) error {
 		})
 	}
 
-	centerinput := c.Params("centerInput")
-	fmt.Println("CenterInput:", centerinput)
-
 	centerModel := []models.CenterResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.center(?)", centerInput.SearchCenter).Scan(&centerModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_center").Find(&centerModel, centerInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -419,12 +388,9 @@ func GetProvider(c *fiber.Ctx) error {
 		})
 	}
 
-	providerinput := c.Params("providerInput")
-	fmt.Println("ProviderInput:", providerinput)
-
 	providerModel := []models.ProviderResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.provider(?)", providerInput.SearchProvider).Scan(&providerModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_provider").Find(&providerModel, providerInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -458,12 +424,9 @@ func GetProductType(c *fiber.Ctx) error {
 		})
 	}
 
-	producttypeinput := c.Params("producttypeInput")
-	fmt.Println("ProductTypeInput:", producttypeinput)
-
 	producttypeModel := []models.ProductTypeResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.product(?)", producttypeInput.SearchProduct).Scan(&producttypeModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_producttype").Find(&producttypeModel, producttypeInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -497,12 +460,9 @@ func GetProductCategory(c *fiber.Ctx) error {
 		})
 	}
 
-	productcategoryinput := c.Params("productcategoryInput")
-	fmt.Println("ProductCategoryInput:", productcategoryinput)
-
 	productcategoryModel := []models.ProductCategoryResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.productcategory(?)", productcategoryInput.SearchProductcategory).Scan(&productcategoryModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_productcategory").Find(&productcategoryModel, productcategoryInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -536,12 +496,9 @@ func GetBillerProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	billerproductinput := c.Params("billerproductInput")
-	fmt.Println("BillerProductInput:", billerproductinput)
-
 	billerproductModel := []models.BillerProductResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.billerproduct(?)", billerproductInput.SearchBillerproduct).Scan(&billerproductModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_billerproduct").Find(&billerproductModel, billerproductInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -575,12 +532,9 @@ func GetLoadProduct(c *fiber.Ctx) error {
 		})
 	}
 
-	loadproductinput := c.Params("loadproductInput")
-	fmt.Println("LoadProductInput:", loadproductinput)
-
 	loadproductModel := []models.LoadProductResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.loadproduct(?)", loadproductInput.SearchLoadproduct).Scan(&loadproductModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_loadproduct").Find(&loadproductModel, loadproductInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -614,12 +568,9 @@ func GetCommission(c *fiber.Ctx) error {
 		})
 	}
 
-	commissioninput := c.Params("commissionInput")
-	fmt.Println("CommissionInput:", commissioninput)
-
 	commissionModel := []models.CommissionResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.commission(?)", commissionInput.SearchCommission).Scan(&commissionModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_commission").Find(&commissionModel, commissionInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -653,12 +604,9 @@ func GetBankList(c *fiber.Ctx) error {
 		})
 	}
 
-	banklistinput := c.Params("banklistInput")
-	fmt.Println("BankListInput:", banklistinput)
-
 	banklistModel := []models.BankListResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.banklist(?)", banklistInput.SearchBanklist).Scan(&banklistModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_banklist").Find(&banklistModel, banklistInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -692,12 +640,9 @@ func GetPartnerList(c *fiber.Ctx) error {
 		})
 	}
 
-	partnerlistinput := c.Params("partnerlistInput")
-	fmt.Println("PartnerListInput:", partnerlistinput)
-
 	partnerlistModel := []models.PartnerListResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.partnerlist(?)", partnerlistInput.SearchPartnerlist).Scan(&partnerlistModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_partnerlist").Find(&partnerlistModel, partnerlistInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -731,12 +676,9 @@ func GetSplashScreen(c *fiber.Ctx) error {
 		})
 	}
 
-	splashscreeninput := c.Params("splashscreenInput")
-	fmt.Println("SplashScreenInput:", splashscreeninput)
-
 	splashscreenModel := []models.SplashScreenResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.splashscreen(?)", splashscreenInput.SearchSplashscreen).Scan(&splashscreenModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_splashscreen").Find(&splashscreenModel, splashscreenInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

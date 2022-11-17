@@ -20,19 +20,38 @@ type HierarchyRequest struct {
 ///listfailedenrollment
 
 type FailedEnrollmentRequest struct {
-	SearchFailedenrollment string `json:"search_failedenrollment"`
+	Created_date      string `json:"created_date" example:"Activated Date Start"`
+	Last_updated_date string `json:"last_updated_date" example:"Activated Date End"`
+	Date_of_birth     string `json:"date_of_birth"`
+	Client_type       string `json:"client_type" example:"Client Type"`
+	Account_number    string `json:"account_number"`
+	Mobile_number     string `json:"mobile_number"`
+	Error_message     string `json:"error_message"`
 }
 
 ///listofagent
 
 type ListofAgentRequest struct {
-	SearchListofagent string `json:"search_listofagent"`
+	Date_And_Time string `json:"c.date_and_time" example:"Activated Date Start"`
+	Date_and_time string `json:"q.date_and_time" example:"Activated Date End"`
+	Cid           string `json:"c.cid"`
+	Inst_desc     string `json:"a.inst_desc"`
+	Branch_desc   string `json:"c.branch_desc"`
+	Mobile_no     string `json:"c.mobile_no"`
+	Unit_desc     string `json:"c.unit_desc"`
+	Center_desc   string `json:"c.center_desc"`
 }
 
 ///listuseddevice
 
 type UsedDeviceRequest struct {
-	SearchUsedDevice string `json:"search_useddevice"`
+	Created_date      string `json:"created_date" example:"Activated Date Start"`
+	Last_updated_date string `json:"last_updated_date" example:"Activated Date End"`
+	Cid               string `json:"cid"`
+	Client_type       string `json:"client_type" example:"Client Type"`
+	Device_id         string `json:"device_id"`
+	Mobile_number     string `json:"mobile_number"`
+	Device_status     string `json:"device_status" example:"Status"`
 }
 
 ///remittancelog
@@ -51,7 +70,6 @@ type RemittanceLogRequest struct {
 
 type RolesManagementRequest struct {
 	Role_name string `json:"role_name"`
-	Role_desc string `json:"role_desc"`
 }
 
 //smslog
@@ -68,15 +86,24 @@ type SmsLogRequest struct {
 ///transactionlog
 
 type TransLogRequest struct {
-	SearchTranslog string `json:"search_translog"`
+	Core_refno      string `json:"core_refno" example:"Core_ID"`
+	Trans_type_code string `json:"trans_type_code" example:"Transaction_Type"`
+	Source_cid      string `json:"source_cid"`
+	Source_account  string `json:"source_account"`
+	Status          string `json:"status" `
+	Mobile_refno    string `json:"mobile_refno" example:"Mobile_ID"`
+	Trans_date      string `json:"trans_date" example:"Date_Time"`
+	Post_date       string `json:"post_date" `
+	Target_cid      string `json:"target_cid" `
+	Target_account  string `json:"target_account" `
 }
 
 ///usermanagement
 
 type UserManagementRequest struct {
-	User_name    string `json:"user_name"`
+	User_login   string `json:"user_login"`
 	Given_name   string `json:"given_name"`
-	MiddleName   string `json:"middle_name"`
+	Middle_name  string `json:"middle_name"`
 	Last_name    string `json:"last_name"`
 	Branch_names string `json:"branch_names"`
 	Check_status string `json:"check_status"`
@@ -85,125 +112,155 @@ type UserManagementRequest struct {
 ///feestructure
 
 type FeeStructureRequest struct {
-	SearchFeeStructure string `json:"search_feestructure"`
+	Trans_type string `json:"trans_type"`
 }
 
 ///paramconfig
 
 type ParamConfigRequest struct {
-	SearchParamConfig string `json:"search_paramconfig"`
+	App_type   string `json:"app_type" example:"Param Type"`
+	Param_name string `json:"param_name"`
 }
 
 ///atmloc
 
 type AtmLocRequest struct {
-	SearchAtmloc string `json:"search_atmloc"`
+	Inst_desc       string `json:"i.inst_desc"`
+	Atm_description string `json:"c.atm_description"`
+	Atm_address     string `json:"c.atm_address"`
+	Atm_city        string `json:"c.atm_city"`
 }
 
 ///productservices
 
 type ProductServicesRequest struct {
-	SearchProductServices string `json:"search_productservices"`
+	Service_name string `json:"service_name"`
 }
 
 ///servicedowntime
 
 type ServiceDowntimeRequest struct {
-	SearchServicedowntime string `json:"search_servicedowntime"`
+	Downtime_desc  string `json:"downtime_desc"`
+	Downtime_start string `json:"downtime_start"`
+	Downtime_end   string `json:"downtime_end"`
 }
 
 ///banknews
 
 type BankNewsRequest struct {
-	SearchBanknews string `json:"search_banknews"`
+	Product_name string `json:"c.product_name"`
 }
 
 ///institution
 
 type InstitutionRequest struct {
-	SearchInstitution string `json:"search_institution"`
+	Inst_code string `json:"inst_code"`
+	Inst_desc string `json:"inst_desc"`
 }
 
 ///branch
 
 type BranchRequest struct {
-	SearchBranch string `json:"search_branch"`
+	Branch_code string `json:"branch_code"`
+	Branch_desc string `json:"branch_desc"`
 }
 
 ///unit
 
 type UnitRequest struct {
-	SearchUnit string `json:"search_unit"`
+	Unit_code string `json:"unit_code"`
+	Unit_desc string `json:"unit_desc"`
 }
 
 ///center
 
 type CenterRequest struct {
-	SearchCenter string `json:"search_center"`
+	Center_code string `json:"center_code"`
+	Center_desc string `json:"center_desc"`
 }
 
 ///provider
 
 type ProviderRequest struct {
-	SearchProvider string `json:"search_provider"`
+	Id            string `json:"id"`
+	Provider_name string `json:"provider_name"`
 }
 
 ///producttype
 
 type ProductTypeRequest struct {
-	SearchProduct string `json:"search_product"`
+	Product_type_id   string `json:"c.product_type_id"`
+	Product_type_name string `json:"c.product_type_name"`
+	Provider_name     string `json:"a.provider_name"`
 }
 
 ///productcategory
 
 type ProductCategoryRequest struct {
-	SearchProductcategory string `json:"search_productcategory"`
+	Product_category_id   string `json:"c.product_category_id"`
+	Product_category_name string `json:"c.product_category_name"`
+	Provider_name         string `json:"a.provider_name"`
+	Product_type_name     string `json:"b.product_type_name"`
 }
 
 ///billerproduct
 
 type BillerProductRequest struct {
-	SearchBillerproduct string `json:"search_billerproduct"`
+	Biller_product_id     string `json:"c.biller_product_id"`
+	Biller_product_name   string `json:"c.biller_product_name"`
+	Provider_name         string `json:"a.provider_name"`
+	Product_category_name string `json:"b.product_category_name"`
 }
 
 ///billerproduct
 
 type LoadProductRequest struct {
-	SearchLoadproduct string `json:"search_loadproduct"`
+	Load_product_id       string `json:"c.load_product_id"`
+	Load_product_name     string `json:"c.load_product_name"`
+	Product_category_name string `json:"a.product_category_name"`
 }
 
 ///commissionsetup
 
 type CommissionRequest struct {
-	SearchCommission string `json:"search_commission"`
+	Trans_type      string `json:"trans_type"`
+	Commission_type string `json:"commission_type"`
 }
 
 ///banklist
 
 type BankListRequest struct {
-	SearchBanklist string `json:"search_banklist"`
+	Bank_code  string `json:"bank_code"`
+	Bank_name  string `json:"bank_name"`
+	Short_name string `json:"short_name"`
 }
 
 ///partnerlist
 
 type PartnerListRequest struct {
-	SearchPartnerlist string `json:"search_partnerlist"`
+	Partner_id   string `json:"partner_id"`
+	Partner_desc string `json:"partner_desc"`
+	Partner_name string `json:"partner_name"`
+	Status       string `json:"status"`
 }
 
 ///splashscreen
 
 type SplashScreenRequest struct {
-	SearchSplashscreen string `json:"search_splashscreen"`
+	Action string `json:"action"`
+	Title  string `json:"title"`
 }
 
 ///csrhotline
 
 type CsrHotlineRequest struct {
-	SearchCsrhotline string `json:"search_csrhotline"`
+	Contact_number   string `json:"c.contact_number"`
+	Network_provider string `json:"c.network_provider"`
 }
 
 ///concerntype
 
 type ConcernTypeRequest struct {
-	SearchConcerntype string `json:"search_concerntype"`
+	Concern_name  string `json:"concern_name"`
+	Concern_level string `json:"concern_level"`
 }

@@ -29,54 +29,55 @@ type ClientProfileResponse struct {
 ///hierarchy
 
 type HierarchyResponse struct {
-	BranchCode string `json:"branch_code"`
-	BranchDesc string `json:"branch_desc"`
-	UnitCode   string `json:"unit_code"`
-	UnitDesc   string `json:"unit_desc"`
-	CenterCode string `json:"center_code"`
-	CenterDesc string `json:"center_desc"`
+	Branch_code string `json:"branch_code"`
+	Branch_desc string `json:"branch_desc"`
+	Unit_code   string `json:"unit_code"`
+	Unit_desc   string `json:"unit_desc"`
+	Center_code string `json:"center_code"`
+	Center_desc string `json:"center_desc"`
+	Inst_desc   string `json:"i.inst_desc"`
 }
 
 ///listfailedenrollment
 
 type FailedEnrollmentResponse struct {
-	DateTime      time.Time `json:"Date_Time"`
-	AccountNumber string    `json:"Account_Number"`
-	BirthDate     string    `json:"Birth_Date"`
-	MobileNumber  string    `json:"Mobile_Number"`
-	ClientType    string    `json:"Client_Type"`
-	DeviceId      string    `json:"Device_Id"`
-	DeviceModel   string    `json:"Device_Model"`
-	ErrorMessage  string    `json:"Error_Message"`
+	Created_date   string `json:"created_date"`
+	Account_number string `json:"account_number"`
+	Date_of_birth  string `json:"date_of_birth"`
+	Mobile_number  string `json:"mobile_number"`
+	Client_type    string `json:"client_type"`
+	Device_id      string `json:"device_id"`
+	Device_model   string `json:"device_model"`
+	Error_message  string `json:"error_message"`
 }
 
 ///listofagent
 
 type ListofAgentResponse struct {
-	DateTimeEnabled time.Time `json:"Date_Time_Enabled"`
-	EnabledBy       string    `json:"Enabled_By"`
-	Cid             string    `json:"Cid"`
-	FullName        string    `json:"Full_Name"`
-	MobileNumber    string    `json:"Mobile_Number"`
-	Institution     string    `json:"Institution"`
-	Branch          string    `json:"Branch"`
-	Unit            string    `json:"Unit"`
-	Center          string    `json:"Center"`
+	Date_and_time time.Time `json:"c.date_and_time"`
+	User_name     string    `json:"i.user_name"`
+	Cid           string    `json:"c.cid"`
+	Fullname      string    `json:"c.fullname"`
+	Mobile_no     string    `json:"c.mobile_no"`
+	Inst_desc     string    `json:"a.inst_desc"`
+	Branch_desc   string    `json:"c.branch_desc"`
+	Unit_desc     string    `json:"c.unit_desc"`
+	Center_desc   string    `json:"c.center_desc"`
 }
 
 ///listuseddevice
 
 type UsedDeviceResponse struct {
-	DateTimeActivated time.Time `json:"DateTime_Activated" example:"2022-02-08T19:33:06Z"`
-	DeviceId          string    `json:"Device_Id"`
-	DeviceModel       string    `json:"Device_Model"`
-	AndroidVersion    string    `json:"Android_Version"`
-	Cid               string    `json:"Cid"`
-	Branch            string    `json:"Branch"`
-	MobileNumber      string    `json:"Mobile_Number"`
-	CostumerName      string    `json:"Costumer_Name"`
-	CostumerType      string    `json:"Costumer_Type"`
-	Status            int       `json:"Status"`
+	Created_date    string `json:"created_date"`
+	Device_id       string `json:"device_id"`
+	Device_model    string `json:"device_model"`
+	Android_version string `json:"android_version"`
+	Cid             string `json:"cid"`
+	Branch_code     string `json:"branch_code"`
+	Mobile_number   string `json:"mobile_number"`
+	Client_name     string `json:"client_name"`
+	Client_type     string `json:"client_type"`
+	Device_status   string `json:"device_status"`
 }
 
 ///remittancelog
@@ -134,244 +135,244 @@ type SmsLogResponse struct {
 //transactionlog
 
 type TransLogResponse struct {
-	MobileId           string    `json:"Mobile_Id"`
-	CoreId             string    `json:"Core_Id"`
-	SourceBranch       string    `json:"Source_Branch"`
-	SourceCid          string    `json:"Source_Cid"`
-	SourceIdClientType string    `json:"Source_Id_Client_Type"`
-	SourceAccountType  string    `json:"Source_Account_Type"`
-	SourceAccount      string    `json:"Source_Account"`
-	SourceName         string    `json:"Source_Name"`
-	TargetBranch       string    `json:"Target_Branch"`
-	TargetCid          string    `json:"Target_Cid"`
-	BankName           string    `json:"Bank_Name"`
-	TargetIdClientType string    `json:"Target_Id_Client_Type"`
-	TargetAccountType  string    `json:"Target_Account_Type"`
-	TargetAccount      string    `json:"Target_Account"`
-	TargetName         string    `json:"Target_Name"`
-	TransactionType    string    `json:"Transaction_Type"`
-	TransactionAmount  string    `json:"Transaction_Amount"`
-	TransactionCharge  string    `json:"Transaction_Charge"`
-	AgentIncome        string    `json:"Agent_Income"`
-	BankIncome         string    `json:"Bank_Income"`
-	APBancnetInstapay  string    `json:"Ap_Bancnet_Instapay"`
-	DateTime           time.Time `json:"Date_Time"`
-	PostDateTime       time.Time `json:"Post_Date_Time"`
-	Status             string    `json:"Status"`
-	Message            string    `json:"Mes_sage"`
-	WithAgentFeature   int       `json:"With_Agent_Feature"`
-	ArOrNumber         string    `json:"Ar_Or_Number"`
-	ChargesCorerefID   string    `json:"Charges_Coreref_Id"`
+	Mobile_refno        string `json:"mobile_refno"`
+	Core_refno          string `json:"core_refno"`
+	Source_branch       string `json:"source_branch"`
+	Source_cid          string `json:"source_cid"`
+	Source_client_type  string `json:"source_client_type"`
+	Source_account_type string `json:"source_account_type"`
+	Source_account      string `json:"source_account"`
+	Source_name         string `json:"source_name"`
+	Target_branch       string `json:"target_branch"`
+	Target_cid          string `json:"target_cid"`
+	Bank_name           string `json:"bank_name"`
+	Target_client_type  string `json:"target_client_type"`
+	Target_account_type string `json:"target_account_type"`
+	Target_account      string `json:"target_account"`
+	Target_name         string `json:"target_name"`
+	Trans_type_code     string `json:"trans_type_code"`
+	Amount              string `json:"amount"`
+	Trans_amount_fee    string `json:"trans_amount_fee"`
+	Agent_income        string `json:"agent_income"`
+	Bank_income         string `json:"bank_income"`
+	Bancnet_income      string `json:"bancnet_income"`
+	Trans_date          string `json:"trans_date"`
+	Post_date           string `json:"post_date"`
+	Status              string `json:"status"`
+	Message             string `json:"message"`
+	Agent_feature       string `json:"agent_feature"`
+	Ar_or_number        string `json:"ar_or_number"`
+	Cust_cid            string `json:"cust_cid"`
 }
 
 ///usermanagement
 
 type UserManagementResponse struct {
-	UserName    string `json:"user_name"`
-	GivenName   string `json:"given_name"`
-	MiddleName  string `json:"middle_name"`
-	LastName    string `json:"last_name"`
-	BranchNames string `json:"branch_names"`
-	Roles       string `json:"roles"`
-	CheckStatus string `json:"check_status"`
+	User_login   string `json:"user_login"`
+	Given_name   string `json:"given_name"`
+	Middle_name  string `json:"middle_name"`
+	Last_name    string `json:"last_name"`
+	Branch_names string `json:"branch_names"`
+	Roles        string `json:"roles"`
+	Check_status string `json:"check_status"`
 }
 
 ///feestructure
 
 type FeeStructureResponse struct {
-	Transaction       string `json:"Transaction"`
-	Range             string `json:"Range"`
-	TotalCharge       string `json:"Total_Charge"`
-	AgentIncome       string `json:"Agent_Income"`
-	BankIncome        string `json:"Bank_Income"`
-	AgentTargetIncome string `json:"Agent_Target_Income"`
-	ApBancnetIncome   string `json:"Ap_Bancnet_Income"`
+	Trans_type         string `json:"trans_type"`
+	Range              string `json:"Range"`
+	Total_charge       string `json:"total_charge"`
+	Agent_income       string `json:"agent_income"`
+	Bank_income        string `json:"bank_income"`
+	Agen_target_income string `json:"agent_target_income"`
+	Bancnet_income     string `json:"bancnet_income"`
 }
 
 ///paramconfig
 
 type ParamConfigResponse struct {
-	ParameterType  string `json:"Parameter_Type"`
-	ParameterName  string `json:"Parameter_Name"`
-	ParameterValue string `json:"Parameter_Value"`
-	Description    string `json:"Description"`
+	App_type    string `json:"app_type"`
+	Param_name  string `json:"param_name"`
+	Param_value string `json:"param_value"`
+	Param_desc  string `json:"param_desc"`
 }
 
 ///atmloc
 
 type AtmLocResponse struct {
-	InstiDescription string `json:"Insti_Description"`
-	Description      string `json:"Description"`
-	StreetBrgy       string `json:"Street_Brgy"`
-	CityProvince     string `json:"City_Province"`
+	Inst_desc       string `json:"i.inst_desc"`
+	Atm_description string `json:"c.atm_description"`
+	Atm_address     string `json:"c.atm_address"`
+	Atm_city        string `json:"c.atm_city"`
 }
 
 ///productservices
 
 type ProductServicesResponse struct {
-	Name        string `json:"Name"`
-	Description string `json:"Description"`
-	Show        bool   `json:"Show"`
+	Service_name        string `json:"service_name"`
+	Service_description string `json:"service_description"`
+	Show                bool   `json:"show"`
 }
 
 ///servicedowntime
 
 type ServiceDowntimeResponse struct {
-	Description string    `json:"Description"`
-	StartDate   time.Time `json:"Start_Date"`
-	EndDate     time.Time `json:"End_Date"`
-	ClientType  string    `json:"Client_Type"`
+	Downtime_desc  string `json:"downtime_desc"`
+	Downtime_start string `json:"downtime_start"`
+	Downtime_end   string `json:"downtime_end"`
+	Client_type    string `json:"client_type"`
 }
 
 ///banknews
 
 type BankNewsResponse struct {
-	Date   time.Time `json:"Date_"`
-	Sender string    `json:"Sender"`
-	Topic  string    `json:"Topic"`
+	Product_date time.Time `json:"c.product_date"`
+	Given_name   string    `json:"t.given_name"`
+	Product_name string    `json:"c.product_name"`
 }
 
 ///institution
 
 type InstitutionResponse struct {
-	Code        string    `json:"Code"`
-	Description string    `json:"Description"`
-	Topic       time.Time `json:"Created_Date"`
+	Inst_code    string `json:"inst_code"`
+	Inst_desc    string `json:"inst_desc"`
+	Created_date string `json:"created_date"`
 }
 
 ///branch
 
 type BranchResponse struct {
-	Code        string    `json:"Code"`
-	Description string    `json:"Description"`
-	Topic       time.Time `json:"Created_Date"`
+	Branch_code  string `json:"branch_code"`
+	Branch_desc  string `json:"branch_desc"`
+	Created_date string `json:"created_date"`
 }
 
 ///unit
 
 type UnitResponse struct {
-	Code        string    `json:"Code"`
-	Description string    `json:"Description"`
-	Topic       time.Time `json:"Created_Date"`
+	Unit_code    string `json:"unit_code"`
+	Unit_desc    string `json:"unit_desc"`
+	Created_date string `json:"created_date"`
 }
 
 ///center
 
 type CenterResponse struct {
-	Code        string    `json:"Code"`
-	Description string    `json:"Description"`
-	Topic       time.Time `json:"Created_Date"`
+	Center_code  string `json:"center_code"`
+	Center_desc  string `json:"center_desc"`
+	Created_date string `json:"created_date"`
 }
 
 ///provider
 
 type ProviderResponse struct {
-	ProviderId    int    `json:"Provider_Id"`
-	ProviderName  string `json:"Provider_Name"`
-	Description   string `json:"Description"`
-	ProviderAlias string `json:"Provider_Alias"`
-	Status        int    `json:"Status"`
+	Id             string `json:"id"`
+	Provider_name  string `json:"provider_name"`
+	Description    string `json:"description"`
+	Provider_alias string `json:"provider_alias"`
+	Status         string `json:"status"`
 }
 
 ///producttype
 
 type ProductTypeResponse struct {
-	Provider_Name     string `json:"Provider_Name"`
-	Product_Type_Id   int    `json:"Product_Type_Id"`
-	Product_Type_Name string `json:"Product_Type_Name"`
-	Description       string `json:"Description"`
-	Status            int    `json:"Status"`
+	Provider_name     string `json:"a.provider_name"`
+	Product_type_Id   string `json:"c.product_type_id"`
+	Product_type_name string `json:"c.product_type_name"`
+	Description       string `json:"c.description"`
+	Status            string `json:"c.status"`
 }
 
 ///productcategory
 
 type ProductCategoryResponse struct {
-	ProviderName        string `json:"Provider_Name"`
-	ProductTypeName     string `json:"Product_Type_Name"`
-	ProductCategoryId   int    `json:"Product_Category_Id"`
-	ProductCategoryName string `json:"Product_Category_Name"`
-	Status              int    `json:"Status"`
+	Provider_name         string `json:"a.provider_name"`
+	Product_type_name     string `json:"b.product_type_name"`
+	Product_category_id   string `json:"c.product_category_id"`
+	Product_category_name string `json:"c.product_category_name"`
+	Status                string `json:"c.status"`
 }
 
 ///billerproduct
 
 type BillerProductResponse struct {
-	ProviderName        string  `json:"Provider_Name"`
-	ProductCategoryName string  `json:"Product_Category_Name"`
-	BillerProductId     int     `json:"Biller_Product_Id"`
-	BillerProductName   string  `json:"Biller_Product_Name"`
-	Description         string  `json:"Description"`
-	BankCommission      float32 `json:"Bank_Commission"`
-	ServiceFee          float32 `json:"Service_Fee"`
-	Status              int     `json:"Status"`
+	Provider_name         string  `json:"a.provider_name"`
+	Product_category_name string  `json:"b.product_category_name"`
+	Biller_product_id     int     `json:"c.biller_product_id"`
+	Biller_product_name   string  `json:"c.biller_product_name"`
+	Description           string  `json:"c.description"`
+	Bank_commission       float32 `json:"c.bank_commission"`
+	Service_fee           float32 `json:"c.service_fee"`
+	Status                int     `json:"c.status"`
 }
 
 ///loadproduct
 
 type LoadProductResponse struct {
-	ProductCategoryName string `json:"Product_Category_Name"`
-	LoadProductId       int    `json:"Load_Product_Id"`
-	LoadProductName     string `json:"Load_Product_Name"`
-	Description         string `json:"Description"`
-	Status              int    `json:"Status"`
+	Product_category_name string `json:"a.product_category_name"`
+	Load_product_id       string `json:"c.load_product_id"`
+	Load_product_name     string `json:"c.load_product_name"`
+	Description           string `json:"c.description"`
+	Status                string `json:"c.status"`
 }
 
-///loadproduct
+///commission
 
 type CommissionResponse struct {
-	TransactionType         string  `json:"Transaction_Type"`
-	CommissionType          string  `json:"Commission_Type"`
-	CustomerIncome          float32 `json:"Customer_Income"`
-	AgentIncome             float32 `json:"Agent_Income"`
-	BankIncome              float32 `json:"Bank_Income"`
-	StaBankPartnerIncometus float32 `json:"Bank_Partner_Income"`
+	Trans_type          string  `json:"trans_type"`
+	Commission_type     string  `json:"commission_type"`
+	Customer_income     float32 `json:"customer_income"`
+	Agent_income        float32 `json:"agent_income"`
+	Bank_income         float32 `json:"bank_income"`
+	Bank_partner_income float32 `json:"bank_partner_income"`
 }
 
 //banklist
 
 type BankListResponse struct {
-	BankCode  string `json:"Bank_Code"`
-	BankName  string `json:"Bank_Name"`
-	ShortName string `json:"Short_Name"`
-	BankBic   string `json:"Bank_Bic"`
+	Bank_code  string `json:"bank_code"`
+	Bank_name  string `json:"bank_name"`
+	Short_name string `json:"short_name"`
+	Bank_bic   string `json:"bank_bic"`
 }
 
 //partnerlist
 
 type PartnerListResponse struct {
-	PartnerId                  string `json:"Partner_Id"`
-	PartnerName                string `json:"Partner_Name"`
-	Description                string `json:"Description"`
-	PartnerApiUrl              string `json:"Partner_Api_Url"`
-	MerchantPaymentCallbackUrl string `json:"Merchant_Payment_Callback_Url"`
-	MerchantIdPrefix           string `json:"Merchant_Id_Prefix"`
-	MriGroup                   int    `json:"Mri_Group"`
-	Status                     int    `json:"Status"`
+	Partner_id                    string `json:"partner_id"`
+	Partner_name                  string `json:"partner_name"`
+	Partner_desc                  string `json:"partner_desc"`
+	Partner_api_url               string `json:"partner_api_url"`
+	Merchant_payment_callback_url string `json:"merchant_payment_callback_url"`
+	Merchant_id_prefix            string `json:"merchant_id_prefix"`
+	Mri_group                     string `json:"mri_group"`
+	Status                        string `json:"status"`
 }
 
 //splashscreen
 
 type SplashScreenResponse struct {
-	Action     string `json:"Action"`
-	Title      string `json:"Title"`
-	Message    string `json:"Message"`
-	SubMessage string `json:"Sub_Message"`
-	ImageUrl   string `json:"Image_Url"`
-	Show       string `json:"Show"`
+	Action      string `json:"action"`
+	Title       string `json:"title"`
+	Message     string `json:"message"`
+	Sub_message string `json:"sub_message"`
+	Image_url   string `json:"image_url"`
+	Show        string `json:"show"`
 }
 
 //csrhotline
 
 type CsrHotlineResponse struct {
-	ContactNumber   string `json:"Contact_Number"`
-	NetworkProvider string `json:"Network_Provider"`
-	InstitutionDesc string `json:"Institution_Desc"`
+	Contact_number   string `json:"c.contact_number"`
+	Network_provider string `json:"c.network_provider"`
+	Inst_desc        string `json:"a.inst_desc"`
 }
 
 //corncerntype
 
 type ConcernTypeResponse struct {
-	Concern         string `json:"Concern"`
-	TurnAroundTime  string `json:"Turn_Around_Time"`
-	ComflexityLevel string `json:"Comflexity_Level"`
+	Concern_name  string `json:"concern_name"`
+	Concern_time  string `json:"concern_time"`
+	Concern_level string `json:"concern_level"`
 }

@@ -1295,7 +1295,16 @@ const docTemplate = `{
         "models.AtmLocRequest": {
             "type": "object",
             "properties": {
-                "search_atmloc": {
+                "c.atm_address": {
+                    "type": "string"
+                },
+                "c.atm_city": {
+                    "type": "string"
+                },
+                "c.atm_description": {
+                    "type": "string"
+                },
+                "i.inst_desc": {
                     "type": "string"
                 }
             }
@@ -1303,16 +1312,16 @@ const docTemplate = `{
         "models.AtmLocResponse": {
             "type": "object",
             "properties": {
-                "City_Province": {
+                "c.atm_address": {
                     "type": "string"
                 },
-                "Description": {
+                "c.atm_city": {
                     "type": "string"
                 },
-                "Insti_Description": {
+                "c.atm_description": {
                     "type": "string"
                 },
-                "Street_Brgy": {
+                "i.inst_desc": {
                     "type": "string"
                 }
             }
@@ -1320,7 +1329,13 @@ const docTemplate = `{
         "models.BankListRequest": {
             "type": "object",
             "properties": {
-                "search_banklist": {
+                "bank_code": {
+                    "type": "string"
+                },
+                "bank_name": {
+                    "type": "string"
+                },
+                "short_name": {
                     "type": "string"
                 }
             }
@@ -1328,16 +1343,16 @@ const docTemplate = `{
         "models.BankListResponse": {
             "type": "object",
             "properties": {
-                "Bank_Bic": {
+                "bank_bic": {
                     "type": "string"
                 },
-                "Bank_Code": {
+                "bank_code": {
                     "type": "string"
                 },
-                "Bank_Name": {
+                "bank_name": {
                     "type": "string"
                 },
-                "Short_Name": {
+                "short_name": {
                     "type": "string"
                 }
             }
@@ -1345,7 +1360,7 @@ const docTemplate = `{
         "models.BankNewsRequest": {
             "type": "object",
             "properties": {
-                "search_banknews": {
+                "c.product_name": {
                     "type": "string"
                 }
             }
@@ -1353,13 +1368,13 @@ const docTemplate = `{
         "models.BankNewsResponse": {
             "type": "object",
             "properties": {
-                "Date_": {
+                "c.product_date": {
                     "type": "string"
                 },
-                "Sender": {
+                "c.product_name": {
                     "type": "string"
                 },
-                "Topic": {
+                "t.given_name": {
                     "type": "string"
                 }
             }
@@ -1367,7 +1382,16 @@ const docTemplate = `{
         "models.BillerProductRequest": {
             "type": "object",
             "properties": {
-                "search_billerproduct": {
+                "a.provider_name": {
+                    "type": "string"
+                },
+                "b.product_category_name": {
+                    "type": "string"
+                },
+                "c.biller_product_id": {
+                    "type": "string"
+                },
+                "c.biller_product_name": {
                     "type": "string"
                 }
             }
@@ -1375,28 +1399,28 @@ const docTemplate = `{
         "models.BillerProductResponse": {
             "type": "object",
             "properties": {
-                "Bank_Commission": {
+                "a.provider_name": {
+                    "type": "string"
+                },
+                "b.product_category_name": {
+                    "type": "string"
+                },
+                "c.bank_commission": {
                     "type": "number"
                 },
-                "Biller_Product_Id": {
+                "c.biller_product_id": {
                     "type": "integer"
                 },
-                "Biller_Product_Name": {
+                "c.biller_product_name": {
                     "type": "string"
                 },
-                "Description": {
+                "c.description": {
                     "type": "string"
                 },
-                "Product_Category_Name": {
-                    "type": "string"
-                },
-                "Provider_Name": {
-                    "type": "string"
-                },
-                "Service_Fee": {
+                "c.service_fee": {
                     "type": "number"
                 },
-                "Status": {
+                "c.status": {
                     "type": "integer"
                 }
             }
@@ -1404,7 +1428,10 @@ const docTemplate = `{
         "models.BranchRequest": {
             "type": "object",
             "properties": {
-                "search_branch": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "branch_desc": {
                     "type": "string"
                 }
             }
@@ -1412,13 +1439,13 @@ const docTemplate = `{
         "models.BranchResponse": {
             "type": "object",
             "properties": {
-                "Code": {
+                "branch_code": {
                     "type": "string"
                 },
-                "Created_Date": {
+                "branch_desc": {
                     "type": "string"
                 },
-                "Description": {
+                "created_date": {
                     "type": "string"
                 }
             }
@@ -1426,7 +1453,10 @@ const docTemplate = `{
         "models.CenterRequest": {
             "type": "object",
             "properties": {
-                "search_center": {
+                "center_code": {
+                    "type": "string"
+                },
+                "center_desc": {
                     "type": "string"
                 }
             }
@@ -1434,13 +1464,13 @@ const docTemplate = `{
         "models.CenterResponse": {
             "type": "object",
             "properties": {
-                "Code": {
+                "center_code": {
                     "type": "string"
                 },
-                "Created_Date": {
+                "center_desc": {
                     "type": "string"
                 },
-                "Description": {
+                "created_date": {
                     "type": "string"
                 }
             }
@@ -1518,7 +1548,10 @@ const docTemplate = `{
         "models.CommissionRequest": {
             "type": "object",
             "properties": {
-                "search_commission": {
+                "commission_type": {
+                    "type": "string"
+                },
+                "trans_type": {
                     "type": "string"
                 }
             }
@@ -1526,22 +1559,22 @@ const docTemplate = `{
         "models.CommissionResponse": {
             "type": "object",
             "properties": {
-                "Agent_Income": {
+                "agent_income": {
                     "type": "number"
                 },
-                "Bank_Income": {
+                "bank_income": {
                     "type": "number"
                 },
-                "Bank_Partner_Income": {
+                "bank_partner_income": {
                     "type": "number"
                 },
-                "Commission_Type": {
+                "commission_type": {
                     "type": "string"
                 },
-                "Customer_Income": {
+                "customer_income": {
                     "type": "number"
                 },
-                "Transaction_Type": {
+                "trans_type": {
                     "type": "string"
                 }
             }
@@ -1549,7 +1582,10 @@ const docTemplate = `{
         "models.ConcernTypeRequest": {
             "type": "object",
             "properties": {
-                "search_concerntype": {
+                "concern_level": {
+                    "type": "string"
+                },
+                "concern_name": {
                     "type": "string"
                 }
             }
@@ -1557,13 +1593,13 @@ const docTemplate = `{
         "models.ConcernTypeResponse": {
             "type": "object",
             "properties": {
-                "Comflexity_Level": {
+                "concern_level": {
                     "type": "string"
                 },
-                "Concern": {
+                "concern_name": {
                     "type": "string"
                 },
-                "Turn_Around_Time": {
+                "concern_time": {
                     "type": "string"
                 }
             }
@@ -1571,7 +1607,10 @@ const docTemplate = `{
         "models.CsrHotlineRequest": {
             "type": "object",
             "properties": {
-                "search_csrhotline": {
+                "c.contact_number": {
+                    "type": "string"
+                },
+                "c.network_provider": {
                     "type": "string"
                 }
             }
@@ -1579,13 +1618,13 @@ const docTemplate = `{
         "models.CsrHotlineResponse": {
             "type": "object",
             "properties": {
-                "Contact_Number": {
+                "a.inst_desc": {
                     "type": "string"
                 },
-                "Institution_Desc": {
+                "c.contact_number": {
                     "type": "string"
                 },
-                "Network_Provider": {
+                "c.network_provider": {
                     "type": "string"
                 }
             }
@@ -1593,7 +1632,28 @@ const docTemplate = `{
         "models.FailedEnrollmentRequest": {
             "type": "object",
             "properties": {
-                "search_failedenrollment": {
+                "account_number": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string",
+                    "example": "Client Type"
+                },
+                "created_date": {
+                    "type": "string",
+                    "example": "Activated Date Start"
+                },
+                "date_of_birth": {
+                    "type": "string"
+                },
+                "error_message": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string",
+                    "example": "Activated Date End"
+                },
+                "mobile_number": {
                     "type": "string"
                 }
             }
@@ -1601,28 +1661,28 @@ const docTemplate = `{
         "models.FailedEnrollmentResponse": {
             "type": "object",
             "properties": {
-                "Account_Number": {
+                "account_number": {
                     "type": "string"
                 },
-                "Birth_Date": {
+                "client_type": {
                     "type": "string"
                 },
-                "Client_Type": {
+                "created_date": {
                     "type": "string"
                 },
-                "Date_Time": {
+                "date_of_birth": {
                     "type": "string"
                 },
-                "Device_Id": {
+                "device_id": {
                     "type": "string"
                 },
-                "Device_Model": {
+                "device_model": {
                     "type": "string"
                 },
-                "Error_Message": {
+                "error_message": {
                     "type": "string"
                 },
-                "Mobile_Number": {
+                "mobile_number": {
                     "type": "string"
                 }
             }
@@ -1630,7 +1690,7 @@ const docTemplate = `{
         "models.FeeStructureRequest": {
             "type": "object",
             "properties": {
-                "search_feestructure": {
+                "trans_type": {
                     "type": "string"
                 }
             }
@@ -1638,25 +1698,25 @@ const docTemplate = `{
         "models.FeeStructureResponse": {
             "type": "object",
             "properties": {
-                "Agent_Income": {
-                    "type": "string"
-                },
-                "Agent_Target_Income": {
-                    "type": "string"
-                },
-                "Ap_Bancnet_Income": {
-                    "type": "string"
-                },
-                "Bank_Income": {
-                    "type": "string"
-                },
                 "Range": {
                     "type": "string"
                 },
-                "Total_Charge": {
+                "agent_income": {
                     "type": "string"
                 },
-                "Transaction": {
+                "agent_target_income": {
+                    "type": "string"
+                },
+                "bancnet_income": {
+                    "type": "string"
+                },
+                "bank_income": {
+                    "type": "string"
+                },
+                "total_charge": {
+                    "type": "string"
+                },
+                "trans_type": {
                     "type": "string"
                 }
             }
@@ -1693,6 +1753,9 @@ const docTemplate = `{
                 "center_desc": {
                     "type": "string"
                 },
+                "i.inst_desc": {
+                    "type": "string"
+                },
                 "unit_code": {
                     "type": "string"
                 },
@@ -1704,7 +1767,10 @@ const docTemplate = `{
         "models.InstitutionRequest": {
             "type": "object",
             "properties": {
-                "search_institution": {
+                "inst_code": {
+                    "type": "string"
+                },
+                "inst_desc": {
                     "type": "string"
                 }
             }
@@ -1712,13 +1778,13 @@ const docTemplate = `{
         "models.InstitutionResponse": {
             "type": "object",
             "properties": {
-                "Code": {
+                "created_date": {
                     "type": "string"
                 },
-                "Created_Date": {
+                "inst_code": {
                     "type": "string"
                 },
-                "Description": {
+                "inst_desc": {
                     "type": "string"
                 }
             }
@@ -1726,39 +1792,62 @@ const docTemplate = `{
         "models.ListofAgentRequest": {
             "type": "object",
             "properties": {
-                "search_listofagent": {
+                "a.inst_desc": {
                     "type": "string"
+                },
+                "c.branch_desc": {
+                    "type": "string"
+                },
+                "c.center_desc": {
+                    "type": "string"
+                },
+                "c.cid": {
+                    "type": "string"
+                },
+                "c.date_and_time": {
+                    "type": "string",
+                    "example": "Activated Date Start"
+                },
+                "c.mobile_no": {
+                    "type": "string"
+                },
+                "c.unit_desc": {
+                    "type": "string"
+                },
+                "q.date_and_time": {
+                    "type": "string",
+                    "example": "Activated Date End"
                 }
             }
         },
         "models.ListofAgentResponse": {
             "type": "object",
             "properties": {
-                "Branch": {
+                "a.inst_desc": {
                     "type": "string"
                 },
-                "Center": {
+                "c.branch_desc": {
                     "type": "string"
                 },
-                "Cid": {
+                "c.center_desc": {
                     "type": "string"
                 },
-                "Date_Time_Enabled": {
+                "c.cid": {
                     "type": "string"
                 },
-                "Enabled_By": {
+                "c.date_and_time": {
                     "type": "string"
                 },
-                "Full_Name": {
+                "c.fullname": {
                     "type": "string"
                 },
-                "Institution": {
+                "c.mobile_no": {
                     "type": "string"
                 },
-                "Mobile_Number": {
+                "c.unit_desc": {
                     "type": "string"
                 },
-                "Unit": {
+                "i.user_name": {
                     "type": "string"
                 }
             }
@@ -1766,7 +1855,13 @@ const docTemplate = `{
         "models.LoadProductRequest": {
             "type": "object",
             "properties": {
-                "search_loadproduct": {
+                "a.product_category_name": {
+                    "type": "string"
+                },
+                "c.load_product_id": {
+                    "type": "string"
+                },
+                "c.load_product_name": {
                     "type": "string"
                 }
             }
@@ -1774,27 +1869,31 @@ const docTemplate = `{
         "models.LoadProductResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "a.product_category_name": {
                     "type": "string"
                 },
-                "Load_Product_Id": {
-                    "type": "integer"
-                },
-                "Load_Product_Name": {
+                "c.description": {
                     "type": "string"
                 },
-                "Product_Category_Name": {
+                "c.load_product_id": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "c.load_product_name": {
+                    "type": "string"
+                },
+                "c.status": {
+                    "type": "string"
                 }
             }
         },
         "models.ParamConfigRequest": {
             "type": "object",
             "properties": {
-                "search_paramconfig": {
+                "app_type": {
+                    "type": "string",
+                    "example": "Param Type"
+                },
+                "param_name": {
                     "type": "string"
                 }
             }
@@ -1802,16 +1901,16 @@ const docTemplate = `{
         "models.ParamConfigResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "app_type": {
                     "type": "string"
                 },
-                "Parameter_Name": {
+                "param_desc": {
                     "type": "string"
                 },
-                "Parameter_Type": {
+                "param_name": {
                     "type": "string"
                 },
-                "Parameter_Value": {
+                "param_value": {
                     "type": "string"
                 }
             }
@@ -1819,7 +1918,16 @@ const docTemplate = `{
         "models.PartnerListRequest": {
             "type": "object",
             "properties": {
-                "search_partnerlist": {
+                "partner_desc": {
+                    "type": "string"
+                },
+                "partner_id": {
+                    "type": "string"
+                },
+                "partner_name": {
+                    "type": "string"
+                },
+                "status": {
                     "type": "string"
                 }
             }
@@ -1827,36 +1935,45 @@ const docTemplate = `{
         "models.PartnerListResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "merchant_id_prefix": {
                     "type": "string"
                 },
-                "Merchant_Id_Prefix": {
+                "merchant_payment_callback_url": {
                     "type": "string"
                 },
-                "Merchant_Payment_Callback_Url": {
+                "mri_group": {
                     "type": "string"
                 },
-                "Mri_Group": {
-                    "type": "integer"
-                },
-                "Partner_Api_Url": {
+                "partner_api_url": {
                     "type": "string"
                 },
-                "Partner_Id": {
+                "partner_desc": {
                     "type": "string"
                 },
-                "Partner_Name": {
+                "partner_id": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "partner_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         },
         "models.ProductCategoryRequest": {
             "type": "object",
             "properties": {
-                "search_productcategory": {
+                "a.provider_name": {
+                    "type": "string"
+                },
+                "b.product_type_name": {
+                    "type": "string"
+                },
+                "c.product_category_id": {
+                    "type": "string"
+                },
+                "c.product_category_name": {
                     "type": "string"
                 }
             }
@@ -1864,27 +1981,27 @@ const docTemplate = `{
         "models.ProductCategoryResponse": {
             "type": "object",
             "properties": {
-                "Product_Category_Id": {
-                    "type": "integer"
-                },
-                "Product_Category_Name": {
+                "a.provider_name": {
                     "type": "string"
                 },
-                "Product_Type_Name": {
+                "b.product_type_name": {
                     "type": "string"
                 },
-                "Provider_Name": {
+                "c.product_category_id": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "c.product_category_name": {
+                    "type": "string"
+                },
+                "c.status": {
+                    "type": "string"
                 }
             }
         },
         "models.ProductServicesRequest": {
             "type": "object",
             "properties": {
-                "search_productservices": {
+                "service_name": {
                     "type": "string"
                 }
             }
@@ -1892,13 +2009,13 @@ const docTemplate = `{
         "models.ProductServicesResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "service_description": {
                     "type": "string"
                 },
-                "Name": {
+                "service_name": {
                     "type": "string"
                 },
-                "Show": {
+                "show": {
                     "type": "boolean"
                 }
             }
@@ -1906,7 +2023,13 @@ const docTemplate = `{
         "models.ProductTypeRequest": {
             "type": "object",
             "properties": {
-                "search_product": {
+                "a.provider_name": {
+                    "type": "string"
+                },
+                "c.product_type_id": {
+                    "type": "string"
+                },
+                "c.product_type_name": {
                     "type": "string"
                 }
             }
@@ -1914,27 +2037,30 @@ const docTemplate = `{
         "models.ProductTypeResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "a.provider_name": {
                     "type": "string"
                 },
-                "Product_Type_Id": {
-                    "type": "integer"
-                },
-                "Product_Type_Name": {
+                "c.description": {
                     "type": "string"
                 },
-                "Provider_Name": {
+                "c.product_type_id": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "c.product_type_name": {
+                    "type": "string"
+                },
+                "c.status": {
+                    "type": "string"
                 }
             }
         },
         "models.ProviderRequest": {
             "type": "object",
             "properties": {
-                "search_provider": {
+                "id": {
+                    "type": "string"
+                },
+                "provider_name": {
                     "type": "string"
                 }
             }
@@ -1942,20 +2068,20 @@ const docTemplate = `{
         "models.ProviderResponse": {
             "type": "object",
             "properties": {
-                "Description": {
+                "description": {
                     "type": "string"
                 },
-                "Provider_Alias": {
+                "id": {
                     "type": "string"
                 },
-                "Provider_Id": {
-                    "type": "integer"
-                },
-                "Provider_Name": {
+                "provider_alias": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "provider_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         },
@@ -2079,9 +2205,6 @@ const docTemplate = `{
         "models.RolesManagementRequest": {
             "type": "object",
             "properties": {
-                "role_desc": {
-                    "type": "string"
-                },
                 "role_name": {
                     "type": "string"
                 }
@@ -2101,7 +2224,13 @@ const docTemplate = `{
         "models.ServiceDowntimeRequest": {
             "type": "object",
             "properties": {
-                "search_servicedowntime": {
+                "downtime_desc": {
+                    "type": "string"
+                },
+                "downtime_end": {
+                    "type": "string"
+                },
+                "downtime_start": {
                     "type": "string"
                 }
             }
@@ -2109,16 +2238,16 @@ const docTemplate = `{
         "models.ServiceDowntimeResponse": {
             "type": "object",
             "properties": {
-                "Client_Type": {
+                "client_type": {
                     "type": "string"
                 },
-                "Description": {
+                "downtime_desc": {
                     "type": "string"
                 },
-                "End_Date": {
+                "downtime_end": {
                     "type": "string"
                 },
-                "Start_Date": {
+                "downtime_start": {
                     "type": "string"
                 }
             }
@@ -2184,7 +2313,10 @@ const docTemplate = `{
         "models.SplashScreenRequest": {
             "type": "object",
             "properties": {
-                "search_splashscreen": {
+                "action": {
+                    "type": "string"
+                },
+                "title": {
                     "type": "string"
                 }
             }
@@ -2192,22 +2324,22 @@ const docTemplate = `{
         "models.SplashScreenResponse": {
             "type": "object",
             "properties": {
-                "Action": {
+                "action": {
                     "type": "string"
                 },
-                "Image_Url": {
+                "image_url": {
                     "type": "string"
                 },
-                "Message": {
+                "message": {
                     "type": "string"
                 },
-                "Show": {
+                "show": {
                     "type": "string"
                 },
-                "Sub_Message": {
+                "sub_message": {
                     "type": "string"
                 },
-                "Title": {
+                "title": {
                     "type": "string"
                 }
             }
@@ -2215,104 +2347,138 @@ const docTemplate = `{
         "models.TransLogRequest": {
             "type": "object",
             "properties": {
-                "search_translog": {
+                "core_refno": {
+                    "type": "string",
+                    "example": "Core_ID"
+                },
+                "mobile_refno": {
+                    "type": "string",
+                    "example": "Mobile_ID"
+                },
+                "post_date": {
                     "type": "string"
+                },
+                "source_account": {
+                    "type": "string"
+                },
+                "source_cid": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "target_account": {
+                    "type": "string"
+                },
+                "target_cid": {
+                    "type": "string"
+                },
+                "trans_date": {
+                    "type": "string",
+                    "example": "Date_Time"
+                },
+                "trans_type_code": {
+                    "type": "string",
+                    "example": "Transaction_Type"
                 }
             }
         },
         "models.TransLogResponse": {
             "type": "object",
             "properties": {
-                "Agent_Income": {
+                "agent_feature": {
                     "type": "string"
                 },
-                "Ap_Bancnet_Instapay": {
+                "agent_income": {
                     "type": "string"
                 },
-                "Ar_Or_Number": {
+                "amount": {
                     "type": "string"
                 },
-                "Bank_Income": {
+                "ar_or_number": {
                     "type": "string"
                 },
-                "Bank_Name": {
+                "bancnet_income": {
                     "type": "string"
                 },
-                "Charges_Coreref_Id": {
+                "bank_income": {
                     "type": "string"
                 },
-                "Core_Id": {
+                "bank_name": {
                     "type": "string"
                 },
-                "Date_Time": {
+                "core_refno": {
                     "type": "string"
                 },
-                "Mes_sage": {
+                "cust_cid": {
                     "type": "string"
                 },
-                "Mobile_Id": {
+                "message": {
                     "type": "string"
                 },
-                "Post_Date_Time": {
+                "mobile_refno": {
                     "type": "string"
                 },
-                "Source_Account": {
+                "post_date": {
                     "type": "string"
                 },
-                "Source_Account_Type": {
+                "source_account": {
                     "type": "string"
                 },
-                "Source_Branch": {
+                "source_account_type": {
                     "type": "string"
                 },
-                "Source_Cid": {
+                "source_branch": {
                     "type": "string"
                 },
-                "Source_Id_Client_Type": {
+                "source_cid": {
                     "type": "string"
                 },
-                "Source_Name": {
+                "source_client_type": {
                     "type": "string"
                 },
-                "Status": {
+                "source_name": {
                     "type": "string"
                 },
-                "Target_Account": {
+                "status": {
                     "type": "string"
                 },
-                "Target_Account_Type": {
+                "target_account": {
                     "type": "string"
                 },
-                "Target_Branch": {
+                "target_account_type": {
                     "type": "string"
                 },
-                "Target_Cid": {
+                "target_branch": {
                     "type": "string"
                 },
-                "Target_Id_Client_Type": {
+                "target_cid": {
                     "type": "string"
                 },
-                "Target_Name": {
+                "target_client_type": {
                     "type": "string"
                 },
-                "Transaction_Amount": {
+                "target_name": {
                     "type": "string"
                 },
-                "Transaction_Charge": {
+                "trans_amount_fee": {
                     "type": "string"
                 },
-                "Transaction_Type": {
+                "trans_date": {
                     "type": "string"
                 },
-                "With_Agent_Feature": {
-                    "type": "integer"
+                "trans_type_code": {
+                    "type": "string"
                 }
             }
         },
         "models.UnitRequest": {
             "type": "object",
             "properties": {
-                "search_unit": {
+                "unit_code": {
+                    "type": "string"
+                },
+                "unit_desc": {
                     "type": "string"
                 }
             }
@@ -2320,13 +2486,13 @@ const docTemplate = `{
         "models.UnitResponse": {
             "type": "object",
             "properties": {
-                "Code": {
+                "created_date": {
                     "type": "string"
                 },
-                "Created_Date": {
+                "unit_code": {
                     "type": "string"
                 },
-                "Description": {
+                "unit_desc": {
                     "type": "string"
                 }
             }
@@ -2334,7 +2500,29 @@ const docTemplate = `{
         "models.UsedDeviceRequest": {
             "type": "object",
             "properties": {
-                "search_useddevice": {
+                "cid": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string",
+                    "example": "Client Type"
+                },
+                "created_date": {
+                    "type": "string",
+                    "example": "Activated Date Start"
+                },
+                "device_id": {
+                    "type": "string"
+                },
+                "device_status": {
+                    "type": "string",
+                    "example": "Status"
+                },
+                "last_updated_date": {
+                    "type": "string",
+                    "example": "Activated Date End"
+                },
+                "mobile_number": {
                     "type": "string"
                 }
             }
@@ -2342,36 +2530,35 @@ const docTemplate = `{
         "models.UsedDeviceResponse": {
             "type": "object",
             "properties": {
-                "Android_Version": {
+                "android_version": {
                     "type": "string"
                 },
-                "Branch": {
+                "branch_code": {
                     "type": "string"
                 },
-                "Cid": {
+                "cid": {
                     "type": "string"
                 },
-                "Costumer_Name": {
+                "client_name": {
                     "type": "string"
                 },
-                "Costumer_Type": {
+                "client_type": {
                     "type": "string"
                 },
-                "DateTime_Activated": {
-                    "type": "string",
-                    "example": "2022-02-08T19:33:06Z"
-                },
-                "Device_Id": {
+                "created_date": {
                     "type": "string"
                 },
-                "Device_Model": {
+                "device_id": {
                     "type": "string"
                 },
-                "Mobile_Number": {
+                "device_model": {
                     "type": "string"
                 },
-                "Status": {
-                    "type": "integer"
+                "device_status": {
+                    "type": "string"
+                },
+                "mobile_number": {
+                    "type": "string"
                 }
             }
         },
@@ -2393,7 +2580,7 @@ const docTemplate = `{
                 "middle_name": {
                     "type": "string"
                 },
-                "user_name": {
+                "user_login": {
                     "type": "string"
                 }
             }
@@ -2419,7 +2606,7 @@ const docTemplate = `{
                 "roles": {
                     "type": "string"
                 },
-                "user_name": {
+                "user_login": {
                     "type": "string"
                 }
             }

@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"net/http"
 	"webtool-api/middleware"
 	"webtool-api/models"
@@ -29,12 +28,9 @@ func GetCsrHotline(c *fiber.Ctx) error {
 		})
 	}
 
-	csrhotlineinput := c.Params("csrhotlineInput")
-	fmt.Println("CsrHotlineInput:", csrhotlineinput)
-
 	csrhotlineModel := []models.CsrHotlineResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.csrhotline(?)", csrhotlineInput.SearchCsrhotline).Scan(&csrhotlineModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_csrhotline").Find(&csrhotlineModel, csrhotlineInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -68,12 +64,9 @@ func GetConcernType(c *fiber.Ctx) error {
 		})
 	}
 
-	concerntypeinput := c.Params("corncerntypeInput")
-	fmt.Println("ConcernTypeInput:", concerntypeinput)
-
 	concerntypeModel := []models.ConcernTypeResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.concerntype(?)", concerntypeInput.SearchConcerntype).Scan(&concerntypeModel).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_concerntype").Find(&concerntypeModel, concerntypeInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
