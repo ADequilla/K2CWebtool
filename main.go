@@ -42,6 +42,11 @@ func AppRoutes(app *fiber.App) {
 	app.Get("/docs/*", swagger.HandlerDefault)
 	//-----
 
+	//Login/Authenticated/Logout
+	app.Post("/Login/", controller.Login)
+	app.Post("/Authenticate/", controller.Authenticated)
+	app.Post("/Logout/", controller.Logout)
+
 	//Administration
 	app.Post("/get_usermanagement/", controller.GetUserManagements)
 	app.Post("/get_rolesmanagement/", controller.GetRolesManagements)

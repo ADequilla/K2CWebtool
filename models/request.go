@@ -264,3 +264,10 @@ type ConcernTypeRequest struct {
 	Concern_name  string `json:"concern_name"`
 	Concern_level string `json:"concern_level"`
 }
+
+///login
+
+type LoginRequest struct {
+	User_login  string `json:"c.user_login" validate:"required"`
+	User_passwd string `json:"c.user_passwd" validate:"required"`
+}

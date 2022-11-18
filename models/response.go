@@ -376,3 +376,32 @@ type ConcernTypeResponse struct {
 	Concern_time  string `json:"concern_time"`
 	Concern_level string `json:"concern_level"`
 }
+
+//login
+
+type LoginResponse struct {
+	User_id                   uint   `json:"c.user_id"`
+	User_login                string `json:"c.user_login"`
+	User_passwd               string `json:"c.user_passwd"`
+	User_name                 string `json:"c.user_name"`
+	User_email                string `json:"c.user_email"`
+	User_phone                string `json:"c.user_phone"`
+	User_expired_passwd       string `json:"c.user_expired_passwd"`
+	User_type                 string `json:"c.user_type"`
+	User_status               string `json:"c.user_status"`
+	User_position             string `json:"c.user_position"`
+	Login_attempts            string `json:"c.login_attempts"`
+	User_enabled              string `json:"c.user_enabled"`
+	Inst_desc                 string `json:"i.inst_desc"`
+	Branch_desc               string `json:"b.branch_desc"`
+	Unit_desc                 string `json:"u.unit_desc"`
+	Center_desc               string `json:"a.center_desc"`
+	Last_name                 string `json:"c.last_name"`
+	Given_name                string `json:"c.given_name"`
+	Middle_name               string `json:"c.middle_name"`
+	Passwd_default            string `json:"c.passwd_default"`
+	Activation_limit          string `json:"c.activation_limit"`
+	Check_status              string `json:"c.check_status"`
+	Last_login_date           string `json:"c.last_login_date"`
+	Last_password_chaged_date string `json:"c.last_password_chaged_date"`
+}

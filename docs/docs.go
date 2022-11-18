@@ -21,6 +21,98 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/Authenticate/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponsetokenModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/Login/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Login Input",
+                        "name": "loginInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponsetokenModel"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseWoModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/Logout/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseWoModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_atmloc/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1886,6 +1978,21 @@ const docTemplate = `{
                 }
             }
         },
+        "models.LoginRequest": {
+            "type": "object",
+            "required": [
+                "c.user_login",
+                "c.user_passwd"
+            ],
+            "properties": {
+                "c.user_login": {
+                    "type": "string"
+                },
+                "c.user_passwd": {
+                    "type": "string"
+                }
+            }
+        },
         "models.ParamConfigRequest": {
             "type": "object",
             "properties": {
@@ -2200,6 +2307,30 @@ const docTemplate = `{
                 "retcode": {
                     "type": "string"
                 }
+            }
+        },
+        "models.ResponseWoModel": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "retcode": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ResponsetokenModel": {
+            "type": "object",
+            "properties": {
+                "data": {},
+                "message": {
+                    "type": "string"
+                },
+                "retcode": {
+                    "type": "string"
+                },
+                "token": {}
             }
         },
         "models.RolesManagementRequest": {

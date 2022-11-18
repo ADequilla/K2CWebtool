@@ -387,6 +387,16 @@ definitions:
       c.status:
         type: string
     type: object
+  models.LoginRequest:
+    properties:
+      c.user_login:
+        type: string
+      c.user_passwd:
+        type: string
+    required:
+    - c.user_login
+    - c.user_passwd
+    type: object
   models.ParamConfigRequest:
     properties:
       app_type:
@@ -593,6 +603,22 @@ definitions:
         type: string
       retcode:
         type: string
+    type: object
+  models.ResponseWoModel:
+    properties:
+      message:
+        type: string
+      retcode:
+        type: string
+    type: object
+  models.ResponsetokenModel:
+    properties:
+      data: {}
+      message:
+        type: string
+      retcode:
+        type: string
+      token: {}
     type: object
   models.RolesManagementRequest:
     properties:
@@ -877,6 +903,66 @@ info:
   title: Webtool
   version: "2.0"
 paths:
+  /Authenticate/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponsetokenModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /Login/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Login Input
+        in: body
+        name: loginInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponsetokenModel'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/models.ResponseWoModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /Logout/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ResponseWoModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_atmloc/:
     post:
       consumes:
