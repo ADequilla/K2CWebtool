@@ -288,3 +288,11 @@ type ListforRegistrationRequest struct {
 	Ams_status_desc string `json:"sms_status_desc"`
 	Account_number  string `json:"account_number"`
 }
+
+///SlfRequest
+
+type SlfRequestRequest struct {
+	Cid         string `json:"cid"`
+	Branch_desc string `json:"branch_desc"`
+	Trans_date  string `json:"trans_date"`
+}

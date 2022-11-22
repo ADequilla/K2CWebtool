@@ -424,3 +424,15 @@ type ListforRegistrationResponse struct {
 	Acc_status_desc  string `json:"acc_status_desc"`
 	Sms_status_desc  string `json:"sms_status_desc"`
 }
+
+//slfrequest
+
+type SlfRequestResponse struct {
+	Trans_date      string `json:"trans_date"`
+	Branch_desc     string `json:"branch_desc"`
+	Cid             string `json:"cid"`
+	Client_name     string `json:"client_name"`
+	Amount          string `json:"amount"`
+	Amount_approved string `json:"amount_approved"`
+	Status          string `json:"status"`
+}

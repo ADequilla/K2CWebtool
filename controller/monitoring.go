@@ -285,3 +285,39 @@ func GetListofAgent(c *fiber.Ctx) error {
 		Data:    listofagentModel,
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	slfrequestInput body models.SlfRequestRequest true "SlfRequest Input"
+// @Success		  	200 {object} models.SlfRequestResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_slfrequest/ [post]
+func GetSlfRequest(c *fiber.Ctx) error {
+	slfrequestInput := models.SlfRequestRequest{}
+
+	if parErr := c.BodyParser(&slfrequestInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	slfrequestModel := []models.SlfRequestResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_slfrequest").Find(&slfrequestModel, slfrequestInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    slfrequestModel,
+	})
+}
