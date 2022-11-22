@@ -323,6 +323,64 @@ definitions:
       inst_desc:
         type: string
     type: object
+  models.ListforRegistrationRequest:
+    properties:
+      acc_status_desc:
+        type: string
+      account_number:
+        type: string
+      approved:
+        type: string
+      branch_desc:
+        type: string
+      center_desc:
+        type: string
+      cid:
+        type: string
+      enrolled:
+        type: string
+      mobile_no:
+        type: string
+      re_approved:
+        type: string
+      re_enrolled:
+        type: string
+      sms_status_desc:
+        type: string
+      unit_desc:
+        type: string
+    type: object
+  models.ListforRegistrationResponse:
+    properties:
+      acc_status_desc:
+        type: string
+      account_number:
+        type: string
+      act_code_expired:
+        type: string
+      approved:
+        type: string
+      branch_desc:
+        type: string
+      center_desc:
+        type: string
+      cid:
+        type: string
+      client_type:
+        type: string
+      enrolled:
+        type: string
+      fullname:
+        type: string
+      mobile_no:
+        type: string
+      sms_status_desc:
+        type: string
+      type_account:
+        type: string
+      unit_desc:
+        type: string
+    type: object
   models.ListofAgentRequest:
     properties:
       a.inst_desc:
@@ -1320,6 +1378,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.InstitutionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_listforregistration/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ListforRegistration Input
+        in: body
+        name: listforregistrationInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ListforRegistrationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ListforRegistrationResponse'
         "400":
           description: Bad Request
           schema:

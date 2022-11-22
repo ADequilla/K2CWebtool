@@ -7,6 +7,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 
 	//----- SWAGGER -----
@@ -34,6 +35,10 @@ func main() {
 	app.Use(logger.New())
 	AppRoutes(app)
 
+	app.Use(cors.New(cors.Config{
+		AllowCredentials: true,
+	}))
+
 	log.Fatal(app.Listen(":1111"))
 }
 
@@ -51,6 +56,9 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_usermanagement/", controller.GetUserManagements)
 	app.Post("/get_rolesmanagement/", controller.GetRolesManagements)
 	app.Post("/get_hierarchy/", controller.GetHierarchy)
+
+	//Enrollment
+	app.Post("/get_listforregistration/", controller.GetListforRegistration)
 
 	//Monitoring
 	app.Post("/get_clientprofile/", controller.GetClientProfile)

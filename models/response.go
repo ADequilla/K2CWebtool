@@ -405,3 +405,22 @@ type LoginResponse struct {
 	Last_login_date           string `json:"c.last_login_date"`
 	Last_password_chaged_date string `json:"c.last_password_chaged_date"`
 }
+
+///Clientlistforregistration
+
+type ListforRegistrationResponse struct {
+	Enrolled         string `json:"enrolled"`
+	Approved         string `json:"approved"`
+	Act_code_expired string `json:"act_code_expired"`
+	Cid              string `json:"cid"`
+	Account_number   string `json:"account_number"`
+	Type_account     string `json:"type_account"`
+	Mobile_no        string `json:"mobile_no"`
+	Fullname         string `json:"fullname"`
+	Client_type      string `json:"client_type"`
+	Branch_desc      string `json:"branch_desc"`
+	Unit_desc        string `json:"unit_desc"`
+	Center_desc      string `json:"center_desc"`
+	Acc_status_desc  string `json:"acc_status_desc"`
+	Sms_status_desc  string `json:"sms_status_desc"`
+}

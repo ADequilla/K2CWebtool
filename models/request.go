@@ -271,3 +271,20 @@ type LoginRequest struct {
 	User_login  string `json:"c.user_login" validate:"required"`
 	User_passwd string `json:"c.user_passwd" validate:"required"`
 }
+
+///Clientlistforregistration
+
+type ListforRegistrationRequest struct {
+	Cid             string `json:"cid"`
+	Branch_desc     string `json:"branch_desc"`
+	Unit_desc       string `json:"unit_desc"`
+	Center_desc     string `json:"center_desc"`
+	Mobile_no       string `json:"mobile_no"`
+	Enrolled        string `json:"enrolled"`
+	Re_enrolled     string `json:"re_enrolled"`
+	Approved        string `json:"approved"`
+	Re_approved     string `json:"re_approved"`
+	Acc_status_desc string `json:"acc_status_desc"`
+	Ams_status_desc string `json:"sms_status_desc"`
+	Account_number  string `json:"account_number"`
+}

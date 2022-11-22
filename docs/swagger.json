@@ -666,6 +666,46 @@
                 }
             }
         },
+        "/get_listforregistration/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ListforRegistration Input",
+                        "name": "listforregistrationInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ListforRegistrationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ListforRegistrationResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_listofagent/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1870,6 +1910,94 @@
                     "type": "string"
                 },
                 "inst_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ListforRegistrationRequest": {
+            "type": "object",
+            "properties": {
+                "acc_status_desc": {
+                    "type": "string"
+                },
+                "account_number": {
+                    "type": "string"
+                },
+                "approved": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "enrolled": {
+                    "type": "string"
+                },
+                "mobile_no": {
+                    "type": "string"
+                },
+                "re_approved": {
+                    "type": "string"
+                },
+                "re_enrolled": {
+                    "type": "string"
+                },
+                "sms_status_desc": {
+                    "type": "string"
+                },
+                "unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ListforRegistrationResponse": {
+            "type": "object",
+            "properties": {
+                "acc_status_desc": {
+                    "type": "string"
+                },
+                "account_number": {
+                    "type": "string"
+                },
+                "act_code_expired": {
+                    "type": "string"
+                },
+                "approved": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string"
+                },
+                "enrolled": {
+                    "type": "string"
+                },
+                "fullname": {
+                    "type": "string"
+                },
+                "mobile_no": {
+                    "type": "string"
+                },
+                "sms_status_desc": {
+                    "type": "string"
+                },
+                "type_account": {
+                    "type": "string"
+                },
+                "unit_desc": {
                     "type": "string"
                 }
             }
