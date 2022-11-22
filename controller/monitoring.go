@@ -321,3 +321,39 @@ func GetSlfRequest(c *fiber.Ctx) error {
 		Data:    slfrequestModel,
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	operationdashboardInput body models.OperationDashboardRequest true "OperationDashboard Input"
+// @Success		  	200 {object} models.OperationDashboardResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_operationdashboard/ [post]
+func GetOperationDashboard(c *fiber.Ctx) error {
+	operationdashboardInput := models.OperationDashboardRequest{}
+
+	if parErr := c.BodyParser(&operationdashboardInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	operationdashboardModel := []models.OperationDashboardResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_operationdashboard").Find(&operationdashboardModel, operationdashboardInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    operationdashboardModel,
+	})
+}

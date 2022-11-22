@@ -1222,6 +1222,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_slfrequest/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "SlfRequest Input",
+                        "name": "slfrequestInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SlfRequestRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.SlfRequestResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_smslog/": {
             "post": {
                 "description": "Fetch User Data",
@@ -2507,6 +2547,46 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "downtime_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SlfRequestRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "trans_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SlfRequestResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "amount_approved": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "trans_date": {
                     "type": "string"
                 }
             }

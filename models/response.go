@@ -436,3 +436,15 @@ type SlfRequestResponse struct {
 	Amount_approved string `json:"amount_approved"`
 	Status          string `json:"status"`
 }
+
+//OperationDashboard
+
+type OperationDashboardResponse struct {
+	Member       string `json:"Member"`
+	NonMember    string `json:"NonMember"`
+	Trans_type   string `json:"trans_type"`
+	Number       string `json:"number"`
+	Arans_amount string `json:"trans_amount"`
+	Agent_income string `json:"agent_income"`
+	Bank_income  string `json:"bank_income"`
+}

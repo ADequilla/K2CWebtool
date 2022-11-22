@@ -296,3 +296,11 @@ type SlfRequestRequest struct {
 	Branch_desc string `json:"branch_desc"`
 	Trans_date  string `json:"trans_date"`
 }
+
+///OperationDashboard
+
+type OperationDashboardRequest struct {
+	Trans_post_date   string `json:"trans_post_date"`
+	Last_updated_date string `json:"last_updated_date"`
+	Ref_branch        string `json:"ref_branch"`
+}

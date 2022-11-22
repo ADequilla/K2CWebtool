@@ -710,6 +710,32 @@ definitions:
       downtime_start:
         type: string
     type: object
+  models.SlfRequestRequest:
+    properties:
+      branch_desc:
+        type: string
+      cid:
+        type: string
+      trans_date:
+        type: string
+    type: object
+  models.SlfRequestResponse:
+    properties:
+      amount:
+        type: string
+      amount_approved:
+        type: string
+      branch_desc:
+        type: string
+      cid:
+        type: string
+      client_name:
+        type: string
+      status:
+        type: string
+      trans_date:
+        type: string
+    type: object
   models.SmsLogRequest:
     properties:
       activity:
@@ -1735,6 +1761,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.ServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_slfrequest/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: SlfRequest Input
+        in: body
+        name: slfrequestInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.SlfRequestRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SlfRequestResponse'
         "400":
           description: Bad Request
           schema:

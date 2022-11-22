@@ -70,6 +70,7 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_failedenrollment/", controller.GetFailedEnrollment)
 	app.Post("/get_listofagent/", controller.GetListofAgent)
 	app.Post("/get_slfrequest/", controller.GetSlfRequest)
+	app.Post("/get_operationdashboard/", controller.GetOperationDashboard)
 
 	//Utilities
 	app.Post("/get_feestructure/", controller.GetFeeStructure)
