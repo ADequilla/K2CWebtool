@@ -37,6 +37,14 @@ func GetListforRegistration(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(listforregistrationModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",

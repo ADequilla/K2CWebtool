@@ -826,6 +826,46 @@
                 }
             }
         },
+        "/get_operationdashboard/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "OperationDashboard Input",
+                        "name": "operationdashboardInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OperationDashboardRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.OperationDashboardResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_paramconfig/": {
             "post": {
                 "description": "Fetch User Data",
@@ -2150,6 +2190,46 @@
                     "type": "string"
                 },
                 "c.user_passwd": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OperationDashboardRequest": {
+            "type": "object",
+            "properties": {
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "ref_branch": {
+                    "type": "string"
+                },
+                "trans_post_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OperationDashboardResponse": {
+            "type": "object",
+            "properties": {
+                "Member": {
+                    "type": "string"
+                },
+                "NonMember": {
+                    "type": "string"
+                },
+                "agent_income": {
+                    "type": "string"
+                },
+                "bank_income": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
+                },
+                "trans_amount": {
+                    "type": "string"
+                },
+                "trans_type": {
                     "type": "string"
                 }
             }

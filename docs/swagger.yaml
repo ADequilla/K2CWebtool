@@ -455,6 +455,32 @@ definitions:
     - c.user_login
     - c.user_passwd
     type: object
+  models.OperationDashboardRequest:
+    properties:
+      last_updated_date:
+        type: string
+      ref_branch:
+        type: string
+      trans_post_date:
+        type: string
+    type: object
+  models.OperationDashboardResponse:
+    properties:
+      Member:
+        type: string
+      NonMember:
+        type: string
+      agent_income:
+        type: string
+      bank_income:
+        type: string
+      number:
+        type: string
+      trans_amount:
+        type: string
+      trans_type:
+        type: string
+    type: object
   models.ParamConfigRequest:
     properties:
       app_type:
@@ -1508,6 +1534,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.LoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_operationdashboard/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: OperationDashboard Input
+        in: body
+        name: operationdashboardInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.OperationDashboardRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.OperationDashboardResponse'
         "400":
           description: Bad Request
           schema:

@@ -38,6 +38,13 @@ func GetUserManagements(c *fiber.Ctx) error {
 		})
 	}
 
+	if len(umModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -76,7 +83,18 @@ func GetRolesManagements(c *fiber.Ctx) error {
 		})
 	}
 
-	return c.Status(http.StatusCreated).JSON(rmModel)
+	if len(rmModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    rmModel,
+	})
 }
 
 // @summary 	  	Fetch User Data
@@ -109,5 +127,16 @@ func GetHierarchy(c *fiber.Ctx) error {
 		})
 	}
 
-	return c.Status(http.StatusCreated).JSON(hModel)
+	if len(hModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    hModel,
+	})
 }

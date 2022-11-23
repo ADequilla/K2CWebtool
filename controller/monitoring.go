@@ -37,6 +37,14 @@ func GetClientProfile(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(cfModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -73,6 +81,14 @@ func GetRemittanceLog(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(rlModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -97,6 +113,13 @@ func GetRemittanceStatus(c *fiber.Ctx) error {
 			RetCode: "400",
 			Message: "Database Error",
 			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(rsModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
 		})
 	}
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
@@ -135,6 +158,14 @@ func GetSmsLog(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(slModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -171,6 +202,14 @@ func GetTransLog(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(translogModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -207,6 +246,14 @@ func GetUsedDevice(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(useddeviceModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -243,6 +290,14 @@ func GetFailedEnrollment(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(failedenrollmentModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -279,6 +334,14 @@ func GetListofAgent(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(listofagentModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -315,6 +378,14 @@ func GetSlfRequest(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(slfrequestModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
@@ -351,6 +422,14 @@ func GetOperationDashboard(c *fiber.Ctx) error {
 			Data:    dbErr.Error(),
 		})
 	}
+
+	if len(operationdashboardModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
 		Message: "Succes",
