@@ -481,3 +481,24 @@ type AgentDashboardResponse struct {
 	Sum                    string `json:"sum"`
 	Sum_income             string `json:"sum_income"`
 }
+
+///CSRDashboard
+
+type CSRDashboardResponse struct {
+	Customer_ticket_idBranch_desc string `json:"customer_ticket_id"`
+	Created_date                  string `json:"created_date"`
+	Client_cidCash_out            string `json:"client_cid"`
+	Branch_desc                   string `json:"branch_desc"`
+	Unit_desc                     string `json:"unit_desc"`
+	Center_desc                   string `json:"center_desc"`
+	Client_name                   string `json:"client_name"`
+	Client_mobile_no              string `json:"client_mobile_no"`
+	Submitted_by                  string `json:"submitted_by"`
+	Action_detail                 string `json:"action_detail"`
+	Concern_desc                  string `json:"concern_desc"`
+	Concern_level                 string `json:"concern_level"`
+	Concern_type                  string `json:"concern_type"`
+	Trans_type                    string `json:"trans_type"`
+	Assigned_to                   string `json:"assigned_to"`
+	Action_taken                  string `json:"action_taken"`
+}

@@ -104,5 +104,6 @@ func AppRoutes(app *fiber.App) {
 	///CustomerService
 	app.Post("/get_csrhotline/", controller.GetCsrHotline)
 	app.Post("/get_concerntype/", controller.GetConcernType)
+	app.Post("/get_csrdashboard/", controller.GetCSRDashboard)
 
 }

@@ -553,6 +553,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_csrdashboard/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CSRDashboard Input",
+                        "name": "csrdashboardInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CSRDashboardRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CSRDashboardResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_csrhotline/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1836,6 +1876,85 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "created_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CSRDashboardRequest": {
+            "type": "object",
+            "properties": {
+                "client_cid": {
+                    "type": "string"
+                },
+                "closed_date": {
+                    "type": "string"
+                },
+                "concern_name": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "customer_ticket_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "submitted_by": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CSRDashboardResponse": {
+            "type": "object",
+            "properties": {
+                "action_detail": {
+                    "type": "string"
+                },
+                "action_taken": {
+                    "type": "string"
+                },
+                "assigned_to": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "client_cid": {
+                    "type": "string"
+                },
+                "client_mobile_no": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "concern_desc": {
+                    "type": "string"
+                },
+                "concern_level": {
+                    "type": "string"
+                },
+                "concern_type": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "customer_ticket_id": {
+                    "type": "string"
+                },
+                "submitted_by": {
+                    "type": "string"
+                },
+                "trans_type": {
+                    "type": "string"
+                },
+                "unit_desc": {
                     "type": "string"
                 }
             }

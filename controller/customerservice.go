@@ -95,3 +95,47 @@ func GetConcernType(c *fiber.Ctx) error {
 		Data:    concerntypeModel,
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	csrdashboardInput body models.CSRDashboardRequest true "CSRDashboard Input"
+// @Success		  	200 {object} models.CSRDashboardResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_csrdashboard/ [post]
+func GetCSRDashboard(c *fiber.Ctx) error {
+	csrdashboardInput := models.CSRDashboardRequest{}
+
+	if parErr := c.BodyParser(&csrdashboardInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	csrdashboardModel := []models.CSRDashboardResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_cs_ticket").Find(&csrdashboardModel, csrdashboardInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(csrdashboardModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Success",
+		Data:    csrdashboardModel,
+	})
+}

@@ -166,6 +166,58 @@ definitions:
       created_date:
         type: string
     type: object
+  models.CSRDashboardRequest:
+    properties:
+      client_cid:
+        type: string
+      closed_date:
+        type: string
+      concern_name:
+        type: string
+      created_date:
+        type: string
+      customer_ticket_id:
+        type: string
+      status:
+        type: string
+      submitted_by:
+        type: string
+    type: object
+  models.CSRDashboardResponse:
+    properties:
+      action_detail:
+        type: string
+      action_taken:
+        type: string
+      assigned_to:
+        type: string
+      branch_desc:
+        type: string
+      center_desc:
+        type: string
+      client_cid:
+        type: string
+      client_mobile_no:
+        type: string
+      client_name:
+        type: string
+      concern_desc:
+        type: string
+      concern_level:
+        type: string
+      concern_type:
+        type: string
+      created_date:
+        type: string
+      customer_ticket_id:
+        type: string
+      submitted_by:
+        type: string
+      trans_type:
+        type: string
+      unit_desc:
+        type: string
+    type: object
   models.CenterRequest:
     properties:
       center_code:
@@ -1416,6 +1468,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.ConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_csrdashboard/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CSRDashboard Input
+        in: body
+        name: csrdashboardInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CSRDashboardRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CSRDashboardResponse'
         "400":
           description: Bad Request
           schema:

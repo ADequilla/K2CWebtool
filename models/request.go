@@ -317,3 +317,15 @@ type ARPRequest struct {
 type AgentDashboardRequest struct {
 	Branch_desc string `json:"branch_desc"`
 }
+
+///CsrDashboard
+
+type CSRDashboardRequest struct {
+	Ticket_id    string `json:"customer_ticket_id"`
+	Client_cid   string `json:"client_cid"`
+	Submitted_by string `json:"submitted_by"`
+	Created_date string `json:"created_date"`
+	Closed_date  string `json:"closed_date"`
+	Concern_name string `json:"concern_name"`
+	Status       string `json:"status"`
+}
