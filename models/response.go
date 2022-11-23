@@ -448,3 +448,17 @@ type OperationDashboardResponse struct {
 	Agent_income string `json:"agent_income"`
 	Bank_income  string `json:"bank_income"`
 }
+
+//AuthorResetPassword
+
+type ARPResponse struct {
+	Created_date      string `json:"created_date"`
+	Cid               string `json:"cid"`
+	Client_name       string `json:"client_name"`
+	Client_mobile_no  string `json:"client_mobile_no"`
+	Branch_code       string `json:"branch_code"`
+	Unit_code         string `json:"unit_code"`
+	Center_code       string `json:"center_code"`
+	Type              string `json:"type"`
+	Last_updated_date string `json:"last_updated_date"`
+}

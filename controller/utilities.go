@@ -47,7 +47,7 @@ func GetFeeStructure(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    feestructureModel,
 	})
 }
@@ -91,7 +91,7 @@ func GetParamConfig(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    paramconfigModel,
 	})
 }
@@ -135,7 +135,7 @@ func GetAtmLoc(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    atmlocModel,
 	})
 }
@@ -179,7 +179,7 @@ func GetProductServices(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    productservicesModel,
 	})
 }
@@ -223,7 +223,7 @@ func GetServiceDowntime(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    servicedowntimeModel,
 	})
 }
@@ -267,7 +267,7 @@ func GetBankNews(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    banknewsModel,
 	})
 }
@@ -311,7 +311,7 @@ func GetInstitution(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    institutionModel,
 	})
 }
@@ -355,7 +355,7 @@ func GetBranch(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    branchModel,
 	})
 }
@@ -399,7 +399,7 @@ func GetUnit(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    unitModel,
 	})
 }
@@ -443,7 +443,7 @@ func GetCenter(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    centerModel,
 	})
 }
@@ -487,7 +487,7 @@ func GetProvider(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    providerModel,
 	})
 }
@@ -531,7 +531,7 @@ func GetProductType(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    producttypeModel,
 	})
 }
@@ -575,7 +575,7 @@ func GetProductCategory(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    productcategoryModel,
 	})
 }
@@ -619,7 +619,7 @@ func GetBillerProduct(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    billerproductModel,
 	})
 }
@@ -663,7 +663,7 @@ func GetLoadProduct(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    loadproductModel,
 	})
 }
@@ -707,7 +707,7 @@ func GetCommission(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    commissionModel,
 	})
 }
@@ -751,7 +751,7 @@ func GetBankList(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    banklistModel,
 	})
 }
@@ -795,7 +795,7 @@ func GetPartnerList(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    partnerlistModel,
 	})
 }
@@ -839,7 +839,7 @@ func GetSplashScreen(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    splashscreenModel,
 	})
 }

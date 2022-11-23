@@ -47,7 +47,7 @@ func GetClientProfile(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    cfModel,
 	})
 }
@@ -91,7 +91,7 @@ func GetRemittanceLog(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    rlModel,
 	})
 
@@ -124,7 +124,7 @@ func GetRemittanceStatus(c *fiber.Ctx) error {
 	}
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    rsModel,
 	})
 }
@@ -168,7 +168,7 @@ func GetSmsLog(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    slModel,
 	})
 }
@@ -212,7 +212,7 @@ func GetTransLog(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    translogModel,
 	})
 }
@@ -256,7 +256,7 @@ func GetUsedDevice(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    useddeviceModel,
 	})
 }
@@ -300,7 +300,7 @@ func GetFailedEnrollment(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    failedenrollmentModel,
 	})
 }
@@ -344,7 +344,7 @@ func GetListofAgent(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    listofagentModel,
 	})
 }
@@ -388,7 +388,7 @@ func GetSlfRequest(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    slfrequestModel,
 	})
 }
@@ -432,7 +432,51 @@ func GetOperationDashboard(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    operationdashboardModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	arpInput body models.ARPRequest true "ARP Input"
+// @Success		  	200 {object} models.ARPResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_arp/ [post]
+func GetAuthorResetPassword(c *fiber.Ctx) error {
+	arpInput := models.ARPRequest{}
+
+	if parErr := c.BodyParser(&arpInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	arpModel := []models.OperationDashboardResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_author_reset_password").Find(&arpModel, arpInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(arpModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Success",
+		Data:    arpModel,
 	})
 }

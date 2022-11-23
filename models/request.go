@@ -304,3 +304,10 @@ type OperationDashboardRequest struct {
 	Last_updated_date string `json:"last_updated_date"`
 	Ref_branch        string `json:"ref_branch"`
 }
+
+///AuthorResetPasswword
+
+type ARPRequest struct {
+	Cid    string `json:"cid"`
+	Status string `json:"status"`
+}

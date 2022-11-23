@@ -47,7 +47,7 @@ func GetUserManagements(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    umModel,
 	})
 
@@ -92,7 +92,7 @@ func GetRolesManagements(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    rmModel,
 	})
 }
@@ -136,7 +136,7 @@ func GetHierarchy(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    hModel,
 	})
 }

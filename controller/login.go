@@ -76,7 +76,7 @@ func Login(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponsetokenModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Login Successfully",
 		Data:    loginModel,
 		Token:   t,
 	})
@@ -113,7 +113,7 @@ func Authenticated(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 		Data:    login,
 	})
 }
@@ -138,6 +138,6 @@ func Logout(c *fiber.Ctx) error {
 
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
-		Message: "Succes",
+		Message: "Success",
 	})
 }
