@@ -1,5 +1,69 @@
 basePath: /
 definitions:
+  models.ARPRequest:
+    properties:
+      cid:
+        type: string
+      status:
+        type: string
+    type: object
+  models.ARPResponse:
+    properties:
+      branch_code:
+        type: string
+      center_code:
+        type: string
+      cid:
+        type: string
+      client_mobile_no:
+        type: string
+      client_name:
+        type: string
+      created_date:
+        type: string
+      last_updated_date:
+        type: string
+      type:
+        type: string
+      unit_code:
+        type: string
+    type: object
+  models.AgentDashboardRequest:
+    properties:
+      branch_desc:
+        type: string
+    type: object
+  models.AgentDashboardResponse:
+    properties:
+      aap:
+        type: string
+      agent_assisted_payment:
+        type: string
+      bill_payment:
+        type: string
+      bp:
+        type: string
+      branch_desc:
+        type: string
+      cash_in:
+        type: string
+      cash_out:
+        type: string
+      ci:
+        type: string
+      client_name:
+        type: string
+      co:
+        type: string
+      sum:
+        type: string
+      sum_income:
+        type: string
+      total:
+        type: string
+      total_income:
+        type: string
+    type: object
   models.AtmLocRequest:
     properties:
       c.atm_address:
@@ -1070,6 +1134,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.ResponseWoModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_agentdashboard/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AgentDashboard Input
+        in: body
+        name: agentdashboardInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AgentDashboardRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AgentDashboardResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_arp/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ARP Input
+        in: body
+        name: arpInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ARPRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ARPResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
       summary: Fetch User Data
       tags:
       - Webtool

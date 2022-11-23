@@ -106,6 +106,86 @@
                 }
             }
         },
+        "/get_agentdashboard/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AgentDashboard Input",
+                        "name": "agentdashboardInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentDashboardRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AgentDashboardResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_arp/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ARP Input",
+                        "name": "arpInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ARPRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ARPResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_atmloc/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1497,6 +1577,104 @@
         }
     },
     "definitions": {
+        "models.ARPRequest": {
+            "type": "object",
+            "properties": {
+                "cid": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ARPResponse": {
+            "type": "object",
+            "properties": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "center_code": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "client_mobile_no": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "unit_code": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AgentDashboardRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AgentDashboardResponse": {
+            "type": "object",
+            "properties": {
+                "aap": {
+                    "type": "string"
+                },
+                "agent_assisted_payment": {
+                    "type": "string"
+                },
+                "bill_payment": {
+                    "type": "string"
+                },
+                "bp": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "cash_in": {
+                    "type": "string"
+                },
+                "cash_out": {
+                    "type": "string"
+                },
+                "ci": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "co": {
+                    "type": "string"
+                },
+                "sum": {
+                    "type": "string"
+                },
+                "sum_income": {
+                    "type": "string"
+                },
+                "total": {
+                    "type": "string"
+                },
+                "total_income": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AtmLocRequest": {
             "type": "object",
             "properties": {

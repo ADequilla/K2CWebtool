@@ -18,6 +18,12 @@ import (
 	_ "webtool-api/docs"
 )
 
+/**
+ *
+ * @author A.Dequilla
+ *
+ */
+
 // @title Webtool
 // @version 2.0
 // @description KPLUS Webtool Swagger
@@ -72,6 +78,7 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_slfrequest/", controller.GetSlfRequest)
 	app.Post("/get_operationdashboard/", controller.GetOperationDashboard)
 	app.Post("/get_arp/", controller.GetAuthorResetPassword)
+	app.Post("/get_agentdashboard/", controller.GetAgentDashboard)
 
 	//Utilities
 	app.Post("/get_feestructure/", controller.GetFeeStructure)

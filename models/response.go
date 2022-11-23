@@ -462,3 +462,22 @@ type ARPResponse struct {
 	Type              string `json:"type"`
 	Last_updated_date string `json:"last_updated_date"`
 }
+
+///AgentDashboard
+
+type AgentDashboardResponse struct {
+	Branch_desc            string `json:"branch_desc"`
+	Cash_in                string `json:"cash_in"`
+	Cash_out               string `json:"cash_out"`
+	Agent_assisted_payment string `json:"agent_assisted_payment"`
+	Bill_payment           string `json:"bill_payment"`
+	Total                  string `json:"total"`
+	Total_income           string `json:"total_income"`
+	Client_name            string `json:"client_name"`
+	Ci                     string `json:"ci"`
+	Co                     string `json:"co"`
+	Aap                    string `json:"aap"`
+	Bp                     string `json:"bp"`
+	Sum                    string `json:"sum"`
+	Sum_income             string `json:"sum_income"`
+}

@@ -457,7 +457,7 @@ func GetAuthorResetPassword(c *fiber.Ctx) error {
 		})
 	}
 
-	arpModel := []models.OperationDashboardResponse{}
+	arpModel := []models.ARPResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Table("mfs.view_author_reset_password").Find(&arpModel, arpInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
@@ -478,5 +478,49 @@ func GetAuthorResetPassword(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    arpModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	agentdashboardInput body models.AgentDashboardRequest true "AgentDashboard Input"
+// @Success		  	200 {object} models.AgentDashboardResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_agentdashboard/ [post]
+func GetAgentDashboard(c *fiber.Ctx) error {
+	agentdashboardInput := models.AgentDashboardRequest{}
+
+	if parErr := c.BodyParser(&agentdashboardInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	agentdashboardModel := []models.AgentDashboardResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_agentdashboard").Find(&agentdashboardModel, agentdashboardInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(agentdashboardModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Success",
+		Data:    agentdashboardModel,
 	})
 }

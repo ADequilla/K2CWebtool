@@ -311,3 +311,9 @@ type ARPRequest struct {
 	Cid    string `json:"cid"`
 	Status string `json:"status"`
 }
+
+///AgentDashboard
+
+type AgentDashboardRequest struct {
+	Branch_desc string `json:"branch_desc"`
+}
