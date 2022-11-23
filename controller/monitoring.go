@@ -547,7 +547,7 @@ func GetTransConfirmation(c *fiber.Ctx) error {
 
 	transconfirmationModel := []models.TransConfirmationResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Table("mfs.view_trans_confirmation").Find(&transconfirmationModel, transconfirmationInput).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_transconfirmation").Find(&transconfirmationModel, transconfirmationInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

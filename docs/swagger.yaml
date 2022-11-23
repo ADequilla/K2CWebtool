@@ -166,6 +166,24 @@ definitions:
       created_date:
         type: string
     type: object
+  models.BroadcastSmsRequest:
+    properties:
+      subject:
+        type: string
+    type: object
+  models.BroadcastSmsResponse:
+    properties:
+      inbox_date:
+        type: string
+      inbox_desc:
+        type: string
+      period_end:
+        type: string
+      period_start:
+        type: string
+      subject:
+        type: string
+    type: object
   models.CSRDashboardRequest:
     properties:
       client_cid:
@@ -940,6 +958,42 @@ definitions:
       title:
         type: string
     type: object
+  models.TransConfirmationRequest:
+    properties:
+      branch_desc:
+        type: string
+      cid:
+        type: string
+      status:
+        type: string
+      trans_date:
+        type: string
+      trans_desc:
+        type: string
+    type: object
+  models.TransConfirmationResponse:
+    properties:
+      branch_desc:
+        type: string
+      center_desc:
+        type: string
+      cid:
+        type: string
+      client_mobile_no:
+        type: string
+      client_name:
+        type: string
+      note:
+        type: string
+      status:
+        type: string
+      trans_date:
+        type: string
+      trans_desc:
+        type: string
+      unit_desc:
+        type: string
+    type: object
   models.TransLogRequest:
     properties:
       core_refno:
@@ -1364,6 +1418,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.BranchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_broadcastsms/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: BroadcastSms Input
+        in: body
+        name: broadcastsmsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.BroadcastSmsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.BroadcastSmsResponse'
         "400":
           description: Bad Request
           schema:
@@ -2111,6 +2191,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.TransLogResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_transconfirmation/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: TransConfirmation Input
+        in: body
+        name: transconfirmationInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.TransConfirmationRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TransConfirmationResponse'
         "400":
           description: Bad Request
           schema:

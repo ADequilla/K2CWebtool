@@ -79,7 +79,7 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_operationdashboard/", controller.GetOperationDashboard)
 	app.Post("/get_arp/", controller.GetAuthorResetPassword)
 	app.Post("/get_agentdashboard/", controller.GetAgentDashboard)
-	app.Post("/get_transconformation/", controller.GetTransConfirmation)
+	app.Post("/get_transconfirmation/", controller.GetTransConfirmation)
 
 	//Utilities
 	app.Post("/get_feestructure/", controller.GetFeeStructure)
@@ -106,5 +106,6 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_csrhotline/", controller.GetCsrHotline)
 	app.Post("/get_concerntype/", controller.GetConcernType)
 	app.Post("/get_csrdashboard/", controller.GetCSRDashboard)
+	app.Post("/get_broadcastsms/", controller.GetBroadcastSms)
 
 }

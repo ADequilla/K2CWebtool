@@ -517,3 +517,13 @@ type TransConfirmationResponse struct {
 	Note             string `json:"note"`
 	Status           string `json:"status"`
 }
+
+///BroadcastSms
+
+type BroadcastSmsResponse struct {
+	Inbox_date   string `json:"inbox_date"`
+	Subject      string `json:"subject"`
+	Inbox_desc   string `json:"inbox_desc"`
+	Period_start string `json:"period_start"`
+	Period_end   string `json:"period_end"`
+}

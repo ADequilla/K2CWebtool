@@ -339,3 +339,9 @@ type TransConfirmationRequest struct {
 	Branch_desc string `json:"branch_desc"`
 	Trans_date  string `json:"trans_date"`
 }
+
+///Broadcastsms
+
+type BroadcastSmsRequest struct {
+	Subject string `json:"subject"`
+}

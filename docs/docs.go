@@ -393,6 +393,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_broadcastsms/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "BroadcastSms Input",
+                        "name": "broadcastsmsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.BroadcastSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.BroadcastSmsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_center/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1542,6 +1582,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_transconfirmation/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "TransConfirmation Input",
+                        "name": "transconfirmationInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TransConfirmationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TransConfirmationResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_unit/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1876,6 +1956,34 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "created_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.BroadcastSmsRequest": {
+            "type": "object",
+            "properties": {
+                "subject": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.BroadcastSmsResponse": {
+            "type": "object",
+            "properties": {
+                "inbox_date": {
+                    "type": "string"
+                },
+                "inbox_desc": {
+                    "type": "string"
+                },
+                "period_end": {
+                    "type": "string"
+                },
+                "period_start": {
+                    "type": "string"
+                },
+                "subject": {
                     "type": "string"
                 }
             }
@@ -3056,6 +3164,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransConfirmationRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "trans_date": {
+                    "type": "string"
+                },
+                "trans_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransConfirmationResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "client_mobile_no": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "trans_date": {
+                    "type": "string"
+                },
+                "trans_desc": {
+                    "type": "string"
+                },
+                "unit_desc": {
                     "type": "string"
                 }
             }

@@ -139,3 +139,47 @@ func GetCSRDashboard(c *fiber.Ctx) error {
 		Data:    csrdashboardModel,
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	broadcastsmsInput body models.BroadcastSmsRequest true "BroadcastSms Input"
+// @Success		  	200 {object} models.BroadcastSmsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_broadcastsms/ [post]
+func GetBroadcastSms(c *fiber.Ctx) error {
+	broadcastsmsInput := models.BroadcastSmsRequest{}
+
+	if parErr := c.BodyParser(&broadcastsmsInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	broadcastsmsModel := []models.BroadcastSmsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_broadcastsms").Find(&broadcastsmsModel, broadcastsmsInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(broadcastsmsModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Success",
+		Data:    broadcastsmsModel,
+	})
+}
