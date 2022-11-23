@@ -329,3 +329,13 @@ type CSRDashboardRequest struct {
 	Concern_name string `json:"concern_name"`
 	Status       string `json:"status"`
 }
+
+///TransConformation
+
+type TransConfirmationRequest struct {
+	Cid         string `json:"cid"`
+	Trans_desc  string `json:"trans_desc"`
+	Status      string `json:"status"`
+	Branch_desc string `json:"branch_desc"`
+	Trans_date  string `json:"trans_date"`
+}

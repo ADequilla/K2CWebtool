@@ -524,3 +524,47 @@ func GetAgentDashboard(c *fiber.Ctx) error {
 		Data:    agentdashboardModel,
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	transconfirmationInput body models.TransConfirmationRequest true "TransConfirmation Input"
+// @Success		  	200 {object} models.TransConfirmationResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/get_transconfirmation/ [post]
+func GetTransConfirmation(c *fiber.Ctx) error {
+	transconfirmationInput := models.TransConfirmationRequest{}
+
+	if parErr := c.BodyParser(&transconfirmationInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	transconfirmationModel := []models.TransConfirmationResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_trans_confirmation").Find(&transconfirmationModel, transconfirmationInput).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(transconfirmationModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Success",
+		Data:    transconfirmationModel,
+	})
+}

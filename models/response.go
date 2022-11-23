@@ -487,7 +487,7 @@ type AgentDashboardResponse struct {
 type CSRDashboardResponse struct {
 	Customer_ticket_idBranch_desc string `json:"customer_ticket_id"`
 	Created_date                  string `json:"created_date"`
-	Client_cidCash_out            string `json:"client_cid"`
+	Client_cid                    string `json:"client_cid"`
 	Branch_desc                   string `json:"branch_desc"`
 	Unit_desc                     string `json:"unit_desc"`
 	Center_desc                   string `json:"center_desc"`
@@ -501,4 +501,19 @@ type CSRDashboardResponse struct {
 	Trans_type                    string `json:"trans_type"`
 	Assigned_to                   string `json:"assigned_to"`
 	Action_taken                  string `json:"action_taken"`
+}
+
+///TransConformation
+
+type TransConfirmationResponse struct {
+	Trans_date       string `json:"trans_date"`
+	Trans_desc       string `json:"trans_desc"`
+	Client_mobile_no string `json:"client_mobile_no"`
+	Cid              string `json:"cid"`
+	Client_name      string `json:"client_name"`
+	Branch_desc      string `json:"branch_desc"`
+	Unit_desc        string `json:"unit_desc"`
+	Center_desc      string `json:"center_desc"`
+	Note             string `json:"note"`
+	Status           string `json:"status"`
 }
