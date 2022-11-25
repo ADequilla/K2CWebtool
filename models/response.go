@@ -527,3 +527,330 @@ type BroadcastSmsResponse struct {
 	Period_start string `json:"period_start"`
 	Period_end   string `json:"period_end"`
 }
+
+///WebReport
+
+type WebReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///TransactionReport
+
+type TransactionReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///RemittanceSentReport
+
+type RemittanceSentReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///RemittanceClaimedReport
+
+type RemittanceClaimedReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///RemittanceCancelledReport
+
+type RemittanceCancelledReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///ActivityHistoryReport
+
+type ActivityHistoryReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///MpinChangeReport
+
+type MpinChangeReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///SmsActivationReport
+
+type SmsActivationReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///LoginLogoutReport
+
+type LoginLogoutReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///UserActivityReport
+
+type UserActivityReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///TransactionSuspiciousReport
+
+type TransactionSuspiciousReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///TransactionValidReport
+
+type TransactionValidReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///CsDashboardReport
+
+type CsDashboardReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///ReconCcmReport
+
+type ReconCcmReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///SmsLogReport
+
+type SmsLogReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///AccountStatusReport
+
+type AccountStatusReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///EnableAgentReport
+
+type EnableAgentReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///IgateReconReport
+
+type IgateReconReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///ActivatedMerchantReport
+
+type ActivatedMerchantReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+}
+
+///DeactivatedMerchantReport
+
+type DeactivatedMerchantReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+}
+
+///UsedDeviceReport
+
+type UsedDeviceReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///FailedEnrollmentReport
+
+type FailedEnrollmentReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///RegisteredClientReport
+
+type RegisteredClientReportResponse struct {
+	Report_id      string `json:"report_id"`
+	Report_param   string `json:"report_param"`
+	User_name      string `json:"user_name"`
+	Branch_desc    string `json:"branch_desc"`
+	Submited_date  string `json:"submited_date"`
+	Completed_date string `json:"completed_date"`
+	Report_status  string `json:"report_status"`
+	File_type      string `json:"file_type"`
+	Remark         string `json:"remark"`
+}
+
+///Task
+
+type TaskResponse struct {
+	Task_id    string `json:"task_id"`
+	Task_name  string `json:"task_name"`
+	Chain_id   string `json:"chain_id"`
+	Chain_name string `json:"chain_name"`
+	Task_order string `json:"task_order"`
+	Created_at string `json:"created_at"`
+}

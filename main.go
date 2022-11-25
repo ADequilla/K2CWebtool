@@ -108,4 +108,31 @@ func AppRoutes(app *fiber.App) {
 	app.Post("/get_csrdashboard/", controller.GetCSRDashboard)
 	app.Post("/get_broadcastsms/", controller.GetBroadcastSms)
 
+	///Reports
+	app.Post("/get_webreport/", controller.GetWebReport)
+	app.Post("/get_transreport/", controller.GetTransactionReport)
+	app.Post("/get_remittancesentreport/", controller.GetRemittanceSentReport)
+	app.Post("/get_remittanceclaimedreport/", controller.GetRemittanceClaimedReport)
+	app.Post("/get_remittancecancelledreport/", controller.GetRemittanceCancelledReport)
+	app.Post("/get_activityhistoryreport/", controller.GetActivityHistoryReport)
+	app.Post("/get_mpinchangereport/", controller.GetMpinChangeReport)
+	app.Post("/get_smsactivationreport/", controller.GetSmsActivationReport)
+	app.Post("/get_loginlogoutreport/", controller.GetLoginLogoutReport)
+	app.Post("/get_useractivityreport/", controller.GetUserActivityReport)
+	app.Post("/get_transactionsuspiciousreport/", controller.GetTransactionSuspiciousReport)
+	app.Post("/get_registeredclientreport/", controller.GetRegisteredClientReport)
+	app.Post("/get_transactionvalidreport/", controller.GetTransactionValidReport)
+	app.Post("/get_csdashboardreport/", controller.GetCsDashboardReport)
+	app.Post("/get_reconccmreport/", controller.GetReconCcmReport)
+	app.Post("/get_smslogreport/", controller.GetSmsLogReport)
+	app.Post("/get_accountstatusreport/", controller.GetAccountStatusReport)
+	app.Post("/get_enableagentreport/", controller.GetEnableAgentReport)
+	app.Post("/get_igatereconreport/", controller.GetIgateReconReport)
+	app.Post("/get_activatedmerchantreport/", controller.GetActivatedMerchantReport)
+	app.Post("/get_deactivatedmerchantreport/", controller.GetDeactivatedMerchantReport)
+	app.Post("/get_useddevicereport/", controller.GetUsedDeviceReport)
+	app.Post("/get_failedenrollmentreport/", controller.GetFailedEnrollmentReport)
+
+	///Task
+	app.Post("/get_task/", controller.GetTask)
 }
