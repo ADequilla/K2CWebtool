@@ -184,6 +184,54 @@ definitions:
       atm_longitude:
         type: string
     type: object
+  models.AllBankNewsRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllBankNewsResponse:
+    properties:
+      product_description:
+        type: string
+      product_id:
+        type: string
+      product_img_name:
+        type: string
+      product_name:
+        type: string
+      product_periode_end:
+        type: string
+      product_periode_start:
+        type: string
+    type: object
+  models.AllBranchRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllBranchResponse:
+    properties:
+      branch_code:
+        type: string
+      branch_desc:
+        type: string
+      branch_id:
+        type: string
+    type: object
+  models.AllCenterRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllCenterResponse:
+    properties:
+      center_code:
+        type: string
+      center_desc:
+        type: string
+      center_id:
+        type: string
+    type: object
   models.AllFeestructureRequest:
     properties:
       get_id:
@@ -234,9 +282,73 @@ definitions:
       unit_desc:
         type: string
     type: object
+  models.AllInstiRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllInstiResponse:
+    properties:
+      inst_code:
+        type: string
+      inst_desc:
+        type: string
+      inst_id:
+        type: string
+    type: object
   models.AllParamConfigRequest:
     properties:
       get_id:
+        type: string
+    type: object
+  models.AllProductServicesRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllProductServicesResponse:
+    properties:
+      service_banner:
+        type: string
+      service_description:
+        type: string
+      service_id:
+        type: string
+      service_name:
+        type: string
+      show:
+        type: boolean
+    type: object
+  models.AllServiceDowntimeRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllServiceDowntimeResponse:
+    properties:
+      client_type:
+        type: string
+      downtime_desc:
+        type: string
+      downtime_end:
+        type: string
+      downtime_id:
+        type: string
+      downtime_start:
+        type: string
+    type: object
+  models.AllUnitRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllUnitResponse:
+    properties:
+      unit_code:
+        type: string
+      unit_desc:
+        type: string
+      unit_id:
         type: string
     type: object
   models.AllUseddeviceRequest:
@@ -674,35 +786,83 @@ definitions:
       get_atm_id:
         type: string
       get_atm_latitude:
-        type: string
+        type: integer
       get_atm_longitude:
-        type: string
+        type: integer
     type: object
   models.EditAtmLocResponse:
     properties:
       update_atmloc:
         type: string
     type: object
+  models.EditBankNewsRequest:
+    properties:
+      get_product_description:
+        type: string
+      get_product_id:
+        type: string
+      get_product_img_name:
+        type: string
+      get_product_name:
+        type: string
+      get_product_periode_end:
+        type: string
+      get_product_periode_start:
+        type: string
+    type: object
+  models.EditBankNewsResponse:
+    properties:
+      update_banknews:
+        type: string
+    type: object
+  models.EditBranchRequest:
+    properties:
+      get_branch_code:
+        type: string
+      get_branch_desc:
+        type: string
+      get_branch_id:
+        type: string
+    type: object
+  models.EditBranchResponse:
+    properties:
+      update_branch:
+        type: string
+    type: object
+  models.EditCenterRequest:
+    properties:
+      get_center_code:
+        type: string
+      get_center_desc:
+        type: string
+      get_center_id:
+        type: string
+    type: object
+  models.EditCenterResponse:
+    properties:
+      update_center:
+        type: string
+    type: object
   models.EditFeeStructureRequest:
     properties:
       get_agent_income:
-        type: string
+        type: integer
       get_agent_target_income:
-        type: string
+        type: integer
       get_bancnet_income:
-        type: string
+        type: integer
       get_bank_income:
-        type: string
+        type: integer
       get_client_type:
         type: string
       get_end_range:
-        type: string
+        type: integer
       get_fee_id:
         type: string
       get_start_range:
-        type: string
+        type: integer
       get_total_charge:
-        type: string
+        type: integer
       get_trans_type:
         type: string
     type: object
@@ -733,6 +893,20 @@ definitions:
       get_unit_desc:
         type: string
     type: object
+  models.EditInstiRequest:
+    properties:
+      get_inst_code:
+        type: string
+      get_inst_desc:
+        type: string
+      get_inst_id:
+        type: string
+    type: object
+  models.EditInstiResponse:
+    properties:
+      update_insti:
+        type: string
+    type: object
   models.EditParamConfigRequest:
     properties:
       get_app_type:
@@ -749,6 +923,56 @@ definitions:
   models.EditParamConfigResponse:
     properties:
       update_paramconfig:
+        type: string
+    type: object
+  models.EditProductServicesRequest:
+    properties:
+      get_service_banner:
+        type: string
+      get_service_description:
+        type: string
+      get_service_id:
+        type: string
+      get_service_name:
+        type: string
+      get_show:
+        type: boolean
+    type: object
+  models.EditProductServicesResponse:
+    properties:
+      update_productservices:
+        type: string
+    type: object
+  models.EditServiceDowntimeRequest:
+    properties:
+      get_client_type:
+        type: string
+      get_downtime_desc:
+        type: string
+      get_downtime_end:
+        type: string
+      get_downtime_id:
+        type: string
+      get_downtime_start:
+        type: string
+    type: object
+  models.EditServiceDowntimeResponse:
+    properties:
+      update_servicedowntime:
+        type: string
+    type: object
+  models.EditUnitRequest:
+    properties:
+      get_unit_code:
+        type: string
+      get_unit_desc:
+        type: string
+      get_unit_id:
+        type: string
+    type: object
+  models.EditUnitResponse:
+    properties:
+      update_unit:
         type: string
     type: object
   models.EditUseddeviceRequest:
@@ -2434,6 +2658,84 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_banknews/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditBankNews Input
+        in: body
+        name: editbanknewsnput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditBankNewsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditBankNewsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_branch/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditBranch Input
+        in: body
+        name: editbranchInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditBranchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_center/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditCenter Input
+        in: body
+        name: editcenterInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditCenterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_feestructure/:
     post:
       consumes:
@@ -2486,6 +2788,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_insti/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditInsti Input
+        in: body
+        name: editinstiInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditInstiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditInstiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_paramconfig/:
     post:
       consumes:
@@ -2505,6 +2833,84 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.EditParamConfigResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_productservices/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditProductServices Input
+        in: body
+        name: editproductservicesInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditProductServicesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_servicedowntime/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditDowntime Input
+        in: body
+        name: editservicedowntimeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditServiceDowntimeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_unit/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditUnit Input
+        in: body
+        name: editunitInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditUnitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditUnitResponse'
         "400":
           description: Bad Request
           schema:
@@ -4247,6 +4653,84 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_banknews/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllBankNews Input
+        in: body
+        name: allBankNewsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllBankNewsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllBankNewsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_branch/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllBranch Input
+        in: body
+        name: allBranchInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllBranchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_center/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllCenter Input
+        in: body
+        name: allCenterInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllCenterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_feestructure/:
     post:
       consumes:
@@ -4299,6 +4783,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_insti/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllInsti Input
+        in: body
+        name: allInstiInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllInstiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllInstiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_paramconfig/:
     post:
       consumes:
@@ -4318,6 +4828,84 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllFeestructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_productservices/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllProductServices Input
+        in: body
+        name: allProductServicesInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllProductServicesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_servicedowntime/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllServiceDowntime Input
+        in: body
+        name: allServiceDowntimeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllServiceDowntimeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_unit/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllUnit Input
+        in: body
+        name: allUnitInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllUnitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllUnitResponse'
         "400":
           description: Bad Request
           schema:

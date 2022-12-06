@@ -24,6 +24,13 @@ func AppRoutes3(app *fiber.App) {
 	app.Post("/edit_feestructure/", controller.EditFeeStructure)
 	app.Post("/edit_paramconfig/", controller.EditParamConfig)
 	app.Post("/edit_atmloc/", controller.EditAtmLoc)
+	app.Post("/edit_banknews/", controller.EditBankNews)
+	app.Post("/edit_productservices/", controller.EditProductServices)
+	app.Post("/edit_servicedowntime/", controller.EditServiceDowntime)
+	app.Post("/edit_insti/", controller.EditInsti)
+	app.Post("/edit_branch/", controller.EditBranch)
+	app.Post("/edit_unit/", controller.EditUnit)
+	app.Post("/edit_center/", controller.EditCenter)
 	///CustomerService
 
 	///Reports

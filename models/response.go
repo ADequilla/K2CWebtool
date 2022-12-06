@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 ///*Search*///
 
 ///clientprofile
@@ -314,6 +316,18 @@ type ProductServicesResponse struct {
 	Show                bool   `json:"show"`
 }
 
+type AllProductServicesResponse struct {
+	Service_id          string `json:"service_id"`
+	Service_name        string `json:"service_name"`
+	Service_description string `json:"service_description"`
+	Show                bool   `json:"show"`
+	Service_banner      string `json:"service_banner"`
+}
+
+type EditProductServicesResponse struct {
+	Update_productservices string `json:"update_productservices"`
+}
+
 ///servicedowntime
 
 type ServiceDowntimeResponse struct {
@@ -322,6 +336,18 @@ type ServiceDowntimeResponse struct {
 	Downtime_start string `json:"downtime_start"`
 	Downtime_end   string `json:"downtime_end"`
 	Client_type    string `json:"client_type"`
+}
+
+type AllServiceDowntimeResponse struct {
+	Downtime_id    string    `json:"downtime_id"`
+	Downtime_start time.Time `json:"downtime_start"`
+	Downtime_end   time.Time `json:"downtime_end"`
+	Client_type    string    `json:"client_type"`
+	Downtime_desc  string    `json:"downtime_desc"`
+}
+
+type EditServiceDowntimeResponse struct {
+	Update_servicedowntime string `json:"update_servicedowntime"`
 }
 
 ///banknews
@@ -333,12 +359,35 @@ type BankNewsResponse struct {
 	Product_name string `json:"c.product_name"`
 }
 
+type AllBankNewsResponse struct {
+	Product_id            string `json:"product_id"`
+	Product_name          string `json:"product_name"`
+	Product_description   string `json:"product_description"`
+	Product_periode_start string `json:"product_periode_start"`
+	Product_periode_end   string `json:"product_periode_end"`
+	Product_img_name      string `json:"product_img_name"`
+}
+
+type EditBankNewsResponse struct {
+	Update_banknews string `json:"update_banknews"`
+}
+
 ///institution
 
 type InstitutionResponse struct {
 	Inst_code    string `json:"inst_code"`
 	Inst_desc    string `json:"inst_desc"`
 	Created_date string `json:"created_date"`
+}
+
+type AllInstiResponse struct {
+	Inst_id   string `json:"inst_id"`
+	Inst_code string `json:"inst_code"`
+	Inst_desc string `json:"inst_desc"`
+}
+
+type EditInstiResponse struct {
+	Update_insti string `json:"update_insti"`
 }
 
 ///branch
@@ -349,6 +398,16 @@ type BranchResponse struct {
 	Created_date string `json:"created_date"`
 }
 
+type AllBranchResponse struct {
+	Branch_id   string `json:"branch_id"`
+	Branch_code string `json:"branch_code"`
+	Branch_desc string `json:"branch_desc"`
+}
+
+type EditBranchResponse struct {
+	Update_branch string `json:"update_branch"`
+}
+
 ///unit
 
 type UnitResponse struct {
@@ -357,12 +416,32 @@ type UnitResponse struct {
 	Created_date string `json:"created_date"`
 }
 
+type AllUnitResponse struct {
+	Unit_id   string `json:"unit_id"`
+	Unit_code string `json:"unit_code"`
+	Unit_desc string `json:"unit_desc"`
+}
+
+type EditUnitResponse struct {
+	Update_unit string `json:"update_unit"`
+}
+
 ///center
 
 type CenterResponse struct {
 	Center_code  string `json:"center_code"`
 	Center_desc  string `json:"center_desc"`
 	Created_date string `json:"created_date"`
+}
+
+type AllCenterResponse struct {
+	Center_id   string `json:"center_id"`
+	Center_code string `json:"center_code"`
+	Center_desc string `json:"center_desc"`
+}
+
+type EditCenterResponse struct {
+	Update_center string `json:"update_center"`
 }
 
 ///provider

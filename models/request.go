@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 ///clientprofile
 
 type ClientProfileRequest struct {
@@ -172,13 +174,13 @@ type EditFeeStructureRequest struct {
 	Get_fee_id              string `json:"get_fee_id"`
 	Get_client_type         string `json:"get_client_type"`
 	Get_trans_type          string `json:"get_trans_type"`
-	Get_start_range         string `json:"get_start_range"`
-	Get_end_range           string `json:"get_end_range"`
-	Get_total_charge        string `json:"get_total_charge"`
-	Get_agent_income        string `json:"get_agent_income"`
-	Get_bank_income         string `json:"get_bank_income"`
-	Get_agent_target_income string `json:"get_agent_target_income"`
-	Get_bancnet_income      string `json:"get_bancnet_income"`
+	Get_start_range         int    `json:"get_start_range"`
+	Get_end_range           int    `json:"get_end_range"`
+	Get_total_charge        int    `json:"get_total_charge"`
+	Get_agent_income        int    `json:"get_agent_income"`
+	Get_bank_income         int    `json:"get_bank_income"`
+	Get_agent_target_income int    `json:"get_agent_target_income"`
+	Get_bancnet_income      int    `json:"get_bancnet_income"`
 }
 
 ///paramconfig
@@ -218,14 +220,26 @@ type EditAtmLocRequest struct {
 	Get_atm_description string `json:"get_atm_description"`
 	Get_atm_address     string `json:"get_atm_address"`
 	Get_atm_city        string `json:"get_atm_city"`
-	Get_atm_longitude   string `json:"get_atm_longitude"`
-	Get_atm_latitude    string `json:"get_atm_latitude"`
+	Get_atm_longitude   int    `json:"get_atm_longitude"`
+	Get_atm_latitude    int    `json:"get_atm_latitude"`
 }
 
 ///productservices
 
 type ProductServicesRequest struct {
 	Service_name string `json:"service_name"`
+}
+
+type AllProductServicesRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditProductServicesRequest struct {
+	Get_service_id          string `json:"get_service_id"`
+	Get_service_name        string `json:"get_service_name"`
+	Get_service_description string `json:"get_service_description"`
+	Get_show                bool   `json:"get_show"`
+	Get_service_banner      string `json:"get_service_banner"`
 }
 
 ///servicedowntime
@@ -236,10 +250,35 @@ type ServiceDowntimeRequest struct {
 	Downtime_end   string `json:"downtime_end"`
 }
 
+type AllServiceDowntimeRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditServiceDowntimeRequest struct {
+	Get_downtime_id    string    `json:"get_downtime_id"`
+	Get_downtime_start time.Time `json:"get_downtime_start"`
+	Get_downtime_end   time.Time `json:"get_downtime_end"`
+	Get_client_type    string    `json:"get_client_type"`
+	Get_downtime_desc  string    `json:"get_downtime_desc"`
+}
+
 ///banknews
 
 type BankNewsRequest struct {
 	Product_name string `json:"c.product_name"`
+}
+
+type AllBankNewsRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditBankNewsRequest struct {
+	Get_product_id            string    `json:"get_product_id"`
+	Get_product_name          string    `json:"get_product_name"`
+	Get_product_description   string    `json:"get_product_description"`
+	Get_product_periode_start time.Time `json:"get_product_periode_start"`
+	Get_product_periode_end   time.Time `json:"get_product_periode_end"`
+	Get_product_img_name      string    `json:"get_product_img_name"`
 }
 
 ///institution
@@ -249,11 +288,31 @@ type InstitutionRequest struct {
 	Inst_desc string `json:"inst_desc"`
 }
 
+type AllInstiRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditInstiRequest struct {
+	Get_inst_id   string `json:"get_inst_id"`
+	Get_inst_code string `json:"get_inst_code"`
+	Get_inst_desc string `json:"get_inst_desc"`
+}
+
 ///branch
 
 type BranchRequest struct {
 	Branch_code string `json:"branch_code"`
 	Branch_desc string `json:"branch_desc"`
+}
+
+type AllBranchRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditBranchRequest struct {
+	Get_branch_id   string `json:"get_branch_id"`
+	Get_branch_code string `json:"get_branch_code"`
+	Get_branch_desc string `json:"get_branch_desc"`
 }
 
 ///unit
@@ -263,11 +322,31 @@ type UnitRequest struct {
 	Unit_desc string `json:"unit_desc"`
 }
 
+type AllUnitRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditUnitRequest struct {
+	Get_unit_id   string `json:"get_unit_id"`
+	Get_unit_code string `json:"get_unit_code"`
+	Get_unit_desc string `json:"get_unit_desc"`
+}
+
 ///center
 
 type CenterRequest struct {
 	Center_code string `json:"center_code"`
 	Center_desc string `json:"center_desc"`
+}
+
+type AllCenterRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditCenterRequest struct {
+	Get_center_id   string `json:"get_center_id"`
+	Get_center_code string `json:"get_center_code"`
+	Get_center_desc string `json:"get_center_desc"`
 }
 
 ///provider

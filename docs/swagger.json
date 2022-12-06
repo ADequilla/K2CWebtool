@@ -146,6 +146,126 @@
                 }
             }
         },
+        "/edit_banknews/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditBankNews Input",
+                        "name": "editbanknewsnput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBankNewsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBankNewsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_branch/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditBranch Input",
+                        "name": "editbranchInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBranchRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBranchResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_center/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditCenter Input",
+                        "name": "editcenterInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCenterRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_feestructure/": {
             "post": {
                 "description": "Fetch User Data",
@@ -226,6 +346,46 @@
                 }
             }
         },
+        "/edit_insti/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditInsti Input",
+                        "name": "editinstiInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditInstiRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditInstiResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_paramconfig/": {
             "post": {
                 "description": "Fetch User Data",
@@ -255,6 +415,126 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.EditParamConfigResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_productservices/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditProductServices Input",
+                        "name": "editproductservicesInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductServicesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_servicedowntime/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditDowntime Input",
+                        "name": "editservicedowntimeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditServiceDowntimeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_unit/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditUnit Input",
+                        "name": "editunitInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUnitRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUnitResponse"
                         }
                     },
                     "400": {
@@ -2935,6 +3215,126 @@
                 }
             }
         },
+        "/select_banknews/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllBankNews Input",
+                        "name": "allBankNewsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBankNewsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBankNewsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_branch/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllBranch Input",
+                        "name": "allBranchInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBranchRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBranchResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_center/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllCenter Input",
+                        "name": "allCenterInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCenterRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_feestructure/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3015,6 +3415,46 @@
                 }
             }
         },
+        "/select_insti/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllInsti Input",
+                        "name": "allInstiInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllInstiRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllInstiResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_paramconfig/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3044,6 +3484,126 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.AllFeestructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_productservices/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllProductServices Input",
+                        "name": "allProductServicesInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductServicesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_servicedowntime/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllServiceDowntime Input",
+                        "name": "allServiceDowntimeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllServiceDowntimeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_unit/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllUnit Input",
+                        "name": "allUnitInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUnitRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUnitResponse"
                         }
                     },
                     "400": {
@@ -3419,6 +3979,81 @@
                 }
             }
         },
+        "models.AllBankNewsRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBankNewsResponse": {
+            "type": "object",
+            "properties": {
+                "product_description": {
+                    "type": "string"
+                },
+                "product_id": {
+                    "type": "string"
+                },
+                "product_img_name": {
+                    "type": "string"
+                },
+                "product_name": {
+                    "type": "string"
+                },
+                "product_periode_end": {
+                    "type": "string"
+                },
+                "product_periode_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBranchRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBranchResponse": {
+            "type": "object",
+            "properties": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "branch_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCenterRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCenterResponse": {
+            "type": "object",
+            "properties": {
+                "center_code": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "center_id": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AllFeestructureRequest": {
             "type": "object",
             "properties": {
@@ -3496,10 +4131,110 @@
                 }
             }
         },
+        "models.AllInstiRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllInstiResponse": {
+            "type": "object",
+            "properties": {
+                "inst_code": {
+                    "type": "string"
+                },
+                "inst_desc": {
+                    "type": "string"
+                },
+                "inst_id": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AllParamConfigRequest": {
             "type": "object",
             "properties": {
                 "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllProductServicesRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllProductServicesResponse": {
+            "type": "object",
+            "properties": {
+                "service_banner": {
+                    "type": "string"
+                },
+                "service_description": {
+                    "type": "string"
+                },
+                "service_id": {
+                    "type": "string"
+                },
+                "service_name": {
+                    "type": "string"
+                },
+                "show": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.AllServiceDowntimeRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllServiceDowntimeResponse": {
+            "type": "object",
+            "properties": {
+                "client_type": {
+                    "type": "string"
+                },
+                "downtime_desc": {
+                    "type": "string"
+                },
+                "downtime_end": {
+                    "type": "string"
+                },
+                "downtime_id": {
+                    "type": "string"
+                },
+                "downtime_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUnitRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUnitResponse": {
+            "type": "object",
+            "properties": {
+                "unit_code": {
+                    "type": "string"
+                },
+                "unit_desc": {
+                    "type": "string"
+                },
+                "unit_id": {
                     "type": "string"
                 }
             }
@@ -4172,10 +4907,10 @@
                     "type": "string"
                 },
                 "get_atm_latitude": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_atm_longitude": {
-                    "type": "string"
+                    "type": "integer"
                 }
             }
         },
@@ -4187,35 +4922,110 @@
                 }
             }
         },
+        "models.EditBankNewsRequest": {
+            "type": "object",
+            "properties": {
+                "get_product_description": {
+                    "type": "string"
+                },
+                "get_product_id": {
+                    "type": "string"
+                },
+                "get_product_img_name": {
+                    "type": "string"
+                },
+                "get_product_name": {
+                    "type": "string"
+                },
+                "get_product_periode_end": {
+                    "type": "string"
+                },
+                "get_product_periode_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditBankNewsResponse": {
+            "type": "object",
+            "properties": {
+                "update_banknews": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditBranchRequest": {
+            "type": "object",
+            "properties": {
+                "get_branch_code": {
+                    "type": "string"
+                },
+                "get_branch_desc": {
+                    "type": "string"
+                },
+                "get_branch_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditBranchResponse": {
+            "type": "object",
+            "properties": {
+                "update_branch": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCenterRequest": {
+            "type": "object",
+            "properties": {
+                "get_center_code": {
+                    "type": "string"
+                },
+                "get_center_desc": {
+                    "type": "string"
+                },
+                "get_center_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCenterResponse": {
+            "type": "object",
+            "properties": {
+                "update_center": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditFeeStructureRequest": {
             "type": "object",
             "properties": {
                 "get_agent_income": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_agent_target_income": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_bancnet_income": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_bank_income": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_client_type": {
                     "type": "string"
                 },
                 "get_end_range": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_fee_id": {
                     "type": "string"
                 },
                 "get_start_range": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_total_charge": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "get_trans_type": {
                     "type": "string"
@@ -4264,6 +5074,28 @@
                 }
             }
         },
+        "models.EditInstiRequest": {
+            "type": "object",
+            "properties": {
+                "get_inst_code": {
+                    "type": "string"
+                },
+                "get_inst_desc": {
+                    "type": "string"
+                },
+                "get_inst_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditInstiResponse": {
+            "type": "object",
+            "properties": {
+                "update_insti": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditParamConfigRequest": {
             "type": "object",
             "properties": {
@@ -4288,6 +5120,84 @@
             "type": "object",
             "properties": {
                 "update_paramconfig": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditProductServicesRequest": {
+            "type": "object",
+            "properties": {
+                "get_service_banner": {
+                    "type": "string"
+                },
+                "get_service_description": {
+                    "type": "string"
+                },
+                "get_service_id": {
+                    "type": "string"
+                },
+                "get_service_name": {
+                    "type": "string"
+                },
+                "get_show": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.EditProductServicesResponse": {
+            "type": "object",
+            "properties": {
+                "update_productservices": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditServiceDowntimeRequest": {
+            "type": "object",
+            "properties": {
+                "get_client_type": {
+                    "type": "string"
+                },
+                "get_downtime_desc": {
+                    "type": "string"
+                },
+                "get_downtime_end": {
+                    "type": "string"
+                },
+                "get_downtime_id": {
+                    "type": "string"
+                },
+                "get_downtime_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditServiceDowntimeResponse": {
+            "type": "object",
+            "properties": {
+                "update_servicedowntime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUnitRequest": {
+            "type": "object",
+            "properties": {
+                "get_unit_code": {
+                    "type": "string"
+                },
+                "get_unit_desc": {
+                    "type": "string"
+                },
+                "get_unit_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUnitResponse": {
+            "type": "object",
+            "properties": {
+                "update_unit": {
                     "type": "string"
                 }
             }
