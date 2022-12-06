@@ -21,11 +21,109 @@ definitions:
         type: string
       created_date:
         type: string
+      id:
+        type: string
       last_updated_date:
         type: string
       type:
         type: string
       unit_code:
+        type: string
+    type: object
+  models.AccountStatusReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.AccountStatusReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.ActivatedMerchantReportRequest:
+    properties:
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      submited_date:
+        type: string
+    type: object
+  models.ActivatedMerchantReportResponse:
+    properties:
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+    type: object
+  models.ActivityHistoryReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.ActivityHistoryReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.AgentDashboardRequest:
@@ -55,6 +153,8 @@ definitions:
         type: string
       co:
         type: string
+      id:
+        type: string
       sum:
         type: string
       sum_income:
@@ -62,6 +162,137 @@ definitions:
       total:
         type: string
       total_income:
+        type: string
+    type: object
+  models.AllAtmLocRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllAtmLocResponse:
+    properties:
+      atm_address:
+        type: string
+      atm_city:
+        type: string
+      atm_description:
+        type: string
+      atm_id:
+        type: string
+      atm_latitude:
+        type: string
+      atm_longitude:
+        type: string
+    type: object
+  models.AllFeestructureRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllFeestructureResponse:
+    properties:
+      agent_income:
+        type: string
+      agent_target_income:
+        type: string
+      bancnet_income:
+        type: string
+      bank_income:
+        type: string
+      client_type:
+        type: string
+      end_range:
+        type: string
+      fee_id:
+        type: string
+      start_range:
+        type: string
+      total_charge:
+        type: string
+      trans_type:
+        type: string
+    type: object
+  models.AllHeirarchyRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllHeirarchyResponse:
+    properties:
+      branch_code:
+        type: string
+      branch_desc:
+        type: string
+      center_code:
+        type: string
+      center_desc:
+        type: string
+      hierarchy_id:
+        type: string
+      unit_code:
+        type: string
+      unit_desc:
+        type: string
+    type: object
+  models.AllParamConfigRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllUseddeviceRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllUseddeviceResponse:
+    properties:
+      branch_code:
+        type: string
+      cid:
+        type: string
+      client_name:
+        type: string
+      client_type:
+        type: string
+      device_id:
+        type: string
+      device_model:
+        type: string
+      device_status:
+        type: string
+      id:
+        type: string
+      mobile_number:
+        type: string
+    type: object
+  models.AllUserManagementRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllUserManagementResponse:
+    properties:
+      got_branch_desc:
+        type: string
+      got_check_status:
+        type: string
+      got_given_name:
+        type: string
+      got_inst_desc:
+        type: string
+      got_last_name:
+        type: string
+      got_middle_name:
+        type: string
+      got_role_name:
+        type: string
+      got_user_email:
+        type: string
+      got_user_name:
+        type: string
+      got_user_phone:
+        type: string
+      got_user_status:
         type: string
     type: object
   models.AtmLocRequest:
@@ -83,6 +314,8 @@ definitions:
         type: string
       c.atm_description:
         type: string
+      c.atm_id:
+        type: string
       i.inst_desc:
         type: string
     type: object
@@ -103,6 +336,8 @@ definitions:
         type: string
       bank_name:
         type: string
+      id:
+        type: string
       short_name:
         type: string
     type: object
@@ -114,6 +349,8 @@ definitions:
   models.BankNewsResponse:
     properties:
       c.product_date:
+        type: string
+      c.product_id:
         type: string
       c.product_name:
         type: string
@@ -144,6 +381,8 @@ definitions:
       c.biller_product_name:
         type: string
       c.description:
+        type: string
+      c.id:
         type: string
       c.service_fee:
         type: number
@@ -176,6 +415,8 @@ definitions:
       inbox_date:
         type: string
       inbox_desc:
+        type: string
+      inbox_id:
         type: string
       period_end:
         type: string
@@ -230,6 +471,8 @@ definitions:
       customer_ticket_id:
         type: string
       submitted_by:
+        type: string
+      ticket_id:
         type: string
       trans_type:
         type: string
@@ -289,6 +532,8 @@ definitions:
         type: string
       cid:
         type: string
+      id:
+        type: string
       insti_name:
         type: string
       is_enabled:
@@ -317,6 +562,8 @@ definitions:
         type: string
       customer_income:
         type: number
+      id:
+        type: string
       trans_type:
         type: string
     type: object
@@ -329,11 +576,49 @@ definitions:
     type: object
   models.ConcernTypeResponse:
     properties:
+      concern_code:
+        type: string
       concern_level:
         type: string
       concern_name:
         type: string
       concern_time:
+        type: string
+    type: object
+  models.CsDashboardReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.CsDashboardReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.CsrHotlineRequest:
@@ -349,7 +634,251 @@ definitions:
         type: string
       c.contact_number:
         type: string
+      c.id:
+        type: string
       c.network_provider:
+        type: string
+    type: object
+  models.DeactivatedMerchantReportRequest:
+    properties:
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      submited_date:
+        type: string
+    type: object
+  models.DeactivatedMerchantReportResponse:
+    properties:
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+    type: object
+  models.EditAtmLocRequest:
+    properties:
+      get_atm_address:
+        type: string
+      get_atm_city:
+        type: string
+      get_atm_description:
+        type: string
+      get_atm_id:
+        type: string
+      get_atm_latitude:
+        type: string
+      get_atm_longitude:
+        type: string
+    type: object
+  models.EditAtmLocResponse:
+    properties:
+      update_atmloc:
+        type: string
+    type: object
+  models.EditFeeStructureRequest:
+    properties:
+      get_agent_income:
+        type: string
+      get_agent_target_income:
+        type: string
+      get_bancnet_income:
+        type: string
+      get_bank_income:
+        type: string
+      get_client_type:
+        type: string
+      get_end_range:
+        type: string
+      get_fee_id:
+        type: string
+      get_start_range:
+        type: string
+      get_total_charge:
+        type: string
+      get_trans_type:
+        type: string
+    type: object
+  models.EditFeeStructureResponse:
+    properties:
+      update_feestructure:
+        type: string
+    type: object
+  models.EditHeirarchyResponse:
+    properties:
+      update_hierarchy:
+        type: string
+    type: object
+  models.EditHierarchyRequest:
+    properties:
+      get_branch_code:
+        type: string
+      get_branch_desc:
+        type: string
+      get_center_code:
+        type: string
+      get_center_desc:
+        type: string
+      get_hierarchy_id:
+        type: string
+      get_unit_code:
+        type: string
+      get_unit_desc:
+        type: string
+    type: object
+  models.EditParamConfigRequest:
+    properties:
+      get_app_type:
+        type: string
+      get_param_desc:
+        type: string
+      get_param_id:
+        type: string
+      get_param_name:
+        type: string
+      get_param_value:
+        type: string
+    type: object
+  models.EditParamConfigResponse:
+    properties:
+      update_paramconfig:
+        type: string
+    type: object
+  models.EditUseddeviceRequest:
+    properties:
+      get_branch_code:
+        type: string
+      get_cid:
+        type: string
+      get_client_name:
+        type: string
+      get_client_type:
+        type: string
+      get_device_id:
+        type: string
+      get_device_model:
+        type: string
+      get_device_status:
+        type: integer
+      get_id:
+        type: string
+      get_mobile_number:
+        type: string
+    type: object
+  models.EditUseddeviceResponse:
+    properties:
+      update_listuseddevice:
+        type: string
+    type: object
+  models.EditUserManagementRequest:
+    properties:
+      get_branch_desc:
+        type: string
+      get_check_status:
+        type: string
+      get_given_name:
+        type: string
+      get_inst_desc:
+        type: string
+      get_last_name:
+        type: string
+      get_middle_name:
+        type: string
+      get_role_name:
+        type: string
+      get_user_email:
+        type: string
+      get_user_id:
+        type: string
+      get_user_name:
+        type: string
+      get_user_phone:
+        type: string
+      get_user_status:
+        type: string
+    type: object
+  models.EditUserManagementResponse:
+    properties:
+      update_usermanagement:
+        type: string
+    type: object
+  models.EnableAgentReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.EnableAgentReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.FailedEnrollmentReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.FailedEnrollmentReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.FailedEnrollmentRequest:
@@ -388,6 +917,8 @@ definitions:
         type: string
       error_message:
         type: string
+      id:
+        type: string
       mobile_number:
         type: string
     type: object
@@ -407,6 +938,8 @@ definitions:
       bancnet_income:
         type: string
       bank_income:
+        type: string
+      fee_id:
         type: string
       total_charge:
         type: string
@@ -434,11 +967,49 @@ definitions:
         type: string
       center_desc:
         type: string
+      hierarchy_id:
+        type: string
       i.inst_desc:
         type: string
       unit_code:
         type: string
       unit_desc:
+        type: string
+    type: object
+  models.IgateReconReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.IgateReconReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.InstitutionRequest:
@@ -506,6 +1077,8 @@ definitions:
         type: string
       fullname:
         type: string
+      id:
+        type: string
       mobile_no:
         type: string
       sms_status_desc:
@@ -572,11 +1145,49 @@ definitions:
         type: string
       c.description:
         type: string
+      c.id:
+        type: string
       c.load_product_id:
         type: string
       c.load_product_name:
         type: string
       c.status:
+        type: string
+    type: object
+  models.LoginLogoutReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.LoginLogoutReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.LoginRequest:
@@ -588,6 +1199,42 @@ definitions:
     required:
     - c.user_login
     - c.user_passwd
+    type: object
+  models.MpinChangeReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.MpinChangeReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
     type: object
   models.OperationDashboardRequest:
     properties:
@@ -612,6 +1259,8 @@ definitions:
         type: string
       trans_amount:
         type: string
+      trans_id:
+        type: string
       trans_type:
         type: string
     type: object
@@ -628,6 +1277,8 @@ definitions:
       app_type:
         type: string
       param_desc:
+        type: string
+      param_id:
         type: string
       param_name:
         type: string
@@ -681,6 +1332,8 @@ definitions:
         type: string
       b.product_type_name:
         type: string
+      c.id:
+        type: string
       c.product_category_id:
         type: string
       c.product_category_name:
@@ -696,6 +1349,8 @@ definitions:
   models.ProductServicesResponse:
     properties:
       service_description:
+        type: string
+      service_id:
         type: string
       service_name:
         type: string
@@ -716,6 +1371,8 @@ definitions:
       a.provider_name:
         type: string
       c.description:
+        type: string
+      c.id:
         type: string
       c.product_type_id:
         type: string
@@ -742,6 +1399,150 @@ definitions:
       provider_name:
         type: string
       status:
+        type: string
+    type: object
+  models.ReconCcmReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.ReconCcmReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RegisteredClientReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RegisteredClientReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RemittanceCancelledReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RemittanceCancelledReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RemittanceClaimedReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RemittanceClaimedReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.RemittanceLogRequest:
@@ -784,6 +1585,8 @@ definitions:
         type: string
       created_date:
         type: string
+      id:
+        type: string
       last_updated_date:
         type: string
       reference_number _Ref_ID:
@@ -801,6 +1604,42 @@ definitions:
       status:
         type: string
       target_branch:
+        type: string
+    type: object
+  models.RemittanceSentReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.RemittanceSentReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.RemittanceStatusResponse:
@@ -847,6 +1686,8 @@ definitions:
     properties:
       role_desc:
         type: string
+      role_id:
+        type: string
       role_name:
         type: string
     type: object
@@ -866,6 +1707,8 @@ definitions:
       downtime_desc:
         type: string
       downtime_end:
+        type: string
+      downtime_id:
         type: string
       downtime_start:
         type: string
@@ -894,6 +1737,80 @@ definitions:
       status:
         type: string
       trans_date:
+        type: string
+      trans_id:
+        type: string
+    type: object
+  models.SmsActivationReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.SmsActivationReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.SmsLogReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.SmsLogReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.SmsLogRequest:
@@ -958,6 +1875,32 @@ definitions:
       title:
         type: string
     type: object
+  models.TaskRequest:
+    properties:
+      created_at:
+        type: string
+      task_id:
+        type: string
+      task_name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.TaskResponse:
+    properties:
+      chain_id:
+        type: string
+      chain_name:
+        type: string
+      created_at:
+        type: string
+      task_id:
+        type: string
+      task_name:
+        type: string
+      task_order:
+        type: string
+    type: object
   models.TransConfirmationRequest:
     properties:
       branch_desc:
@@ -986,6 +1929,8 @@ definitions:
       note:
         type: string
       status:
+        type: string
+      suspicious_id:
         type: string
       trans_date:
         type: string
@@ -1077,7 +2022,117 @@ definitions:
         type: string
       trans_date:
         type: string
+      trans_log:
+        type: string
       trans_type_code:
+        type: string
+    type: object
+  models.TransactionReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.TransactionReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.TransactionSuspiciousReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.TransactionSuspiciousReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.TransactionValidReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.TransactionValidReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.UnitRequest:
@@ -1094,6 +2149,42 @@ definitions:
       unit_code:
         type: string
       unit_desc:
+        type: string
+    type: object
+  models.UsedDeviceReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.UsedDeviceReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
         type: string
     type: object
   models.UsedDeviceRequest:
@@ -1140,6 +2231,42 @@ definitions:
       mobile_number:
         type: string
     type: object
+  models.UserActivityReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.UserActivityReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
   models.UserManagementRequest:
     properties:
       branch_names:
@@ -1169,10 +2296,48 @@ definitions:
         type: string
       roles:
         type: string
+      user_id:
+        type: string
       user_login:
         type: string
     type: object
-host: 192.168.0.148:1111
+  models.WebReportRequest:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      report_id:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+  models.WebReportResponse:
+    properties:
+      branch_desc:
+        type: string
+      completed_date:
+        type: string
+      file_type:
+        type: string
+      remark:
+        type: string
+      report_id:
+        type: string
+      report_param:
+        type: string
+      report_status:
+        type: string
+      submited_date:
+        type: string
+      user_name:
+        type: string
+    type: object
+host: 10.21.0.66:1111
 info:
   contact:
     email: alex.dequilla@fortress-asya.com
@@ -1240,6 +2405,240 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.ResponseWoModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_atmloc/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditAtmLoc Input
+        in: body
+        name: editatmlocInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditAtmLocRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditAtmLocResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_feestructure/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditFeeStructure Input
+        in: body
+        name: editfeestructureInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditFeeStructureRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditFeeStructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_hierarchy/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditHierarchy Input
+        in: body
+        name: edithierarchyInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditHierarchyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditHeirarchyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_paramconfig/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditParamConfig Input
+        in: body
+        name: editparamconfigInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditParamConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditParamConfigResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_useddevice/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditUseddevice Input
+        in: body
+        name: edituseddeviceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditUseddeviceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditUseddeviceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_usermanagement/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditUser Input
+        in: body
+        name: editUserInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditUserManagementRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditUserManagementResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_accountstatusreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AccountStatusReport Input
+        in: body
+        name: accountstatusInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AccountStatusReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AccountStatusReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_activatedmerchantreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ActivatedMerchantReport Input
+        in: body
+        name: activatedmerchantInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ActivatedMerchantReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ActivatedMerchantReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_activityhistoryreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ActivityHistoryReport Input
+        in: body
+        name: activityhistoryreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ActivityHistoryReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ActivityHistoryReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
       summary: Fetch User Data
       tags:
       - Webtool
@@ -1555,6 +2954,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_csdashboardreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CsDashboardReport Input
+        in: body
+        name: csdashboardInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CsDashboardReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CsDashboardReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_csrdashboard/:
     post:
       consumes:
@@ -1607,6 +3032,58 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_deactivatedmerchantreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DeactivatedMerchantReport Input
+        in: body
+        name: deactivatedmerchantInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DeactivatedMerchantReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DeactivatedMerchantReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_enableagentreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EnableAgentReport Input
+        in: body
+        name: enableagentInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EnableAgentReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EnableAgentReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_failedenrollment/:
     post:
       consumes:
@@ -1626,6 +3103,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.FailedEnrollmentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_failedenrollmentreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: FailedEnrollmentReport Input
+        in: body
+        name: failedenrollmentInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.FailedEnrollmentReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.FailedEnrollmentReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -1678,6 +3181,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.HierarchyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_igatereconreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: IgateReconReport Input
+        in: body
+        name: igatereconInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.IgateReconReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.IgateReconReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -1808,6 +3337,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.LoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_loginlogoutreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: LoginLogoutReport Input
+        in: body
+        name: loginlogoutreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.LoginLogoutReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.LoginLogoutReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_mpinchangereport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: MpinChangeReport Input
+        in: body
+        name: mpinchangereportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.MpinChangeReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.MpinChangeReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -1997,6 +3578,110 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_reconccmreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ReconCcmReport Input
+        in: body
+        name: reconccmInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.ReconCcmReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ReconCcmReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_registeredclientReportreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: RegisteredClientReport Input
+        in: body
+        name: registeredclientInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RegisteredClientReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RegisteredClientReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittancecancelledreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: RemittanceCancelledReport Input
+        in: body
+        name: remittancecancelledreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceCancelledReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceCancelledReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittanceclaimedreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: RemittanceClaimedReport Input
+        in: body
+        name: remittanceclaimedreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceClaimedReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceClaimedReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_remittancelog/:
     post:
       consumes:
@@ -2016,6 +3701,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.RemittanceLogResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittancesentreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: RemittanceSentReport Input
+        in: body
+        name: remittancesentreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceSentReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceSentReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -2120,6 +3831,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_smsactivationreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: SmsActivationReport Input
+        in: body
+        name: smsactivationreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.SmsActivationReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SmsActivationReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_smslog/:
     post:
       consumes:
@@ -2139,6 +3876,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.SmsLogResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_smslogreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: SmsLogReport Input
+        in: body
+        name: smslogInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.SmsLogReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.SmsLogReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -2172,6 +3935,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_task/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Task Input
+        in: body
+        name: taskInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.TaskRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TaskResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_transactionlog/:
     post:
       consumes:
@@ -2191,6 +3980,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.TransLogResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_transactionsuspiciousreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: TransactionSuspiciousReport Input
+        in: body
+        name: transactionsuspiciousInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.TransactionSuspiciousReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TransactionSuspiciousReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_transactionvalidreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: TransactionValidReport Input
+        in: body
+        name: transactionvalidInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.TransactionValidReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TransactionValidReportResponse'
         "400":
           description: Bad Request
           schema:
@@ -2224,6 +4065,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_transreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: TransactionReport Input
+        in: body
+        name: transreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.TransactionReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.TransactionReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_unit/:
     post:
       consumes:
@@ -2250,6 +4117,58 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_useddevicereport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: UsedDeviceReport Input
+        in: body
+        name: useddeviceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.UsedDeviceReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UsedDeviceReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_useractivityreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: UserActivityReport Input
+        in: body
+        name: useractivityreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.UserActivityReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.UserActivityReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_usermanagement/:
     post:
       consumes:
@@ -2269,6 +4188,188 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.UserManagementResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_webreport/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: WebReport Input
+        in: body
+        name: webreportInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.WebReportRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.WebReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_atmloc/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllAtmLoc Input
+        in: body
+        name: allAtmLocInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllAtmLocRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllAtmLocResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_feestructure/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllFeestructure Input
+        in: body
+        name: allFeestructureInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllFeestructureRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllFeestructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_heirarchy/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllHeirarchy Input
+        in: body
+        name: allHeirarchyInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllHeirarchyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllHeirarchyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_paramconfig/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllParamConfig Input
+        in: body
+        name: allParamConfigInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllParamConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllFeestructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_useddevice/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllUseddevice Input
+        in: body
+        name: allUsedeviceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllUseddeviceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllUseddeviceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_usermanagement/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllUser Input
+        in: body
+        name: allUserInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllUserManagementRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllUserManagementResponse'
         "400":
           description: Bad Request
           schema:

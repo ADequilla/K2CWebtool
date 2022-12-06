@@ -266,6 +266,86 @@ func GetUsedDevice(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allUsedeviceInput body models.AllUseddeviceRequest true "AllUseddevice Input"
+// @Success		  	200 {object} models.AllUseddeviceResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_useddevice/ [post]
+func SelectUseddevicebyID(c *fiber.Ctx) error {
+	useddeviceInput := models.AllUseddeviceRequest{}
+
+	if parErr := c.BodyParser(&useddeviceInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	alluseddeviceModel := []models.AllUseddeviceResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_listuseddevice(?)", useddeviceInput.Get_id).Scan(&alluseddeviceModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(alluseddeviceModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    alluseddeviceModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	edituseddeviceInput body models.EditUseddeviceRequest true "EditUseddevice Input"
+// @Success		  	200 {object} models.EditUseddeviceResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_useddevice/ [post]
+func EditListUseddevice(c *fiber.Ctx) error {
+	edituseddeviceInput := models.EditUseddeviceRequest{}
+
+	if parErr := c.BodyParser(&edituseddeviceInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	edituseddeviceModel := models.EditUseddeviceResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_listuseddevice(?,?,?,?,?,?,?,?,?)", edituseddeviceInput.Get_id, edituseddeviceInput.Get_device_id, edituseddeviceInput.Get_device_model, edituseddeviceInput.Get_cid, edituseddeviceInput.Get_branch_code, edituseddeviceInput.Get_mobile_number, edituseddeviceInput.Get_client_name, edituseddeviceInput.Get_client_type, edituseddeviceInput.Get_device_status).Scan(&edituseddeviceModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	failedEnrollmentInput body models.FailedEnrollmentRequest true "FailedEnrollment Input"
 // @Success		  	200 {object} models.FailedEnrollmentResponse
 // @Failure 		400 {object} models.ResponseModel

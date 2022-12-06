@@ -113,6 +113,366 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_atmloc/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditAtmLoc Input",
+                        "name": "editatmlocInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditAtmLocRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditAtmLocResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_feestructure/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditFeeStructure Input",
+                        "name": "editfeestructureInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditFeeStructureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditFeeStructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_hierarchy/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditHierarchy Input",
+                        "name": "edithierarchyInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditHierarchyRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditHeirarchyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_paramconfig/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditParamConfig Input",
+                        "name": "editparamconfigInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditParamConfigRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditParamConfigResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_useddevice/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditUseddevice Input",
+                        "name": "edituseddeviceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUseddeviceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUseddeviceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_usermanagement/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditUser Input",
+                        "name": "editUserInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUserManagementRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUserManagementResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_accountstatusreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AccountStatusReport Input",
+                        "name": "accountstatusInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AccountStatusReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AccountStatusReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_activatedmerchantreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ActivatedMerchantReport Input",
+                        "name": "activatedmerchantInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ActivatedMerchantReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ActivatedMerchantReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_activityhistoryreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ActivityHistoryReport Input",
+                        "name": "activityhistoryreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ActivityHistoryReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ActivityHistoryReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_agentdashboard/": {
             "post": {
                 "description": "Fetch User Data",
@@ -593,6 +953,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_csdashboardreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CsDashboardReport Input",
+                        "name": "csdashboardInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CsDashboardReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CsDashboardReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_csrdashboard/": {
             "post": {
                 "description": "Fetch User Data",
@@ -673,6 +1073,86 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_deactivatedmerchantreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DeactivatedMerchantReport Input",
+                        "name": "deactivatedmerchantInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DeactivatedMerchantReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DeactivatedMerchantReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_enableagentreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EnableAgentReport Input",
+                        "name": "enableagentInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EnableAgentReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EnableAgentReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_failedenrollment/": {
             "post": {
                 "description": "Fetch User Data",
@@ -702,6 +1182,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.FailedEnrollmentResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_failedenrollmentreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "FailedEnrollmentReport Input",
+                        "name": "failedenrollmentInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.FailedEnrollmentReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.FailedEnrollmentReportResponse"
                         }
                     },
                     "400": {
@@ -782,6 +1302,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.HierarchyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_igatereconreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "IgateReconReport Input",
+                        "name": "igatereconInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.IgateReconReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.IgateReconReportResponse"
                         }
                     },
                     "400": {
@@ -982,6 +1542,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.LoadProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_loginlogoutreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "LoginLogoutReport Input",
+                        "name": "loginlogoutreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginLogoutReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.LoginLogoutReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_mpinchangereport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "MpinChangeReport Input",
+                        "name": "mpinchangereportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MpinChangeReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.MpinChangeReportResponse"
                         }
                     },
                     "400": {
@@ -1273,6 +1913,166 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_reconccmreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ReconCcmReport Input",
+                        "name": "reconccmInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ReconCcmReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.ReconCcmReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_registeredclientReportreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "RegisteredClientReport Input",
+                        "name": "registeredclientInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RegisteredClientReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RegisteredClientReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittancecancelledreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "RemittanceCancelledReport Input",
+                        "name": "remittancecancelledreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceCancelledReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceCancelledReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittanceclaimedreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "RemittanceClaimedReport Input",
+                        "name": "remittanceclaimedreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceClaimedReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceClaimedReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_remittancelog/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1302,6 +2102,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.RemittanceLogResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittancesentreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "RemittanceSentReport Input",
+                        "name": "remittancesentreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceSentReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceSentReportResponse"
                         }
                     },
                     "400": {
@@ -1462,6 +2302,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_smsactivationreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "SmsActivationReport Input",
+                        "name": "smsactivationreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SmsActivationReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.SmsActivationReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_smslog/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1491,6 +2371,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.SmsLogResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_smslogreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "SmsLogReport Input",
+                        "name": "smslogInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.SmsLogReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.SmsLogReportResponse"
                         }
                     },
                     "400": {
@@ -1542,6 +2462,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_task/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Task Input",
+                        "name": "taskInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TaskRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TaskResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_transactionlog/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1571,6 +2531,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.TransLogResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_transactionsuspiciousreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "TransactionSuspiciousReport Input",
+                        "name": "transactionsuspiciousInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionSuspiciousReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionSuspiciousReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_transactionvalidreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "TransactionValidReport Input",
+                        "name": "transactionvalidInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionValidReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionValidReportResponse"
                         }
                     },
                     "400": {
@@ -1622,6 +2662,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_transreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "TransactionReport Input",
+                        "name": "transreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.TransactionReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_unit/": {
             "post": {
                 "description": "Fetch User Data",
@@ -1651,6 +2731,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.UnitResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_useddevicereport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "UsedDeviceReport Input",
+                        "name": "useddeviceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UsedDeviceReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.UsedDeviceReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_useractivityreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "UserActivityReport Input",
+                        "name": "useractivityreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UserActivityReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.UserActivityReportResponse"
                         }
                     },
                     "400": {
@@ -1701,6 +2861,286 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/get_webreport/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "WebReport Input",
+                        "name": "webreportInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.WebReportRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.WebReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_atmloc/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllAtmLoc Input",
+                        "name": "allAtmLocInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllAtmLocRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllAtmLocResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_feestructure/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllFeestructure Input",
+                        "name": "allFeestructureInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllFeestructureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllFeestructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_heirarchy/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllHeirarchy Input",
+                        "name": "allHeirarchyInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllHeirarchyRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllHeirarchyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_paramconfig/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllParamConfig Input",
+                        "name": "allParamConfigInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllParamConfigRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllFeestructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_useddevice/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllUseddevice Input",
+                        "name": "allUsedeviceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUseddeviceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUseddeviceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_usermanagement/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllUser Input",
+                        "name": "allUserInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUserManagementRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllUserManagementResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -1736,6 +3176,9 @@ const docTemplate = `{
                 "created_date": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "last_updated_date": {
                     "type": "string"
                 },
@@ -1743,6 +3186,153 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "unit_code": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AccountStatusReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AccountStatusReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ActivatedMerchantReportRequest": {
+            "type": "object",
+            "properties": {
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ActivatedMerchantReportResponse": {
+            "type": "object",
+            "properties": {
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ActivityHistoryReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ActivityHistoryReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -1788,6 +3378,9 @@ const docTemplate = `{
                 "co": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "sum": {
                     "type": "string"
                 },
@@ -1798,6 +3391,208 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "total_income": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllAtmLocRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllAtmLocResponse": {
+            "type": "object",
+            "properties": {
+                "atm_address": {
+                    "type": "string"
+                },
+                "atm_city": {
+                    "type": "string"
+                },
+                "atm_description": {
+                    "type": "string"
+                },
+                "atm_id": {
+                    "type": "string"
+                },
+                "atm_latitude": {
+                    "type": "string"
+                },
+                "atm_longitude": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllFeestructureRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllFeestructureResponse": {
+            "type": "object",
+            "properties": {
+                "agent_income": {
+                    "type": "string"
+                },
+                "agent_target_income": {
+                    "type": "string"
+                },
+                "bancnet_income": {
+                    "type": "string"
+                },
+                "bank_income": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string"
+                },
+                "end_range": {
+                    "type": "string"
+                },
+                "fee_id": {
+                    "type": "string"
+                },
+                "start_range": {
+                    "type": "string"
+                },
+                "total_charge": {
+                    "type": "string"
+                },
+                "trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllHeirarchyRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllHeirarchyResponse": {
+            "type": "object",
+            "properties": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "branch_desc": {
+                    "type": "string"
+                },
+                "center_code": {
+                    "type": "string"
+                },
+                "center_desc": {
+                    "type": "string"
+                },
+                "hierarchy_id": {
+                    "type": "string"
+                },
+                "unit_code": {
+                    "type": "string"
+                },
+                "unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllParamConfigRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUseddeviceRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUseddeviceResponse": {
+            "type": "object",
+            "properties": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "cid": {
+                    "type": "string"
+                },
+                "client_name": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string"
+                },
+                "device_id": {
+                    "type": "string"
+                },
+                "device_model": {
+                    "type": "string"
+                },
+                "device_status": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "mobile_number": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUserManagementRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllUserManagementResponse": {
+            "type": "object",
+            "properties": {
+                "got_branch_desc": {
+                    "type": "string"
+                },
+                "got_check_status": {
+                    "type": "string"
+                },
+                "got_given_name": {
+                    "type": "string"
+                },
+                "got_inst_desc": {
+                    "type": "string"
+                },
+                "got_last_name": {
+                    "type": "string"
+                },
+                "got_middle_name": {
+                    "type": "string"
+                },
+                "got_role_name": {
+                    "type": "string"
+                },
+                "got_user_email": {
+                    "type": "string"
+                },
+                "got_user_name": {
+                    "type": "string"
+                },
+                "got_user_phone": {
+                    "type": "string"
+                },
+                "got_user_status": {
                     "type": "string"
                 }
             }
@@ -1831,6 +3626,9 @@ const docTemplate = `{
                 "c.atm_description": {
                     "type": "string"
                 },
+                "c.atm_id": {
+                    "type": "string"
+                },
                 "i.inst_desc": {
                     "type": "string"
                 }
@@ -1862,6 +3660,9 @@ const docTemplate = `{
                 "bank_name": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "short_name": {
                     "type": "string"
                 }
@@ -1879,6 +3680,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "c.product_date": {
+                    "type": "string"
+                },
+                "c.product_id": {
                     "type": "string"
                 },
                 "c.product_name": {
@@ -1925,6 +3729,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "c.description": {
+                    "type": "string"
+                },
+                "c.id": {
                     "type": "string"
                 },
                 "c.service_fee": {
@@ -1975,6 +3782,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "inbox_desc": {
+                    "type": "string"
+                },
+                "inbox_id": {
                     "type": "string"
                 },
                 "period_end": {
@@ -2057,6 +3867,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "submitted_by": {
+                    "type": "string"
+                },
+                "ticket_id": {
                     "type": "string"
                 },
                 "trans_type": {
@@ -2148,6 +3961,9 @@ const docTemplate = `{
                 "cid": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "insti_name": {
                     "type": "string"
                 },
@@ -2191,6 +4007,9 @@ const docTemplate = `{
                 "customer_income": {
                     "type": "number"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "trans_type": {
                     "type": "string"
                 }
@@ -2210,6 +4029,9 @@ const docTemplate = `{
         "models.ConcernTypeResponse": {
             "type": "object",
             "properties": {
+                "concern_code": {
+                    "type": "string"
+                },
                 "concern_level": {
                     "type": "string"
                 },
@@ -2217,6 +4039,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "concern_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CsDashboardReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CsDashboardReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2241,7 +4118,382 @@ const docTemplate = `{
                 "c.contact_number": {
                     "type": "string"
                 },
+                "c.id": {
+                    "type": "string"
+                },
                 "c.network_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DeactivatedMerchantReportRequest": {
+            "type": "object",
+            "properties": {
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DeactivatedMerchantReportResponse": {
+            "type": "object",
+            "properties": {
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditAtmLocRequest": {
+            "type": "object",
+            "properties": {
+                "get_atm_address": {
+                    "type": "string"
+                },
+                "get_atm_city": {
+                    "type": "string"
+                },
+                "get_atm_description": {
+                    "type": "string"
+                },
+                "get_atm_id": {
+                    "type": "string"
+                },
+                "get_atm_latitude": {
+                    "type": "string"
+                },
+                "get_atm_longitude": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditAtmLocResponse": {
+            "type": "object",
+            "properties": {
+                "update_atmloc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditFeeStructureRequest": {
+            "type": "object",
+            "properties": {
+                "get_agent_income": {
+                    "type": "string"
+                },
+                "get_agent_target_income": {
+                    "type": "string"
+                },
+                "get_bancnet_income": {
+                    "type": "string"
+                },
+                "get_bank_income": {
+                    "type": "string"
+                },
+                "get_client_type": {
+                    "type": "string"
+                },
+                "get_end_range": {
+                    "type": "string"
+                },
+                "get_fee_id": {
+                    "type": "string"
+                },
+                "get_start_range": {
+                    "type": "string"
+                },
+                "get_total_charge": {
+                    "type": "string"
+                },
+                "get_trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditFeeStructureResponse": {
+            "type": "object",
+            "properties": {
+                "update_feestructure": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditHeirarchyResponse": {
+            "type": "object",
+            "properties": {
+                "update_hierarchy": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditHierarchyRequest": {
+            "type": "object",
+            "properties": {
+                "get_branch_code": {
+                    "type": "string"
+                },
+                "get_branch_desc": {
+                    "type": "string"
+                },
+                "get_center_code": {
+                    "type": "string"
+                },
+                "get_center_desc": {
+                    "type": "string"
+                },
+                "get_hierarchy_id": {
+                    "type": "string"
+                },
+                "get_unit_code": {
+                    "type": "string"
+                },
+                "get_unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditParamConfigRequest": {
+            "type": "object",
+            "properties": {
+                "get_app_type": {
+                    "type": "string"
+                },
+                "get_param_desc": {
+                    "type": "string"
+                },
+                "get_param_id": {
+                    "type": "string"
+                },
+                "get_param_name": {
+                    "type": "string"
+                },
+                "get_param_value": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditParamConfigResponse": {
+            "type": "object",
+            "properties": {
+                "update_paramconfig": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUseddeviceRequest": {
+            "type": "object",
+            "properties": {
+                "get_branch_code": {
+                    "type": "string"
+                },
+                "get_cid": {
+                    "type": "string"
+                },
+                "get_client_name": {
+                    "type": "string"
+                },
+                "get_client_type": {
+                    "type": "string"
+                },
+                "get_device_id": {
+                    "type": "string"
+                },
+                "get_device_model": {
+                    "type": "string"
+                },
+                "get_device_status": {
+                    "type": "integer"
+                },
+                "get_id": {
+                    "type": "string"
+                },
+                "get_mobile_number": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUseddeviceResponse": {
+            "type": "object",
+            "properties": {
+                "update_listuseddevice": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUserManagementRequest": {
+            "type": "object",
+            "properties": {
+                "get_branch_desc": {
+                    "type": "string"
+                },
+                "get_check_status": {
+                    "type": "string"
+                },
+                "get_given_name": {
+                    "type": "string"
+                },
+                "get_inst_desc": {
+                    "type": "string"
+                },
+                "get_last_name": {
+                    "type": "string"
+                },
+                "get_middle_name": {
+                    "type": "string"
+                },
+                "get_role_name": {
+                    "type": "string"
+                },
+                "get_user_email": {
+                    "type": "string"
+                },
+                "get_user_id": {
+                    "type": "string"
+                },
+                "get_user_name": {
+                    "type": "string"
+                },
+                "get_user_phone": {
+                    "type": "string"
+                },
+                "get_user_status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditUserManagementResponse": {
+            "type": "object",
+            "properties": {
+                "update_usermanagement": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EnableAgentReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EnableAgentReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.FailedEnrollmentReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.FailedEnrollmentReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2299,6 +4551,9 @@ const docTemplate = `{
                 "error_message": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "mobile_number": {
                     "type": "string"
                 }
@@ -2328,6 +4583,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "bank_income": {
+                    "type": "string"
+                },
+                "fee_id": {
                     "type": "string"
                 },
                 "total_charge": {
@@ -2370,6 +4628,9 @@ const docTemplate = `{
                 "center_desc": {
                     "type": "string"
                 },
+                "hierarchy_id": {
+                    "type": "string"
+                },
                 "i.inst_desc": {
                     "type": "string"
                 },
@@ -2377,6 +4638,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.IgateReconReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.IgateReconReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2480,6 +4796,9 @@ const docTemplate = `{
                 "fullname": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "mobile_no": {
                     "type": "string"
                 },
@@ -2580,6 +4899,9 @@ const docTemplate = `{
                 "c.description": {
                     "type": "string"
                 },
+                "c.id": {
+                    "type": "string"
+                },
                 "c.load_product_id": {
                     "type": "string"
                 },
@@ -2587,6 +4909,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "c.status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.LoginLogoutReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.LoginLogoutReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2602,6 +4979,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "c.user_passwd": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.MpinChangeReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.MpinChangeReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2641,6 +5073,9 @@ const docTemplate = `{
                 "trans_amount": {
                     "type": "string"
                 },
+                "trans_id": {
+                    "type": "string"
+                },
                 "trans_type": {
                     "type": "string"
                 }
@@ -2665,6 +5100,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "param_desc": {
+                    "type": "string"
+                },
+                "param_id": {
                     "type": "string"
                 },
                 "param_name": {
@@ -2747,6 +5185,9 @@ const docTemplate = `{
                 "b.product_type_name": {
                     "type": "string"
                 },
+                "c.id": {
+                    "type": "string"
+                },
                 "c.product_category_id": {
                     "type": "string"
                 },
@@ -2770,6 +5211,9 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "service_description": {
+                    "type": "string"
+                },
+                "service_id": {
                     "type": "string"
                 },
                 "service_name": {
@@ -2801,6 +5245,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "c.description": {
+                    "type": "string"
+                },
+                "c.id": {
                     "type": "string"
                 },
                 "c.product_type_id": {
@@ -2841,6 +5288,226 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ReconCcmReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ReconCcmReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RegisteredClientReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RegisteredClientReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceCancelledReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceCancelledReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceClaimedReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceClaimedReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -2904,6 +5571,9 @@ const docTemplate = `{
                 "created_date": {
                     "type": "string"
                 },
+                "id": {
+                    "type": "string"
+                },
                 "last_updated_date": {
                     "type": "string"
                 },
@@ -2929,6 +5599,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "target_branch": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceSentReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceSentReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -3000,6 +5725,9 @@ const docTemplate = `{
                 "role_desc": {
                     "type": "string"
                 },
+                "role_id": {
+                    "type": "string"
+                },
                 "role_name": {
                     "type": "string"
                 }
@@ -3029,6 +5757,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "downtime_end": {
+                    "type": "string"
+                },
+                "downtime_id": {
                     "type": "string"
                 },
                 "downtime_start": {
@@ -3072,6 +5803,119 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "trans_date": {
+                    "type": "string"
+                },
+                "trans_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SmsActivationReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SmsActivationReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SmsLogReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.SmsLogReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -3168,6 +6012,46 @@ const docTemplate = `{
                 }
             }
         },
+        "models.TaskRequest": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "task_id": {
+                    "type": "string"
+                },
+                "task_name": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TaskResponse": {
+            "type": "object",
+            "properties": {
+                "chain_id": {
+                    "type": "string"
+                },
+                "chain_name": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string"
+                },
+                "task_id": {
+                    "type": "string"
+                },
+                "task_name": {
+                    "type": "string"
+                },
+                "task_order": {
+                    "type": "string"
+                }
+            }
+        },
         "models.TransConfirmationRequest": {
             "type": "object",
             "properties": {
@@ -3210,6 +6094,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "status": {
+                    "type": "string"
+                },
+                "suspicious_id": {
                     "type": "string"
                 },
                 "trans_date": {
@@ -3346,7 +6233,175 @@ const docTemplate = `{
                 "trans_date": {
                     "type": "string"
                 },
+                "trans_log": {
+                    "type": "string"
+                },
                 "trans_type_code": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionSuspiciousReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionSuspiciousReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionValidReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.TransactionValidReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -3372,6 +6427,61 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.UsedDeviceReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.UsedDeviceReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -3441,6 +6551,61 @@ const docTemplate = `{
                 }
             }
         },
+        "models.UserActivityReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.UserActivityReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
         "models.UserManagementRequest": {
             "type": "object",
             "properties": {
@@ -3485,7 +6650,65 @@ const docTemplate = `{
                 "roles": {
                     "type": "string"
                 },
+                "user_id": {
+                    "type": "string"
+                },
                 "user_login": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.WebReportRequest": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.WebReportResponse": {
+            "type": "object",
+            "properties": {
+                "branch_desc": {
+                    "type": "string"
+                },
+                "completed_date": {
+                    "type": "string"
+                },
+                "file_type": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": "string"
+                },
+                "report_id": {
+                    "type": "string"
+                },
+                "report_param": {
+                    "type": "string"
+                },
+                "report_status": {
+                    "type": "string"
+                },
+                "submited_date": {
+                    "type": "string"
+                },
+                "user_name": {
                     "type": "string"
                 }
             }
@@ -3496,7 +6719,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "2.0",
-	Host:             "192.168.0.148:1111",
+	Host:             "10.21.0.66:1111",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Webtool",

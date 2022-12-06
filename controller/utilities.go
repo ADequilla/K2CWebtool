@@ -57,6 +57,86 @@ func GetFeeStructure(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allFeestructureInput body models.AllFeestructureRequest true "AllFeestructure Input"
+// @Success		  	200 {object} models.AllFeestructureResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_feestructure/ [post]
+func SelectFeeStructurebyID(c *fiber.Ctx) error {
+	feestructureInput := models.AllFeestructureRequest{}
+
+	if parErr := c.BodyParser(&feestructureInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allfeestructureModel := []models.AllFeestructureResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_feestructure(?)", feestructureInput.Get_id).Scan(&allfeestructureModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allfeestructureModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allfeestructureModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editfeestructureInput body models.EditFeeStructureRequest true "EditFeeStructure Input"
+// @Success		  	200 {object} models.EditFeeStructureResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_feestructure/ [post]
+func EditFeeStructure(c *fiber.Ctx) error {
+	editfeestructureInput := models.EditFeeStructureRequest{}
+
+	if parErr := c.BodyParser(&editfeestructureInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editfeestructureModel := models.EditFeeStructureResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_feestructure(?,?,?,?,?,?,?,?,?,?)", editfeestructureInput.Get_fee_id, editfeestructureInput.Get_client_type, editfeestructureInput.Get_trans_type, editfeestructureInput.Get_start_range, editfeestructureInput.Get_end_range, editfeestructureInput.Get_total_charge, editfeestructureInput.Get_agent_income, editfeestructureInput.Get_bank_income, editfeestructureInput.Get_agent_target_income, editfeestructureInput.Get_bancnet_income).Scan(&editfeestructureModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	paramconfigInput body models.ParamConfigRequest true "ParamConfig Input"
 // @Success		  	200 {object} models.ParamConfigResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -101,6 +181,86 @@ func GetParamConfig(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allParamConfigInput body models.AllParamConfigRequest true "AllParamConfig Input"
+// @Success		  	200 {object} models.AllFeestructureResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_paramconfig/ [post]
+func SelectParamConfigbyID(c *fiber.Ctx) error {
+	paramconfigInput := models.AllParamConfigRequest{}
+
+	if parErr := c.BodyParser(&paramconfigInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allparamconfigModel := []models.AllParamConfigResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_paramsconfig(?)", paramconfigInput.Get_id).Scan(&allparamconfigModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allparamconfigModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allparamconfigModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editparamconfigInput body models.EditParamConfigRequest true "EditParamConfig Input"
+// @Success		  	200 {object} models.EditParamConfigResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_paramconfig/ [post]
+func EditParamConfig(c *fiber.Ctx) error {
+	editparamconfigInput := models.EditParamConfigRequest{}
+
+	if parErr := c.BodyParser(&editparamconfigInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editparamconfigModel := models.EditParamConfigResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_paramconfig(?,?,?,?,?)", editparamconfigInput.Get_param_id, editparamconfigInput.Get_app_type, editparamconfigInput.Get_param_name, editparamconfigInput.Get_param_value, editparamconfigInput.Get_param_desc).Scan(&editparamconfigModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	atmlocInput body models.AtmLocRequest true "AtmLoc Input"
 // @Success		  	200 {object} models.AtmLocResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -137,6 +297,86 @@ func GetAtmLoc(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    atmlocModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allAtmLocInput body models.AllAtmLocRequest true "AllAtmLoc Input"
+// @Success		  	200 {object} models.AllAtmLocResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_atmloc/ [post]
+func SelectAtmLocbyID(c *fiber.Ctx) error {
+	atmlocInput := models.AllAtmLocRequest{}
+
+	if parErr := c.BodyParser(&atmlocInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allatmlocModel := []models.AllAtmLocResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_atmloc(?)", atmlocInput.Get_id).Scan(&allatmlocModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allatmlocModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allatmlocModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editatmlocInput body models.EditAtmLocRequest true "EditAtmLoc Input"
+// @Success		  	200 {object} models.EditAtmLocResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_atmloc/ [post]
+func EditAtmLoc(c *fiber.Ctx) error {
+	editatmlocInput := models.EditAtmLocRequest{}
+
+	if parErr := c.BodyParser(&editatmlocInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editatmlocModel := models.EditAtmLocResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_atmloc(?,?,?,?,?,?)", editatmlocInput.Get_atm_id, editatmlocInput.Get_atm_description, editatmlocInput.Get_atm_address, editatmlocInput.Get_atm_city, editatmlocInput.Get_atm_longitude, editatmlocInput.Get_atm_latitude).Scan(&editatmlocModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 

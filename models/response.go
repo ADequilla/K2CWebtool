@@ -1,12 +1,11 @@
 package models
 
-import (
-	"time"
-)
+///*Search*///
 
 ///clientprofile
 
 type ClientProfileResponse struct {
+	Id             string `json:"id"`
 	Cid            string `json:"cid"`
 	Username       string `json:"username"`
 	Mobile         string `json:"mobile"`
@@ -29,18 +28,34 @@ type ClientProfileResponse struct {
 ///hierarchy
 
 type HierarchyResponse struct {
-	Branch_code string `json:"branch_code"`
-	Branch_desc string `json:"branch_desc"`
-	Unit_code   string `json:"unit_code"`
-	Unit_desc   string `json:"unit_desc"`
-	Center_code string `json:"center_code"`
-	Center_desc string `json:"center_desc"`
-	Inst_desc   string `json:"i.inst_desc"`
+	Hierarchy_id string `json:"hierarchy_id"`
+	Branch_code  string `json:"branch_code"`
+	Branch_desc  string `json:"branch_desc"`
+	Unit_code    string `json:"unit_code"`
+	Unit_desc    string `json:"unit_desc"`
+	Center_code  string `json:"center_code"`
+	Center_desc  string `json:"center_desc"`
+	Inst_desc    string `json:"i.inst_desc"`
+}
+
+type AllHeirarchyResponse struct {
+	Hierarchy_id string `json:"hierarchy_id"`
+	Branch_code  string `json:"branch_code"`
+	Branch_desc  string `json:"branch_desc"`
+	Unit_code    string `json:"unit_code"`
+	Unit_desc    string `json:"unit_desc"`
+	Center_code  string `json:"center_code"`
+	Center_desc  string `json:"center_desc"`
+}
+
+type EditHeirarchyResponse struct {
+	Update_hierarchy string `json:"update_hierarchy"`
 }
 
 ///listfailedenrollment
 
 type FailedEnrollmentResponse struct {
+	Id             string `json:"id"`
 	Created_date   string `json:"created_date"`
 	Account_number string `json:"account_number"`
 	Date_of_birth  string `json:"date_of_birth"`
@@ -54,15 +69,15 @@ type FailedEnrollmentResponse struct {
 ///listofagent
 
 type ListofAgentResponse struct {
-	Date_and_time time.Time `json:"c.date_and_time"`
-	User_name     string    `json:"i.user_name"`
-	Cid           string    `json:"c.cid"`
-	Fullname      string    `json:"c.fullname"`
-	Mobile_no     string    `json:"c.mobile_no"`
-	Inst_desc     string    `json:"a.inst_desc"`
-	Branch_desc   string    `json:"c.branch_desc"`
-	Unit_desc     string    `json:"c.unit_desc"`
-	Center_desc   string    `json:"c.center_desc"`
+	Date_and_time string `json:"c.date_and_time"`
+	User_name     string `json:"i.user_name"`
+	Cid           string `json:"c.cid"`
+	Fullname      string `json:"c.fullname"`
+	Mobile_no     string `json:"c.mobile_no"`
+	Inst_desc     string `json:"a.inst_desc"`
+	Branch_desc   string `json:"c.branch_desc"`
+	Unit_desc     string `json:"c.unit_desc"`
+	Center_desc   string `json:"c.center_desc"`
 }
 
 ///listuseddevice
@@ -80,9 +95,26 @@ type UsedDeviceResponse struct {
 	Device_status   string `json:"device_status"`
 }
 
+type AllUseddeviceResponse struct {
+	Id            string `json:"id"`
+	Device_id     string `json:"device_id"`
+	Device_model  string `json:"device_model"`
+	Cid           string `json:"cid"`
+	Branch_code   string `json:"branch_code"`
+	Mobile_number string `json:"mobile_number"`
+	Client_name   string `json:"client_name"`
+	Client_type   string `json:"client_type"`
+	Device_status string `json:"device_status"`
+}
+
+type EditUseddeviceResponse struct {
+	Update_listuseddevice string `json:"update_listuseddevice"`
+}
+
 ///remittancelog
 
 type RemittanceLogResponse struct {
+	Id                    string `json:"id"`
 	Sent_mobile_ref_id    string `json:"sent_mobile_ref_id"`
 	Sent_core_ref_id      string `json:"sent_core_ref_id"`
 	Reference_number      string `json:"reference_number _Ref_ID"`
@@ -115,6 +147,7 @@ type RemittanceStatusResponse struct {
 ///rolemanagement
 
 type RolesManagementResponse struct {
+	Role_id  string `json:"role_id"`
 	RoleName string `json:"role_name"`
 	RoleDesc string `json:"role_desc"`
 }
@@ -135,6 +168,7 @@ type SmsLogResponse struct {
 //transactionlog
 
 type TransLogResponse struct {
+	Trans_log           string `json:"trans_log"`
 	Mobile_refno        string `json:"mobile_refno"`
 	Core_refno          string `json:"core_refno"`
 	Source_branch       string `json:"source_branch"`
@@ -168,6 +202,7 @@ type TransLogResponse struct {
 ///usermanagement
 
 type UserManagementResponse struct {
+	User_id      string `json:"user_id"`
 	User_login   string `json:"user_login"`
 	Given_name   string `json:"given_name"`
 	Middle_name  string `json:"middle_name"`
@@ -177,9 +212,28 @@ type UserManagementResponse struct {
 	Check_status string `json:"check_status"`
 }
 
+type AllUserManagementResponse struct {
+	Got_user_name    string `json:"got_user_name"`
+	Got_given_name   string `json:"got_given_name"`
+	Got_middle_name  string `json:"got_middle_name"`
+	Got_last_name    string `json:"got_last_name"`
+	Got_user_email   string `json:"got_user_email"`
+	Got_user_phone   string `json:"got_user_phone"`
+	Got_user_status  string `json:"got_user_status"`
+	Got_check_status string `json:"got_check_status"`
+	Got_role_name    string `json:"got_role_name"`
+	Got_inst_desc    string `json:"got_inst_desc"`
+	Got_branch_desc  string `json:"got_branch_desc"`
+}
+
+type EditUserManagementResponse struct {
+	Update_usermanagement string `json:"update_usermanagement"`
+}
+
 ///feestructure
 
 type FeeStructureResponse struct {
+	Fee_id             string `json:"fee_id"`
 	Trans_type         string `json:"trans_type"`
 	Range              string `json:"Range"`
 	Total_charge       string `json:"total_charge"`
@@ -189,27 +243,72 @@ type FeeStructureResponse struct {
 	Bancnet_income     string `json:"bancnet_income"`
 }
 
+type AllFeestructureResponse struct {
+	Fee_id              string `json:"fee_id"`
+	Client_type         string `json:"client_type"`
+	Trans_type          string `json:"trans_type"`
+	Start_range         string `json:"start_range"`
+	End_range           string `json:"end_range"`
+	Total_charge        string `json:"total_charge"`
+	Agent_income        string `json:"agent_income"`
+	Bank_income         string `json:"bank_income"`
+	Agent_target_income string `json:"agent_target_income"`
+	Bancnet_income      string `json:"bancnet_income"`
+}
+
+type EditFeeStructureResponse struct {
+	Update_feestructure string `json:"update_feestructure"`
+}
+
 ///paramconfig
 
 type ParamConfigResponse struct {
+	Param_id    string `json:"param_id"`
 	App_type    string `json:"app_type"`
 	Param_name  string `json:"param_name"`
 	Param_value string `json:"param_value"`
 	Param_desc  string `json:"param_desc"`
 }
 
+type AllParamConfigResponse struct {
+	Param_id    string `json:"param_id"`
+	App_type    string `json:"app_type"`
+	Param_name  string `json:"param_name"`
+	Param_value string `json:"param_value"`
+	Param_desc  string `json:"param_desc"`
+}
+
+type EditParamConfigResponse struct {
+	Update_paramconfig string `json:"update_paramconfig"`
+}
+
 ///atmloc
 
 type AtmLocResponse struct {
+	Atm_id          string `json:"c.atm_id"`
 	Inst_desc       string `json:"i.inst_desc"`
 	Atm_description string `json:"c.atm_description"`
 	Atm_address     string `json:"c.atm_address"`
 	Atm_city        string `json:"c.atm_city"`
 }
 
+type AllAtmLocResponse struct {
+	Atm_id          string `json:"atm_id"`
+	Atm_description string `json:"atm_description"`
+	Atm_address     string `json:"atm_address"`
+	Atm_city        string `json:"atm_city"`
+	Atm_longitude   string `json:"atm_longitude"`
+	Atm_latitude    string `json:"atm_latitude"`
+}
+
+type EditAtmLocResponse struct {
+	Update_atmloc string `json:"update_atmloc"`
+}
+
 ///productservices
 
 type ProductServicesResponse struct {
+	Service_id          string `json:"service_id"`
 	Service_name        string `json:"service_name"`
 	Service_description string `json:"service_description"`
 	Show                bool   `json:"show"`
@@ -218,6 +317,7 @@ type ProductServicesResponse struct {
 ///servicedowntime
 
 type ServiceDowntimeResponse struct {
+	Downtime_id    string `json:"downtime_id"`
 	Downtime_desc  string `json:"downtime_desc"`
 	Downtime_start string `json:"downtime_start"`
 	Downtime_end   string `json:"downtime_end"`
@@ -227,9 +327,10 @@ type ServiceDowntimeResponse struct {
 ///banknews
 
 type BankNewsResponse struct {
-	Product_date time.Time `json:"c.product_date"`
-	Given_name   string    `json:"t.given_name"`
-	Product_name string    `json:"c.product_name"`
+	Product_id   string `json:"c.product_id"`
+	Product_date string `json:"c.product_date"`
+	Given_name   string `json:"t.given_name"`
+	Product_name string `json:"c.product_name"`
 }
 
 ///institution
@@ -277,6 +378,7 @@ type ProviderResponse struct {
 ///producttype
 
 type ProductTypeResponse struct {
+	Id                string `json:"c.id"`
 	Provider_name     string `json:"a.provider_name"`
 	Product_type_Id   string `json:"c.product_type_id"`
 	Product_type_name string `json:"c.product_type_name"`
@@ -287,6 +389,7 @@ type ProductTypeResponse struct {
 ///productcategory
 
 type ProductCategoryResponse struct {
+	Id                    string `json:"c.id"`
 	Provider_name         string `json:"a.provider_name"`
 	Product_type_name     string `json:"b.product_type_name"`
 	Product_category_id   string `json:"c.product_category_id"`
@@ -297,6 +400,7 @@ type ProductCategoryResponse struct {
 ///billerproduct
 
 type BillerProductResponse struct {
+	Id                    string  `json:"c.id"`
 	Provider_name         string  `json:"a.provider_name"`
 	Product_category_name string  `json:"b.product_category_name"`
 	Biller_product_id     int     `json:"c.biller_product_id"`
@@ -310,6 +414,7 @@ type BillerProductResponse struct {
 ///loadproduct
 
 type LoadProductResponse struct {
+	Id                    string `json:"c.id"`
 	Product_category_name string `json:"a.product_category_name"`
 	Load_product_id       string `json:"c.load_product_id"`
 	Load_product_name     string `json:"c.load_product_name"`
@@ -320,6 +425,7 @@ type LoadProductResponse struct {
 ///commission
 
 type CommissionResponse struct {
+	Id                  string  `json:"id"`
 	Trans_type          string  `json:"trans_type"`
 	Commission_type     string  `json:"commission_type"`
 	Customer_income     float32 `json:"customer_income"`
@@ -331,6 +437,7 @@ type CommissionResponse struct {
 //banklist
 
 type BankListResponse struct {
+	Id         string `json:"id"`
 	Bank_code  string `json:"bank_code"`
 	Bank_name  string `json:"bank_name"`
 	Short_name string `json:"short_name"`
@@ -364,6 +471,7 @@ type SplashScreenResponse struct {
 //csrhotline
 
 type CsrHotlineResponse struct {
+	Id               string `json:"c.id"`
 	Contact_number   string `json:"c.contact_number"`
 	Network_provider string `json:"c.network_provider"`
 	Inst_desc        string `json:"a.inst_desc"`
@@ -372,6 +480,7 @@ type CsrHotlineResponse struct {
 //corncerntype
 
 type ConcernTypeResponse struct {
+	Concern_code  string `json:"concern_code"`
 	Concern_name  string `json:"concern_name"`
 	Concern_time  string `json:"concern_time"`
 	Concern_level string `json:"concern_level"`
@@ -409,6 +518,7 @@ type LoginResponse struct {
 ///Clientlistforregistration
 
 type ListforRegistrationResponse struct {
+	Id               string `json:"id"`
 	Enrolled         string `json:"enrolled"`
 	Approved         string `json:"approved"`
 	Act_code_expired string `json:"act_code_expired"`
@@ -428,6 +538,7 @@ type ListforRegistrationResponse struct {
 //slfrequest
 
 type SlfRequestResponse struct {
+	Trans_id        string `json:"trans_id"`
 	Trans_date      string `json:"trans_date"`
 	Branch_desc     string `json:"branch_desc"`
 	Cid             string `json:"cid"`
@@ -440,6 +551,7 @@ type SlfRequestResponse struct {
 //OperationDashboard
 
 type OperationDashboardResponse struct {
+	Trans_id     string `json:"trans_id"`
 	Member       string `json:"Member"`
 	NonMember    string `json:"NonMember"`
 	Trans_type   string `json:"trans_type"`
@@ -452,6 +564,7 @@ type OperationDashboardResponse struct {
 //AuthorResetPassword
 
 type ARPResponse struct {
+	Id                string `json:"id"`
 	Created_date      string `json:"created_date"`
 	Cid               string `json:"cid"`
 	Client_name       string `json:"client_name"`
@@ -466,6 +579,7 @@ type ARPResponse struct {
 ///AgentDashboard
 
 type AgentDashboardResponse struct {
+	Id                     string `json:"id"`
 	Branch_desc            string `json:"branch_desc"`
 	Cash_in                string `json:"cash_in"`
 	Cash_out               string `json:"cash_out"`
@@ -485,27 +599,29 @@ type AgentDashboardResponse struct {
 ///CSRDashboard
 
 type CSRDashboardResponse struct {
-	Customer_ticket_idBranch_desc string `json:"customer_ticket_id"`
-	Created_date                  string `json:"created_date"`
-	Client_cid                    string `json:"client_cid"`
-	Branch_desc                   string `json:"branch_desc"`
-	Unit_desc                     string `json:"unit_desc"`
-	Center_desc                   string `json:"center_desc"`
-	Client_name                   string `json:"client_name"`
-	Client_mobile_no              string `json:"client_mobile_no"`
-	Submitted_by                  string `json:"submitted_by"`
-	Action_detail                 string `json:"action_detail"`
-	Concern_desc                  string `json:"concern_desc"`
-	Concern_level                 string `json:"concern_level"`
-	Concern_type                  string `json:"concern_type"`
-	Trans_type                    string `json:"trans_type"`
-	Assigned_to                   string `json:"assigned_to"`
-	Action_taken                  string `json:"action_taken"`
+	Ticket_id          string `json:"ticket_id"`
+	Customer_ticket_id string `json:"customer_ticket_id"`
+	Created_date       string `json:"created_date"`
+	Client_cid         string `json:"client_cid"`
+	Branch_desc        string `json:"branch_desc"`
+	Unit_desc          string `json:"unit_desc"`
+	Center_desc        string `json:"center_desc"`
+	Client_name        string `json:"client_name"`
+	Client_mobile_no   string `json:"client_mobile_no"`
+	Submitted_by       string `json:"submitted_by"`
+	Action_detail      string `json:"action_detail"`
+	Concern_desc       string `json:"concern_desc"`
+	Concern_level      string `json:"concern_level"`
+	Concern_type       string `json:"concern_type"`
+	Trans_type         string `json:"trans_type"`
+	Assigned_to        string `json:"assigned_to"`
+	Action_taken       string `json:"action_taken"`
 }
 
 ///TransConformation
 
 type TransConfirmationResponse struct {
+	Suspicious_id    string `json:"suspicious_id"`
 	Trans_date       string `json:"trans_date"`
 	Trans_desc       string `json:"trans_desc"`
 	Client_mobile_no string `json:"client_mobile_no"`
@@ -521,6 +637,7 @@ type TransConfirmationResponse struct {
 ///BroadcastSms
 
 type BroadcastSmsResponse struct {
+	Inbox_id     string `json:"inbox_id"`
 	Inbox_date   string `json:"inbox_date"`
 	Subject      string `json:"subject"`
 	Inbox_desc   string `json:"inbox_desc"`

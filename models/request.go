@@ -17,6 +17,20 @@ type HierarchyRequest struct {
 	Center_desc string `json:"c.center_desc"`
 }
 
+type AllHeirarchyRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditHierarchyRequest struct {
+	Get_hierarchy_id string `json:"get_hierarchy_id"`
+	Get_branch_code  string `json:"get_branch_code"`
+	Get_branch_desc  string `json:"get_branch_desc"`
+	Get_unit_code    string `json:"get_unit_code"`
+	Get_unit_desc    string `json:"get_unit_desc"`
+	Get_center_code  string `json:"get_center_code"`
+	Get_center_desc  string `json:"get_center_desc"`
+}
+
 ///listfailedenrollment
 
 type FailedEnrollmentRequest struct {
@@ -52,6 +66,22 @@ type UsedDeviceRequest struct {
 	Device_id         string `json:"device_id"`
 	Mobile_number     string `json:"mobile_number"`
 	Device_status     string `json:"device_status" example:"Status"`
+}
+
+type AllUseddeviceRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditUseddeviceRequest struct {
+	Get_id            string `json:"get_id"`
+	Get_device_id     string `json:"get_device_id"`
+	Get_device_model  string `json:"get_device_model"`
+	Get_cid           string `json:"get_cid"`
+	Get_branch_code   string `json:"get_branch_code"`
+	Get_mobile_number string `json:"get_mobile_number"`
+	Get_client_name   string `json:"get_client_name"`
+	Get_client_type   string `json:"get_client_type"`
+	Get_device_status int    `json:"get_device_status"`
 }
 
 ///remittancelog
@@ -109,10 +139,46 @@ type UserManagementRequest struct {
 	Check_status string `json:"check_status"`
 }
 
+type AllUserManagementRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditUserManagementRequest struct {
+	Get_user_id      string `json:"get_user_id"`
+	Get_user_name    string `json:"get_user_name"`
+	Get_given_name   string `json:"get_given_name"`
+	Get_middle_name  string `json:"get_middle_name"`
+	Get_last_name    string `json:"get_last_name"`
+	Get_user_email   string `json:"get_user_email"`
+	Get_user_phone   string `json:"get_user_phone"`
+	Get_user_status  string `json:"get_user_status"`
+	Get_check_status string `json:"get_check_status"`
+	Get_role_name    string `json:"get_role_name"`
+	Get_inst_desc    string `json:"get_inst_desc"`
+	Get_branch_desc  string `json:"get_branch_desc"`
+}
+
 ///feestructure
 
 type FeeStructureRequest struct {
 	Trans_type string `json:"trans_type"`
+}
+
+type AllFeestructureRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditFeeStructureRequest struct {
+	Get_fee_id              string `json:"get_fee_id"`
+	Get_client_type         string `json:"get_client_type"`
+	Get_trans_type          string `json:"get_trans_type"`
+	Get_start_range         string `json:"get_start_range"`
+	Get_end_range           string `json:"get_end_range"`
+	Get_total_charge        string `json:"get_total_charge"`
+	Get_agent_income        string `json:"get_agent_income"`
+	Get_bank_income         string `json:"get_bank_income"`
+	Get_agent_target_income string `json:"get_agent_target_income"`
+	Get_bancnet_income      string `json:"get_bancnet_income"`
 }
 
 ///paramconfig
@@ -122,6 +188,18 @@ type ParamConfigRequest struct {
 	Param_name string `json:"param_name"`
 }
 
+type AllParamConfigRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditParamConfigRequest struct {
+	Get_param_id    string `json:"get_param_id"`
+	Get_app_type    string `json:"get_app_type"`
+	Get_param_name  string `json:"get_param_name"`
+	Get_param_value string `json:"get_param_value"`
+	Get_param_desc  string `json:"get_param_desc"`
+}
+
 ///atmloc
 
 type AtmLocRequest struct {
@@ -129,6 +207,19 @@ type AtmLocRequest struct {
 	Atm_description string `json:"c.atm_description"`
 	Atm_address     string `json:"c.atm_address"`
 	Atm_city        string `json:"c.atm_city"`
+}
+
+type AllAtmLocRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditAtmLocRequest struct {
+	Get_atm_id          string `json:"get_atm_id"`
+	Get_atm_description string `json:"get_atm_description"`
+	Get_atm_address     string `json:"get_atm_address"`
+	Get_atm_city        string `json:"get_atm_city"`
+	Get_atm_longitude   string `json:"get_atm_longitude"`
+	Get_atm_latitude    string `json:"get_atm_latitude"`
 }
 
 ///productservices

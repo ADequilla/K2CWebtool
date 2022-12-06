@@ -1097,3 +1097,89 @@ host=34.87.184.130 user=postgres password=p0stgR35_t3sT_p@55_2022 dbname=mfs por
 [0m[33m[90.527ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
 15:38:23 | 201 |    91ms |   192.168.0.196 | POST    | /get_rolesmanagement/     
 signal: interrupt
+postgres
+host=34.87.184.130 user=postgres password=p0stgR35_t3sT_p@55_2022 dbname=mfs port=5432 sslmode=disable
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.39.0                   │ 
+ │               http://127.0.0.1:1111               │ 
+ │       (bound on host 0.0.0.0 and port 1111)       │ 
+ │                                                   │ 
+ │ Handlers ............ 71  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............. 15152 │ 
+ └───────────────────────────────────────────────────┘ 
+
+signal: interrupt
+postgres
+host=34.87.184.130 user=postgres password=p0stgR35_t3sT_p@55_2022 dbname=mfs port=5432 sslmode=disable
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.39.0                   │ 
+ │               http://127.0.0.1:1111               │ 
+ │       (bound on host 0.0.0.0 and port 1111)       │ 
+ │                                                   │ 
+ │ Handlers ............ 71  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 1082 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2022/11/29 08:01:09 [31;1m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134 [35;1mread tcp 10.21.0.66:49412->34.87.184.130:5432: read: operation timed out
+[0m[33m[24974.833ms] [34;1m[rows:0][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:01:08 | 201 | 24.978s |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:01:28 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134 [33mSLOW SQL >= 200ms
+[0m[31;1m[348.959ms] [33m[rows:20][35m SELECT * FROM "mfs"."view_rolemanagement"[0m
+08:01:28 | 201 |   349ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:01:44 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[57.596ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:01:43 | 201 |    59ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:02:39 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[57.763ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:02:39 | 201 |    60ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:04:26 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[58.387ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:04:26 | 201 |    60ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:05:05 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[65.101ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:05:04 | 201 |    67ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:05:40 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[67.159ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:05:40 | 201 |    68ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:06:31 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[58.948ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:06:31 | 201 |    60ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:06:46 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[61.919ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:06:46 | 201 |    63ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:07:09 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[58.734ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:07:09 | 201 |    61ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:07:29 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[57.478ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:07:29 | 201 |    58ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:08:19 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[61.302ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:08:19 | 201 |    63ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:08:30 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[60.639ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:08:29 | 201 |    61ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+
+2022/11/29 08:08:31 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[135.858ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_broadcastsms" WHERE "view_broadcastsms"."subject" = 'alex'
+08:08:30 | 201 |   137ms |   192.168.0.108 | POST    | /get_broadcastsms                 
+
+2022/11/29 08:08:38 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134 [33mSLOW SQL >= 200ms
+[0m[31;1m[248.502ms] [33m[rows:20][35m SELECT * FROM "mfs"."view_rolemanagement"[0m
+08:08:38 | 201 |   250ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
+signal: interrupt
