@@ -204,6 +204,30 @@ definitions:
       product_periode_start:
         type: string
     type: object
+  models.AllBillerProductRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllBillerProductResponse:
+    properties:
+      bank_commission:
+        type: string
+      biller_product_id:
+        type: string
+      biller_product_name:
+        type: string
+      billerproduct_id:
+        type: string
+      description:
+        type: string
+      product_category_name:
+        type: string
+      service_fee:
+        type: string
+      status:
+        type: integer
+    type: object
   models.AllBranchRequest:
     properties:
       get_id:
@@ -296,10 +320,48 @@ definitions:
       inst_id:
         type: string
     type: object
+  models.AllLoadProductRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllLoadProductResponse:
+    properties:
+      description:
+        type: string
+      load_product_id:
+        type: string
+      load_product_name:
+        type: string
+      loadproduct_id:
+        type: string
+      product_category_name:
+        type: string
+      status:
+        type: integer
+    type: object
   models.AllParamConfigRequest:
     properties:
       get_id:
         type: string
+    type: object
+  models.AllProductCategoryRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllProductCategoryResponse:
+    properties:
+      product_category_id:
+        type: string
+      product_category_name:
+        type: string
+      product_type_name:
+        type: string
+      productcategory_id:
+        type: string
+      status:
+        type: integer
     type: object
   models.AllProductServicesRequest:
     properties:
@@ -318,6 +380,46 @@ definitions:
         type: string
       show:
         type: boolean
+    type: object
+  models.AllProductTypeRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllProductTypeResponse:
+    properties:
+      description:
+        type: string
+      last_sync:
+        type: string
+      product_type_id:
+        type: string
+      product_type_name:
+        type: string
+      producttype_id:
+        type: string
+      provider_name:
+        type: string
+      status:
+        type: integer
+    type: object
+  models.AllProviderRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllProviderResponse:
+    properties:
+      description:
+        type: string
+      provider_alias:
+        type: string
+      provider_id:
+        type: string
+      provider_name:
+        type: string
+      status:
+        type: integer
     type: object
   models.AllServiceDowntimeRequest:
     properties:
@@ -471,34 +573,32 @@ definitions:
     type: object
   models.BillerProductRequest:
     properties:
-      a.provider_name:
+      biller_product_id:
         type: string
-      b.product_category_name:
+      biller_product_name:
         type: string
-      c.biller_product_id:
+      product_category_name:
         type: string
-      c.biller_product_name:
+      provider_name:
         type: string
     type: object
   models.BillerProductResponse:
     properties:
-      a.provider_name:
-        type: string
-      b.product_category_name:
-        type: string
-      c.bank_commission:
+      bank_commission:
         type: number
-      c.biller_product_id:
+      biller_product_id:
         type: integer
-      c.biller_product_name:
+      biller_product_name:
         type: string
-      c.description:
+      description:
         type: string
-      c.id:
+      product_category_name:
         type: string
-      c.service_fee:
+      provider_name:
+        type: string
+      service_fee:
         type: number
-      c.status:
+      status:
         type: integer
     type: object
   models.BranchRequest:
@@ -815,6 +915,30 @@ definitions:
       update_banknews:
         type: string
     type: object
+  models.EditBillerProductRequest:
+    properties:
+      get_bank_commission:
+        type: string
+      get_biller_product_id:
+        type: integer
+      get_biller_product_name:
+        type: string
+      get_billerproduct_id:
+        type: string
+      get_description:
+        type: string
+      get_product_category_name:
+        type: string
+      get_service_fee:
+        type: string
+      get_status:
+        type: integer
+    type: object
+  models.EditBillerProductResponse:
+    properties:
+      update_billerproduct:
+        type: string
+    type: object
   models.EditBranchRequest:
     properties:
       get_branch_code:
@@ -907,6 +1031,26 @@ definitions:
       update_insti:
         type: string
     type: object
+  models.EditLoadProductRequest:
+    properties:
+      get_description:
+        type: string
+      get_load_product_id:
+        type: integer
+      get_load_product_name:
+        type: string
+      get_loadproduct_id:
+        type: string
+      get_product_category_name:
+        type: string
+      get_status:
+        type: integer
+    type: object
+  models.EditLoadProductResponse:
+    properties:
+      update_loadproduct:
+        type: string
+    type: object
   models.EditParamConfigRequest:
     properties:
       get_app_type:
@@ -925,6 +1069,24 @@ definitions:
       update_paramconfig:
         type: string
     type: object
+  models.EditProductCategoryRequest:
+    properties:
+      get_product_category_id:
+        type: integer
+      get_product_category_name:
+        type: string
+      get_product_type_name:
+        type: string
+      get_productcategory_id:
+        type: string
+      get_status:
+        type: integer
+    type: object
+  models.EditProductCategoryResponse:
+    properties:
+      update_productcategory:
+        type: string
+    type: object
   models.EditProductServicesRequest:
     properties:
       get_service_banner:
@@ -941,6 +1103,44 @@ definitions:
   models.EditProductServicesResponse:
     properties:
       update_productservices:
+        type: string
+    type: object
+  models.EditProductTypeRequest:
+    properties:
+      get_description:
+        type: string
+      get_product_type_id:
+        type: integer
+      get_product_type_name:
+        type: string
+      get_producttype_id:
+        type: string
+      get_provider_name:
+        type: string
+      get_status:
+        type: integer
+    type: object
+  models.EditProductTypeResponse:
+    properties:
+      update_producttype:
+        type: string
+    type: object
+  models.EditProviderRequest:
+    properties:
+      get_description:
+        type: string
+      get_provider_alias:
+        type: string
+      get_provider_id:
+        type: string
+      get_provider_name:
+        type: string
+      get_status:
+        type: integer
+    type: object
+  models.EditProviderResponse:
+    properties:
+      update_provider:
         type: string
     type: object
   models.EditServiceDowntimeRequest:
@@ -1356,26 +1556,24 @@ definitions:
     type: object
   models.LoadProductRequest:
     properties:
-      a.product_category_name:
+      load_product_id:
         type: string
-      c.load_product_id:
+      load_product_name:
         type: string
-      c.load_product_name:
+      product_category_name:
         type: string
     type: object
   models.LoadProductResponse:
     properties:
-      a.product_category_name:
+      description:
         type: string
-      c.description:
+      load_product_id:
         type: string
-      c.id:
+      load_product_name:
         type: string
-      c.load_product_id:
+      product_category_name:
         type: string
-      c.load_product_name:
-        type: string
-      c.status:
+      status:
         type: string
     type: object
   models.LoginLogoutReportRequest:
@@ -1552,17 +1750,15 @@ definitions:
     type: object
   models.ProductCategoryResponse:
     properties:
-      a.provider_name:
+      product_category_id:
         type: string
-      b.product_type_name:
+      product_category_name:
         type: string
-      c.id:
+      product_type_name:
         type: string
-      c.product_category_id:
+      provider_name:
         type: string
-      c.product_category_name:
-        type: string
-      c.status:
+      status:
         type: string
     type: object
   models.ProductServicesRequest:
@@ -1583,26 +1779,28 @@ definitions:
     type: object
   models.ProductTypeRequest:
     properties:
-      a.provider_name:
+      product_type_id:
         type: string
-      c.product_type_id:
+      product_type_name:
         type: string
-      c.product_type_name:
+      provider_name:
         type: string
     type: object
   models.ProductTypeResponse:
     properties:
-      a.provider_name:
+      description:
         type: string
-      c.description:
+      id:
         type: string
-      c.id:
+      last_sync:
         type: string
-      c.product_type_id:
+      product_type_id:
         type: string
-      c.product_type_name:
+      product_type_name:
         type: string
-      c.status:
+      provider_name:
+        type: string
+      status:
         type: string
     type: object
   models.ProviderRequest:
@@ -1617,6 +1815,8 @@ definitions:
       description:
         type: string
       id:
+        type: string
+      last_sync:
         type: string
       provider_alias:
         type: string
@@ -2684,6 +2884,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_billerproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditBillerProduct Input
+        in: body
+        name: editBillerProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditBillerProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditBillerProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_branch/:
     post:
       consumes:
@@ -2718,7 +2944,7 @@ paths:
       parameters:
       - description: EditCenter Input
         in: body
-        name: editcenterInput
+        name: editCenterInput
         required: true
         schema:
           $ref: '#/definitions/models.EditCenterRequest'
@@ -2814,6 +3040,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_loadproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditLoadProduct Input
+        in: body
+        name: editLoadProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditLoadProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditLoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_paramconfig/:
     post:
       consumes:
@@ -2840,6 +3092,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_productcategory/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditProductCategory Input
+        in: body
+        name: editProductCategoryInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditProductCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditProductCategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_productservices/:
     post:
       consumes:
@@ -2859,6 +3137,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.EditProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_producttype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditProductType Input
+        in: body
+        name: editProductTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditProductTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditProductTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_provider/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditProvider Input
+        in: body
+        name: editProviderInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditProviderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditProviderResponse'
         "400":
           description: Bad Request
           schema:
@@ -4679,6 +5009,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_billerproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllBillerProduct Input
+        in: body
+        name: allBillerProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllBillerProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllBillerProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_branch/:
     post:
       consumes:
@@ -4809,6 +5165,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_loadproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllLoadProduct Input
+        in: body
+        name: allLoadProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllLoadProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllLoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_paramconfig/:
     post:
       consumes:
@@ -4835,6 +5217,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_productcategory/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllProductCategory Input
+        in: body
+        name: allProductCategoryInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllProductCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllProductCategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_productservices/:
     post:
       consumes:
@@ -4854,6 +5262,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_producttype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllProductType Input
+        in: body
+        name: allProductTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllProductTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllProductTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_provider/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllProvider Input
+        in: body
+        name: allProviderInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllProviderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllProviderResponse'
         "400":
           description: Bad Request
           schema:

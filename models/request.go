@@ -356,12 +356,37 @@ type ProviderRequest struct {
 	Provider_name string `json:"provider_name"`
 }
 
+type AllProviderRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditProviderRequest struct {
+	Get_provider_id    string `json:"get_provider_id"`
+	Get_provider_name  string `json:"get_provider_name"`
+	Get_description    string `json:"get_description"`
+	Get_provider_alias string `json:"get_provider_alias"`
+	Get_status         int    `json:"get_status"`
+}
+
 ///producttype
 
 type ProductTypeRequest struct {
-	Product_type_id   string `json:"c.product_type_id"`
-	Product_type_name string `json:"c.product_type_name"`
-	Provider_name     string `json:"a.provider_name"`
+	Product_type_id   string `json:"product_type_id"`
+	Product_type_name string `json:"product_type_name"`
+	Provider_name     string `json:"provider_name"`
+}
+
+type AllProductTypeRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditProductTypeRequest struct {
+	Get_producttype_id    string `json:"get_producttype_id"`
+	Get_provider_name     string `json:"get_provider_name"`
+	Get_product_type_id   int    `json:"get_product_type_id"`
+	Get_product_type_name string `json:"get_product_type_name"`
+	Get_description       string `json:"get_description"`
+	Get_status            int    `json:"get_status"`
 }
 
 ///productcategory
@@ -373,21 +398,61 @@ type ProductCategoryRequest struct {
 	Product_type_name     string `json:"b.product_type_name"`
 }
 
-///billerproduct
+type AllProductCategoryRequest struct {
+	Get_id string `json:"get_id"`
+}
 
-type BillerProductRequest struct {
-	Biller_product_id     string `json:"c.biller_product_id"`
-	Biller_product_name   string `json:"c.biller_product_name"`
-	Provider_name         string `json:"a.provider_name"`
-	Product_category_name string `json:"b.product_category_name"`
+type EditProductCategoryRequest struct {
+	Get_productcategory_id    string `json:"get_productcategory_id"`
+	Get_product_type_name     string `json:"get_product_type_name"`
+	Get_product_category_id   int    `json:"get_product_category_id"`
+	Get_product_category_name string `json:"get_product_category_name"`
+	Get_status                int    `json:"get_status"`
 }
 
 ///billerproduct
 
+type BillerProductRequest struct {
+	Biller_product_id     string `json:"biller_product_id"`
+	Biller_product_name   string `json:"biller_product_name"`
+	Provider_name         string `json:"provider_name"`
+	Product_category_name string `json:"product_category_name"`
+}
+
+type AllBillerProductRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditBillerProductRequest struct {
+	Get_Billerproduct_id      string `json:"get_billerproduct_id"`
+	Get_Product_category_name string `json:"get_product_category_name"`
+	Get_Biller_product_id     int    `json:"get_biller_product_id"`
+	Get_Biller_product_name   string `json:"get_biller_product_name"`
+	Get_Description           string `json:"get_description"`
+	Get_Service_fee           string `json:"get_service_fee"`
+	Get_Bank_commission       string `json:"get_bank_commission"`
+	Get_Status                int    `json:"get_status"`
+}
+
+///loadproduct
+
 type LoadProductRequest struct {
-	Load_product_id       string `json:"c.load_product_id"`
-	Load_product_name     string `json:"c.load_product_name"`
-	Product_category_name string `json:"a.product_category_name"`
+	Load_product_id       string `json:"load_product_id"`
+	Load_product_name     string `json:"load_product_name"`
+	Product_category_name string `json:"product_category_name"`
+}
+
+type AllLoadProductRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditLoadProductRequest struct {
+	Get_loadproduct_id        string `json:"get_loadproduct_id"`
+	Get_product_category_name string `json:"get_product_category_name"`
+	Get_load_product_id       int    `json:"get_load_product_id"`
+	Get_load_product_name     string `json:"get_load_product_name"`
+	Get_description           string `json:"get_description"`
+	Get_status                int    `json:"get_status"`
 }
 
 ///commissionsetup

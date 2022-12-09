@@ -1183,3 +1183,78 @@ host=34.87.184.130 user=postgres password=p0stgR35_t3sT_p@55_2022 dbname=mfs por
 [0m[31;1m[248.502ms] [33m[rows:20][35m SELECT * FROM "mfs"."view_rolemanagement"[0m
 08:08:38 | 201 |   250ms |   192.168.0.196 | POST    | /get_rolesmanagement/             
 signal: interrupt
+alexendrich_dequilla
+host=35.186.156.47 user=alexendrich_dequilla password=fdsap@2020 dbname=mfs port=5432 sslmode=disable
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.39.0                   │ 
+ │               http://127.0.0.1:1111               │ 
+ │       (bound on host 0.0.0.0 and port 1111)       │ 
+ │                                                   │ 
+ │ Handlers ........... 101  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 3194 │ 
+ └───────────────────────────────────────────────────┘ 
+
+
+2022/12/09 08:31:51 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[85.916ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_usermanagement" WHERE "view_usermanagement"."user_login" = 'ngpunzalan'
+08:31:51 | 201 |    90ms |      10.21.0.29 | POST    | /get_usermanagement               
+
+2022/12/09 08:39:46 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[197.436ms] [34;1m[rows:114][0m SELECT * FROM "mfs"."view_usermanagement"
+08:39:46 | 201 |   208ms |      10.21.0.29 | POST    | /get_usermanagement/              
+
+2022/12/09 08:44:28 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[75.936ms] [34;1m[rows:0][0m SELECT * FROM "mfs"."view_broadcastsms" WHERE "view_broadcastsms"."subject" = 'alex'
+08:44:28 | 201 |    83ms |      10.21.0.86 | POST    | /get_broadcastsms                 
+
+2022/12/09 08:44:41 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[38.211ms] [34;1m[rows:0][0m SELECT * FROM "mfs"."view_broadcastsms" WHERE "view_broadcastsms"."subject" = 'alex'
+08:44:41 | 201 |    39ms |      10.21.0.86 | POST    | /get_broadcastsms                 
+
+2022/12/09 08:47:27 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[40.135ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_broadcastsms" WHERE "view_broadcastsms"."subject" = 'test'
+08:47:27 | 201 |    42ms |      10.21.0.86 | POST    | /get_broadcastsms                 
+
+2022/12/09 08:49:36 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[167.019ms] [34;1m[rows:114][0m SELECT * FROM "mfs"."view_usermanagement"
+08:49:36 | 201 |   169ms |      10.21.0.29 | POST    | /get_usermanagement               
+
+2022/12/09 08:49:36 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134 [33mSLOW SQL >= 200ms
+[0m[31;1m[204.563ms] [33m[rows:0][35m SELECT * FROM "mfs"."view_usermanagement" WHERE "view_usermanagement"."user_login" = 'user_login' AND "view_usermanagement"."given_name" = 'fname' AND "view_usermanagement"."middle_name" = 'mname' AND "view_usermanagement"."last_name" = 'lname' AND "view_usermanagement"."branch_names" = 'branch_names' AND "view_usermanagement"."check_status" = 'check_status'[0m
+08:49:36 | 201 |   205ms |      10.21.0.29 | POST    | /get_usermanagement               
+
+2022/12/09 08:50:43 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[76.313ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_broadcastsms" WHERE "view_broadcastsms"."subject" = 'test'
+08:50:43 | 201 |    78ms |      10.21.0.86 | POST    | /get_broadcastsms                 
+
+2022/12/09 08:52:50 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[74.490ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_rolemanagement" WHERE "view_rolemanagement"."role_name" = 'CSR'
+08:52:49 | 201 |    77ms |      10.21.0.66 | POST    | /get_rolesmanagement              
+
+2022/12/09 08:54:18 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[38.896ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_rolemanagement" WHERE "view_rolemanagement"."role_name" = 'CSR'
+08:54:18 | 201 |    41ms |      10.21.0.66 | POST    | /get_rolesmanagement              
+
+2022/12/09 08:55:14 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[39.912ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_rolemanagement" WHERE "view_rolemanagement"."role_name" = 'CSR'
+08:55:13 | 201 |    43ms |      10.21.0.86 | POST    | /get_rolesmanagement              
+
+2022/12/09 08:56:07 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134 [33mSLOW SQL >= 200ms
+[0m[31;1m[204.387ms] [33m[rows:114][35m SELECT * FROM "mfs"."view_usermanagement"[0m
+08:56:06 | 201 |   207ms |      10.21.0.29 | POST    | /get_usermanagement               
+
+2022/12/09 08:56:23 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[151.623ms] [34;1m[rows:1][0m SELECT * FROM "mfs"."view_rolemanagement" WHERE "view_rolemanagement"."role_name" = 'CSR'
+08:56:22 | 201 |   152ms |      10.21.0.29 | POST    | /get_rolesmanagement              
+
+2022/12/09 08:56:27 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[175.357ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+08:56:26 | 201 |   176ms |      10.21.0.29 | POST    | /get_rolesmanagement              
+
+2022/12/09 09:02:47 [32m/Users/alexendrichdequilla/go/pkg/mod/gorm.io/gorm@v1.24.1/callbacks.go:134
+[0m[33m[82.024ms] [34;1m[rows:20][0m SELECT * FROM "mfs"."view_rolemanagement"
+09:02:47 | 201 |    84ms |      10.21.0.29 | POST    | /get_rolesmanagement/             
+09:35:06 | 404 |     1ms |      10.21.0.66 | POST    | /select_provider                   | Cannot POST /select_provider
+09:35:56 | 404 |      0s |      10.21.0.66 | POST    | /select_provider                   | Cannot POST /select_provider
+signal: interrupt

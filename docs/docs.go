@@ -193,6 +193,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_billerproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditBillerProduct Input",
+                        "name": "editBillerProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBillerProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBillerProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_branch/": {
             "post": {
                 "description": "Fetch User Data",
@@ -249,7 +289,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "description": "EditCenter Input",
-                        "name": "editcenterInput",
+                        "name": "editCenterInput",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -393,6 +433,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_loadproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditLoadProduct Input",
+                        "name": "editLoadProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditLoadProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditLoadProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_paramconfig/": {
             "post": {
                 "description": "Fetch User Data",
@@ -433,6 +513,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_productcategory/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditProductCategory Input",
+                        "name": "editProductCategoryInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductCategoryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductCategoryResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_productservices/": {
             "post": {
                 "description": "Fetch User Data",
@@ -462,6 +582,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.EditProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_producttype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditProductType Input",
+                        "name": "editProductTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProductTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_provider/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditProvider Input",
+                        "name": "editProviderInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProviderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditProviderResponse"
                         }
                     },
                     "400": {
@@ -3262,6 +3462,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_billerproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllBillerProduct Input",
+                        "name": "allBillerProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBillerProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBillerProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_branch/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3462,6 +3702,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_loadproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllLoadProduct Input",
+                        "name": "allLoadProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllLoadProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllLoadProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_paramconfig/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3502,6 +3782,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_productcategory/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllProductCategory Input",
+                        "name": "allProductCategoryInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductCategoryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductCategoryResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_productservices/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3531,6 +3851,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.AllProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_producttype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllProductType Input",
+                        "name": "allProductTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProductTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_provider/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllProvider Input",
+                        "name": "allProviderInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProviderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllProviderResponse"
                         }
                     },
                     "400": {
@@ -4017,6 +4417,43 @@ const docTemplate = `{
                 }
             }
         },
+        "models.AllBillerProductRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBillerProductResponse": {
+            "type": "object",
+            "properties": {
+                "bank_commission": {
+                    "type": "string"
+                },
+                "biller_product_id": {
+                    "type": "string"
+                },
+                "biller_product_name": {
+                    "type": "string"
+                },
+                "billerproduct_id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "product_category_name": {
+                    "type": "string"
+                },
+                "service_fee": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.AllBranchRequest": {
             "type": "object",
             "properties": {
@@ -4160,11 +4597,70 @@ const docTemplate = `{
                 }
             }
         },
+        "models.AllLoadProductRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllLoadProductResponse": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "load_product_id": {
+                    "type": "string"
+                },
+                "load_product_name": {
+                    "type": "string"
+                },
+                "loadproduct_id": {
+                    "type": "string"
+                },
+                "product_category_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            }
+        },
         "models.AllParamConfigRequest": {
             "type": "object",
             "properties": {
                 "get_id": {
                     "type": "string"
+                }
+            }
+        },
+        "models.AllProductCategoryRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllProductCategoryResponse": {
+            "type": "object",
+            "properties": {
+                "product_category_id": {
+                    "type": "string"
+                },
+                "product_category_name": {
+                    "type": "string"
+                },
+                "product_type_name": {
+                    "type": "string"
+                },
+                "productcategory_id": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
                 }
             }
         },
@@ -4193,6 +4689,68 @@ const docTemplate = `{
                 },
                 "show": {
                     "type": "boolean"
+                }
+            }
+        },
+        "models.AllProductTypeRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllProductTypeResponse": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "last_sync": {
+                    "type": "string"
+                },
+                "product_type_id": {
+                    "type": "string"
+                },
+                "product_type_name": {
+                    "type": "string"
+                },
+                "producttype_id": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.AllProviderRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllProviderResponse": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "provider_alias": {
+                    "type": "string"
+                },
+                "provider_id": {
+                    "type": "string"
+                },
+                "provider_name": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
                 }
             }
         },
@@ -4431,16 +4989,16 @@ const docTemplate = `{
         "models.BillerProductRequest": {
             "type": "object",
             "properties": {
-                "a.provider_name": {
+                "biller_product_id": {
                     "type": "string"
                 },
-                "b.product_category_name": {
+                "biller_product_name": {
                     "type": "string"
                 },
-                "c.biller_product_id": {
+                "product_category_name": {
                     "type": "string"
                 },
-                "c.biller_product_name": {
+                "provider_name": {
                     "type": "string"
                 }
             }
@@ -4448,31 +5006,28 @@ const docTemplate = `{
         "models.BillerProductResponse": {
             "type": "object",
             "properties": {
-                "a.provider_name": {
-                    "type": "string"
-                },
-                "b.product_category_name": {
-                    "type": "string"
-                },
-                "c.bank_commission": {
+                "bank_commission": {
                     "type": "number"
                 },
-                "c.biller_product_id": {
+                "biller_product_id": {
                     "type": "integer"
                 },
-                "c.biller_product_name": {
+                "biller_product_name": {
                     "type": "string"
                 },
-                "c.description": {
+                "description": {
                     "type": "string"
                 },
-                "c.id": {
+                "product_category_name": {
                     "type": "string"
                 },
-                "c.service_fee": {
+                "provider_name": {
+                    "type": "string"
+                },
+                "service_fee": {
                     "type": "number"
                 },
-                "c.status": {
+                "status": {
                     "type": "integer"
                 }
             }
@@ -4960,6 +5515,43 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditBillerProductRequest": {
+            "type": "object",
+            "properties": {
+                "get_bank_commission": {
+                    "type": "string"
+                },
+                "get_biller_product_id": {
+                    "type": "integer"
+                },
+                "get_biller_product_name": {
+                    "type": "string"
+                },
+                "get_billerproduct_id": {
+                    "type": "string"
+                },
+                "get_description": {
+                    "type": "string"
+                },
+                "get_product_category_name": {
+                    "type": "string"
+                },
+                "get_service_fee": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.EditBillerProductResponse": {
+            "type": "object",
+            "properties": {
+                "update_billerproduct": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditBranchRequest": {
             "type": "object",
             "properties": {
@@ -5103,6 +5695,37 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditLoadProductRequest": {
+            "type": "object",
+            "properties": {
+                "get_description": {
+                    "type": "string"
+                },
+                "get_load_product_id": {
+                    "type": "integer"
+                },
+                "get_load_product_name": {
+                    "type": "string"
+                },
+                "get_loadproduct_id": {
+                    "type": "string"
+                },
+                "get_product_category_name": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.EditLoadProductResponse": {
+            "type": "object",
+            "properties": {
+                "update_loadproduct": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditParamConfigRequest": {
             "type": "object",
             "properties": {
@@ -5131,6 +5754,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditProductCategoryRequest": {
+            "type": "object",
+            "properties": {
+                "get_product_category_id": {
+                    "type": "integer"
+                },
+                "get_product_category_name": {
+                    "type": "string"
+                },
+                "get_product_type_name": {
+                    "type": "string"
+                },
+                "get_productcategory_id": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.EditProductCategoryResponse": {
+            "type": "object",
+            "properties": {
+                "update_productcategory": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditProductServicesRequest": {
             "type": "object",
             "properties": {
@@ -5155,6 +5806,65 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "update_productservices": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditProductTypeRequest": {
+            "type": "object",
+            "properties": {
+                "get_description": {
+                    "type": "string"
+                },
+                "get_product_type_id": {
+                    "type": "integer"
+                },
+                "get_product_type_name": {
+                    "type": "string"
+                },
+                "get_producttype_id": {
+                    "type": "string"
+                },
+                "get_provider_name": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.EditProductTypeResponse": {
+            "type": "object",
+            "properties": {
+                "update_producttype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditProviderRequest": {
+            "type": "object",
+            "properties": {
+                "get_description": {
+                    "type": "string"
+                },
+                "get_provider_alias": {
+                    "type": "string"
+                },
+                "get_provider_id": {
+                    "type": "string"
+                },
+                "get_provider_name": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.EditProviderResponse": {
+            "type": "object",
+            "properties": {
+                "update_provider": {
                     "type": "string"
                 }
             }
@@ -5789,13 +6499,13 @@ const docTemplate = `{
         "models.LoadProductRequest": {
             "type": "object",
             "properties": {
-                "a.product_category_name": {
+                "load_product_id": {
                     "type": "string"
                 },
-                "c.load_product_id": {
+                "load_product_name": {
                     "type": "string"
                 },
-                "c.load_product_name": {
+                "product_category_name": {
                     "type": "string"
                 }
             }
@@ -5803,22 +6513,19 @@ const docTemplate = `{
         "models.LoadProductResponse": {
             "type": "object",
             "properties": {
-                "a.product_category_name": {
+                "description": {
                     "type": "string"
                 },
-                "c.description": {
+                "load_product_id": {
                     "type": "string"
                 },
-                "c.id": {
+                "load_product_name": {
                     "type": "string"
                 },
-                "c.load_product_id": {
+                "product_category_name": {
                     "type": "string"
                 },
-                "c.load_product_name": {
-                    "type": "string"
-                },
-                "c.status": {
+                "status": {
                     "type": "string"
                 }
             }
@@ -6089,22 +6796,19 @@ const docTemplate = `{
         "models.ProductCategoryResponse": {
             "type": "object",
             "properties": {
-                "a.provider_name": {
+                "product_category_id": {
                     "type": "string"
                 },
-                "b.product_type_name": {
+                "product_category_name": {
                     "type": "string"
                 },
-                "c.id": {
+                "product_type_name": {
                     "type": "string"
                 },
-                "c.product_category_id": {
+                "provider_name": {
                     "type": "string"
                 },
-                "c.product_category_name": {
-                    "type": "string"
-                },
-                "c.status": {
+                "status": {
                     "type": "string"
                 }
             }
@@ -6137,13 +6841,13 @@ const docTemplate = `{
         "models.ProductTypeRequest": {
             "type": "object",
             "properties": {
-                "a.provider_name": {
+                "product_type_id": {
                     "type": "string"
                 },
-                "c.product_type_id": {
+                "product_type_name": {
                     "type": "string"
                 },
-                "c.product_type_name": {
+                "provider_name": {
                     "type": "string"
                 }
             }
@@ -6151,22 +6855,25 @@ const docTemplate = `{
         "models.ProductTypeResponse": {
             "type": "object",
             "properties": {
-                "a.provider_name": {
+                "description": {
                     "type": "string"
                 },
-                "c.description": {
+                "id": {
                     "type": "string"
                 },
-                "c.id": {
+                "last_sync": {
                     "type": "string"
                 },
-                "c.product_type_id": {
+                "product_type_id": {
                     "type": "string"
                 },
-                "c.product_type_name": {
+                "product_type_name": {
                     "type": "string"
                 },
-                "c.status": {
+                "provider_name": {
+                    "type": "string"
+                },
+                "status": {
                     "type": "string"
                 }
             }
@@ -6189,6 +6896,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "id": {
+                    "type": "string"
+                },
+                "last_sync": {
                     "type": "string"
                 },
                 "provider_alias": {

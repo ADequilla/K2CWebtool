@@ -1217,7 +1217,7 @@ func SelectCenterbyID(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
-// @Param       	editcenterInput body models.EditCenterRequest true "EditCenter Input"
+// @Param       	editCenterInput body models.EditCenterRequest true "EditCenter Input"
 // @Success		  	200 {object} models.EditCenterResponse
 // @Failure 		400 {object} models.ResponseModel
 // @Router			/edit_center/ [post]
@@ -1297,6 +1297,86 @@ func GetProvider(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allProviderInput body models.AllProviderRequest true "AllProvider Input"
+// @Success		  	200 {object} models.AllProviderResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_provider/ [post]
+func SelectProviderbyID(c *fiber.Ctx) error {
+	providerInput := models.AllProviderRequest{}
+
+	if parErr := c.BodyParser(&providerInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allproviderModel := []models.AllProviderResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_provider(?)", providerInput.Get_id).Scan(&allproviderModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allproviderModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allproviderModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editProviderInput body models.EditProviderRequest true "EditProvider Input"
+// @Success		  	200 {object} models.EditProviderResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_provider/ [post]
+func EditProvider(c *fiber.Ctx) error {
+	editproviderInput := models.EditProviderRequest{}
+
+	if parErr := c.BodyParser(&editproviderInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editproviderModel := models.EditProviderResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_provider(?,?,?,?,?)", editproviderInput.Get_provider_id, editproviderInput.Get_provider_name, editproviderInput.Get_description, editproviderInput.Get_provider_alias, editproviderInput.Get_status).Scan(&editproviderModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	producttypeInput body models.ProductTypeRequest true "ProductType Input"
 // @Success		  	200 {object} models.ProductTypeResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1314,7 +1394,7 @@ func GetProductType(c *fiber.Ctx) error {
 
 	producttypeModel := []models.ProductTypeResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Table("mfs.view_producttype").Find(&producttypeModel, producttypeInput).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_product_type").Find(&producttypeModel, producttypeInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1333,6 +1413,86 @@ func GetProductType(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    producttypeModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allProductTypeInput body models.AllProductTypeRequest true "AllProductType Input"
+// @Success		  	200 {object} models.AllProductTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_producttype/ [post]
+func SelectProductTypebyID(c *fiber.Ctx) error {
+	producttypeInput := models.AllProductTypeRequest{}
+
+	if parErr := c.BodyParser(&producttypeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allproducttypeModel := []models.AllProductTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_producttype(?)", producttypeInput.Get_id).Scan(&allproducttypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allproducttypeModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allproducttypeModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editProductTypeInput body models.EditProductTypeRequest true "EditProductType Input"
+// @Success		  	200 {object} models.EditProductTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_producttype/ [post]
+func EditProductType(c *fiber.Ctx) error {
+	editproducttypeInput := models.EditProductTypeRequest{}
+
+	if parErr := c.BodyParser(&editproducttypeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editproducttypeModel := models.EditProductTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_producttype(?,?,?,?,?,?)", editproducttypeInput.Get_producttype_id, editproducttypeInput.Get_provider_name, editproducttypeInput.Get_product_type_id, editproducttypeInput.Get_product_type_name, editproducttypeInput.Get_description, editproducttypeInput.Get_status).Scan(&editproducttypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 
@@ -1385,6 +1545,86 @@ func GetProductCategory(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allProductCategoryInput body models.AllProductCategoryRequest true "AllProductCategory Input"
+// @Success		  	200 {object} models.AllProductCategoryResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_productcategory/ [post]
+func SelectProductCategorybyID(c *fiber.Ctx) error {
+	productcategoryInput := models.AllProductCategoryRequest{}
+
+	if parErr := c.BodyParser(&productcategoryInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allproductcategoryModel := []models.AllProductCategoryResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_productcategory(?)", productcategoryInput.Get_id).Scan(&allproductcategoryModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allproductcategoryModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allproductcategoryModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editProductCategoryInput body models.EditProductCategoryRequest true "EditProductCategory Input"
+// @Success		  	200 {object} models.EditProductCategoryResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_productcategory/ [post]
+func EditProductCategory(c *fiber.Ctx) error {
+	editproductcategoryInput := models.EditProductCategoryRequest{}
+
+	if parErr := c.BodyParser(&editproductcategoryInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editproducttypeModel := models.EditProductCategoryResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_productcategory(?,?,?,?,?)", editproductcategoryInput.Get_productcategory_id, editproductcategoryInput.Get_product_type_name, editproductcategoryInput.Get_product_category_id, editproductcategoryInput.Get_product_category_name, editproductcategoryInput.Get_status).Scan(&editproducttypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	billerproductInput body models.BillerProductRequest true "BillerProduct Input"
 // @Success		  	200 {object} models.BillerProductResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1402,7 +1642,7 @@ func GetBillerProduct(c *fiber.Ctx) error {
 
 	billerproductModel := []models.BillerProductResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Table("mfs.view_billerproduct").Find(&billerproductModel, billerproductInput).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_biller_product").Find(&billerproductModel, billerproductInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1429,6 +1669,86 @@ func GetBillerProduct(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allBillerProductInput body models.AllBillerProductRequest true "AllBillerProduct Input"
+// @Success		  	200 {object} models.AllBillerProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_billerproduct/ [post]
+func SelectBillerProductbyID(c *fiber.Ctx) error {
+	billerproductInput := models.AllBillerProductRequest{}
+
+	if parErr := c.BodyParser(&billerproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allbillerproductModel := []models.AllBillerProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_billerproduct(?)", billerproductInput.Get_id).Scan(&allbillerproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allbillerproductModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allbillerproductModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editBillerProductInput body models.EditBillerProductRequest true "EditBillerProduct Input"
+// @Success		  	200 {object} models.EditBillerProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_billerproduct/ [post]
+func EditBillerProduct(c *fiber.Ctx) error {
+	editbillerproductInput := models.EditBillerProductRequest{}
+
+	if parErr := c.BodyParser(&editbillerproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editbillerproductModel := models.EditBillerProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_billerproduct(?,?,?,?,?,?,?,?)", editbillerproductInput.Get_Billerproduct_id, editbillerproductInput.Get_Product_category_name, editbillerproductInput.Get_Biller_product_id, editbillerproductInput.Get_Biller_product_name, editbillerproductInput.Get_Description, editbillerproductInput.Get_Service_fee, editbillerproductInput.Get_Bank_commission, editbillerproductInput.Get_Status).Scan(&editbillerproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	loadproductInput body models.LoadProductRequest true "LoadProduct Input"
 // @Success		  	200 {object} models.LoadProductResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1446,7 +1766,7 @@ func GetLoadProduct(c *fiber.Ctx) error {
 
 	loadproductModel := []models.LoadProductResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Table("mfs.view_loadproduct").Find(&loadproductModel, loadproductInput).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_load_product").Find(&loadproductModel, loadproductInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1465,6 +1785,86 @@ func GetLoadProduct(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    loadproductModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allLoadProductInput body models.AllLoadProductRequest true "AllLoadProduct Input"
+// @Success		  	200 {object} models.AllLoadProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_loadproduct/ [post]
+func SelectLoadProductbyID(c *fiber.Ctx) error {
+	loadproductInput := models.AllLoadProductRequest{}
+
+	if parErr := c.BodyParser(&loadproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allloadproductModel := []models.AllLoadProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_loadproduct(?)", loadproductInput.Get_id).Scan(&allloadproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allloadproductModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allloadproductModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editLoadProductInput body models.EditLoadProductRequest true "EditLoadProduct Input"
+// @Success		  	200 {object} models.EditLoadProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_loadproduct/ [post]
+func EditLoadProduct(c *fiber.Ctx) error {
+	editloadproductInput := models.EditLoadProductRequest{}
+
+	if parErr := c.BodyParser(&editloadproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editloadproductModel := models.EditLoadProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_loadproduct(?,?,?,?,?,?)", editloadproductInput.Get_loadproduct_id, editloadproductInput.Get_product_category_name, editloadproductInput.Get_load_product_id, editloadproductInput.Get_load_product_name, editloadproductInput.Get_description, editloadproductInput.Get_status).Scan(&editloadproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 

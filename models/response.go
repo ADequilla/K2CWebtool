@@ -452,53 +452,118 @@ type ProviderResponse struct {
 	Description    string `json:"description"`
 	Provider_alias string `json:"provider_alias"`
 	Status         string `json:"status"`
+	Last_sync      string `json:"last_sync"`
+}
+
+type AllProviderResponse struct {
+	Provider_id    string `json:"provider_id"`
+	Provider_name  string `json:"provider_name"`
+	Description    string `json:"description"`
+	Provider_alias string `json:"provider_alias"`
+	Status         int    `json:"status"`
+}
+
+type EditProviderResponse struct {
+	Update_provider string `json:"update_provider"`
 }
 
 ///producttype
 
 type ProductTypeResponse struct {
-	Id                string `json:"c.id"`
-	Provider_name     string `json:"a.provider_name"`
-	Product_type_Id   string `json:"c.product_type_id"`
-	Product_type_name string `json:"c.product_type_name"`
-	Description       string `json:"c.description"`
-	Status            string `json:"c.status"`
+	Id                string `json:"id"`
+	Provider_name     string `json:"provider_name"`
+	Product_type_Id   string `json:"product_type_id"`
+	Product_type_name string `json:"product_type_name"`
+	Description       string `json:"description"`
+	Status            string `json:"status"`
+	Last_sync         string `json:"last_sync"`
+}
+
+type AllProductTypeResponse struct {
+	Producttype_id    string `json:"producttype_id"`
+	Provider_name     string `json:"provider_name"`
+	Product_type_id   string `json:"product_type_id"`
+	Product_type_name string `json:"product_type_name"`
+	Description       string `json:"description"`
+	Status            int    `json:"status"`
+	Last_sync         string `json:"last_sync"`
+}
+
+type EditProductTypeResponse struct {
+	Update_producttype string `json:"update_producttype"`
 }
 
 ///productcategory
 
 type ProductCategoryResponse struct {
-	Id                    string `json:"c.id"`
-	Provider_name         string `json:"a.provider_name"`
-	Product_type_name     string `json:"b.product_type_name"`
-	Product_category_id   string `json:"c.product_category_id"`
-	Product_category_name string `json:"c.product_category_name"`
-	Status                string `json:"c.status"`
+	Provider_name         string `json:"provider_name"`
+	Product_type_name     string `json:"product_type_name"`
+	Product_category_id   string `json:"product_category_id"`
+	Product_category_name string `json:"product_category_name"`
+	Status                string `json:"status"`
+}
+
+type AllProductCategoryResponse struct {
+	Productcategory_id    string `json:"productcategory_id"`
+	Product_type_name     string `json:"product_type_name"`
+	Product_category_id   string `json:"product_category_id"`
+	Product_category_name string `json:"product_category_name"`
+	Status                int    `json:"status"`
+}
+
+type EditProductCategoryResponse struct {
+	Update_productcategory string `json:"update_productcategory"`
 }
 
 ///billerproduct
 
 type BillerProductResponse struct {
-	Id                    string  `json:"c.id"`
-	Provider_name         string  `json:"a.provider_name"`
-	Product_category_name string  `json:"b.product_category_name"`
-	Biller_product_id     int     `json:"c.biller_product_id"`
-	Biller_product_name   string  `json:"c.biller_product_name"`
-	Description           string  `json:"c.description"`
-	Bank_commission       float32 `json:"c.bank_commission"`
-	Service_fee           float32 `json:"c.service_fee"`
-	Status                int     `json:"c.status"`
+	Provider_name         string  `json:"provider_name"`
+	Product_category_name string  `json:"product_category_name"`
+	Biller_product_id     int     `json:"biller_product_id"`
+	Biller_product_name   string  `json:"biller_product_name"`
+	Description           string  `json:"description"`
+	Bank_commission       float32 `json:"bank_commission"`
+	Service_fee           float32 `json:"service_fee"`
+	Status                int     `json:"status"`
+}
+
+type AllBillerProductResponse struct {
+	Billerproduct_id      string `json:"billerproduct_id"`
+	Product_category_name string `json:"product_category_name"`
+	Biller_product_id     string `json:"biller_product_id"`
+	Biller_product_name   string `json:"biller_product_name"`
+	Description           string `json:"description"`
+	Service_fee           string `json:"service_fee"`
+	Bank_commission       string `json:"bank_commission"`
+	Status                int    `json:"status"`
+}
+
+type EditBillerProductResponse struct {
+	Update_billerproduct string `json:"update_billerproduct"`
 }
 
 ///loadproduct
 
 type LoadProductResponse struct {
-	Id                    string `json:"c.id"`
-	Product_category_name string `json:"a.product_category_name"`
-	Load_product_id       string `json:"c.load_product_id"`
-	Load_product_name     string `json:"c.load_product_name"`
-	Description           string `json:"c.description"`
-	Status                string `json:"c.status"`
+	Product_category_name string `json:"product_category_name"`
+	Load_product_id       string `json:"load_product_id"`
+	Load_product_name     string `json:"load_product_name"`
+	Description           string `json:"description"`
+	Status                string `json:"status"`
+}
+
+type AllLoadProductResponse struct {
+	Loadproduct_id        string `json:"loadproduct_id"`
+	Product_category_name string `json:"product_category_name"`
+	Load_product_id       string `json:"load_product_id"`
+	Load_product_name     string `json:"load_product_name"`
+	Description           string `json:"description"`
+	Status                int    `json:"status"`
+}
+
+type EditLoadProductResponse struct {
+	Update_loadproduct string `json:"update_loadproduct"`
 }
 
 ///commission
