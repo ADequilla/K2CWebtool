@@ -37,7 +37,14 @@ func AppRoutes2(app *fiber.App) {
 	app.Post("/select_productcategory/", controller.SelectProductCategorybyID)
 	app.Post("/select_billerproduct/", controller.SelectBillerProductbyID)
 	app.Post("/select_loadproduct/", controller.SelectLoadProductbyID)
+	app.Post("/select_commission/", controller.SelectCommissionbyID)
+	app.Post("/select_banklist/", controller.SelectBanklistbyID)
+	app.Post("/select_partnerlist/", controller.SelectPartnerlistbyID)
+	app.Post("/select_splashscreen/", controller.SelectSplashScreenbyID)
 	///CustomerService
+	app.Post("/select_broadcastsms/", controller.SelectBroadcastSmsbyID)
+	app.Post("/select_concerntype/", controller.SelectConcernTypebyID)
+	app.Post("/select_csrhotline/", controller.SelectCsrHotlinebyID)
 
 	///Reports
 

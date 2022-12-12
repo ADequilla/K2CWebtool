@@ -1917,6 +1917,86 @@ func GetCommission(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allCommisionInput body models.AllCommissionRequest true "AllCommission Input"
+// @Success		  	200 {object} models.AllCommissionResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_commission/ [post]
+func SelectCommissionbyID(c *fiber.Ctx) error {
+	commissionInput := models.AllCommissionRequest{}
+
+	if parErr := c.BodyParser(&commissionInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allcommissionModel := []models.AllCommissionResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_commission(?)", commissionInput.Get_id).Scan(&allcommissionModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allcommissionModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allcommissionModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editCommissionInput body models.EditCommissionRequest true "EditCommission Input"
+// @Success		  	200 {object} models.EditCommissionResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_commission/ [post]
+func EditCommission(c *fiber.Ctx) error {
+	editcommissionInput := models.EditCommissionRequest{}
+
+	if parErr := c.BodyParser(&editcommissionInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editcommissionModel := models.EditCommissionResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_commission(?,?,?,?,?,?,?)", editcommissionInput.Get_Id, editcommissionInput.Get_Trans_type, editcommissionInput.Get_Commission_type, editcommissionInput.Get_Customer_income, editcommissionInput.Get_Agent_income, editcommissionInput.Get_Bank_income, editcommissionInput.Get_Bank_partner_income).Scan(&editcommissionModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	banklistInput body models.BankListRequest true "BankList Input"
 // @Success		  	200 {object} models.BankListResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1953,6 +2033,86 @@ func GetBankList(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    banklistModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allBanklistInput body models.AllBanklistRequest true "AllBanklist Input"
+// @Success		  	200 {object} models.AllBanklistResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_banklist/ [post]
+func SelectBanklistbyID(c *fiber.Ctx) error {
+	banklistInput := models.AllBanklistRequest{}
+
+	if parErr := c.BodyParser(&banklistInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allbanklistModel := []models.AllBanklistResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_banklist(?)", banklistInput.Get_id).Scan(&allbanklistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allbanklistModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allbanklistModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editBanklistInput body models.EditBanklistRequest true "EditBanklist Input"
+// @Success		  	200 {object} models.EditBanklistResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_banklist/ [post]
+func EditBanklist(c *fiber.Ctx) error {
+	editbanklistnInput := models.EditBanklistRequest{}
+
+	if parErr := c.BodyParser(&editbanklistnInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editbanklistModel := models.EditBanklistResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_banklist(?,?,?,?,?)", editbanklistnInput.Get_Banklist_id, editbanklistnInput.Get_Bank_code, editbanklistnInput.Get_Bank_name, editbanklistnInput.Get_Short_name, editbanklistnInput.Get_Bank_bic).Scan(&editbanklistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 
@@ -2005,6 +2165,86 @@ func GetPartnerList(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allPartnerlistInput body models.AllPartnerlistRequest true "AllPartnerlist Input"
+// @Success		  	200 {object} models.AllPartnerlistResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_partnerlist/ [post]
+func SelectPartnerlistbyID(c *fiber.Ctx) error {
+	partnerlistInput := models.AllPartnerlistRequest{}
+
+	if parErr := c.BodyParser(&partnerlistInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allpartnerlistModel := []models.AllPartnerlistResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_partnerlist(?)", partnerlistInput.Get_id).Scan(&allpartnerlistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allpartnerlistModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allpartnerlistModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editPartnerlistInput body models.EditPartnerlistRequest true "EditPartnerlist Input"
+// @Success		  	200 {object} models.EditPartnerlistResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_partnerlist/ [post]
+func EditPartnerlist(c *fiber.Ctx) error {
+	editpartnerlistnInput := models.EditPartnerlistRequest{}
+
+	if parErr := c.BodyParser(&editpartnerlistnInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editpartnerlistModel := models.EditPartnerlistResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_partnerlist(?,?,?,?,?,?,?,?,?,?)", editpartnerlistnInput.Get_Partnerlist_id, editpartnerlistnInput.Get_Partner_id, editpartnerlistnInput.Get_Partner_name, editpartnerlistnInput.Get_Partner_desc, editpartnerlistnInput.Get_Partner_account, editpartnerlistnInput.Get_Partner_api_url, editpartnerlistnInput.Get_Merchant_payment_callback_url, editpartnerlistnInput.Get_Merchant_id_prefix, editpartnerlistnInput.Get_Mri_group, editpartnerlistnInput.Get_Status).Scan(&editpartnerlistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	splashscreenInput body models.SplashScreenRequest true "SplashScreen Input"
 // @Success		  	200 {object} models.SplashScreenResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2041,5 +2281,85 @@ func GetSplashScreen(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    splashscreenModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allSplashScreenInput body models.AllSplashScreenRequest true "AllSplashScreen Input"
+// @Success		  	200 {object} models.AllSplashScreenResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_splashscreen/ [post]
+func SelectSplashScreenbyID(c *fiber.Ctx) error {
+	splashscreenInput := models.AllSplashScreenRequest{}
+
+	if parErr := c.BodyParser(&splashscreenInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allsplashscreenModel := []models.AllSplashScreenResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_splashscreen(?)", splashscreenInput.Get_id).Scan(&allsplashscreenModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allsplashscreenModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allsplashscreenModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editSplashScreenInput body models.EditSplashScreenRequest true "EditSplashScreen Input"
+// @Success		  	200 {object} models.EditSplashScreenResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_splashscreen/ [post]
+func EditSplashScreen(c *fiber.Ctx) error {
+	editsplashscreenInput := models.EditSplashScreenRequest{}
+
+	if parErr := c.BodyParser(&editsplashscreenInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editsplashscreenModel := models.EditSplashScreenResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_splashscreen(?,?,?,?,?,?,?)", editsplashscreenInput.Get_id, editsplashscreenInput.Get_Action, editsplashscreenInput.Get_Title, editsplashscreenInput.Get_Message, editsplashscreenInput.Get_Sub_message, editsplashscreenInput.Get_Image_url, editsplashscreenInput.Get_Show).Scan(&editsplashscreenModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }

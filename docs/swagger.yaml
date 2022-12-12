@@ -204,6 +204,24 @@ definitions:
       product_periode_start:
         type: string
     type: object
+  models.AllBanklistRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllBanklistResponse:
+    properties:
+      bank_bic:
+        type: string
+      bank_code:
+        type: string
+      bank_name:
+        type: string
+      banklist_id:
+        type: string
+      short_name:
+        type: string
+    type: object
   models.AllBillerProductRequest:
     properties:
       get_id:
@@ -242,6 +260,28 @@ definitions:
       branch_id:
         type: string
     type: object
+  models.AllBroadcastSmsRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllBroadcastSmsResponse:
+    properties:
+      branch_code:
+        type: string
+      client_type:
+        type: string
+      inbox_desc:
+        type: string
+      inbox_id:
+        type: string
+      period_end:
+        type: string
+      period_start:
+        type: string
+      subject:
+        type: string
+    type: object
   models.AllCenterRequest:
     properties:
       get_id:
@@ -254,6 +294,62 @@ definitions:
       center_desc:
         type: string
       center_id:
+        type: string
+    type: object
+  models.AllCommissionRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllCommissionResponse:
+    properties:
+      agent_income:
+        type: string
+      bank_income:
+        type: string
+      bank_partner_income:
+        type: string
+      commission_type:
+        type: string
+      customer_income:
+        type: string
+      id:
+        type: string
+      trans_type:
+        type: string
+    type: object
+  models.AllConcernTypeRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllConcernTypeResponse:
+    properties:
+      concern_code:
+        type: string
+      concern_desc:
+        type: string
+      concern_level:
+        type: string
+      concern_name:
+        type: string
+      concern_time:
+        type: string
+    type: object
+  models.AllCsrHotlineRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllCsrHotlineResponse:
+    properties:
+      contact_number:
+        type: string
+      id:
+        type: string
+      inst_code:
+        type: string
+      network_provider:
         type: string
     type: object
   models.AllFeestructureRequest:
@@ -343,6 +439,34 @@ definitions:
   models.AllParamConfigRequest:
     properties:
       get_id:
+        type: string
+    type: object
+  models.AllPartnerlistRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllPartnerlistResponse:
+    properties:
+      merchant_id_prefix:
+        type: string
+      merchant_payment_callback_url:
+        type: string
+      mri_group:
+        type: string
+      partner_account:
+        type: string
+      partner_api_url:
+        type: string
+      partner_desc:
+        type: string
+      partner_id:
+        type: string
+      partner_name:
+        type: string
+      partnerlist_id:
+        type: string
+      status:
         type: string
     type: object
   models.AllProductCategoryRequest:
@@ -437,6 +561,28 @@ definitions:
       downtime_id:
         type: string
       downtime_start:
+        type: string
+    type: object
+  models.AllSplashScreenRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllSplashScreenResponse:
+    properties:
+      action:
+        type: string
+      id:
+        type: string
+      image_url:
+        type: string
+      message:
+        type: string
+      show:
+        type: string
+      sub_message:
+        type: string
+      title:
         type: string
     type: object
   models.AllUnitRequest:
@@ -835,20 +981,20 @@ definitions:
     type: object
   models.CsrHotlineRequest:
     properties:
-      c.contact_number:
+      contact_number:
         type: string
-      c.network_provider:
+      network_provider:
         type: string
     type: object
   models.CsrHotlineResponse:
     properties:
-      a.inst_desc:
+      contact_number:
         type: string
-      c.contact_number:
+      id:
         type: string
-      c.id:
+      inst_desc:
         type: string
-      c.network_provider:
+      network_provider:
         type: string
     type: object
   models.DeactivatedMerchantReportRequest:
@@ -915,6 +1061,24 @@ definitions:
       update_banknews:
         type: string
     type: object
+  models.EditBanklistRequest:
+    properties:
+      get_bank_bic:
+        type: string
+      get_bank_code:
+        type: string
+      get_bank_name:
+        type: string
+      get_banklist_id:
+        type: string
+      get_short_name:
+        type: string
+    type: object
+  models.EditBanklistResponse:
+    properties:
+      update_banklist:
+        type: string
+    type: object
   models.EditBillerProductRequest:
     properties:
       get_bank_commission:
@@ -953,6 +1117,28 @@ definitions:
       update_branch:
         type: string
     type: object
+  models.EditBroadcastSmsRequest:
+    properties:
+      get_branch_code:
+        type: string
+      get_client_type:
+        type: string
+      get_inbox_desc:
+        type: string
+      get_inbox_id:
+        type: string
+      get_period_end:
+        type: string
+      get_period_start:
+        type: string
+      get_subject:
+        type: string
+    type: object
+  models.EditBroadcastSmsResponse:
+    properties:
+      update_broadcastsms:
+        type: string
+    type: object
   models.EditCenterRequest:
     properties:
       get_center_code:
@@ -965,6 +1151,62 @@ definitions:
   models.EditCenterResponse:
     properties:
       update_center:
+        type: string
+    type: object
+  models.EditCommissionRequest:
+    properties:
+      get_agent_income:
+        type: string
+      get_bank_income:
+        type: string
+      get_bank_partner_income:
+        type: string
+      get_commission_type:
+        type: string
+      get_customer_income:
+        type: string
+      get_id:
+        type: string
+      get_trans_type:
+        type: string
+    type: object
+  models.EditCommissionResponse:
+    properties:
+      update_commission:
+        type: string
+    type: object
+  models.EditConcernTypeRequest:
+    properties:
+      get_concern_code:
+        type: string
+      get_concern_desc:
+        type: string
+      get_concern_level:
+        type: string
+      get_concern_name:
+        type: string
+      get_concern_time:
+        type: string
+    type: object
+  models.EditConcernTypeResponse:
+    properties:
+      update_concerntype:
+        type: string
+    type: object
+  models.EditCsrHotlineRequest:
+    properties:
+      get_contact_number:
+        type: string
+      get_id:
+        type: string
+      get_inst_code:
+        type: string
+      get_network_provider:
+        type: string
+    type: object
+  models.EditCsrHotlineResponse:
+    properties:
+      update_csrhotline:
         type: string
     type: object
   models.EditFeeStructureRequest:
@@ -1069,6 +1311,34 @@ definitions:
       update_paramconfig:
         type: string
     type: object
+  models.EditPartnerlistRequest:
+    properties:
+      get_merchant_id_prefix:
+        type: string
+      get_merchant_payment_callback_url:
+        type: string
+      get_mri_group:
+        type: string
+      get_partner_account:
+        type: string
+      get_partner_api_url:
+        type: string
+      get_partner_desc:
+        type: string
+      get_partner_id:
+        type: string
+      get_partner_name:
+        type: string
+      get_partnerlist_id:
+        type: string
+      get_status:
+        type: string
+    type: object
+  models.EditPartnerlistResponse:
+    properties:
+      update_partnerlist:
+        type: string
+    type: object
   models.EditProductCategoryRequest:
     properties:
       get_product_category_id:
@@ -1159,6 +1429,28 @@ definitions:
   models.EditServiceDowntimeResponse:
     properties:
       update_servicedowntime:
+        type: string
+    type: object
+  models.EditSplashScreenRequest:
+    properties:
+      get_action:
+        type: string
+      get_id:
+        type: string
+      get_image_url:
+        type: string
+      get_message:
+        type: string
+      get_show:
+        type: string
+      get_sub_message:
+        type: string
+      get_title:
+        type: string
+    type: object
+  models.EditSplashScreenResponse:
+    properties:
+      update_splashscreen:
         type: string
     type: object
   models.EditUnitRequest:
@@ -1725,6 +2017,8 @@ definitions:
       merchant_payment_callback_url:
         type: string
       mri_group:
+        type: string
+      partner_account:
         type: string
       partner_api_url:
         type: string
@@ -2858,6 +3152,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_banklist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditBanklist Input
+        in: body
+        name: editBanklistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditBanklistRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditBanklistResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_banknews/:
     post:
       consumes:
@@ -2936,6 +3256,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_broadcastsms/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditBroadcastSms Input
+        in: body
+        name: editBroadcastSmsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditBroadcastSmsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditBroadcastSmsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_center/:
     post:
       consumes:
@@ -2955,6 +3301,84 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.EditCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_commission/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditCommission Input
+        in: body
+        name: editCommissionInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditCommissionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditCommissionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_concerntype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditConcernType Input
+        in: body
+        name: editConcernTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditConcernTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_csrhotline/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditCsrHotline Input
+        in: body
+        name: editCsrHotlineInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditCsrHotlineRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditCsrHotlineResponse'
         "400":
           description: Bad Request
           schema:
@@ -3092,6 +3516,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_partnerlist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditPartnerlist Input
+        in: body
+        name: editPartnerlistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditPartnerlistRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditPartnerlistResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_productcategory/:
     post:
       consumes:
@@ -3215,6 +3665,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.EditServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_splashscreen/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditSplashScreen Input
+        in: body
+        name: editSplashScreenInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditSplashScreenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditSplashScreenResponse'
         "400":
           description: Bad Request
           schema:
@@ -4983,6 +5459,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_banklist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllBanklist Input
+        in: body
+        name: allBanklistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllBanklistRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllBanklistResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_banknews/:
     post:
       consumes:
@@ -5061,6 +5563,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_broadcastsms/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllBroadcastSms Input
+        in: body
+        name: allBroadcastSmsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllBroadcastSmsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllBroadcastSmsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_center/:
     post:
       consumes:
@@ -5080,6 +5608,84 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_commission/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllCommission Input
+        in: body
+        name: allCommisionInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllCommissionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllCommissionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_concerntype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllConcernType Input
+        in: body
+        name: allConcernTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllConcernTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_csrhotline/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllCsrHotline Input
+        in: body
+        name: allCsrHotlineInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllCsrHotlineRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllCsrHotlineResponse'
         "400":
           description: Bad Request
           schema:
@@ -5217,6 +5823,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /select_partnerlist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllPartnerlist Input
+        in: body
+        name: allPartnerlistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllPartnerlistRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllPartnerlistResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /select_productcategory/:
     post:
       consumes:
@@ -5340,6 +5972,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_splashscreen/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllSplashScreen Input
+        in: body
+        name: allSplashScreenInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllSplashScreenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllSplashScreenResponse'
         "400":
           description: Bad Request
           schema:

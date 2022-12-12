@@ -578,6 +578,20 @@ type CommissionResponse struct {
 	Bank_partner_income float32 `json:"bank_partner_income"`
 }
 
+type AllCommissionResponse struct {
+	Id                  string `json:"id"`
+	Trans_type          string `json:"trans_type"`
+	Commission_type     string `json:"commission_type"`
+	Customer_income     string `json:"customer_income"`
+	Agent_income        string `json:"agent_income"`
+	Bank_income         string `json:"bank_income"`
+	Bank_partner_income string `json:"bank_partner_income"`
+}
+
+type EditCommissionResponse struct {
+	Update_commission string `json:"update_commission"`
+}
+
 //banklist
 
 type BankListResponse struct {
@@ -588,17 +602,47 @@ type BankListResponse struct {
 	Bank_bic   string `json:"bank_bic"`
 }
 
+type AllBanklistResponse struct {
+	Banklist_id string `json:"banklist_id"`
+	Bank_code   string `json:"bank_code"`
+	Bank_name   string `json:"bank_name"`
+	Short_name  string `json:"short_name"`
+	Bank_bic    string `json:"bank_bic"`
+}
+
+type EditBanklistResponse struct {
+	Update_banklist string `json:"update_banklist"`
+}
+
 //partnerlist
 
 type PartnerListResponse struct {
 	Partner_id                    string `json:"partner_id"`
 	Partner_name                  string `json:"partner_name"`
 	Partner_desc                  string `json:"partner_desc"`
+	Partner_account               string `json:"partner_account"`
 	Partner_api_url               string `json:"partner_api_url"`
 	Merchant_payment_callback_url string `json:"merchant_payment_callback_url"`
 	Merchant_id_prefix            string `json:"merchant_id_prefix"`
 	Mri_group                     string `json:"mri_group"`
 	Status                        string `json:"status"`
+}
+
+type AllPartnerlistResponse struct {
+	Partnerlist_id                string `json:"partnerlist_id"`
+	Partner_id                    string `json:"partner_id"`
+	Partner_name                  string `json:"partner_name"`
+	Partner_desc                  string `json:"partner_desc"`
+	Partner_account               string `json:"partner_account"`
+	Partner_api_url               string `json:"partner_api_url"`
+	Merchant_payment_callback_url string `json:"merchant_payment_callback_url"`
+	Merchant_id_prefix            string `json:"merchant_id_prefix"`
+	Mri_group                     string `json:"mri_group"`
+	Status                        string `json:"status"`
+}
+
+type EditPartnerlistResponse struct {
+	Update_partnerlist string `json:"update_partnerlist"`
 }
 
 //splashscreen
@@ -612,13 +656,38 @@ type SplashScreenResponse struct {
 	Show        string `json:"show"`
 }
 
+type AllSplashScreenResponse struct {
+	Id          string `json:"id"`
+	Action      string `json:"action"`
+	Title       string `json:"title"`
+	Message     string `json:"message"`
+	Sub_message string `json:"sub_message"`
+	Image_url   string `json:"image_url"`
+	Show        string `json:"show"`
+}
+
+type EditSplashScreenResponse struct {
+	Update_splashscreen string `json:"update_splashscreen"`
+}
+
 //csrhotline
 
 type CsrHotlineResponse struct {
-	Id               string `json:"c.id"`
-	Contact_number   string `json:"c.contact_number"`
-	Network_provider string `json:"c.network_provider"`
-	Inst_desc        string `json:"a.inst_desc"`
+	Id               string `json:"id"`
+	Contact_number   string `json:"contact_number"`
+	Network_provider string `json:"network_provider"`
+	Inst_desc        string `json:"inst_desc"`
+}
+
+type AllCsrHotlineResponse struct {
+	Id               string `json:"id"`
+	Contact_number   string `json:"contact_number"`
+	Network_provider string `json:"network_provider"`
+	Inst_code        string `json:"inst_code"`
+}
+
+type EditCsrHotlineResponse struct {
+	Update_csrhotline string `json:"update_csrhotline"`
 }
 
 //corncerntype
@@ -628,6 +697,18 @@ type ConcernTypeResponse struct {
 	Concern_name  string `json:"concern_name"`
 	Concern_time  string `json:"concern_time"`
 	Concern_level string `json:"concern_level"`
+}
+
+type AllConcernTypeResponse struct {
+	Concern_code  string `json:"concern_code"`
+	Concern_name  string `json:"concern_name"`
+	Concern_desc  string `json:"concern_desc"`
+	Concern_time  string `json:"concern_time"`
+	Concern_level string `json:"concern_level"`
+}
+
+type EditConcernTypeResponse struct {
+	Update_concerntype string `json:"update_concerntype"`
 }
 
 //login
@@ -787,6 +868,20 @@ type BroadcastSmsResponse struct {
 	Inbox_desc   string `json:"inbox_desc"`
 	Period_start string `json:"period_start"`
 	Period_end   string `json:"period_end"`
+}
+
+type AllBroadcastSmsResponse struct {
+	Inbox_id     string `json:"inbox_id"`
+	Subject      string `json:"subject"`
+	Period_start string `json:"period_start"`
+	Period_end   string `json:"period_end"`
+	Inbox_desc   string `json:"inbox_desc"`
+	Client_type  string `json:"client_type"`
+	Branch_code  string `json:"branch_code"`
+}
+
+type EditBroadcastSmsResponse struct {
+	Update_broadcastsms string `json:"update_broadcastsms"`
 }
 
 ///WebReport

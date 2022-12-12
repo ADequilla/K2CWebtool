@@ -30,7 +30,7 @@ func GetCsrHotline(c *fiber.Ctx) error {
 
 	csrhotlineModel := []models.CsrHotlineResponse{}
 
-	if dbErr := middleware.DBConn.Debug().Table("mfs.view_csrhotline").Find(&csrhotlineModel, csrhotlineInput).Error; dbErr != nil {
+	if dbErr := middleware.DBConn.Debug().Table("mfs.view_csr_hotline").Find(&csrhotlineModel, csrhotlineInput).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -49,6 +49,86 @@ func GetCsrHotline(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    csrhotlineModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allCsrHotlineInput body models.AllCsrHotlineRequest true "AllCsrHotline Input"
+// @Success		  	200 {object} models.AllCsrHotlineResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_csrhotline/ [post]
+func SelectCsrHotlinebyID(c *fiber.Ctx) error {
+	csrhotlineInput := models.AllCsrHotlineRequest{}
+
+	if parErr := c.BodyParser(&csrhotlineInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allcsrhotlineModel := []models.AllCsrHotlineResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_csrhotline(?)", csrhotlineInput.Get_id).Scan(&allcsrhotlineModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allcsrhotlineModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allcsrhotlineModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editCsrHotlineInput body models.EditCsrHotlineRequest true "EditCsrHotline Input"
+// @Success		  	200 {object} models.EditCsrHotlineResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_csrhotline/ [post]
+func EditCsrHotline(c *fiber.Ctx) error {
+	editcsrhotlineInput := models.EditCsrHotlineRequest{}
+
+	if parErr := c.BodyParser(&editcsrhotlineInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editcsrhotlineModel := models.EditCsrHotlineResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_csrhotline(?,?,?,?)", editcsrhotlineInput.Get_id, editcsrhotlineInput.Get_contact_number, editcsrhotlineInput.Get_network_provider, editcsrhotlineInput.Get_inst_code).Scan(&editcsrhotlineModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 
@@ -93,6 +173,86 @@ func GetConcernType(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    concerntypeModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allConcernTypeInput body models.AllConcernTypeRequest true "AllConcernType Input"
+// @Success		  	200 {object} models.AllConcernTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_concerntype/ [post]
+func SelectConcernTypebyID(c *fiber.Ctx) error {
+	concerntypeInput := models.AllConcernTypeRequest{}
+
+	if parErr := c.BodyParser(&concerntypeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allconcerntypeModel := []models.AllConcernTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_concerntype(?)", concerntypeInput.Get_id).Scan(&allconcerntypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allconcerntypeModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allconcerntypeModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editConcernTypeInput body models.EditConcernTypeRequest true "EditConcernType Input"
+// @Success		  	200 {object} models.EditConcernTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_concerntype/ [post]
+func EditConcernType(c *fiber.Ctx) error {
+	editconcerntypeInput := models.EditConcernTypeRequest{}
+
+	if parErr := c.BodyParser(&editconcerntypeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editconcerntypeModel := models.EditConcernTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_concerntype(?,?,?,?,?)", editconcerntypeInput.Get_Concern_code, editconcerntypeInput.Get_Concern_name, editconcerntypeInput.Get_Concern_desc, editconcerntypeInput.Get_Concern_time, editconcerntypeInput.Get_Concern_level).Scan(&editconcerntypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }
 
@@ -181,5 +341,85 @@ func GetBroadcastSms(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    broadcastsmsModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	allBroadcastSmsInput body models.AllBroadcastSmsRequest true "AllBroadcastSms Input"
+// @Success		  	200 {object} models.AllBroadcastSmsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_broadcastsms/ [post]
+func SelectBroadcastSmsbyID(c *fiber.Ctx) error {
+	splabroadcastsmsInput := models.AllBroadcastSmsRequest{}
+
+	if parErr := c.BodyParser(&splabroadcastsmsInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allbroadcastsmsModel := []models.AllBroadcastSmsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_broadcastsms(?)", splabroadcastsmsInput.Get_id).Scan(&allbroadcastsmsModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allbroadcastsmsModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allbroadcastsmsModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editBroadcastSmsInput body models.EditBroadcastSmsRequest true "EditBroadcastSms Input"
+// @Success		  	200 {object} models.EditBroadcastSmsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_broadcastsms/ [post]
+func EditBroadcastSms(c *fiber.Ctx) error {
+	editbroadcastsmsInput := models.EditBroadcastSmsRequest{}
+
+	if parErr := c.BodyParser(&editbroadcastsmsInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editbroadcastsmsModel := models.EditBroadcastSmsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_broadcastsms(?,?,?,?,?,?,?)", editbroadcastsmsInput.Get_inbox_id, editbroadcastsmsInput.Get_subject, editbroadcastsmsInput.Get_period_start, editbroadcastsmsInput.Get_period_end, editbroadcastsmsInput.Get_inbox_desc, editbroadcastsmsInput.Get_client_type, editbroadcastsmsInput.Get_branch_code).Scan(&editbroadcastsmsModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
 	})
 }

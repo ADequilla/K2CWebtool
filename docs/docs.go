@@ -153,6 +153,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_banklist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditBanklist Input",
+                        "name": "editBanklistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBanklistRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBanklistResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_banknews/": {
             "post": {
                 "description": "Fetch User Data",
@@ -273,6 +313,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_broadcastsms/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditBroadcastSms Input",
+                        "name": "editBroadcastSmsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBroadcastSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditBroadcastSmsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_center/": {
             "post": {
                 "description": "Fetch User Data",
@@ -302,6 +382,126 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.EditCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_commission/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditCommission Input",
+                        "name": "editCommissionInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCommissionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCommissionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_concerntype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditConcernType Input",
+                        "name": "editConcernTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditConcernTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditConcernTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_csrhotline/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditCsrHotline Input",
+                        "name": "editCsrHotlineInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCsrHotlineRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditCsrHotlineResponse"
                         }
                     },
                     "400": {
@@ -513,6 +713,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_partnerlist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditPartnerlist Input",
+                        "name": "editPartnerlistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditPartnerlistRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditPartnerlistResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_productcategory/": {
             "post": {
                 "description": "Fetch User Data",
@@ -702,6 +942,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.EditServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_splashscreen/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditSplashScreen Input",
+                        "name": "editSplashScreenInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditSplashScreenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditSplashScreenResponse"
                         }
                     },
                     "400": {
@@ -3422,6 +3702,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_banklist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllBanklist Input",
+                        "name": "allBanklistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBanklistRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBanklistResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_banknews/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3542,6 +3862,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_broadcastsms/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllBroadcastSms Input",
+                        "name": "allBroadcastSmsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBroadcastSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllBroadcastSmsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_center/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3571,6 +3931,126 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.AllCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_commission/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllCommission Input",
+                        "name": "allCommisionInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCommissionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCommissionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_concerntype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllConcernType Input",
+                        "name": "allConcernTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllConcernTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllConcernTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_csrhotline/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllCsrHotline Input",
+                        "name": "allCsrHotlineInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCsrHotlineRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllCsrHotlineResponse"
                         }
                     },
                     "400": {
@@ -3782,6 +4262,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_partnerlist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllPartnerlist Input",
+                        "name": "allPartnerlistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllPartnerlistRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllPartnerlistResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_productcategory/": {
             "post": {
                 "description": "Fetch User Data",
@@ -3971,6 +4491,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.AllServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_splashscreen/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllSplashScreen Input",
+                        "name": "allSplashScreenInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllSplashScreenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllSplashScreenResponse"
                         }
                     },
                     "400": {
@@ -4417,6 +4977,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.AllBanklistRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBanklistResponse": {
+            "type": "object",
+            "properties": {
+                "bank_bic": {
+                    "type": "string"
+                },
+                "bank_code": {
+                    "type": "string"
+                },
+                "bank_name": {
+                    "type": "string"
+                },
+                "banklist_id": {
+                    "type": "string"
+                },
+                "short_name": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AllBillerProductRequest": {
             "type": "object",
             "properties": {
@@ -4476,6 +5064,40 @@ const docTemplate = `{
                 }
             }
         },
+        "models.AllBroadcastSmsRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllBroadcastSmsResponse": {
+            "type": "object",
+            "properties": {
+                "branch_code": {
+                    "type": "string"
+                },
+                "client_type": {
+                    "type": "string"
+                },
+                "inbox_desc": {
+                    "type": "string"
+                },
+                "inbox_id": {
+                    "type": "string"
+                },
+                "period_end": {
+                    "type": "string"
+                },
+                "period_start": {
+                    "type": "string"
+                },
+                "subject": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AllCenterRequest": {
             "type": "object",
             "properties": {
@@ -4494,6 +5116,93 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "center_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCommissionRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCommissionResponse": {
+            "type": "object",
+            "properties": {
+                "agent_income": {
+                    "type": "string"
+                },
+                "bank_income": {
+                    "type": "string"
+                },
+                "bank_partner_income": {
+                    "type": "string"
+                },
+                "commission_type": {
+                    "type": "string"
+                },
+                "customer_income": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllConcernTypeRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllConcernTypeResponse": {
+            "type": "object",
+            "properties": {
+                "concern_code": {
+                    "type": "string"
+                },
+                "concern_desc": {
+                    "type": "string"
+                },
+                "concern_level": {
+                    "type": "string"
+                },
+                "concern_name": {
+                    "type": "string"
+                },
+                "concern_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCsrHotlineRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllCsrHotlineResponse": {
+            "type": "object",
+            "properties": {
+                "contact_number": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "inst_code": {
+                    "type": "string"
+                },
+                "network_provider": {
                     "type": "string"
                 }
             }
@@ -4632,6 +5341,49 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllPartnerlistRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllPartnerlistResponse": {
+            "type": "object",
+            "properties": {
+                "merchant_id_prefix": {
+                    "type": "string"
+                },
+                "merchant_payment_callback_url": {
+                    "type": "string"
+                },
+                "mri_group": {
+                    "type": "string"
+                },
+                "partner_account": {
+                    "type": "string"
+                },
+                "partner_api_url": {
+                    "type": "string"
+                },
+                "partner_desc": {
+                    "type": "string"
+                },
+                "partner_id": {
+                    "type": "string"
+                },
+                "partner_name": {
+                    "type": "string"
+                },
+                "partnerlist_id": {
+                    "type": "string"
+                },
+                "status": {
                     "type": "string"
                 }
             }
@@ -4778,6 +5530,40 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "downtime_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllSplashScreenRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllSplashScreenResponse": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "image_url": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "show": {
+                    "type": "string"
+                },
+                "sub_message": {
+                    "type": "string"
+                },
+                "title": {
                     "type": "string"
                 }
             }
@@ -5391,10 +6177,10 @@ const docTemplate = `{
         "models.CsrHotlineRequest": {
             "type": "object",
             "properties": {
-                "c.contact_number": {
+                "contact_number": {
                     "type": "string"
                 },
-                "c.network_provider": {
+                "network_provider": {
                     "type": "string"
                 }
             }
@@ -5402,16 +6188,16 @@ const docTemplate = `{
         "models.CsrHotlineResponse": {
             "type": "object",
             "properties": {
-                "a.inst_desc": {
+                "contact_number": {
                     "type": "string"
                 },
-                "c.contact_number": {
+                "id": {
                     "type": "string"
                 },
-                "c.id": {
+                "inst_desc": {
                     "type": "string"
                 },
-                "c.network_provider": {
+                "network_provider": {
                     "type": "string"
                 }
             }
@@ -5515,6 +6301,34 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditBanklistRequest": {
+            "type": "object",
+            "properties": {
+                "get_bank_bic": {
+                    "type": "string"
+                },
+                "get_bank_code": {
+                    "type": "string"
+                },
+                "get_bank_name": {
+                    "type": "string"
+                },
+                "get_banklist_id": {
+                    "type": "string"
+                },
+                "get_short_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditBanklistResponse": {
+            "type": "object",
+            "properties": {
+                "update_banklist": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditBillerProductRequest": {
             "type": "object",
             "properties": {
@@ -5574,6 +6388,40 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditBroadcastSmsRequest": {
+            "type": "object",
+            "properties": {
+                "get_branch_code": {
+                    "type": "string"
+                },
+                "get_client_type": {
+                    "type": "string"
+                },
+                "get_inbox_desc": {
+                    "type": "string"
+                },
+                "get_inbox_id": {
+                    "type": "string"
+                },
+                "get_period_end": {
+                    "type": "string"
+                },
+                "get_period_start": {
+                    "type": "string"
+                },
+                "get_subject": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditBroadcastSmsResponse": {
+            "type": "object",
+            "properties": {
+                "update_broadcastsms": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditCenterRequest": {
             "type": "object",
             "properties": {
@@ -5592,6 +6440,93 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "update_center": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCommissionRequest": {
+            "type": "object",
+            "properties": {
+                "get_agent_income": {
+                    "type": "string"
+                },
+                "get_bank_income": {
+                    "type": "string"
+                },
+                "get_bank_partner_income": {
+                    "type": "string"
+                },
+                "get_commission_type": {
+                    "type": "string"
+                },
+                "get_customer_income": {
+                    "type": "string"
+                },
+                "get_id": {
+                    "type": "string"
+                },
+                "get_trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCommissionResponse": {
+            "type": "object",
+            "properties": {
+                "update_commission": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditConcernTypeRequest": {
+            "type": "object",
+            "properties": {
+                "get_concern_code": {
+                    "type": "string"
+                },
+                "get_concern_desc": {
+                    "type": "string"
+                },
+                "get_concern_level": {
+                    "type": "string"
+                },
+                "get_concern_name": {
+                    "type": "string"
+                },
+                "get_concern_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditConcernTypeResponse": {
+            "type": "object",
+            "properties": {
+                "update_concerntype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCsrHotlineRequest": {
+            "type": "object",
+            "properties": {
+                "get_contact_number": {
+                    "type": "string"
+                },
+                "get_id": {
+                    "type": "string"
+                },
+                "get_inst_code": {
+                    "type": "string"
+                },
+                "get_network_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditCsrHotlineResponse": {
+            "type": "object",
+            "properties": {
+                "update_csrhotline": {
                     "type": "string"
                 }
             }
@@ -5754,6 +6689,49 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditPartnerlistRequest": {
+            "type": "object",
+            "properties": {
+                "get_merchant_id_prefix": {
+                    "type": "string"
+                },
+                "get_merchant_payment_callback_url": {
+                    "type": "string"
+                },
+                "get_mri_group": {
+                    "type": "string"
+                },
+                "get_partner_account": {
+                    "type": "string"
+                },
+                "get_partner_api_url": {
+                    "type": "string"
+                },
+                "get_partner_desc": {
+                    "type": "string"
+                },
+                "get_partner_id": {
+                    "type": "string"
+                },
+                "get_partner_name": {
+                    "type": "string"
+                },
+                "get_partnerlist_id": {
+                    "type": "string"
+                },
+                "get_status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditPartnerlistResponse": {
+            "type": "object",
+            "properties": {
+                "update_partnerlist": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditProductCategoryRequest": {
             "type": "object",
             "properties": {
@@ -5893,6 +6871,40 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "update_servicedowntime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditSplashScreenRequest": {
+            "type": "object",
+            "properties": {
+                "get_action": {
+                    "type": "string"
+                },
+                "get_id": {
+                    "type": "string"
+                },
+                "get_image_url": {
+                    "type": "string"
+                },
+                "get_message": {
+                    "type": "string"
+                },
+                "get_show": {
+                    "type": "string"
+                },
+                "get_sub_message": {
+                    "type": "string"
+                },
+                "get_title": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditSplashScreenResponse": {
+            "type": "object",
+            "properties": {
+                "update_splashscreen": {
                     "type": "string"
                 }
             }
@@ -6757,6 +7769,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "mri_group": {
+                    "type": "string"
+                },
+                "partner_account": {
                     "type": "string"
                 },
                 "partner_api_url": {

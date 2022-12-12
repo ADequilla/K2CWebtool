@@ -462,12 +462,38 @@ type CommissionRequest struct {
 	Commission_type string `json:"commission_type"`
 }
 
+type AllCommissionRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditCommissionRequest struct {
+	Get_Id                  string `json:"get_id"`
+	Get_Trans_type          string `json:"get_trans_type"`
+	Get_Commission_type     string `json:"get_commission_type"`
+	Get_Customer_income     string `json:"get_customer_income"`
+	Get_Agent_income        string `json:"get_agent_income"`
+	Get_Bank_income         string `json:"get_bank_income"`
+	Get_Bank_partner_income string `json:"get_bank_partner_income"`
+}
+
 ///banklist
 
 type BankListRequest struct {
 	Bank_code  string `json:"bank_code"`
 	Bank_name  string `json:"bank_name"`
 	Short_name string `json:"short_name"`
+}
+
+type AllBanklistRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditBanklistRequest struct {
+	Get_Banklist_id string `json:"get_banklist_id"`
+	Get_Bank_code   string `json:"get_bank_code"`
+	Get_Bank_name   string `json:"get_bank_name"`
+	Get_Short_name  string `json:"get_short_name"`
+	Get_Bank_bic    string `json:"get_bank_bic"`
 }
 
 ///partnerlist
@@ -479,6 +505,23 @@ type PartnerListRequest struct {
 	Status       string `json:"status"`
 }
 
+type AllPartnerlistRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditPartnerlistRequest struct {
+	Get_Partnerlist_id                string `json:"get_partnerlist_id"`
+	Get_Partner_id                    string `json:"get_partner_id"`
+	Get_Partner_name                  string `json:"get_partner_name"`
+	Get_Partner_desc                  string `json:"get_partner_desc"`
+	Get_Partner_account               string `json:"get_partner_account"`
+	Get_Partner_api_url               string `json:"get_partner_api_url"`
+	Get_Merchant_payment_callback_url string `json:"get_merchant_payment_callback_url"`
+	Get_Merchant_id_prefix            string `json:"get_merchant_id_prefix"`
+	Get_Mri_group                     string `json:"get_mri_group"`
+	Get_Status                        string `json:"get_status"`
+}
+
 ///splashscreen
 
 type SplashScreenRequest struct {
@@ -486,11 +529,36 @@ type SplashScreenRequest struct {
 	Title  string `json:"title"`
 }
 
+type AllSplashScreenRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditSplashScreenRequest struct {
+	Get_id          string `json:"get_id"`
+	Get_Action      string `json:"get_action"`
+	Get_Title       string `json:"get_title"`
+	Get_Message     string `json:"get_message"`
+	Get_Sub_message string `json:"get_sub_message"`
+	Get_Image_url   string `json:"get_image_url"`
+	Get_Show        string `json:"get_show"`
+}
+
 ///csrhotline
 
 type CsrHotlineRequest struct {
-	Contact_number   string `json:"c.contact_number"`
-	Network_provider string `json:"c.network_provider"`
+	Contact_number   string `json:"contact_number"`
+	Network_provider string `json:"network_provider"`
+}
+
+type AllCsrHotlineRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditCsrHotlineRequest struct {
+	Get_id               string `json:"get_id"`
+	Get_contact_number   string `json:"get_contact_number"`
+	Get_network_provider string `json:"get_network_provider"`
+	Get_inst_code        string `json:"get_inst_code"`
 }
 
 ///concerntype
@@ -498,6 +566,18 @@ type CsrHotlineRequest struct {
 type ConcernTypeRequest struct {
 	Concern_name  string `json:"concern_name"`
 	Concern_level string `json:"concern_level"`
+}
+
+type AllConcernTypeRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditConcernTypeRequest struct {
+	Get_Concern_code  string `json:"get_concern_code"`
+	Get_Concern_name  string `json:"get_concern_name"`
+	Get_Concern_desc  string `json:"get_concern_desc"`
+	Get_Concern_time  string `json:"get_concern_time"`
+	Get_Concern_level string `json:"get_concern_level"`
 }
 
 ///login
@@ -579,6 +659,20 @@ type TransConfirmationRequest struct {
 
 type BroadcastSmsRequest struct {
 	Subject string `json:"subject"`
+}
+
+type AllBroadcastSmsRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditBroadcastSmsRequest struct {
+	Get_inbox_id     string `json:"get_inbox_id"`
+	Get_subject      string `json:"get_subject"`
+	Get_period_start string `json:"get_period_start"`
+	Get_period_end   string `json:"get_period_end"`
+	Get_inbox_desc   string `json:"get_inbox_desc"`
+	Get_client_type  string `json:"get_client_type"`
+	Get_branch_code  string `json:"get_branch_code"`
 }
 
 ///WebReport
