@@ -393,6 +393,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/edit_clientprofile/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditClientProfile Input",
+                        "name": "editclientprofileInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditClientProfileRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditClientProfileResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_commission/": {
             "post": {
                 "description": "Fetch User Data",
@@ -902,6 +942,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.EditProviderResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/edit_rolemanagement/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "EditRoleManagement Input",
+                        "name": "editRoleManagementInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.EditRoleManagementRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.EditUserManagementResponse"
                         }
                     },
                     "400": {
@@ -4462,6 +4542,104 @@ const docTemplate = `{
                 }
             }
         },
+        "/select_remittanceclaimed/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittancePendingResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_remittancesent/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceSentResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/select_rolemanagement/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AllRoleManagement Input",
+                        "name": "allRoleManagementInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.AllRoleManagementRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.AllRoleManagementResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/select_servicedowntime/": {
             "post": {
                 "description": "Fetch User Data",
@@ -5506,6 +5684,37 @@ const docTemplate = `{
                 }
             }
         },
+        "models.AllRoleManagementRequest": {
+            "type": "object",
+            "properties": {
+                "get_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.AllRoleManagementResponse": {
+            "type": "object",
+            "properties": {
+                "menu_comp_desc": {
+                    "type": "string"
+                },
+                "menu_comp_name": {
+                    "type": "string"
+                },
+                "menu_desc": {
+                    "type": "string"
+                },
+                "role_desc": {
+                    "type": "string"
+                },
+                "role_id": {
+                    "type": "string"
+                },
+                "role_name": {
+                    "type": "string"
+                }
+            }
+        },
         "models.AllServiceDowntimeRequest": {
             "type": "object",
             "properties": {
@@ -6444,6 +6653,73 @@ const docTemplate = `{
                 }
             }
         },
+        "models.EditClientProfileRequest": {
+            "type": "object",
+            "properties": {
+                "get_FullName": {
+                    "type": "string"
+                },
+                "get_account_name": {
+                    "type": "string"
+                },
+                "get_account_number": {
+                    "type": "string"
+                },
+                "get_birthday": {
+                    "type": "string"
+                },
+                "get_branch_desc": {
+                    "type": "string"
+                },
+                "get_center_desc": {
+                    "type": "string"
+                },
+                "get_cid": {
+                    "type": "string"
+                },
+                "get_client_type": {
+                    "type": "string"
+                },
+                "get_id": {
+                    "type": "string"
+                },
+                "get_insti_name": {
+                    "type": "string"
+                },
+                "get_is_agent": {
+                    "type": "string"
+                },
+                "get_is_enabled": {
+                    "type": "string"
+                },
+                "get_is_enableds": {
+                    "type": "string"
+                },
+                "get_is_merchant": {
+                    "type": "string"
+                },
+                "get_member_classification": {
+                    "type": "string"
+                },
+                "get_mobile": {
+                    "type": "string"
+                },
+                "get_unit_desc": {
+                    "type": "string"
+                },
+                "get_username": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditClientProfileResponse": {
+            "type": "object",
+            "properties": {
+                "update_clientprofile": {
+                    "type": "string"
+                }
+            }
+        },
         "models.EditCommissionRequest": {
             "type": "object",
             "properties": {
@@ -6843,6 +7119,29 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "update_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.EditRoleManagementRequest": {
+            "type": "object",
+            "properties": {
+                "get_menu_comp_desc": {
+                    "type": "string"
+                },
+                "get_menu_comp_name": {
+                    "type": "string"
+                },
+                "get_menu_desc": {
+                    "type": "string"
+                },
+                "get_role_desc": {
+                    "type": "string"
+                },
+                "get_role_id": {
+                    "type": "string"
+                },
+                "get_role_name": {
                     "type": "string"
                 }
             }
@@ -8092,6 +8391,44 @@ const docTemplate = `{
                 }
             }
         },
+        "models.RemittanceCancelledResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "processed_by_fullname": {
+                    "type": "string"
+                },
+                "receiver_name": {
+                    "type": "string"
+                },
+                "reference_number": {
+                    "type": "string"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sender_name": {
+                    "type": "string"
+                },
+                "sent_core_ref_id": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string"
+                },
+                "source_branch": {
+                    "type": "string"
+                }
+            }
+        },
         "models.RemittanceClaimedReportRequest": {
             "type": "object",
             "properties": {
@@ -8143,6 +8480,44 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceClaimedResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "processed_by_fullname": {
+                    "type": "string"
+                },
+                "receiver_name": {
+                    "type": "string"
+                },
+                "reference_number": {
+                    "type": "string"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sender_name": {
+                    "type": "string"
+                },
+                "sent_core_ref_id": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string"
+                },
+                "source_branch": {
                     "type": "string"
                 }
             }
@@ -8238,6 +8613,44 @@ const docTemplate = `{
                 }
             }
         },
+        "models.RemittancePendingResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "processed_by_fullname": {
+                    "type": "string"
+                },
+                "receiver_name": {
+                    "type": "string"
+                },
+                "reference_number": {
+                    "type": "string"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sender_name": {
+                    "type": "string"
+                },
+                "sent_core_ref_id": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string"
+                },
+                "source_branch": {
+                    "type": "string"
+                }
+            }
+        },
         "models.RemittanceSentReportRequest": {
             "type": "object",
             "properties": {
@@ -8289,6 +8702,44 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceSentResponse": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "string"
+                },
+                "created_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "processed_by_fullname": {
+                    "type": "string"
+                },
+                "receiver_name": {
+                    "type": "string"
+                },
+                "reference_number": {
+                    "type": "string"
+                },
+                "sender_mobile_number": {
+                    "type": "string"
+                },
+                "sender_name": {
+                    "type": "string"
+                },
+                "sent_core_ref_id": {
+                    "type": "string"
+                },
+                "sent_mobile_ref_id": {
+                    "type": "string"
+                },
+                "source_branch": {
                     "type": "string"
                 }
             }

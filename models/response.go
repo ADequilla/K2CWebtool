@@ -27,6 +27,10 @@ type ClientProfileResponse struct {
 	Is_enabled     string `json:"is_enabled"`
 }
 
+type EditClientProfileResponse struct {
+	Update_clientprofile string `json:"update_clientprofile"`
+}
+
 ///hierarchy
 
 type HierarchyResponse struct {
@@ -152,6 +156,19 @@ type RolesManagementResponse struct {
 	Role_id  string `json:"role_id"`
 	RoleName string `json:"role_name"`
 	RoleDesc string `json:"role_desc"`
+}
+
+type AllRoleManagementResponse struct {
+	Role_id        string `json:"role_id"`
+	Role_name      string `json:"role_name"`
+	Role_desc      string `json:"role_desc"`
+	Menu_comp_name string `json:"menu_comp_name"`
+	Menu_comp_desc string `json:"menu_comp_desc"`
+	Menu_desc      string `json:"menu_desc"`
+}
+
+type EditRoleManagementResponse struct {
+	Update_broadcastsms string `json:"update_broadcastsms"`
 }
 
 ///smslog
@@ -714,30 +731,30 @@ type EditConcernTypeResponse struct {
 //login
 
 type LoginResponse struct {
-	User_id                   uint   `json:"c.user_id"`
-	User_login                string `json:"c.user_login"`
-	User_passwd               string `json:"c.user_passwd"`
-	User_name                 string `json:"c.user_name"`
-	User_email                string `json:"c.user_email"`
-	User_phone                string `json:"c.user_phone"`
-	User_expired_passwd       string `json:"c.user_expired_passwd"`
-	User_type                 string `json:"c.user_type"`
-	User_status               string `json:"c.user_status"`
-	User_position             string `json:"c.user_position"`
-	Login_attempts            string `json:"c.login_attempts"`
-	User_enabled              string `json:"c.user_enabled"`
-	Inst_desc                 string `json:"i.inst_desc"`
-	Branch_desc               string `json:"b.branch_desc"`
-	Unit_desc                 string `json:"u.unit_desc"`
-	Center_desc               string `json:"a.center_desc"`
-	Last_name                 string `json:"c.last_name"`
-	Given_name                string `json:"c.given_name"`
-	Middle_name               string `json:"c.middle_name"`
-	Passwd_default            string `json:"c.passwd_default"`
-	Activation_limit          string `json:"c.activation_limit"`
-	Check_status              string `json:"c.check_status"`
-	Last_login_date           string `json:"c.last_login_date"`
-	Last_password_chaged_date string `json:"c.last_password_chaged_date"`
+	User_id                   uint   `json:"user_id"`
+	User_login                string `json:"user_login"`
+	User_passwd               string `json:"user_passwd"`
+	User_name                 string `json:"user_name"`
+	User_email                string `json:"user_email"`
+	User_phone                string `json:"user_phone"`
+	User_expired_passwd       string `json:"user_expired_passwd"`
+	User_type                 string `json:"user_type"`
+	User_status               string `json:"user_status"`
+	User_position             string `json:"user_position"`
+	Login_attempts            string `json:"login_attempts"`
+	User_enabled              string `json:"user_enabled"`
+	Inst_desc                 string `json:"inst_desc"`
+	Branch_desc               string `json:"branch_desc"`
+	Unit_desc                 string `json:"unit_desc"`
+	Center_desc               string `json:"center_desc"`
+	Last_name                 string `json:"last_name"`
+	Given_name                string `json:"given_name"`
+	Middle_name               string `json:"middle_name"`
+	Passwd_default            string `json:"passwd_default"`
+	Activation_limit          string `json:"activation_limit"`
+	Check_status              string `json:"check_status"`
+	Last_login_date           string `json:"last_login_date"`
+	Last_password_chaged_date string `json:"last_password_chaged_date"`
 }
 
 ///Clientlistforregistration
@@ -1209,4 +1226,62 @@ type TaskResponse struct {
 	Chain_name string `json:"chain_name"`
 	Task_order string `json:"task_order"`
 	Created_at string `json:"created_at"`
+}
+
+///RemittanceStatus
+
+type RemittanceSentResponse struct {
+	Id                      string `json:"id"`
+	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id        string `json:"sent_core_ref_id"`
+	Reference_number        string `json:"reference_number"`
+	Sender_name             string `json:"sender_name"`
+	Receiver_name           string `json:"receiver_name"`
+	Amount                  string `json:"amount"`
+	Sender_mobile_number    string `json:"sender_mobile_number"`
+	Created_date            string `json:"created_date"`
+	Chaisource_branchn_name string `json:"source_branch"`
+	Processed_by_fullname   string `json:"processed_by_fullname"`
+}
+
+type RemittanceCancelledResponse struct {
+	Id                      string `json:"id"`
+	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id        string `json:"sent_core_ref_id"`
+	Reference_number        string `json:"reference_number"`
+	Sender_name             string `json:"sender_name"`
+	Receiver_name           string `json:"receiver_name"`
+	Amount                  string `json:"amount"`
+	Sender_mobile_number    string `json:"sender_mobile_number"`
+	Created_date            string `json:"created_date"`
+	Chaisource_branchn_name string `json:"source_branch"`
+	Processed_by_fullname   string `json:"processed_by_fullname"`
+}
+
+type RemittancePendingResponse struct {
+	Id                      string `json:"id"`
+	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id        string `json:"sent_core_ref_id"`
+	Reference_number        string `json:"reference_number"`
+	Sender_name             string `json:"sender_name"`
+	Receiver_name           string `json:"receiver_name"`
+	Amount                  string `json:"amount"`
+	Sender_mobile_number    string `json:"sender_mobile_number"`
+	Created_date            string `json:"created_date"`
+	Chaisource_branchn_name string `json:"source_branch"`
+	Processed_by_fullname   string `json:"processed_by_fullname"`
+}
+
+type RemittanceClaimedResponse struct {
+	Id                      string `json:"id"`
+	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id        string `json:"sent_core_ref_id"`
+	Reference_number        string `json:"reference_number"`
+	Sender_name             string `json:"sender_name"`
+	Receiver_name           string `json:"receiver_name"`
+	Amount                  string `json:"amount"`
+	Sender_mobile_number    string `json:"sender_mobile_number"`
+	Created_date            string `json:"created_date"`
+	Chaisource_branchn_name string `json:"source_branch"`
+	Processed_by_fullname   string `json:"processed_by_fullname"`
 }

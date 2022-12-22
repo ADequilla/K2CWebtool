@@ -10,6 +10,27 @@ type ClientProfileRequest struct {
 	Costumer string `json:"cid"`
 }
 
+type EditClientProfileRequest struct {
+	Get_id                    string `json:"get_id"`
+	Get_cid                   string `json:"get_cid"`
+	Get_username              string `json:"get_username"`
+	Get_mobile                string `json:"get_mobile"`
+	Get_FullName              string `json:"get_FullName"`
+	Get_birthday              string `json:"get_birthday"`
+	Get_insti_name            string `json:"get_insti_name"`
+	Get_is_agent              string `json:"get_is_agent"`
+	Get_is_enabled            string `json:"get_is_enabled"`
+	Get_is_merchant           string `json:"get_is_merchant"`
+	Get_account_name          string `json:"get_account_name"`
+	Get_account_number        string `json:"get_account_number"`
+	Get_branch_desc           string `json:"get_branch_desc"`
+	Get_unit_desc             string `json:"get_unit_desc"`
+	Get_center_desc           string `json:"get_center_desc"`
+	Get_client_type           string `json:"get_client_type"`
+	Get_member_classification string `json:"get_member_classification"`
+	Get_is_enableds           string `json:"get_is_enableds"`
+}
+
 ///hierarchy
 
 type HierarchyRequest struct {
@@ -102,6 +123,19 @@ type RemittanceLogRequest struct {
 
 type RolesManagementRequest struct {
 	Role_name string `json:"role_name"`
+}
+
+type AllRoleManagementRequest struct {
+	Get_id string `json:"get_id"`
+}
+
+type EditRoleManagementRequest struct {
+	Get_role_id        string `json:"get_role_id"`
+	Get_role_name      string `json:"get_role_name"`
+	Get_role_desc      string `json:"get_role_desc"`
+	Get_menu_comp_name string `json:"get_menu_comp_name"`
+	Get_menu_comp_desc string `json:"get_menu_comp_desc"`
+	Get_menu_desc      string `json:"get_menu_desc"`
 }
 
 //smslog

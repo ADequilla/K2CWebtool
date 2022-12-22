@@ -14,12 +14,14 @@ func AppRoutes3(app *fiber.App) {
 
 	//Administration
 	app.Post("/edit_usermanagement/", controller.EditUserManagement)
+	app.Post("/edit_rolemanagement/", controller.EditRoleManagement)
 	app.Post("/edit_hierarchy/", controller.EditHierarchy)
 
 	//Enrollment
 
 	//Monitoring
 	app.Post("/edit_useddevice/", controller.EditListUseddevice)
+	app.Post("/edit_clientprofile/", controller.EditClientProfile)
 	//Utilities
 	app.Post("/edit_feestructure/", controller.EditFeeStructure)
 	app.Post("/edit_paramconfig/", controller.EditParamConfig)

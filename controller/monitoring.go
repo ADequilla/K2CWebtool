@@ -57,6 +57,42 @@ func GetClientProfile(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	editclientprofileInput body models.EditClientProfileRequest true "EditClientProfile Input"
+// @Success		  	200 {object} models.EditClientProfileResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_clientprofile/ [post]
+func EditClientProfile(c *fiber.Ctx) error {
+	editclientprofileInput := models.EditClientProfileRequest{}
+
+	if parErr := c.BodyParser(&editclientprofileInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editclientprofileModel := models.EditClientProfileResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_clientprofile(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", editclientprofileInput.Get_id, editclientprofileInput.Get_cid, editclientprofileInput.Get_username, editclientprofileInput.Get_mobile, editclientprofileInput.Get_FullName, editclientprofileInput.Get_birthday, editclientprofileInput.Get_insti_name, editclientprofileInput.Get_is_agent, editclientprofileInput.Get_is_enabled, editclientprofileInput.Get_is_merchant, editclientprofileInput.Get_account_name, editclientprofileInput.Get_account_number, editclientprofileInput.Get_branch_desc, editclientprofileInput.Get_unit_desc, editclientprofileInput.Get_center_desc, editclientprofileInput.Get_client_type, editclientprofileInput.Get_member_classification, editclientprofileInput.Get_is_enableds).Scan(&editclientprofileModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	remittanceLogInput body models.RemittanceLogRequest true "RemittanceLog Input"
 // @Success		  	200 {object} models.RemittanceLogResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -126,6 +162,138 @@ func GetRemittanceStatus(c *fiber.Ctx) error {
 		RetCode: "200",
 		Message: "Success",
 		Data:    rsModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Success		  	200 {object} models.RemittanceSentResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_remittancesent/ [post]
+func SelectRemittanceSent(c *fiber.Ctx) error {
+	allremittancesentModel := []models.RemittanceSentResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_remittancesent()").Scan(&allremittancesentModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allremittancesentModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allremittancesentModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Success		  	200 {object} models.RemittanceClaimedResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_remittanceclaimed/ [post]
+func SelectRemittanceClaimed(c *fiber.Ctx) error {
+	allremittanceclaimedModel := []models.RemittanceClaimedResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_remittanceclaimed()").Scan(&allremittanceclaimedModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allremittanceclaimedModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allremittanceclaimedModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Success		  	200 {object} models.RemittanceCancelledResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_remittanceclaimed/ [post]
+func SelectRemittanceCancelled(c *fiber.Ctx) error {
+	allremittancecancelledModel := []models.RemittanceCancelledResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_remittancecancelled()").Scan(&allremittancecancelledModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allremittancecancelledModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allremittancecancelledModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Success		  	200 {object} models.RemittancePendingResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_remittanceclaimed/ [post]
+func SelectRemittancePending(c *fiber.Ctx) error {
+	allremittancependingModel := []models.RemittancePendingResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_remittancepending()").Scan(&allremittancependingModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allremittancependingModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allremittancependingModel,
 	})
 }
 

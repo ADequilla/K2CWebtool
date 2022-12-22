@@ -14,11 +14,16 @@ func AppRoutes2(app *fiber.App) {
 
 	//Administration
 	app.Post("/select_usermanagement/", controller.SelectUserManagementbyID)
+	app.Post("/select_rolemanagement/", controller.SelectRolesManagementbyID)
 	app.Post("/select_heirarchy/", controller.SelectHeirarchybyID)
 
 	//Enrollment
 
 	//Monitoring
+	app.Post("/select_remittancesent/", controller.SelectRemittanceSent)
+	app.Post("/select_remittanceclaimed/", controller.SelectRemittanceClaimed)
+	app.Post("/select_remittancecancelled/", controller.SelectRemittanceCancelled)
+	app.Post("/select_remittancepending/", controller.SelectRemittancePending)
 	app.Post("/select_useddevice/", controller.SelectUseddevicebyID)
 
 	//Utilities

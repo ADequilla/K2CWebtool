@@ -545,6 +545,26 @@ definitions:
       status:
         type: integer
     type: object
+  models.AllRoleManagementRequest:
+    properties:
+      get_id:
+        type: string
+    type: object
+  models.AllRoleManagementResponse:
+    properties:
+      menu_comp_desc:
+        type: string
+      menu_comp_name:
+        type: string
+      menu_desc:
+        type: string
+      role_desc:
+        type: string
+      role_id:
+        type: string
+      role_name:
+        type: string
+    type: object
   models.AllServiceDowntimeRequest:
     properties:
       get_id:
@@ -1153,6 +1173,50 @@ definitions:
       update_center:
         type: string
     type: object
+  models.EditClientProfileRequest:
+    properties:
+      get_FullName:
+        type: string
+      get_account_name:
+        type: string
+      get_account_number:
+        type: string
+      get_birthday:
+        type: string
+      get_branch_desc:
+        type: string
+      get_center_desc:
+        type: string
+      get_cid:
+        type: string
+      get_client_type:
+        type: string
+      get_id:
+        type: string
+      get_insti_name:
+        type: string
+      get_is_agent:
+        type: string
+      get_is_enabled:
+        type: string
+      get_is_enableds:
+        type: string
+      get_is_merchant:
+        type: string
+      get_member_classification:
+        type: string
+      get_mobile:
+        type: string
+      get_unit_desc:
+        type: string
+      get_username:
+        type: string
+    type: object
+  models.EditClientProfileResponse:
+    properties:
+      update_clientprofile:
+        type: string
+    type: object
   models.EditCommissionRequest:
     properties:
       get_agent_income:
@@ -1411,6 +1475,21 @@ definitions:
   models.EditProviderResponse:
     properties:
       update_provider:
+        type: string
+    type: object
+  models.EditRoleManagementRequest:
+    properties:
+      get_menu_comp_desc:
+        type: string
+      get_menu_comp_name:
+        type: string
+      get_menu_desc:
+        type: string
+      get_role_desc:
+        type: string
+      get_role_id:
+        type: string
+      get_role_name:
         type: string
     type: object
   models.EditServiceDowntimeRequest:
@@ -2227,6 +2306,31 @@ definitions:
       user_name:
         type: string
     type: object
+  models.RemittanceCancelledResponse:
+    properties:
+      amount:
+        type: string
+      created_date:
+        type: string
+      id:
+        type: string
+      processed_by_fullname:
+        type: string
+      receiver_name:
+        type: string
+      reference_number:
+        type: string
+      sender_mobile_number:
+        type: string
+      sender_name:
+        type: string
+      sent_core_ref_id:
+        type: string
+      sent_mobile_ref_id:
+        type: string
+      source_branch:
+        type: string
+    type: object
   models.RemittanceClaimedReportRequest:
     properties:
       branch_desc:
@@ -2261,6 +2365,31 @@ definitions:
       submited_date:
         type: string
       user_name:
+        type: string
+    type: object
+  models.RemittanceClaimedResponse:
+    properties:
+      amount:
+        type: string
+      created_date:
+        type: string
+      id:
+        type: string
+      processed_by_fullname:
+        type: string
+      receiver_name:
+        type: string
+      reference_number:
+        type: string
+      sender_mobile_number:
+        type: string
+      sender_name:
+        type: string
+      sent_core_ref_id:
+        type: string
+      sent_mobile_ref_id:
+        type: string
+      source_branch:
         type: string
     type: object
   models.RemittanceLogRequest:
@@ -2324,6 +2453,31 @@ definitions:
       target_branch:
         type: string
     type: object
+  models.RemittancePendingResponse:
+    properties:
+      amount:
+        type: string
+      created_date:
+        type: string
+      id:
+        type: string
+      processed_by_fullname:
+        type: string
+      receiver_name:
+        type: string
+      reference_number:
+        type: string
+      sender_mobile_number:
+        type: string
+      sender_name:
+        type: string
+      sent_core_ref_id:
+        type: string
+      sent_mobile_ref_id:
+        type: string
+      source_branch:
+        type: string
+    type: object
   models.RemittanceSentReportRequest:
     properties:
       branch_desc:
@@ -2358,6 +2512,31 @@ definitions:
       submited_date:
         type: string
       user_name:
+        type: string
+    type: object
+  models.RemittanceSentResponse:
+    properties:
+      amount:
+        type: string
+      created_date:
+        type: string
+      id:
+        type: string
+      processed_by_fullname:
+        type: string
+      receiver_name:
+        type: string
+      reference_number:
+        type: string
+      sender_mobile_number:
+        type: string
+      sender_name:
+        type: string
+      sent_core_ref_id:
+        type: string
+      sent_mobile_ref_id:
+        type: string
+      source_branch:
         type: string
     type: object
   models.RemittanceStatusResponse:
@@ -3308,6 +3487,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /edit_clientprofile/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditClientProfile Input
+        in: body
+        name: editclientprofileInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditClientProfileRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditClientProfileResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /edit_commission/:
     post:
       consumes:
@@ -3639,6 +3844,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.EditProviderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /edit_rolemanagement/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: EditRoleManagement Input
+        in: body
+        name: editRoleManagementInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.EditRoleManagementRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.EditUserManagementResponse'
         "400":
           description: Bad Request
           schema:
@@ -5946,6 +6177,70 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllProviderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_remittanceclaimed/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittancePendingResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_remittancesent/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceSentResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /select_rolemanagement/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AllRoleManagement Input
+        in: body
+        name: allRoleManagementInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.AllRoleManagementRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.AllRoleManagementResponse'
         "400":
           description: Bad Request
           schema:

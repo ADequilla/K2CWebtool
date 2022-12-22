@@ -182,6 +182,86 @@ func GetRolesManagements(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	allRoleManagementInput body models.AllRoleManagementRequest true "AllRoleManagement Input"
+// @Success		  	200 {object} models.AllRoleManagementResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/select_rolemanagement/ [post]
+func SelectRolesManagementbyID(c *fiber.Ctx) error {
+	allrolemanagementInput := models.AllRoleManagementRequest{}
+
+	if parErr := c.BodyParser(&allrolemanagementInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	allrolemanagementModel := []models.AllRoleManagementResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.get_role(?)", allrolemanagementInput.Get_id).Scan(&allrolemanagementModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	if len(allrolemanagementModel) == 0 {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "No Data Available in Table",
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+		RetCode: "200",
+		Message: "Succes",
+		Data:    allrolemanagementModel,
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	editRoleManagementInput body models.EditRoleManagementRequest true "EditRoleManagement Input"
+// @Success		  	200 {object} models.EditUserManagementResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/edit_rolemanagement/ [post]
+func EditRoleManagement(c *fiber.Ctx) error {
+	editrolemanagementInput := models.EditRoleManagementRequest{}
+
+	if parErr := c.BodyParser(&editrolemanagementInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	editrolemanagementModel := models.EditRoleManagementResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_role(?,?,?,?,?,?)", editrolemanagementInput.Get_role_id, editrolemanagementInput.Get_role_name, editrolemanagementInput.Get_role_desc, editrolemanagementInput.Get_menu_comp_name, editrolemanagementInput.Get_menu_comp_desc, editrolemanagementInput.Get_menu_desc).Scan(&editrolemanagementModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	hierarchyInput body models.HierarchyRequest true "Hierarchy Input"
 // @Success		  	200 {object} models.HierarchyResponse
 // @Failure 		400 {object} models.ResponseModel
