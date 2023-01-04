@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func AppRoutes3(app *fiber.App) {
+func Edit(app *fiber.App) {
 	// Swagger
 	app.Get("/docs/*", swagger.HandlerDefault)
 	//-----

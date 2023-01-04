@@ -137,6 +137,42 @@ func EditFeeStructure(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropfeestructureInput body models.DropFeeStructureRequest true "DropFeeStructure Input"
+// @Success		  	200 {object} models.DropFeeStructureResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_feestructure/ [post]
+func DropFeeStructure(c *fiber.Ctx) error {
+	dropfeestructureInput := models.DropFeeStructureRequest{}
+
+	if parErr := c.BodyParser(&dropfeestructureInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropfeestructureModel := models.DropFeeStructureResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_feestructure(?,?)", dropfeestructureInput.Drop_id, dropfeestructureInput.Drop_feestructure).Scan(&dropfeestructureModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	paramconfigInput body models.ParamConfigRequest true "ParamConfig Input"
 // @Success		  	200 {object} models.ParamConfigResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -385,6 +421,42 @@ func EditAtmLoc(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropatmlocInput body models.DropAtmLocRequest true "DropAtmLoc Input"
+// @Success		  	200 {object} models.DropAtmLocResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_atmloc/ [post]
+func DropAtmLoc(c *fiber.Ctx) error {
+	dropatmlocInput := models.DropAtmLocRequest{}
+
+	if parErr := c.BodyParser(&dropatmlocInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropatmlocModel := models.DropAtmLocResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_atmloc(?,?)", dropatmlocInput.Drop_id, dropatmlocInput.Drop_atmloc).Scan(&dropatmlocModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	productservicesInput body models.ProductServicesRequest true "ProductServices Input"
 // @Success		  	200 {object} models.ProductServicesResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -491,6 +563,42 @@ func EditProductServices(c *fiber.Ctx) error {
 	editproductservicesModel := models.EditProductServicesResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_productservices(?,?,?,?,?)", editproductservicesInput.Get_service_id, editproductservicesInput.Get_service_name, editproductservicesInput.Get_service_description, editproductservicesInput.Get_show, editproductservicesInput.Get_service_banner).Scan(&editproductservicesModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropproductservicesInput body models.DropProductServicesRequest true "DropProductServices Input"
+// @Success		  	200 {object} models.DropProductServicesResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_productservices/ [post]
+func DropProductServices(c *fiber.Ctx) error {
+	dropproductservicesInput := models.DropProductServicesRequest{}
+
+	if parErr := c.BodyParser(&dropproductservicesInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropproductservicesModel := models.DropProductServicesResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_productservices(?,?)", dropproductservicesInput.Drop_id, dropproductservicesInput.Drop_productservices).Scan(&dropproductservicesModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -633,6 +741,42 @@ func EditServiceDowntime(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropservicedowntimeInput body models.DropServiceDowntimeRequest true "DropServiceDowntime Input"
+// @Success		  	200 {object} models.DropServiceDowntimeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_servicedowntime/ [post]
+func DropServiceDowntime(c *fiber.Ctx) error {
+	dropservicedowntimeInput := models.DropServiceDowntimeRequest{}
+
+	if parErr := c.BodyParser(&dropservicedowntimeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropservicedowntimeModel := models.DropServiceDowntimeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_servicedowntime(?,?)", dropservicedowntimeInput.Drop_id, dropservicedowntimeInput.Drop_servicedowntime).Scan(&dropservicedowntimeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	backnewsInput body models.BankNewsRequest true "BankNews Input"
 // @Success		  	200 {object} models.BankNewsResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -739,6 +883,42 @@ func EditBankNews(c *fiber.Ctx) error {
 	editbanknewsModel := models.EditBankNewsResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_banknews(?,?,?,?,?,?)", editbanknewsInput.Get_product_id, editbanknewsInput.Get_product_name, editbanknewsInput.Get_product_description, editbanknewsInput.Get_product_periode_start, editbanknewsInput.Get_product_periode_end, editbanknewsInput.Get_product_img_name).Scan(&editbanknewsModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropbanknewsInput body models.DropBankNewsRequest true "DropBankNews Input"
+// @Success		  	200 {object} models.DropBankNewsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_banknews/ [post]
+func DropBankNews(c *fiber.Ctx) error {
+	dropbanknewsInput := models.DropBankNewsRequest{}
+
+	if parErr := c.BodyParser(&dropbanknewsInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropbanknewsModel := models.DropBankNewsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_banknews(?,?)", dropbanknewsInput.Drop_id, dropbanknewsInput.Drop_banknews).Scan(&dropbanknewsModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -881,6 +1061,42 @@ func EditInsti(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropinstiInput body models.DropInstiRequest true "DropInsti Input"
+// @Success		  	200 {object} models.DropInstiResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_insti/ [post]
+func DropInstitution(c *fiber.Ctx) error {
+	dropinstiInput := models.DropInstiRequest{}
+
+	if parErr := c.BodyParser(&dropinstiInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropInstiModel := models.DropInstiResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_insti(?,?)", dropinstiInput.Drop_id, dropinstiInput.Drop_insti).Scan(&dropInstiModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	branchInput body models.BranchRequest true "Branch Input"
 // @Success		  	200 {object} models.BranchResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -987,6 +1203,42 @@ func EditBranch(c *fiber.Ctx) error {
 	editbranchModel := models.EditBranchResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_branch(?,?,?)", editbranchInput.Get_branch_id, editbranchInput.Get_branch_code, editbranchInput.Get_branch_desc).Scan(&editbranchModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropbranchInput body models.DropBranchRequest true "DropBranch Input"
+// @Success		  	200 {object} models.DropBranchResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_branch/ [post]
+func DropBranch(c *fiber.Ctx) error {
+	dropbranchInput := models.DropBranchRequest{}
+
+	if parErr := c.BodyParser(&dropbranchInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropbranchModel := models.DropBranchResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_branch(?,?)", dropbranchInput.Drop_id, dropbranchInput.Drop_branch).Scan(&dropbranchModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1129,6 +1381,42 @@ func EditUnit(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropunitInput body models.DropUnitRequest true "DropUnit Input"
+// @Success		  	200 {object} models.DropUnitResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_unit/ [post]
+func DropUnit(c *fiber.Ctx) error {
+	dropunitInput := models.DropUnitRequest{}
+
+	if parErr := c.BodyParser(&dropunitInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropunitModel := models.DropUnitResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_unit(?,?)", dropunitInput.Drop_id, dropunitInput.Drop_unit).Scan(&dropunitModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	centerInput body models.CenterRequest true "Center Input"
 // @Success		  	200 {object} models.CenterResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1235,6 +1523,42 @@ func EditCenter(c *fiber.Ctx) error {
 	editcenterModel := models.EditCenterResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_center(?,?,?)", editcenterInput.Get_center_id, editcenterInput.Get_center_code, editcenterInput.Get_center_desc).Scan(&editcenterModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropcenterInput body models.DropCenterRequest true "DropCenter Input"
+// @Success		  	200 {object} models.DropCenterResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_center/ [post]
+func DropCenter(c *fiber.Ctx) error {
+	dropcenterInput := models.DropCenterRequest{}
+
+	if parErr := c.BodyParser(&dropcenterInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropcenterModel := models.DropCenterResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_center(?,?)", dropcenterInput.Drop_id, dropcenterInput.Drop_center).Scan(&dropcenterModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1377,6 +1701,42 @@ func EditProvider(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropproviderInput body models.DropProviderRequest true "DropProviderInput"
+// @Success		  	200 {object} models.DropProviderResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_provider/ [post]
+func DropProvider(c *fiber.Ctx) error {
+	dropproviderInput := models.DropProviderRequest{}
+
+	if parErr := c.BodyParser(&dropproviderInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropproviderModel := models.DropProviderResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_provider(?,?)", dropproviderInput.Drop_id, dropproviderInput.Drop_provider).Scan(&dropproviderModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	producttypeInput body models.ProductTypeRequest true "ProductType Input"
 // @Success		  	200 {object} models.ProductTypeResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1483,6 +1843,42 @@ func EditProductType(c *fiber.Ctx) error {
 	editproducttypeModel := models.EditProductTypeResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_producttype(?,?,?,?,?,?)", editproducttypeInput.Get_producttype_id, editproducttypeInput.Get_provider_name, editproducttypeInput.Get_product_type_id, editproducttypeInput.Get_product_type_name, editproducttypeInput.Get_description, editproducttypeInput.Get_status).Scan(&editproducttypeModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropproducttypeInput body models.DropProductTypeRequest true "DropProductTypeInput"
+// @Success		  	200 {object} models.DropProductTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_producttype/ [post]
+func DropProductType(c *fiber.Ctx) error {
+	dropproducttypeInput := models.DropProductTypeRequest{}
+
+	if parErr := c.BodyParser(&dropproducttypeInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropproducttypeModel := models.DropProductTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_producttype(?,?)", dropproducttypeInput.Drop_id, dropproducttypeInput.Drop_producttype).Scan(&dropproducttypeModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1625,6 +2021,42 @@ func EditProductCategory(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropproductcategoryInput body models.DropProductCategoryRequest true "DropProductCategoryInput"
+// @Success		  	200 {object} models.DropProductCategoryResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_productcategory/ [post]
+func DropProductCategory(c *fiber.Ctx) error {
+	dropproductcategoryInput := models.DropProductCategoryRequest{}
+
+	if parErr := c.BodyParser(&dropproductcategoryInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropproductcategoryModel := models.DropProductCategoryResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_productcategory(?,?)", dropproductcategoryInput.Drop_id, dropproductcategoryInput.Drop_productcategory).Scan(&dropproductcategoryModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	billerproductInput body models.BillerProductRequest true "BillerProduct Input"
 // @Success		  	200 {object} models.BillerProductResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1731,6 +2163,42 @@ func EditBillerProduct(c *fiber.Ctx) error {
 	editbillerproductModel := models.EditBillerProductResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_billerproduct(?,?,?,?,?,?,?,?)", editbillerproductInput.Get_Billerproduct_id, editbillerproductInput.Get_Product_category_name, editbillerproductInput.Get_Biller_product_id, editbillerproductInput.Get_Biller_product_name, editbillerproductInput.Get_Description, editbillerproductInput.Get_Service_fee, editbillerproductInput.Get_Bank_commission, editbillerproductInput.Get_Status).Scan(&editbillerproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropbillerproductInput body models.DropBillerProductRequest true "DropBillerProductInput"
+// @Success		  	200 {object} models.DropBillerProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_billerproduct/ [post]
+func DropBillerProduct(c *fiber.Ctx) error {
+	dropbillerproductInput := models.DropBillerProductRequest{}
+
+	if parErr := c.BodyParser(&dropbillerproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropbillerproductModel := models.DropBillerProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_billerproduct(?,?)", dropbillerproductInput.Drop_id, dropbillerproductInput.Drop_billerproduct).Scan(&dropbillerproductModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -1873,6 +2341,42 @@ func EditLoadProduct(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropbillerproductInput body models.DropLoadProductRequest true "DropLoadProductInput"
+// @Success		  	200 {object} models.DropLoadProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_billerproduct/ [post]
+func DropLoadProduct(c *fiber.Ctx) error {
+	droploadproductInput := models.DropLoadProductRequest{}
+
+	if parErr := c.BodyParser(&droploadproductInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	droploadproductModel := models.DropLoadProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_loadproduct(?,?)", droploadproductInput.Drop_id, droploadproductInput.Drop_loadproduct).Scan(&droploadproductModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	commssionInput body models.CommissionRequest true "Commission Input"
 // @Success		  	200 {object} models.CommissionResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1979,6 +2483,42 @@ func EditCommission(c *fiber.Ctx) error {
 	editcommissionModel := models.EditCommissionResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_commission(?,?,?,?,?,?,?)", editcommissionInput.Get_Id, editcommissionInput.Get_Trans_type, editcommissionInput.Get_Commission_type, editcommissionInput.Get_Customer_income, editcommissionInput.Get_Agent_income, editcommissionInput.Get_Bank_income, editcommissionInput.Get_Bank_partner_income).Scan(&editcommissionModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropcommissionInput body models.DropCommissionRequest true "DropCommissionInput"
+// @Success		  	200 {object} models.DropCommissionResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_commission/ [post]
+func DropCommission(c *fiber.Ctx) error {
+	dropcommissionInput := models.DropCommissionRequest{}
+
+	if parErr := c.BodyParser(&dropcommissionInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropcommissionModel := models.DropCommissionResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_commission(?,?)", dropcommissionInput.Drop_id, dropcommissionInput.Drop_commission).Scan(&dropcommissionModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",
@@ -2121,6 +2661,42 @@ func EditBanklist(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	dropbanklistInput body models.DropBanklistRequest true "DropBanklistInput"
+// @Success		  	200 {object} models.DropBanklistResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_banklist/ [post]
+func DropBanklist(c *fiber.Ctx) error {
+	dropbanklistInput := models.DropBanklistRequest{}
+
+	if parErr := c.BodyParser(&dropbanklistInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropbanklistModel := models.DropBanklistResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_banklist(?,?)", dropbanklistInput.Drop_id, dropbanklistInput.Drop_banklist).Scan(&dropbanklistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	partnerlistInput body models.PartnerListRequest true "PartnerList Input"
 // @Success		  	200 {object} models.PartnerListResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2245,6 +2821,42 @@ func EditPartnerlist(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	droppartnerlistInput body models.DropPartnerListRequest true "DropPartnerListInput"
+// @Success		  	200 {object} models.DropPartnerListResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_partnerlist/ [post]
+func DropPartnerList(c *fiber.Ctx) error {
+	droppartnerlistInput := models.DropPartnerListRequest{}
+
+	if parErr := c.BodyParser(&droppartnerlistInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	droppartnerlistModel := models.DropPartnerListResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_partnerlist(?,?)", droppartnerlistInput.Drop_id, droppartnerlistInput.Drop_partnerlist).Scan(&droppartnerlistModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	splashscreenInput body models.SplashScreenRequest true "SplashScreen Input"
 // @Success		  	200 {object} models.SplashScreenResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2351,6 +2963,42 @@ func EditSplashScreen(c *fiber.Ctx) error {
 	editsplashscreenModel := models.EditSplashScreenResponse{}
 
 	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.update_splashscreen(?,?,?,?,?,?,?)", editsplashscreenInput.Get_id, editsplashscreenInput.Get_Action, editsplashscreenInput.Get_Title, editsplashscreenInput.Get_Message, editsplashscreenInput.Get_Sub_message, editsplashscreenInput.Get_Image_url, editsplashscreenInput.Get_Show).Scan(&editsplashscreenModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	dropsplashscreenInput body models.DropSplashScreenRequest true "DropSplashScreenInput"
+// @Success		  	200 {object} models.DropSplashScreenResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_splashscreen/ [post]
+func DropSplashScreen(c *fiber.Ctx) error {
+	dropsplashscreenInput := models.DropSplashScreenRequest{}
+
+	if parErr := c.BodyParser(&dropsplashscreenInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	dropsplashscreenModel := models.DropSplashScreenResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_splashscreen(?,?)", dropsplashscreenInput.Drop_id, dropsplashscreenInput.Drop_splashscreen).Scan(&dropsplashscreenModel).Error; dbErr != nil {
 		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
 			RetCode: "400",
 			Message: "Database Error",

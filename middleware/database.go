@@ -24,6 +24,13 @@ func PostgreSQLConnect() {
 		log.Fatal("Error Loading Env File: ", err)
 	}
 
+	environment := os.Getenv("ENVIRONMENT")
+	fmt.Println(environment)
+	err = godotenv.Load(fmt.Sprintf(".env-%s", environment))
+	if err != nil {
+		log.Fatal("Error Loading Env File: ", err)
+	}
+
 	host := os.Getenv("DB_HOST")
 	user := os.Getenv("DB_UNAME")
 	pass := os.Getenv("DB_PASS")

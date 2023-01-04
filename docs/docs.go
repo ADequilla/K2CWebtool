@@ -113,6 +113,846 @@ const docTemplate = `{
                 }
             }
         },
+        "/drop_atmloc/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropAtmLoc Input",
+                        "name": "dropatmlocInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropAtmLocRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropAtmLocResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_banklist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropBanklistInput",
+                        "name": "dropbanklistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBanklistRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBanklistResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_banknews/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropBankNews Input",
+                        "name": "dropbanknewsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBankNewsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBankNewsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_billerproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropLoadProductInput",
+                        "name": "dropbillerproductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropLoadProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropLoadProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_branch/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropBranch Input",
+                        "name": "dropbranchInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBranchRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBranchResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_broadcastsms/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropBroadcastSmsInput",
+                        "name": "dropbroadcastsmsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBroadcastSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropBroadcastSmsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_center/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropCenter Input",
+                        "name": "dropcenterInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCenterRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_commission/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropCommissionInput",
+                        "name": "dropcommissionInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCommissionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCommissionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_concerntype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropConcernTypeInput",
+                        "name": "dropconcerntypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropConcernTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropConcernTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_csrhotline/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropCsrHotlineInput",
+                        "name": "dropcsrhotlineInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCsrHotlineRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropCsrHotlineResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_feestructure/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropFeeStructure Input",
+                        "name": "dropfeestructureInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropFeeStructureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropFeeStructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_hierarchy/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropHierarchy Input",
+                        "name": "drophierarchyInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropHierarchyRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropHeirarchyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_insti/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropInsti Input",
+                        "name": "dropinstiInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropInstiRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropInstiResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_partnerlist/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropPartnerListInput",
+                        "name": "droppartnerlistInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropPartnerListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropPartnerListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_productcategory/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropProductCategoryInput",
+                        "name": "dropproductcategoryInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductCategoryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductCategoryResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_productservices/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropProductServices Input",
+                        "name": "dropproductservicesInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductServicesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_producttype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropProductTypeInput",
+                        "name": "dropproducttypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProductTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_provider/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropProviderInput",
+                        "name": "dropproviderInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProviderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropProviderResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_servicedowntime/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropServiceDowntime Input",
+                        "name": "dropservicedowntimeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropServiceDowntimeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_splashscreen/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropSplashScreenInput",
+                        "name": "dropsplashscreenInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropSplashScreenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropSplashScreenResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_unit/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropUnit Input",
+                        "name": "dropunitInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropUnitRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropUnitResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/edit_atmloc/": {
             "post": {
                 "description": "Fetch User Data",
@@ -2833,6 +3673,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/get_remittancecancelled/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Remittance Input",
+                        "name": "remittanceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/get_remittancecancelledreport/": {
             "post": {
                 "description": "Fetch User Data",
@@ -2862,6 +3742,46 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.RemittanceCancelledReportResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittanceclaimed/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Remittance Input",
+                        "name": "remittanceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceResponse"
                         }
                     },
                     "400": {
@@ -2942,6 +3862,86 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.RemittanceLogResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittancepending/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Remittance Input",
+                        "name": "remittanceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/get_remittancesent/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Remittance Input",
+                        "name": "remittanceInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.RemittanceResponse"
                         }
                     },
                     "400": {
@@ -4542,64 +5542,6 @@ const docTemplate = `{
                 }
             }
         },
-        "/select_remittanceclaimed/": {
-            "post": {
-                "description": "Fetch User Data",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Webtool"
-                ],
-                "summary": "Fetch User Data",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.RemittancePendingResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/models.ResponseModel"
-                        }
-                    }
-                }
-            }
-        },
-        "/select_remittancesent/": {
-            "post": {
-                "description": "Fetch User Data",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "Webtool"
-                ],
-                "summary": "Fetch User Data",
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/models.RemittanceSentResponse"
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "schema": {
-                            "$ref": "#/definitions/models.ResponseModel"
-                        }
-                    }
-                }
-            }
-        },
         "/select_rolemanagement/": {
             "post": {
                 "description": "Fetch User Data",
@@ -5888,16 +6830,16 @@ const docTemplate = `{
         "models.AtmLocRequest": {
             "type": "object",
             "properties": {
-                "c.atm_address": {
+                "atm_address": {
                     "type": "string"
                 },
-                "c.atm_city": {
+                "atm_city": {
                     "type": "string"
                 },
-                "c.atm_description": {
+                "atm_description": {
                     "type": "string"
                 },
-                "i.inst_desc": {
+                "inst_desc": {
                     "type": "string"
                 }
             }
@@ -5905,19 +6847,19 @@ const docTemplate = `{
         "models.AtmLocResponse": {
             "type": "object",
             "properties": {
-                "c.atm_address": {
+                "atm_address": {
                     "type": "string"
                 },
-                "c.atm_city": {
+                "atm_city": {
                     "type": "string"
                 },
-                "c.atm_description": {
+                "atm_description": {
                     "type": "string"
                 },
-                "c.atm_id": {
+                "atm_id": {
                     "type": "string"
                 },
-                "i.inst_desc": {
+                "inst_desc": {
                     "type": "string"
                 }
             }
@@ -5959,7 +6901,7 @@ const docTemplate = `{
         "models.BankNewsRequest": {
             "type": "object",
             "properties": {
-                "c.product_name": {
+                "product_name": {
                     "type": "string"
                 }
             }
@@ -5967,16 +6909,16 @@ const docTemplate = `{
         "models.BankNewsResponse": {
             "type": "object",
             "properties": {
-                "c.product_date": {
+                "given_name": {
                     "type": "string"
                 },
-                "c.product_id": {
+                "product_date": {
                     "type": "string"
                 },
-                "c.product_name": {
+                "product_id": {
                     "type": "string"
                 },
-                "t.given_name": {
+                "product_name": {
                     "type": "string"
                 }
             }
@@ -6444,6 +7386,424 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "submited_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropAtmLocRequest": {
+            "type": "object",
+            "properties": {
+                "drop_atmloc": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropAtmLocResponse": {
+            "type": "object",
+            "properties": {
+                "delete_atmloc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBankNewsRequest": {
+            "type": "object",
+            "properties": {
+                "drop_banknews": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBankNewsResponse": {
+            "type": "object",
+            "properties": {
+                "delete_banknews": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBanklistRequest": {
+            "type": "object",
+            "properties": {
+                "drop_banklist": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBanklistResponse": {
+            "type": "object",
+            "properties": {
+                "delete_banklist": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBillerProductRequest": {
+            "type": "object",
+            "properties": {
+                "drop_billerproduct": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBillerProductResponse": {
+            "type": "object",
+            "properties": {
+                "delete_billerproduct": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBranchRequest": {
+            "type": "object",
+            "properties": {
+                "drop_branch": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBranchResponse": {
+            "type": "object",
+            "properties": {
+                "delete_branch": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBroadcastSmsRequest": {
+            "type": "object",
+            "properties": {
+                "drop_broadcastsms": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropBroadcastSmsResponse": {
+            "type": "object",
+            "properties": {
+                "delete_broadcastsms": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCenterRequest": {
+            "type": "object",
+            "properties": {
+                "drop_center": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCenterResponse": {
+            "type": "object",
+            "properties": {
+                "delete_center": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCommissionRequest": {
+            "type": "object",
+            "properties": {
+                "drop_commission": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCommissionResponse": {
+            "type": "object",
+            "properties": {
+                "delete_commission": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropConcernTypeRequest": {
+            "type": "object",
+            "properties": {
+                "drop_concerntype": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropConcernTypeResponse": {
+            "type": "object",
+            "properties": {
+                "delete_concerntype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCsrHotlineRequest": {
+            "type": "object",
+            "properties": {
+                "drop_csrhotline": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropCsrHotlineResponse": {
+            "type": "object",
+            "properties": {
+                "delete_csrhotline": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropFeeStructureRequest": {
+            "type": "object",
+            "properties": {
+                "drop_feestructure": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropFeeStructureResponse": {
+            "type": "object",
+            "properties": {
+                "delete_feestructure": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropHeirarchyResponse": {
+            "type": "object",
+            "properties": {
+                "delete_hierarchy": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropHierarchyRequest": {
+            "type": "object",
+            "properties": {
+                "drop_hierarchy": {
+                    "type": "string"
+                },
+                "drop_id": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropInstiRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_insti": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropInstiResponse": {
+            "type": "object",
+            "properties": {
+                "delete_insti": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropLoadProductRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_loadproduct": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropLoadProductResponse": {
+            "type": "object",
+            "properties": {
+                "delete_loadproduct": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropPartnerListRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_partnerlist": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropPartnerListResponse": {
+            "type": "object",
+            "properties": {
+                "delete_partnerlist": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductCategoryRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_productcategory": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductCategoryResponse": {
+            "type": "object",
+            "properties": {
+                "delete_productcategory": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductServicesRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_productservices": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductServicesResponse": {
+            "type": "object",
+            "properties": {
+                "delete_productservices": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductTypeRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_producttype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProductTypeResponse": {
+            "type": "object",
+            "properties": {
+                "delete_producttype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProviderRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropProviderResponse": {
+            "type": "object",
+            "properties": {
+                "delete_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropServiceDowntimeRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_servicedowntime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropServiceDowntimeResponse": {
+            "type": "object",
+            "properties": {
+                "delete_servicedowntime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropSplashScreenRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_splashscreen": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropSplashScreenResponse": {
+            "type": "object",
+            "properties": {
+                "delete_splashscreen": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropUnitRequest": {
+            "type": "object",
+            "properties": {
+                "drop_id": {
+                    "type": "string"
+                },
+                "drop_unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.DropUnitResponse": {
+            "type": "object",
+            "properties": {
+                "delete_unit": {
                     "type": "string"
                 }
             }
@@ -7530,16 +8890,16 @@ const docTemplate = `{
         "models.HierarchyRequest": {
             "type": "object",
             "properties": {
-                "b.branch_desc": {
+                "branch_desc": {
                     "type": "string"
                 },
-                "c.center_desc": {
+                "center_desc": {
                     "type": "string"
                 },
-                "i.inst_desc": {
+                "inst_desc": {
                     "type": "string"
                 },
-                "u.unit_desc": {
+                "unit_desc": {
                     "type": "string"
                 }
             }
@@ -7562,7 +8922,7 @@ const docTemplate = `{
                 "hierarchy_id": {
                     "type": "string"
                 },
-                "i.inst_desc": {
+                "inst_desc": {
                     "type": "string"
                 },
                 "unit_code": {
@@ -8391,44 +9751,6 @@ const docTemplate = `{
                 }
             }
         },
-        "models.RemittanceCancelledResponse": {
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "type": "string"
-                },
-                "created_date": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "processed_by_fullname": {
-                    "type": "string"
-                },
-                "receiver_name": {
-                    "type": "string"
-                },
-                "reference_number": {
-                    "type": "string"
-                },
-                "sender_mobile_number": {
-                    "type": "string"
-                },
-                "sender_name": {
-                    "type": "string"
-                },
-                "sent_core_ref_id": {
-                    "type": "string"
-                },
-                "sent_mobile_ref_id": {
-                    "type": "string"
-                },
-                "source_branch": {
-                    "type": "string"
-                }
-            }
-        },
         "models.RemittanceClaimedReportRequest": {
             "type": "object",
             "properties": {
@@ -8480,44 +9802,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user_name": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.RemittanceClaimedResponse": {
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "type": "string"
-                },
-                "created_date": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "processed_by_fullname": {
-                    "type": "string"
-                },
-                "receiver_name": {
-                    "type": "string"
-                },
-                "reference_number": {
-                    "type": "string"
-                },
-                "sender_mobile_number": {
-                    "type": "string"
-                },
-                "sender_name": {
-                    "type": "string"
-                },
-                "sent_core_ref_id": {
-                    "type": "string"
-                },
-                "sent_mobile_ref_id": {
-                    "type": "string"
-                },
-                "source_branch": {
                     "type": "string"
                 }
             }
@@ -8613,9 +9897,26 @@ const docTemplate = `{
                 }
             }
         },
-        "models.RemittancePendingResponse": {
+        "models.RemittanceRequest": {
             "type": "object",
             "properties": {
+                "created_date": {
+                    "type": "string"
+                },
+                "last_updated_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.RemittanceResponse": {
+            "type": "object",
+            "properties": {
+                "Processed_By_Fullname": {
+                    "type": "string"
+                },
+                "Receiver_Name": {
+                    "type": "string"
+                },
                 "amount": {
                     "type": "string"
                 },
@@ -8623,12 +9924,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "id": {
-                    "type": "string"
-                },
-                "processed_by_fullname": {
-                    "type": "string"
-                },
-                "receiver_name": {
                     "type": "string"
                 },
                 "reference_number": {
@@ -8702,44 +9997,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "user_name": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.RemittanceSentResponse": {
-            "type": "object",
-            "properties": {
-                "amount": {
-                    "type": "string"
-                },
-                "created_date": {
-                    "type": "string"
-                },
-                "id": {
-                    "type": "string"
-                },
-                "processed_by_fullname": {
-                    "type": "string"
-                },
-                "receiver_name": {
-                    "type": "string"
-                },
-                "reference_number": {
-                    "type": "string"
-                },
-                "sender_mobile_number": {
-                    "type": "string"
-                },
-                "sender_name": {
-                    "type": "string"
-                },
-                "sent_core_ref_id": {
-                    "type": "string"
-                },
-                "sent_mobile_ref_id": {
-                    "type": "string"
-                },
-                "source_branch": {
                     "type": "string"
                 }
             }

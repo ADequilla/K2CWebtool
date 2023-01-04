@@ -38,9 +38,10 @@ func main() {
 	app := fiber.New()
 
 	app.Use(logger.New())
-	endpoints.AppRoutes1(app)
-	endpoints.AppRoutes2(app)
-	endpoints.AppRoutes3(app)
+	endpoints.ViewSearch(app)
+	endpoints.SlelectbyCid(app)
+	endpoints.Edit(app)
+	endpoints.Delete(app)
 
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,

@@ -380,3 +380,39 @@ func EditHierarchy(c *fiber.Ctx) error {
 		Message: "Updated Successfully",
 	})
 }
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	drophierarchyInput body models.DropHierarchyRequest true "DropHierarchy Input"
+// @Success		  	200 {object} models.DropHeirarchyResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/drop_hierarchy/ [post]
+func DropHierarchy(c *fiber.Ctx) error {
+	drophierarchyInput := models.DropHierarchyRequest{}
+
+	if parErr := c.BodyParser(&drophierarchyInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	drophierarchyModel := models.DropHeirarchyResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.delete_hierarchy(?,?)", drophierarchyInput.Drop_id, drophierarchyInput.Drop_hierarchy).Scan(&drophierarchyModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Updated Successfully",
+	})
+}

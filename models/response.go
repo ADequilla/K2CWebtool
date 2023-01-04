@@ -41,7 +41,7 @@ type HierarchyResponse struct {
 	Unit_desc    string `json:"unit_desc"`
 	Center_code  string `json:"center_code"`
 	Center_desc  string `json:"center_desc"`
-	Inst_desc    string `json:"i.inst_desc"`
+	Inst_desc    string `json:"inst_desc"`
 }
 
 type AllHeirarchyResponse struct {
@@ -56,6 +56,10 @@ type AllHeirarchyResponse struct {
 
 type EditHeirarchyResponse struct {
 	Update_hierarchy string `json:"update_hierarchy"`
+}
+
+type DropHeirarchyResponse struct {
+	Delete_hierarchy string `json:"delete_hierarchy"`
 }
 
 ///listfailedenrollment
@@ -279,6 +283,10 @@ type EditFeeStructureResponse struct {
 	Update_feestructure string `json:"update_feestructure"`
 }
 
+type DropFeeStructureResponse struct {
+	Delete_feestructure string `json:"delete_feestructure"`
+}
+
 ///paramconfig
 
 type ParamConfigResponse struct {
@@ -304,11 +312,11 @@ type EditParamConfigResponse struct {
 ///atmloc
 
 type AtmLocResponse struct {
-	Atm_id          string `json:"c.atm_id"`
-	Inst_desc       string `json:"i.inst_desc"`
-	Atm_description string `json:"c.atm_description"`
-	Atm_address     string `json:"c.atm_address"`
-	Atm_city        string `json:"c.atm_city"`
+	Atm_id          string `json:"atm_id"`
+	Inst_desc       string `json:"inst_desc"`
+	Atm_description string `json:"atm_description"`
+	Atm_address     string `json:"atm_address"`
+	Atm_city        string `json:"atm_city"`
 }
 
 type AllAtmLocResponse struct {
@@ -322,6 +330,10 @@ type AllAtmLocResponse struct {
 
 type EditAtmLocResponse struct {
 	Update_atmloc string `json:"update_atmloc"`
+}
+
+type DropAtmLocResponse struct {
+	Delete_atmloc string `json:"delete_atmloc"`
 }
 
 ///productservices
@@ -343,6 +355,10 @@ type AllProductServicesResponse struct {
 
 type EditProductServicesResponse struct {
 	Update_productservices string `json:"update_productservices"`
+}
+
+type DropProductServicesResponse struct {
+	Delete_productservices string `json:"delete_productservices"`
 }
 
 ///servicedowntime
@@ -367,13 +383,17 @@ type EditServiceDowntimeResponse struct {
 	Update_servicedowntime string `json:"update_servicedowntime"`
 }
 
+type DropServiceDowntimeResponse struct {
+	Delete_servicedowntime string `json:"delete_servicedowntime"`
+}
+
 ///banknews
 
 type BankNewsResponse struct {
-	Product_id   string `json:"c.product_id"`
-	Product_date string `json:"c.product_date"`
-	Given_name   string `json:"t.given_name"`
-	Product_name string `json:"c.product_name"`
+	Product_id   string `json:"product_id"`
+	Product_date string `json:"product_date"`
+	Given_name   string `json:"given_name"`
+	Product_name string `json:"product_name"`
 }
 
 type AllBankNewsResponse struct {
@@ -387,6 +407,10 @@ type AllBankNewsResponse struct {
 
 type EditBankNewsResponse struct {
 	Update_banknews string `json:"update_banknews"`
+}
+
+type DropBankNewsResponse struct {
+	Delete_banknews string `json:"delete_banknews"`
 }
 
 ///institution
@@ -407,6 +431,10 @@ type EditInstiResponse struct {
 	Update_insti string `json:"update_insti"`
 }
 
+type DropInstiResponse struct {
+	Delete_insti string `json:"delete_insti"`
+}
+
 ///branch
 
 type BranchResponse struct {
@@ -423,6 +451,10 @@ type AllBranchResponse struct {
 
 type EditBranchResponse struct {
 	Update_branch string `json:"update_branch"`
+}
+
+type DropBranchResponse struct {
+	Delete_branch string `json:"delete_branch"`
 }
 
 ///unit
@@ -443,6 +475,10 @@ type EditUnitResponse struct {
 	Update_unit string `json:"update_unit"`
 }
 
+type DropUnitResponse struct {
+	Delete_unit string `json:"delete_unit"`
+}
+
 ///center
 
 type CenterResponse struct {
@@ -459,6 +495,10 @@ type AllCenterResponse struct {
 
 type EditCenterResponse struct {
 	Update_center string `json:"update_center"`
+}
+
+type DropCenterResponse struct {
+	Delete_center string `json:"delete_center"`
 }
 
 ///provider
@@ -482,6 +522,10 @@ type AllProviderResponse struct {
 
 type EditProviderResponse struct {
 	Update_provider string `json:"update_provider"`
+}
+
+type DropProviderResponse struct {
+	Delete_provider string `json:"delete_provider"`
 }
 
 ///producttype
@@ -509,6 +553,9 @@ type AllProductTypeResponse struct {
 type EditProductTypeResponse struct {
 	Update_producttype string `json:"update_producttype"`
 }
+type DropProductTypeResponse struct {
+	Delete_producttype string `json:"delete_producttype"`
+}
 
 ///productcategory
 
@@ -530,6 +577,10 @@ type AllProductCategoryResponse struct {
 
 type EditProductCategoryResponse struct {
 	Update_productcategory string `json:"update_productcategory"`
+}
+
+type DropProductCategoryResponse struct {
+	Delete_productcategory string `json:"delete_productcategory"`
 }
 
 ///billerproduct
@@ -560,6 +611,10 @@ type EditBillerProductResponse struct {
 	Update_billerproduct string `json:"update_billerproduct"`
 }
 
+type DropBillerProductResponse struct {
+	Delete_billerproduct string `json:"delete_billerproduct"`
+}
+
 ///loadproduct
 
 type LoadProductResponse struct {
@@ -581,6 +636,10 @@ type AllLoadProductResponse struct {
 
 type EditLoadProductResponse struct {
 	Update_loadproduct string `json:"update_loadproduct"`
+}
+
+type DropLoadProductResponse struct {
+	Delete_loadproduct string `json:"delete_loadproduct"`
 }
 
 ///commission
@@ -609,6 +668,10 @@ type EditCommissionResponse struct {
 	Update_commission string `json:"update_commission"`
 }
 
+type DropCommissionResponse struct {
+	Delete_commission string `json:"delete_commission"`
+}
+
 //banklist
 
 type BankListResponse struct {
@@ -629,6 +692,10 @@ type AllBanklistResponse struct {
 
 type EditBanklistResponse struct {
 	Update_banklist string `json:"update_banklist"`
+}
+
+type DropBanklistResponse struct {
+	Delete_banklist string `json:"delete_banklist"`
 }
 
 //partnerlist
@@ -662,6 +729,10 @@ type EditPartnerlistResponse struct {
 	Update_partnerlist string `json:"update_partnerlist"`
 }
 
+type DropPartnerListResponse struct {
+	Delete_partnerlist string `json:"delete_partnerlist"`
+}
+
 //splashscreen
 
 type SplashScreenResponse struct {
@@ -687,6 +758,10 @@ type EditSplashScreenResponse struct {
 	Update_splashscreen string `json:"update_splashscreen"`
 }
 
+type DropSplashScreenResponse struct {
+	Delete_splashscreen string `json:"delete_splashscreen"`
+}
+
 //csrhotline
 
 type CsrHotlineResponse struct {
@@ -705,6 +780,10 @@ type AllCsrHotlineResponse struct {
 
 type EditCsrHotlineResponse struct {
 	Update_csrhotline string `json:"update_csrhotline"`
+}
+
+type DropCsrHotlineResponse struct {
+	Delete_csrhotline string `json:"delete_csrhotline"`
 }
 
 //corncerntype
@@ -726,6 +805,10 @@ type AllConcernTypeResponse struct {
 
 type EditConcernTypeResponse struct {
 	Update_concerntype string `json:"update_concerntype"`
+}
+
+type DropConcernTypeResponse struct {
+	Delete_concerntype string `json:"delete_concerntype"`
 }
 
 //login
@@ -899,6 +982,10 @@ type AllBroadcastSmsResponse struct {
 
 type EditBroadcastSmsResponse struct {
 	Update_broadcastsms string `json:"update_broadcastsms"`
+}
+
+type DropBroadcastSmsResponse struct {
+	Delete_broadcastsms string `json:"delete_broadcastsms"`
 }
 
 ///WebReport
@@ -1230,58 +1317,16 @@ type TaskResponse struct {
 
 ///RemittanceStatus
 
-type RemittanceSentResponse struct {
-	Id                      string `json:"id"`
-	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
-	Sent_core_ref_id        string `json:"sent_core_ref_id"`
-	Reference_number        string `json:"reference_number"`
-	Sender_name             string `json:"sender_name"`
-	Receiver_name           string `json:"receiver_name"`
-	Amount                  string `json:"amount"`
-	Sender_mobile_number    string `json:"sender_mobile_number"`
-	Created_date            string `json:"created_date"`
-	Chaisource_branchn_name string `json:"source_branch"`
-	Processed_by_fullname   string `json:"processed_by_fullname"`
-}
-
-type RemittanceCancelledResponse struct {
-	Id                      string `json:"id"`
-	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
-	Sent_core_ref_id        string `json:"sent_core_ref_id"`
-	Reference_number        string `json:"reference_number"`
-	Sender_name             string `json:"sender_name"`
-	Receiver_name           string `json:"receiver_name"`
-	Amount                  string `json:"amount"`
-	Sender_mobile_number    string `json:"sender_mobile_number"`
-	Created_date            string `json:"created_date"`
-	Chaisource_branchn_name string `json:"source_branch"`
-	Processed_by_fullname   string `json:"processed_by_fullname"`
-}
-
-type RemittancePendingResponse struct {
-	Id                      string `json:"id"`
-	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
-	Sent_core_ref_id        string `json:"sent_core_ref_id"`
-	Reference_number        string `json:"reference_number"`
-	Sender_name             string `json:"sender_name"`
-	Receiver_name           string `json:"receiver_name"`
-	Amount                  string `json:"amount"`
-	Sender_mobile_number    string `json:"sender_mobile_number"`
-	Created_date            string `json:"created_date"`
-	Chaisource_branchn_name string `json:"source_branch"`
-	Processed_by_fullname   string `json:"processed_by_fullname"`
-}
-
-type RemittanceClaimedResponse struct {
-	Id                      string `json:"id"`
-	Sent_mobile_ref_id      string `json:"sent_mobile_ref_id"`
-	Sent_core_ref_id        string `json:"sent_core_ref_id"`
-	Reference_number        string `json:"reference_number"`
-	Sender_name             string `json:"sender_name"`
-	Receiver_name           string `json:"receiver_name"`
-	Amount                  string `json:"amount"`
-	Sender_mobile_number    string `json:"sender_mobile_number"`
-	Created_date            string `json:"created_date"`
-	Chaisource_branchn_name string `json:"source_branch"`
-	Processed_by_fullname   string `json:"processed_by_fullname"`
+type RemittanceResponse struct {
+	Id                    string `json:"id"`
+	Sent_mobile_ref_id    string `json:"sent_mobile_ref_id"`
+	Sent_core_ref_id      string `json:"sent_core_ref_id"`
+	Reference_number      string `json:"reference_number"`
+	Sender_name           string `json:"sender_name"`
+	Receiver_Name         string `json:"Receiver_Name"`
+	Amount                string `json:"amount"`
+	Sender_mobile_number  string `json:"sender_mobile_number"`
+	Created_date          string `json:"created_date"`
+	Source_branch         string `json:"source_branch"`
+	Processed_By_Fullname string `json:"Processed_By_Fullname"`
 }

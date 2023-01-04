@@ -677,26 +677,26 @@ definitions:
     type: object
   models.AtmLocRequest:
     properties:
-      c.atm_address:
+      atm_address:
         type: string
-      c.atm_city:
+      atm_city:
         type: string
-      c.atm_description:
+      atm_description:
         type: string
-      i.inst_desc:
+      inst_desc:
         type: string
     type: object
   models.AtmLocResponse:
     properties:
-      c.atm_address:
+      atm_address:
         type: string
-      c.atm_city:
+      atm_city:
         type: string
-      c.atm_description:
+      atm_description:
         type: string
-      c.atm_id:
+      atm_id:
         type: string
-      i.inst_desc:
+      inst_desc:
         type: string
     type: object
   models.BankListRequest:
@@ -723,18 +723,18 @@ definitions:
     type: object
   models.BankNewsRequest:
     properties:
-      c.product_name:
+      product_name:
         type: string
     type: object
   models.BankNewsResponse:
     properties:
-      c.product_date:
+      given_name:
         type: string
-      c.product_id:
+      product_date:
         type: string
-      c.product_name:
+      product_id:
         type: string
-      t.given_name:
+      product_name:
         type: string
     type: object
   models.BillerProductRequest:
@@ -1039,6 +1039,270 @@ definitions:
       report_status:
         type: string
       submited_date:
+        type: string
+    type: object
+  models.DropAtmLocRequest:
+    properties:
+      drop_atmloc:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropAtmLocResponse:
+    properties:
+      delete_atmloc:
+        type: string
+    type: object
+  models.DropBankNewsRequest:
+    properties:
+      drop_banknews:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropBankNewsResponse:
+    properties:
+      delete_banknews:
+        type: string
+    type: object
+  models.DropBanklistRequest:
+    properties:
+      drop_banklist:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropBanklistResponse:
+    properties:
+      delete_banklist:
+        type: string
+    type: object
+  models.DropBillerProductRequest:
+    properties:
+      drop_billerproduct:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropBillerProductResponse:
+    properties:
+      delete_billerproduct:
+        type: string
+    type: object
+  models.DropBranchRequest:
+    properties:
+      drop_branch:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropBranchResponse:
+    properties:
+      delete_branch:
+        type: string
+    type: object
+  models.DropBroadcastSmsRequest:
+    properties:
+      drop_broadcastsms:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropBroadcastSmsResponse:
+    properties:
+      delete_broadcastsms:
+        type: string
+    type: object
+  models.DropCenterRequest:
+    properties:
+      drop_center:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropCenterResponse:
+    properties:
+      delete_center:
+        type: string
+    type: object
+  models.DropCommissionRequest:
+    properties:
+      drop_commission:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropCommissionResponse:
+    properties:
+      delete_commission:
+        type: string
+    type: object
+  models.DropConcernTypeRequest:
+    properties:
+      drop_concerntype:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropConcernTypeResponse:
+    properties:
+      delete_concerntype:
+        type: string
+    type: object
+  models.DropCsrHotlineRequest:
+    properties:
+      drop_csrhotline:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropCsrHotlineResponse:
+    properties:
+      delete_csrhotline:
+        type: string
+    type: object
+  models.DropFeeStructureRequest:
+    properties:
+      drop_feestructure:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropFeeStructureResponse:
+    properties:
+      delete_feestructure:
+        type: string
+    type: object
+  models.DropHeirarchyResponse:
+    properties:
+      delete_hierarchy:
+        type: string
+    type: object
+  models.DropHierarchyRequest:
+    properties:
+      drop_hierarchy:
+        type: string
+      drop_id:
+        type: string
+    type: object
+  models.DropInstiRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_insti:
+        type: string
+    type: object
+  models.DropInstiResponse:
+    properties:
+      delete_insti:
+        type: string
+    type: object
+  models.DropLoadProductRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_loadproduct:
+        type: string
+    type: object
+  models.DropLoadProductResponse:
+    properties:
+      delete_loadproduct:
+        type: string
+    type: object
+  models.DropPartnerListRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_partnerlist:
+        type: string
+    type: object
+  models.DropPartnerListResponse:
+    properties:
+      delete_partnerlist:
+        type: string
+    type: object
+  models.DropProductCategoryRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_productcategory:
+        type: string
+    type: object
+  models.DropProductCategoryResponse:
+    properties:
+      delete_productcategory:
+        type: string
+    type: object
+  models.DropProductServicesRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_productservices:
+        type: string
+    type: object
+  models.DropProductServicesResponse:
+    properties:
+      delete_productservices:
+        type: string
+    type: object
+  models.DropProductTypeRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_producttype:
+        type: string
+    type: object
+  models.DropProductTypeResponse:
+    properties:
+      delete_producttype:
+        type: string
+    type: object
+  models.DropProviderRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_provider:
+        type: string
+    type: object
+  models.DropProviderResponse:
+    properties:
+      delete_provider:
+        type: string
+    type: object
+  models.DropServiceDowntimeRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_servicedowntime:
+        type: string
+    type: object
+  models.DropServiceDowntimeResponse:
+    properties:
+      delete_servicedowntime:
+        type: string
+    type: object
+  models.DropSplashScreenRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_splashscreen:
+        type: string
+    type: object
+  models.DropSplashScreenResponse:
+    properties:
+      delete_splashscreen:
+        type: string
+    type: object
+  models.DropUnitRequest:
+    properties:
+      drop_id:
+        type: string
+      drop_unit:
+        type: string
+    type: object
+  models.DropUnitResponse:
+    properties:
+      delete_unit:
         type: string
     type: object
   models.EditAtmLocRequest:
@@ -1743,13 +2007,13 @@ definitions:
     type: object
   models.HierarchyRequest:
     properties:
-      b.branch_desc:
+      branch_desc:
         type: string
-      c.center_desc:
+      center_desc:
         type: string
-      i.inst_desc:
+      inst_desc:
         type: string
-      u.unit_desc:
+      unit_desc:
         type: string
     type: object
   models.HierarchyResponse:
@@ -1764,7 +2028,7 @@ definitions:
         type: string
       hierarchy_id:
         type: string
-      i.inst_desc:
+      inst_desc:
         type: string
       unit_code:
         type: string
@@ -2306,31 +2570,6 @@ definitions:
       user_name:
         type: string
     type: object
-  models.RemittanceCancelledResponse:
-    properties:
-      amount:
-        type: string
-      created_date:
-        type: string
-      id:
-        type: string
-      processed_by_fullname:
-        type: string
-      receiver_name:
-        type: string
-      reference_number:
-        type: string
-      sender_mobile_number:
-        type: string
-      sender_name:
-        type: string
-      sent_core_ref_id:
-        type: string
-      sent_mobile_ref_id:
-        type: string
-      source_branch:
-        type: string
-    type: object
   models.RemittanceClaimedReportRequest:
     properties:
       branch_desc:
@@ -2365,31 +2604,6 @@ definitions:
       submited_date:
         type: string
       user_name:
-        type: string
-    type: object
-  models.RemittanceClaimedResponse:
-    properties:
-      amount:
-        type: string
-      created_date:
-        type: string
-      id:
-        type: string
-      processed_by_fullname:
-        type: string
-      receiver_name:
-        type: string
-      reference_number:
-        type: string
-      sender_mobile_number:
-        type: string
-      sender_name:
-        type: string
-      sent_core_ref_id:
-        type: string
-      sent_mobile_ref_id:
-        type: string
-      source_branch:
         type: string
     type: object
   models.RemittanceLogRequest:
@@ -2453,17 +2667,24 @@ definitions:
       target_branch:
         type: string
     type: object
-  models.RemittancePendingResponse:
+  models.RemittanceRequest:
     properties:
+      created_date:
+        type: string
+      last_updated_date:
+        type: string
+    type: object
+  models.RemittanceResponse:
+    properties:
+      Processed_By_Fullname:
+        type: string
+      Receiver_Name:
+        type: string
       amount:
         type: string
       created_date:
         type: string
       id:
-        type: string
-      processed_by_fullname:
-        type: string
-      receiver_name:
         type: string
       reference_number:
         type: string
@@ -2512,31 +2733,6 @@ definitions:
       submited_date:
         type: string
       user_name:
-        type: string
-    type: object
-  models.RemittanceSentResponse:
-    properties:
-      amount:
-        type: string
-      created_date:
-        type: string
-      id:
-        type: string
-      processed_by_fullname:
-        type: string
-      receiver_name:
-        type: string
-      reference_number:
-        type: string
-      sender_mobile_number:
-        type: string
-      sender_name:
-        type: string
-      sent_core_ref_id:
-        type: string
-      sent_mobile_ref_id:
-        type: string
-      source_branch:
         type: string
     type: object
   models.RemittanceStatusResponse:
@@ -3302,6 +3498,552 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.ResponseWoModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_atmloc/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropAtmLoc Input
+        in: body
+        name: dropatmlocInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropAtmLocRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropAtmLocResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_banklist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropBanklistInput
+        in: body
+        name: dropbanklistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropBanklistRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropBanklistResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_banknews/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropBankNews Input
+        in: body
+        name: dropbanknewsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropBankNewsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropBankNewsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_billerproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropLoadProductInput
+        in: body
+        name: dropbillerproductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropLoadProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropLoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_branch/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropBranch Input
+        in: body
+        name: dropbranchInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropBranchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_broadcastsms/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropBroadcastSmsInput
+        in: body
+        name: dropbroadcastsmsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropBroadcastSmsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropBroadcastSmsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_center/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropCenter Input
+        in: body
+        name: dropcenterInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropCenterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_commission/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropCommissionInput
+        in: body
+        name: dropcommissionInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropCommissionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropCommissionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_concerntype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropConcernTypeInput
+        in: body
+        name: dropconcerntypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropConcernTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_csrhotline/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropCsrHotlineInput
+        in: body
+        name: dropcsrhotlineInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropCsrHotlineRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropCsrHotlineResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_feestructure/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropFeeStructure Input
+        in: body
+        name: dropfeestructureInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropFeeStructureRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropFeeStructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_hierarchy/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropHierarchy Input
+        in: body
+        name: drophierarchyInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropHierarchyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropHeirarchyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_insti/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropInsti Input
+        in: body
+        name: dropinstiInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropInstiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropInstiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_partnerlist/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropPartnerListInput
+        in: body
+        name: droppartnerlistInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropPartnerListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropPartnerListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_productcategory/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropProductCategoryInput
+        in: body
+        name: dropproductcategoryInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropProductCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropProductCategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_productservices/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropProductServices Input
+        in: body
+        name: dropproductservicesInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropProductServicesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_producttype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropProductTypeInput
+        in: body
+        name: dropproducttypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropProductTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropProductTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_provider/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropProviderInput
+        in: body
+        name: dropproviderInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropProviderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropProviderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_servicedowntime/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropServiceDowntime Input
+        in: body
+        name: dropservicedowntimeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropServiceDowntimeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_splashscreen/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropSplashScreenInput
+        in: body
+        name: dropsplashscreenInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropSplashScreenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropSplashScreenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_unit/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropUnit Input
+        in: body
+        name: dropunitInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropUnitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropUnitResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
       summary: Fetch User Data
       tags:
       - Webtool
@@ -5073,6 +5815,32 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /get_remittancecancelled/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Remittance Input
+        in: body
+        name: remittanceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /get_remittancecancelledreport/:
     post:
       consumes:
@@ -5092,6 +5860,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.RemittanceCancelledReportResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittanceclaimed/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Remittance Input
+        in: body
+        name: remittanceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceResponse'
         "400":
           description: Bad Request
           schema:
@@ -5144,6 +5938,58 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.RemittanceLogResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittancepending/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Remittance Input
+        in: body
+        name: remittanceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /get_remittancesent/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Remittance Input
+        in: body
+        name: remittanceInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.RemittanceRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.RemittanceResponse'
         "400":
           description: Bad Request
           schema:
@@ -6177,44 +7023,6 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.AllProviderResponse'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.ResponseModel'
-      summary: Fetch User Data
-      tags:
-      - Webtool
-  /select_remittanceclaimed/:
-    post:
-      consumes:
-      - application/json
-      description: Fetch User Data
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/models.RemittancePendingResponse'
-        "400":
-          description: Bad Request
-          schema:
-            $ref: '#/definitions/models.ResponseModel'
-      summary: Fetch User Data
-      tags:
-      - Webtool
-  /select_remittancesent/:
-    post:
-      consumes:
-      - application/json
-      description: Fetch User Data
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: OK
-          schema:
-            $ref: '#/definitions/models.RemittanceSentResponse'
         "400":
           description: Bad Request
           schema:

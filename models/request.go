@@ -34,10 +34,10 @@ type EditClientProfileRequest struct {
 ///hierarchy
 
 type HierarchyRequest struct {
-	Inst_desc   string `json:"i.inst_desc"`
-	Unit_desc   string `json:"u.unit_desc"`
-	Branch_desc string `json:"b.branch_desc"`
-	Center_desc string `json:"c.center_desc"`
+	Inst_desc   string `json:"inst_desc"`
+	Unit_desc   string `json:"unit_desc"`
+	Branch_desc string `json:"branch_desc"`
+	Center_desc string `json:"center_desc"`
 }
 
 type AllHeirarchyRequest struct {
@@ -52,6 +52,11 @@ type EditHierarchyRequest struct {
 	Get_unit_desc    string `json:"get_unit_desc"`
 	Get_center_code  string `json:"get_center_code"`
 	Get_center_desc  string `json:"get_center_desc"`
+}
+
+type DropHierarchyRequest struct {
+	Drop_id        string `json:"drop_id"`
+	Drop_hierarchy string `json:"drop_hierarchy"`
 }
 
 ///listfailedenrollment
@@ -217,6 +222,11 @@ type EditFeeStructureRequest struct {
 	Get_bancnet_income      int    `json:"get_bancnet_income"`
 }
 
+type DropFeeStructureRequest struct {
+	Drop_id           string `json:"drop_id"`
+	Drop_feestructure string `json:"drop_feestructure"`
+}
+
 ///paramconfig
 
 type ParamConfigRequest struct {
@@ -239,10 +249,10 @@ type EditParamConfigRequest struct {
 ///atmloc
 
 type AtmLocRequest struct {
-	Inst_desc       string `json:"i.inst_desc"`
-	Atm_description string `json:"c.atm_description"`
-	Atm_address     string `json:"c.atm_address"`
-	Atm_city        string `json:"c.atm_city"`
+	Inst_desc       string `json:"inst_desc"`
+	Atm_description string `json:"atm_description"`
+	Atm_address     string `json:"atm_address"`
+	Atm_city        string `json:"atm_city"`
 }
 
 type AllAtmLocRequest struct {
@@ -256,6 +266,11 @@ type EditAtmLocRequest struct {
 	Get_atm_city        string `json:"get_atm_city"`
 	Get_atm_longitude   int    `json:"get_atm_longitude"`
 	Get_atm_latitude    int    `json:"get_atm_latitude"`
+}
+
+type DropAtmLocRequest struct {
+	Drop_id     string `json:"drop_id"`
+	Drop_atmloc string `json:"drop_atmloc"`
 }
 
 ///productservices
@@ -274,6 +289,11 @@ type EditProductServicesRequest struct {
 	Get_service_description string `json:"get_service_description"`
 	Get_show                bool   `json:"get_show"`
 	Get_service_banner      string `json:"get_service_banner"`
+}
+
+type DropProductServicesRequest struct {
+	Drop_id              string `json:"drop_id"`
+	Drop_productservices string `json:"drop_productservices"`
 }
 
 ///servicedowntime
@@ -296,10 +316,15 @@ type EditServiceDowntimeRequest struct {
 	Get_downtime_desc  string    `json:"get_downtime_desc"`
 }
 
+type DropServiceDowntimeRequest struct {
+	Drop_id              string `json:"drop_id"`
+	Drop_servicedowntime string `json:"drop_servicedowntime"`
+}
+
 ///banknews
 
 type BankNewsRequest struct {
-	Product_name string `json:"c.product_name"`
+	Product_name string `json:"product_name"`
 }
 
 type AllBankNewsRequest struct {
@@ -313,6 +338,11 @@ type EditBankNewsRequest struct {
 	Get_product_periode_start time.Time `json:"get_product_periode_start"`
 	Get_product_periode_end   time.Time `json:"get_product_periode_end"`
 	Get_product_img_name      string    `json:"get_product_img_name"`
+}
+
+type DropBankNewsRequest struct {
+	Drop_id       string `json:"drop_id"`
+	Drop_banknews string `json:"drop_banknews"`
 }
 
 ///institution
@@ -332,6 +362,11 @@ type EditInstiRequest struct {
 	Get_inst_desc string `json:"get_inst_desc"`
 }
 
+type DropInstiRequest struct {
+	Drop_id    string `json:"drop_id"`
+	Drop_insti string `json:"drop_insti"`
+}
+
 ///branch
 
 type BranchRequest struct {
@@ -347,6 +382,11 @@ type EditBranchRequest struct {
 	Get_branch_id   string `json:"get_branch_id"`
 	Get_branch_code string `json:"get_branch_code"`
 	Get_branch_desc string `json:"get_branch_desc"`
+}
+
+type DropBranchRequest struct {
+	Drop_id     string `json:"drop_id"`
+	Drop_branch string `json:"drop_branch"`
 }
 
 ///unit
@@ -366,6 +406,11 @@ type EditUnitRequest struct {
 	Get_unit_desc string `json:"get_unit_desc"`
 }
 
+type DropUnitRequest struct {
+	Drop_id   string `json:"drop_id"`
+	Drop_unit string `json:"drop_unit"`
+}
+
 ///center
 
 type CenterRequest struct {
@@ -381,6 +426,11 @@ type EditCenterRequest struct {
 	Get_center_id   string `json:"get_center_id"`
 	Get_center_code string `json:"get_center_code"`
 	Get_center_desc string `json:"get_center_desc"`
+}
+
+type DropCenterRequest struct {
+	Drop_id     string `json:"drop_id"`
+	Drop_center string `json:"drop_center"`
 }
 
 ///provider
@@ -400,6 +450,11 @@ type EditProviderRequest struct {
 	Get_description    string `json:"get_description"`
 	Get_provider_alias string `json:"get_provider_alias"`
 	Get_status         int    `json:"get_status"`
+}
+
+type DropProviderRequest struct {
+	Drop_id       string `json:"drop_id"`
+	Drop_provider string `json:"drop_provider"`
 }
 
 ///producttype
@@ -423,6 +478,11 @@ type EditProductTypeRequest struct {
 	Get_status            int    `json:"get_status"`
 }
 
+type DropProductTypeRequest struct {
+	Drop_id          string `json:"drop_id"`
+	Drop_producttype string `json:"drop_producttype"`
+}
+
 ///productcategory
 
 type ProductCategoryRequest struct {
@@ -442,6 +502,11 @@ type EditProductCategoryRequest struct {
 	Get_product_category_id   int    `json:"get_product_category_id"`
 	Get_product_category_name string `json:"get_product_category_name"`
 	Get_status                int    `json:"get_status"`
+}
+
+type DropProductCategoryRequest struct {
+	Drop_id              string `json:"drop_id"`
+	Drop_productcategory string `json:"drop_productcategory"`
 }
 
 ///billerproduct
@@ -468,6 +533,11 @@ type EditBillerProductRequest struct {
 	Get_Status                int    `json:"get_status"`
 }
 
+type DropBillerProductRequest struct {
+	Drop_id            string `json:"drop_id"`
+	Drop_billerproduct string `json:"drop_billerproduct"`
+}
+
 ///loadproduct
 
 type LoadProductRequest struct {
@@ -487,6 +557,11 @@ type EditLoadProductRequest struct {
 	Get_load_product_name     string `json:"get_load_product_name"`
 	Get_description           string `json:"get_description"`
 	Get_status                int    `json:"get_status"`
+}
+
+type DropLoadProductRequest struct {
+	Drop_id          string `json:"drop_id"`
+	Drop_loadproduct string `json:"drop_loadproduct"`
 }
 
 ///commissionsetup
@@ -510,6 +585,11 @@ type EditCommissionRequest struct {
 	Get_Bank_partner_income string `json:"get_bank_partner_income"`
 }
 
+type DropCommissionRequest struct {
+	Drop_id         string `json:"drop_id"`
+	Drop_commission string `json:"drop_commission"`
+}
+
 ///banklist
 
 type BankListRequest struct {
@@ -528,6 +608,11 @@ type EditBanklistRequest struct {
 	Get_Bank_name   string `json:"get_bank_name"`
 	Get_Short_name  string `json:"get_short_name"`
 	Get_Bank_bic    string `json:"get_bank_bic"`
+}
+
+type DropBanklistRequest struct {
+	Drop_id       string `json:"drop_id"`
+	Drop_banklist string `json:"drop_banklist"`
 }
 
 ///partnerlist
@@ -556,6 +641,11 @@ type EditPartnerlistRequest struct {
 	Get_Status                        string `json:"get_status"`
 }
 
+type DropPartnerListRequest struct {
+	Drop_id          string `json:"drop_id"`
+	Drop_partnerlist string `json:"drop_partnerlist"`
+}
+
 ///splashscreen
 
 type SplashScreenRequest struct {
@@ -577,6 +667,11 @@ type EditSplashScreenRequest struct {
 	Get_Show        string `json:"get_show"`
 }
 
+type DropSplashScreenRequest struct {
+	Drop_id           string `json:"drop_id"`
+	Drop_splashscreen string `json:"drop_splashscreen"`
+}
+
 ///csrhotline
 
 type CsrHotlineRequest struct {
@@ -593,6 +688,11 @@ type EditCsrHotlineRequest struct {
 	Get_contact_number   string `json:"get_contact_number"`
 	Get_network_provider string `json:"get_network_provider"`
 	Get_inst_code        string `json:"get_inst_code"`
+}
+
+type DropCsrHotlineRequest struct {
+	Drop_id         string `json:"drop_id"`
+	Drop_csrhotline string `json:"drop_csrhotline"`
 }
 
 ///concerntype
@@ -612,6 +712,11 @@ type EditConcernTypeRequest struct {
 	Get_Concern_desc  string `json:"get_concern_desc"`
 	Get_Concern_time  string `json:"get_concern_time"`
 	Get_Concern_level string `json:"get_concern_level"`
+}
+
+type DropConcernTypeRequest struct {
+	Drop_id          string `json:"drop_id"`
+	Drop_concerntype string `json:"drop_concerntype"`
 }
 
 ///login
@@ -707,6 +812,11 @@ type EditBroadcastSmsRequest struct {
 	Get_inbox_desc   string `json:"get_inbox_desc"`
 	Get_client_type  string `json:"get_client_type"`
 	Get_branch_code  string `json:"get_branch_code"`
+}
+
+type DropBroadcastSmsRequest struct {
+	Drop_id           string `json:"drop_id"`
+	Drop_broadcastsms string `json:"drop_broadcastsms"`
 }
 
 ///WebReport
@@ -963,4 +1073,11 @@ type TaskRequest struct {
 	Task_name  string `json:"task_name"`
 	Created_at string `json:"created_at"`
 	Updated_at string `json:"updated_at"`
+}
+
+///RemittanceStatus
+
+type RemittanceRequest struct {
+	Created_date      string `json:"created_date"`
+	Cast_updated_date string `json:"last_updated_date"`
 }

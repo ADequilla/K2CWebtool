@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func AppRoutes1(app *fiber.App) {
+func ViewSearch(app *fiber.App) {
 	// Swagger
 	app.Get("/docs/*", swagger.HandlerDefault)
 	//-----
