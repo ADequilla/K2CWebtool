@@ -62,6 +62,10 @@ type DropHeirarchyResponse struct {
 	Delete_hierarchy string `json:"delete_hierarchy"`
 }
 
+type CreateHeirarchyResponse struct {
+	Create_heirarchy string `json:"create_heirarchy"`
+}
+
 ///listfailedenrollment
 
 type FailedEnrollmentResponse struct {
@@ -253,6 +257,10 @@ type EditUserManagementResponse struct {
 	Update_usermanagement string `json:"update_usermanagement"`
 }
 
+type CreateUserManagementResponse struct {
+	Create_usermanagement string `json:"create_usermanagement"`
+}
+
 ///feestructure
 
 type FeeStructureResponse struct {
@@ -287,6 +295,10 @@ type DropFeeStructureResponse struct {
 	Delete_feestructure string `json:"delete_feestructure"`
 }
 
+type CreateFeeStructureResponse struct {
+	Create_feestructure string `json:"create_feestructure"`
+}
+
 ///paramconfig
 
 type ParamConfigResponse struct {
@@ -307,6 +319,10 @@ type AllParamConfigResponse struct {
 
 type EditParamConfigResponse struct {
 	Update_paramconfig string `json:"update_paramconfig"`
+}
+
+type CreateParamConfigResponse struct {
+	Create_paramconfig string `json:"create_paramconfig"`
 }
 
 ///atmloc
@@ -336,6 +352,10 @@ type DropAtmLocResponse struct {
 	Delete_atmloc string `json:"delete_atmloc"`
 }
 
+type CreateAtmLocResponse struct {
+	Create_atmloc string `json:"create_atmloc"`
+}
+
 ///productservices
 
 type ProductServicesResponse struct {
@@ -359,6 +379,10 @@ type EditProductServicesResponse struct {
 
 type DropProductServicesResponse struct {
 	Delete_productservices string `json:"delete_productservices"`
+}
+
+type CreateProductServicesResponse struct {
+	Create_productandservices string `json:"create_productandservices"`
 }
 
 ///servicedowntime
@@ -387,6 +411,10 @@ type DropServiceDowntimeResponse struct {
 	Delete_servicedowntime string `json:"delete_servicedowntime"`
 }
 
+type CreateServiceDowntimeResponse struct {
+	Create_servicedowntime string `json:"create_servicedowntime"`
+}
+
 ///banknews
 
 type BankNewsResponse struct {
@@ -413,6 +441,10 @@ type DropBankNewsResponse struct {
 	Delete_banknews string `json:"delete_banknews"`
 }
 
+type CreateBankNewsResponse struct {
+	Create_banknews string `json:"create_banknews"`
+}
+
 ///institution
 
 type InstitutionResponse struct {
@@ -433,6 +465,10 @@ type EditInstiResponse struct {
 
 type DropInstiResponse struct {
 	Delete_insti string `json:"delete_insti"`
+}
+
+type CreateInstiResponse struct {
+	Create_insti string `json:"create_insti"`
 }
 
 ///branch
@@ -457,6 +493,10 @@ type DropBranchResponse struct {
 	Delete_branch string `json:"delete_branch"`
 }
 
+type CreateBranchResponse struct {
+	Create_branch string `json:"create_branch"`
+}
+
 ///unit
 
 type UnitResponse struct {
@@ -479,6 +519,10 @@ type DropUnitResponse struct {
 	Delete_unit string `json:"delete_unit"`
 }
 
+type CreateUnitResponse struct {
+	Create_unit string `json:"create_unit"`
+}
+
 ///center
 
 type CenterResponse struct {
@@ -499,6 +543,10 @@ type EditCenterResponse struct {
 
 type DropCenterResponse struct {
 	Delete_center string `json:"delete_center"`
+}
+
+type CreateCenterResponse struct {
+	Create_center string `json:"create_center"`
 }
 
 ///provider
@@ -526,6 +574,10 @@ type EditProviderResponse struct {
 
 type DropProviderResponse struct {
 	Delete_provider string `json:"delete_provider"`
+}
+
+type CreateProviderResponse struct {
+	Create_provider string `json:"create_provider"`
 }
 
 ///producttype
@@ -557,6 +609,10 @@ type DropProductTypeResponse struct {
 	Delete_producttype string `json:"delete_producttype"`
 }
 
+type CreateProductTypeResponse struct {
+	Create_product_type string `json:"create_product_type"`
+}
+
 ///productcategory
 
 type ProductCategoryResponse struct {
@@ -581,6 +637,10 @@ type EditProductCategoryResponse struct {
 
 type DropProductCategoryResponse struct {
 	Delete_productcategory string `json:"delete_productcategory"`
+}
+
+type CreateProductCategoryResponse struct {
+	Create_productcategory string `json:"create_productcategory"`
 }
 
 ///billerproduct
@@ -615,6 +675,10 @@ type DropBillerProductResponse struct {
 	Delete_billerproduct string `json:"delete_billerproduct"`
 }
 
+type CreateBillerProductResponse struct {
+	Create_billerproduct string `json:"create_billerproduct"`
+}
+
 ///loadproduct
 
 type LoadProductResponse struct {
@@ -640,6 +704,10 @@ type EditLoadProductResponse struct {
 
 type DropLoadProductResponse struct {
 	Delete_loadproduct string `json:"delete_loadproduct"`
+}
+
+type CreateLoadProductResponse struct {
+	Create_loadproduct string `json:"create_loadproduct"`
 }
 
 ///commission
@@ -672,6 +740,10 @@ type DropCommissionResponse struct {
 	Delete_commission string `json:"delete_commission"`
 }
 
+type CreateCommissionResponse struct {
+	Create_commission string `json:"create_commission"`
+}
+
 //banklist
 
 type BankListResponse struct {
@@ -696,6 +768,10 @@ type EditBanklistResponse struct {
 
 type DropBanklistResponse struct {
 	Delete_banklist string `json:"delete_banklist"`
+}
+
+type CreateBankListResponse struct {
+	Create_bank string `json:"create_bank"`
 }
 
 //partnerlist
@@ -733,6 +809,10 @@ type DropPartnerListResponse struct {
 	Delete_partnerlist string `json:"delete_partnerlist"`
 }
 
+type CreatePartnerListResponse struct {
+	Create_partner string `json:"create_partner"`
+}
+
 //splashscreen
 
 type SplashScreenResponse struct {
@@ -762,6 +842,10 @@ type DropSplashScreenResponse struct {
 	Delete_splashscreen string `json:"delete_splashscreen"`
 }
 
+type CreateSplashScreenResponse struct {
+	Create_splashscreen string `json:"create_splashscreen"`
+}
+
 //csrhotline
 
 type CsrHotlineResponse struct {
@@ -784,6 +868,10 @@ type EditCsrHotlineResponse struct {
 
 type DropCsrHotlineResponse struct {
 	Delete_csrhotline string `json:"delete_csrhotline"`
+}
+
+type CreateCsrHotlineResponse struct {
+	Create_csrhotline string `json:"create_csrhotline"`
 }
 
 //corncerntype
@@ -809,6 +897,10 @@ type EditConcernTypeResponse struct {
 
 type DropConcernTypeResponse struct {
 	Delete_concerntype string `json:"delete_concerntype"`
+}
+
+type CreateConcernTypeResponse struct {
+	Create_concerntype string `json:"create_concerntype"`
 }
 
 //login
@@ -986,6 +1078,10 @@ type EditBroadcastSmsResponse struct {
 
 type DropBroadcastSmsResponse struct {
 	Delete_broadcastsms string `json:"delete_broadcastsms"`
+}
+
+type CreateBroadcastSmsResponse struct {
+	Create_broadcastsms string `json:"create_broadcastsms"`
 }
 
 ///WebReport

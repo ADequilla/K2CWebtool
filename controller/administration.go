@@ -2,6 +2,7 @@ package controller
 
 import (
 	"net/http"
+	"time"
 	"webtool-api/middleware"
 	"webtool-api/models"
 
@@ -130,6 +131,59 @@ func EditUserManagement(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createUserInput body models.CreateUserManagementRequest true "CreateUser Input"
+// @Success		  	200 {object} models.CreateUserManagementResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_usermanagement/ [post]
+func CreateUserManagements(c *fiber.Ctx) error {
+	var createInput models.CreateUserManagementRequest
+	var err error
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_user_password == "" {
+		createInput.Set_user_password = "fdsap2023"
+	}
+
+	if createInput.Set_created_at == "" {
+		createInput.Set_created_at = time.Now().Format("2014-02-04 18:05:00")
+	}
+
+	createInput.Set_user_password, err = middleware.HashPassword(createInput.Set_user_password)
+	if err != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+			RetCode: "400",
+			Message: "HashPassword Error",
+		})
+	}
+
+	createModel := models.CreateUserManagementResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_usermanagement(?,?,?,?,?,?,?,?,?,?,?,?,?,?)", createInput.Set_user_name, createInput.Set_user_password, createInput.Set_user_email, createInput.Set_user_phone, createInput.Set_created_at, createInput.Set_created_by, createInput.Set_user_status, createInput.Set_inst_desc, createInput.Set_branch_desc, createInput.Set_given_name, createInput.Set_middle_name, createInput.Set_last_name, createInput.Set_check_status, createInput.Set_role).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -414,5 +468,45 @@ func DropHierarchy(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createHeirarchyInput body models.CreateHeirarchyRequest true "CreateHeirarchy Input"
+// @Success		  	200 {object} models.CreateHeirarchyResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_heirarchy/ [post]
+func CreateHeirarchy(c *fiber.Ctx) error {
+	var createInput models.CreateHeirarchyRequest
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateHeirarchyResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_heirarchy(?,?,?,?,?,?,?,?)", createInput.Set_branch_code, createInput.Set_branch_desc, createInput.Set_unit_code, createInput.Set_unit_desc, createInput.Set_center_code, createInput.Set_center_desc, createInput.Set_created_by, createInput.Set_created_date).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }

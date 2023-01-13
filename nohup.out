@@ -1258,3 +1258,17 @@ host=35.186.156.47 user=alexendrich_dequilla password=fdsap@2020 dbname=mfs port
 09:35:06 | 404 |     1ms |      10.21.0.66 | POST    | /select_provider                   | Cannot POST /select_provider
 09:35:56 | 404 |      0s |      10.21.0.66 | POST    | /select_provider                   | Cannot POST /select_provider
 signal: interrupt
+SIT
+alexendrich_dequilla
+host=35.186.156.47 user=alexendrich_dequilla password=fdsap@2020 dbname=mfs port=5432 sslmode=disable
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.39.0                   │ 
+ │               http://127.0.0.1:1111               │ 
+ │       (bound on host 0.0.0.0 and port 1111)       │ 
+ │                                                   │ 
+ │ Handlers ........... 161  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID .............. 7718 │ 
+ └───────────────────────────────────────────────────┘ 
+
+signal: interrupt

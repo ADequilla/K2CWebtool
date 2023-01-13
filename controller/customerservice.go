@@ -2,6 +2,7 @@ package controller
 
 import (
 	"net/http"
+	"time"
 	"webtool-api/middleware"
 	"webtool-api/models"
 
@@ -173,6 +174,46 @@ func DropCsrHotline(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createCsrHotlineInput body models.CreateCsrHotlineRequest true "CsrHotline Input"
+// @Success		  	200 {object} models.CreateCsrHotlineResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_csrhotline/ [post]
+func CreateCsrHotline(c *fiber.Ctx) error {
+	createInput := models.CreateCsrHotlineRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateCsrHotlineResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_csrhotline(?,?,?,?,?)", createInput.Set_contact_number, createInput.Set_network_provider, createInput.Set_inst_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	corncerntypeInput body models.ConcernTypeRequest true "ConcernType Input"
 // @Success		  	200 {object} models.ConcernTypeResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -325,6 +366,46 @@ func DropConcernType(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createConcernTypeInput body models.CreateConcernTypeRequest true "ConcernType Input"
+// @Success		  	200 {object} models.CreateConcernTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_concerntype/ [post]
+func CreateConcernType(c *fiber.Ctx) error {
+	createInput := models.CreateConcernTypeRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateConcernTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_concerntype(?,?,?,?,?,?)", createInput.Set_concern_name, createInput.Set_concern_desc, createInput.Set_concern_time, createInput.Set_concern_level, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -529,5 +610,41 @@ func DropBroadcastSms(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createBroadcastSmsInput body models.CreateBroadcastSmsRequest true "BroadcastSms Input"
+// @Success		  	200 {object} models.CreateBroadcastSmsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_broadcastsms/ [post]
+func CreateBroadcastSms(c *fiber.Ctx) error {
+	createInput := models.CreateBroadcastSmsRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	createModel := models.CreateBroadcastSmsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_broadcastsms(?,?,?,?,?,?)", createInput.Set_subject, createInput.Set_period_start, createInput.Set_period_end, createInput.Set_inbox_desc, createInput.Set_client_type, createInput.Set_branch_desc).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }

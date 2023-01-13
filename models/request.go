@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 ///clientprofile
 
@@ -57,6 +59,17 @@ type EditHierarchyRequest struct {
 type DropHierarchyRequest struct {
 	Drop_id        string `json:"drop_id"`
 	Drop_hierarchy string `json:"drop_hierarchy"`
+}
+
+type CreateHeirarchyRequest struct {
+	Set_branch_code  string `json:"set_branch_code"`
+	Set_branch_desc  string `json:"set_branch_desc"`
+	Set_unit_code    string `json:"set_unit_code"`
+	Set_unit_desc    string `json:"set_unit_desc"`
+	Set_center_code  string `json:"set_center_code"`
+	Set_center_desc  string `json:"set_center_desc"`
+	Set_created_by   int64  `json:"set_created_by"`
+	Set_created_date string `json:"set_created_date"`
 }
 
 ///listfailedenrollment
@@ -199,6 +212,23 @@ type EditUserManagementRequest struct {
 	Get_branch_desc  string `json:"get_branch_desc"`
 }
 
+type CreateUserManagementRequest struct {
+	Set_user_name     string `json:"set_user_name"`
+	Set_user_password string `json:"set_user_password"`
+	Set_user_email    string `json:"set_user_email"`
+	Set_user_phone    string `json:"set_user_phone"`
+	Set_created_at    string `json:"set_created_at"`
+	Set_created_by    int    `json:"set_created_by"`
+	Set_user_status   string `json:"set_user_status"`
+	Set_inst_desc     string `json:"set_inst_desc"`
+	Set_branch_desc   string `json:"set_branch_desc"`
+	Set_given_name    string `json:"set_given_name"`
+	Set_middle_name   string `json:"set_middle_name"`
+	Set_last_name     string `json:"set_last_name" `
+	Set_check_status  string `json:"set_check_status"`
+	Set_role          string `json:"set_role" `
+}
+
 ///feestructure
 
 type FeeStructureRequest struct {
@@ -227,6 +257,20 @@ type DropFeeStructureRequest struct {
 	Drop_feestructure string `json:"drop_feestructure"`
 }
 
+type CreateFeeStructureRequest struct {
+	Set_start_range         int    `json:"set_start_range"`
+	Set_end_range           int    `json:"set_end_range"`
+	Set_total_charge        int    `json:"set_total_charge" gorm:"type:real[]"`
+	Set_agent_income        int    `json:"set_agent_income" gorm:"type:real[]"`
+	Set_bank_income         int    `json:"set_bank_income" gorm:"type:real[]"`
+	Set_created_date        string `json:"set_created_date"`
+	Set_created_by          int    `json:"set_created_by"`
+	Set_trans_type          string `json:"set_trans_type"`
+	Set_client_type         string `json:"set_client_type"`
+	Set_agent_target_income int    `json:"set_agent_target_income" gorm:"type:real[]"`
+	Set_bancnet_income      int    `json:"set_bancnet_income" gorm:"type:real[]"`
+}
+
 ///paramconfig
 
 type ParamConfigRequest struct {
@@ -244,6 +288,15 @@ type EditParamConfigRequest struct {
 	Get_param_name  string `json:"get_param_name"`
 	Get_param_value string `json:"get_param_value"`
 	Get_param_desc  string `json:"get_param_desc"`
+}
+
+type CreateParamConfigRequest struct {
+	Set_param_type   string `json:"set_param_type"`
+	Set_param_name   string `json:"set_param_name"`
+	Set_param_value  string `json:"set_param_value"`
+	Set_param_desc   string `json:"set_param_desc"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
 }
 
 ///atmloc
@@ -273,6 +326,17 @@ type DropAtmLocRequest struct {
 	Drop_atmloc string `json:"drop_atmloc"`
 }
 
+type CreateAtmLocRequest struct {
+	Set_atm_description string `json:"set_atm_description"`
+	Set_atm_address     string `json:"set_atm_address"`
+	Set_atm_city        string `json:"set_atm_city"`
+	Set_atm_longitude   string `json:"set_atm_longitude"`
+	Set_atm_latitude    string `json:"set_atm_latitude"`
+	Set_insti_desc      string `json:"set_insti_desc"`
+	Set_created_date    string `json:"set_created_date"`
+	Set_created_by      int    `json:"set_created_by"`
+}
+
 ///productservices
 
 type ProductServicesRequest struct {
@@ -294,6 +358,15 @@ type EditProductServicesRequest struct {
 type DropProductServicesRequest struct {
 	Drop_id              string `json:"drop_id"`
 	Drop_productservices string `json:"drop_productservices"`
+}
+
+type CreateProductServicesRequest struct {
+	Set_service_name        string `json:"set_service_name"`
+	Set_service_description string `json:"set_service_description"`
+	Set_service_banner      string `json:"set_service_banner"`
+	Set_created_date        string `json:"set_created_date"`
+	Set_created_by          int    `json:"set_created_by"`
+	Set_show                bool   `json:"set_show"`
 }
 
 ///servicedowntime
@@ -321,6 +394,15 @@ type DropServiceDowntimeRequest struct {
 	Drop_servicedowntime string `json:"drop_servicedowntime"`
 }
 
+type CreateServiceDowntimeRequest struct {
+	Set_downtime_start string `json:"set_downtime_start"`
+	Set_downtime_end   string `json:"set_downtime_end"`
+	Set_downtime_desc  string `json:"set_downtime_desc"`
+	Set_created_date   string `json:"set_created_date"`
+	Set_created_by     int    `json:"set_created_by"`
+	Set_client_type    string `json:"set_client_type"`
+}
+
 ///banknews
 
 type BankNewsRequest struct {
@@ -345,6 +427,16 @@ type DropBankNewsRequest struct {
 	Drop_banknews string `json:"drop_banknews"`
 }
 
+type CreateBankNewsRequest struct {
+	Set_product_name          string `json:"set_product_name"`
+	Set_product_description   string `json:"set_product_description"`
+	Set_product_periode_start string `json:"set_product_periode_start"`
+	Set_product_periode_end   string `json:"set_product_periode_end"`
+	Set_product_img_name      string `json:"set_product_img_name"`
+	Set_created_date          string `json:"set_created_date"`
+	Set_created_by            int    `json:"set_created_by"`
+}
+
 ///institution
 
 type InstitutionRequest struct {
@@ -365,6 +457,13 @@ type EditInstiRequest struct {
 type DropInstiRequest struct {
 	Drop_id    string `json:"drop_id"`
 	Drop_insti string `json:"drop_insti"`
+}
+
+type CreateInstiRequest struct {
+	Set_inst_code    string `json:"set_inst_code"`
+	Set_inst_desc    string `json:"set_inst_desc"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
 }
 
 ///branch
@@ -389,6 +488,13 @@ type DropBranchRequest struct {
 	Drop_branch string `json:"drop_branch"`
 }
 
+type CreateBranchRequest struct {
+	Set_branch_code  string `json:"set_branch_code"`
+	Set_branch_desc  string `json:"set_branch_desc"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
+}
+
 ///unit
 
 type UnitRequest struct {
@@ -409,6 +515,13 @@ type EditUnitRequest struct {
 type DropUnitRequest struct {
 	Drop_id   string `json:"drop_id"`
 	Drop_unit string `json:"drop_unit"`
+}
+
+type CreateUnitRequest struct {
+	Set_unit_code    string `json:"set_unit_code"`
+	Set_unit_desc    string `json:"set_unit_desc"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
 }
 
 ///center
@@ -433,6 +546,13 @@ type DropCenterRequest struct {
 	Drop_center string `json:"drop_center"`
 }
 
+type CreateCenterRequest struct {
+	Set_center_code  string `json:"set_center_code"`
+	Set_center_desc  string `json:"set_center_desc"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
+}
+
 ///provider
 
 type ProviderRequest struct {
@@ -455,6 +575,15 @@ type EditProviderRequest struct {
 type DropProviderRequest struct {
 	Drop_id       string `json:"drop_id"`
 	Drop_provider string `json:"drop_provider"`
+}
+
+type CreateProviderRequest struct {
+	Set_provider_name  string `json:"set_provider_name"`
+	Set_description    string `json:"set_description"`
+	Set_provider_alias string `json:"set_provider_alias"`
+	Set_status         int    `json:"set_status"`
+	Set_created_date   string `json:"set_created_date"`
+	Set_created_by     int    `json:"set_created_by"`
 }
 
 ///producttype
@@ -483,6 +612,16 @@ type DropProductTypeRequest struct {
 	Drop_producttype string `json:"drop_producttype"`
 }
 
+type CreateProductTypeRequest struct {
+	Set_provider_name     string `json:"set_provider_name"`
+	Set_product_type_id   int    `json:"set_product_type_id"`
+	Set_product_type_name string `json:"set_product_type_name"`
+	Set_description       string `json:"set_description"`
+	Set_status            int    `json:"set_status"`
+	Set_created_date      string `json:"set_created_date"`
+	Set_created_by        int    `json:"set_created_by"`
+}
+
 ///productcategory
 
 type ProductCategoryRequest struct {
@@ -507,6 +646,16 @@ type EditProductCategoryRequest struct {
 type DropProductCategoryRequest struct {
 	Drop_id              string `json:"drop_id"`
 	Drop_productcategory string `json:"drop_productcategory"`
+}
+
+type CreateProductCategoryRequest struct {
+	Set_product_type_name     string `json:"set_product_type_name"`
+	Set_product_category_id   int    `json:"set_product_category_id"`
+	Set_product_category_name string `json:"set_product_category_name"`
+	Set_description           string `json:"set_description"`
+	Set_status                int    `json:"set_status"`
+	Set_created_date          string `json:"set_created_date"`
+	Set_created_by            int    `json:"set_created_by"`
 }
 
 ///billerproduct
@@ -538,6 +687,18 @@ type DropBillerProductRequest struct {
 	Drop_billerproduct string `json:"drop_billerproduct"`
 }
 
+type CreateBillerProductRequest struct {
+	Set_product_category_name string `json:"set_product_category_name"`
+	Set_biller_product_id     int    `json:"set_biller_product_id"`
+	Set_biller_product_name   string `json:"set_biller_product_name"`
+	Set_description           string `json:"set_description"`
+	Set_bank_commission       string `json:"set_bank_commission"`
+	Set_service_fee           string `json:"set_service_fee"`
+	Set_status                int    `json:"set_status"`
+	Set_created_date          string `json:"set_created_date"`
+	Set_created_by            int    `json:"set_created_by"`
+}
+
 ///loadproduct
 
 type LoadProductRequest struct {
@@ -562,6 +723,16 @@ type EditLoadProductRequest struct {
 type DropLoadProductRequest struct {
 	Drop_id          string `json:"drop_id"`
 	Drop_loadproduct string `json:"drop_loadproduct"`
+}
+
+type CreateLoadProductRequest struct {
+	Set_product_category_name string `json:"set_product_category_name"`
+	Set_load_product_id       int    `json:"set_load_product_id"`
+	Set_load_product_name     string `json:"set_load_product_name"`
+	Set_description           string `json:"set_description"`
+	Set_status                int    `json:"set_status"`
+	Set_created_date          string `json:"set_created_date"`
+	Set_created_by            int    `json:"set_created_by"`
 }
 
 ///commissionsetup
@@ -590,6 +761,17 @@ type DropCommissionRequest struct {
 	Drop_commission string `json:"drop_commission"`
 }
 
+type CreateCommissionRequest struct {
+	Set_trans_type          string `json:"set_trans_type"`
+	Set_commission_type     string `json:"set_commission_type"`
+	Set_customer_income     string `json:"set_customer_income"`
+	Set_agent_income        string `json:"set_agent_income"`
+	Set_bank_income         string `json:"set_bank_income"`
+	Set_bank_partner_income string `json:"set_bank_partner_income"`
+	Set_created_date        string `json:"set_created_date"`
+	Set_created_by          int    `json:"set_created_by"`
+}
+
 ///banklist
 
 type BankListRequest struct {
@@ -613,6 +795,15 @@ type EditBanklistRequest struct {
 type DropBanklistRequest struct {
 	Drop_id       string `json:"drop_id"`
 	Drop_banklist string `json:"drop_banklist"`
+}
+
+type CreateBankListRequest struct {
+	Set_bank_code    string `json:"set_bank_code"`
+	Set_bank_name    string `json:"set_bank_name"`
+	Set_short_name   string `json:"set_short_name"`
+	Set_bank_bic     string `json:"set_bank_bic"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
 }
 
 ///partnerlist
@@ -646,6 +837,20 @@ type DropPartnerListRequest struct {
 	Drop_partnerlist string `json:"drop_partnerlist"`
 }
 
+type CreatePartnerListRequest struct {
+	Set_partner_id                    string `json:"set_partner_id"`
+	Set_partner_name                  string `json:"set_partner_name"`
+	Set_partner_desc                  string `json:"set_partner_desc"`
+	Set_partner_account               string `json:"set_partner_account"`
+	Set_partner_api_url               string `json:"set_partner_api_url"`
+	Set_merchant_payment_callback_url string `json:"set_merchant_payment_callback_url"`
+	Set_merchant_id_prefix            string `json:"set_merchant_id_prefix"`
+	Set_mri_group                     int    `json:"set_mri_group"`
+	Set_status                        int    `json:"set_status"`
+	Set_created_date                  string `json:"set_created_date"`
+	Set_created_by                    int    `json:"set_created_by"`
+}
+
 ///splashscreen
 
 type SplashScreenRequest struct {
@@ -672,6 +877,17 @@ type DropSplashScreenRequest struct {
 	Drop_splashscreen string `json:"drop_splashscreen"`
 }
 
+type CreateSplashScreenRequest struct {
+	Set_action       string `json:"set_action"`
+	Set_title        string `json:"set_title"`
+	Set_message      string `json:"set_message"`
+	Set_sub_message  string `json:"set_sub_message"`
+	Set_show         string `json:"set_show"`
+	Set_set_img_url  string `json:"set_img_url"`
+	Set_created_date string `json:"set_created_date"`
+	Set_created_by   int    `json:"set_created_by"`
+}
+
 ///csrhotline
 
 type CsrHotlineRequest struct {
@@ -693,6 +909,14 @@ type EditCsrHotlineRequest struct {
 type DropCsrHotlineRequest struct {
 	Drop_id         string `json:"drop_id"`
 	Drop_csrhotline string `json:"drop_csrhotline"`
+}
+
+type CreateCsrHotlineRequest struct {
+	Set_contact_number   string `json:"set_contact_number"`
+	Set_network_provider string `json:"set_network_provider"`
+	Set_inst_desc        string `json:"set_inst_desc"`
+	Set_created_date     string `json:"set_created_date"`
+	Set_created_by       int    `json:"set_created_by"`
 }
 
 ///concerntype
@@ -717,6 +941,15 @@ type EditConcernTypeRequest struct {
 type DropConcernTypeRequest struct {
 	Drop_id          string `json:"drop_id"`
 	Drop_concerntype string `json:"drop_concerntype"`
+}
+
+type CreateConcernTypeRequest struct {
+	Set_concern_name  string `json:"set_concern_name"`
+	Set_concern_desc  string `json:"set_concern_desc"`
+	Set_concern_time  string `json:"set_concern_time"`
+	Set_concern_level string `json:"set_concern_level"`
+	Set_created_date  string `json:"set_created_date"`
+	Set_created_by    int    `json:"set_created_by"`
 }
 
 ///login
@@ -817,6 +1050,15 @@ type EditBroadcastSmsRequest struct {
 type DropBroadcastSmsRequest struct {
 	Drop_id           string `json:"drop_id"`
 	Drop_broadcastsms string `json:"drop_broadcastsms"`
+}
+
+type CreateBroadcastSmsRequest struct {
+	Set_subject      string `json:"set_subject"`
+	Set_period_start string `json:"set_period_start"`
+	Set_period_end   string `json:"set_period_end"`
+	Set_inbox_desc   string `json:"set_inbox_desc"`
+	Set_client_type  string `json:"set_client_type"`
+	Set_branch_desc  string `json:"set_branch_desc"`
 }
 
 ///WebReport

@@ -106,6 +106,966 @@
                 }
             }
         },
+        "/create_atmloc/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "AtmLoc Input",
+                        "name": "createAtmLocInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateAtmLocRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateAtmLocResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_bank/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "BankList Input",
+                        "name": "createBankListInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBankListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBankListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_banknews/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "BankNews Input",
+                        "name": "createBankNewsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBankNewsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBankNewsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_billerproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "BillerProduct Input",
+                        "name": "createBillerProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBillerProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBillerProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_branch/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Branch Input",
+                        "name": "createBranchInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBranchRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBranchResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_broadcastsms/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "BroadcastSms Input",
+                        "name": "createBroadcastSmsInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBroadcastSmsRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateBroadcastSmsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_center/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Center Input",
+                        "name": "createCenterInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCenterRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCenterResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_commission/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Commission Input",
+                        "name": "createCommissionInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCommissionRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCommissionResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_concerntype/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ConcernType Input",
+                        "name": "createConcernTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateConcernTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateConcernTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_csrhotline/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CsrHotline Input",
+                        "name": "createCsrHotlineInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCsrHotlineRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateCsrHotlineResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_feestructure/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "FeeStructure Input",
+                        "name": "createFeeStructureInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateFeeStructureRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateFeeStructureResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_heirarchy/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CreateHeirarchy Input",
+                        "name": "createHeirarchyInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateHeirarchyRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateHeirarchyResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_insti/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Insti Input",
+                        "name": "createInstiInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateInstiRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateInstiResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_loadproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "LoadProduct Input",
+                        "name": "createLoadProductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateLoadProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateLoadProductResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_paramconfig/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ParamConfig Input",
+                        "name": "createParamConfigInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateParamConfigRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateParamConfigResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_partner/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "PartnerList Input",
+                        "name": "createPartnerListInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreatePartnerListRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreatePartnerListResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_product_type/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ProductType Input",
+                        "name": "createProductTypeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductTypeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductTypeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_productcategory/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ProductCategory Input",
+                        "name": "createProductCategoryInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductCategoryRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductCategoryResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_productservices/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ProductServices Input",
+                        "name": "createProductServicesInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductServicesRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProductServicesResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_provider/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Provider Input",
+                        "name": "createProviderInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProviderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateProviderResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_servicedowntime/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "ServiceDowntime Input",
+                        "name": "createServiceDowntimeInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateServiceDowntimeRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateServiceDowntimeResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_splashscreen/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "SplashScreen Input",
+                        "name": "createSplashScreenInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateSplashScreenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateSplashScreenResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_unit/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "Unit Input",
+                        "name": "createUnitInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateUnitRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateUnitResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/create_usermanagement/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "CreateUser Input",
+                        "name": "createUserInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateUserManagementRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.CreateUserManagementResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
         "/drop_atmloc/": {
             "post": {
                 "description": "Fetch User Data",
@@ -241,12 +1201,12 @@
                 "summary": "Fetch User Data",
                 "parameters": [
                     {
-                        "description": "DropLoadProductInput",
+                        "description": "DropBillerProductInput",
                         "name": "dropbillerproductInput",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.DropLoadProductRequest"
+                            "$ref": "#/definitions/models.DropBillerProductRequest"
                         }
                     }
                 ],
@@ -254,7 +1214,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.DropLoadProductResponse"
+                            "$ref": "#/definitions/models.DropBillerProductResponse"
                         }
                     },
                     "400": {
@@ -615,6 +1575,46 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/models.DropInstiResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/models.ResponseModel"
+                        }
+                    }
+                }
+            }
+        },
+        "/drop_loadproduct/": {
+            "post": {
+                "description": "Fetch User Data",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Webtool"
+                ],
+                "summary": "Fetch User Data",
+                "parameters": [
+                    {
+                        "description": "DropLoadProductInput",
+                        "name": "dropbillerproductInput",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.DropLoadProductRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.DropLoadProductResponse"
                         }
                     },
                     "400": {
@@ -7259,6 +8259,822 @@
                     "type": "string"
                 },
                 "concern_time": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateAtmLocRequest": {
+            "type": "object",
+            "properties": {
+                "set_atm_address": {
+                    "type": "string"
+                },
+                "set_atm_city": {
+                    "type": "string"
+                },
+                "set_atm_description": {
+                    "type": "string"
+                },
+                "set_atm_latitude": {
+                    "type": "string"
+                },
+                "set_atm_longitude": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_insti_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateAtmLocResponse": {
+            "type": "object",
+            "properties": {
+                "create_atmloc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBankListRequest": {
+            "type": "object",
+            "properties": {
+                "set_bank_bic": {
+                    "type": "string"
+                },
+                "set_bank_code": {
+                    "type": "string"
+                },
+                "set_bank_name": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_short_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBankListResponse": {
+            "type": "object",
+            "properties": {
+                "create_bank": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBankNewsRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_product_description": {
+                    "type": "string"
+                },
+                "set_product_img_name": {
+                    "type": "string"
+                },
+                "set_product_name": {
+                    "type": "string"
+                },
+                "set_product_periode_end": {
+                    "type": "string"
+                },
+                "set_product_periode_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBankNewsResponse": {
+            "type": "object",
+            "properties": {
+                "create_banknews": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBillerProductRequest": {
+            "type": "object",
+            "properties": {
+                "set_bank_commission": {
+                    "type": "string"
+                },
+                "set_biller_product_id": {
+                    "type": "integer"
+                },
+                "set_biller_product_name": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_description": {
+                    "type": "string"
+                },
+                "set_product_category_name": {
+                    "type": "string"
+                },
+                "set_service_fee": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateBillerProductResponse": {
+            "type": "object",
+            "properties": {
+                "create_billerproduct": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBranchRequest": {
+            "type": "object",
+            "properties": {
+                "set_branch_code": {
+                    "type": "string"
+                },
+                "set_branch_desc": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBranchResponse": {
+            "type": "object",
+            "properties": {
+                "create_branch": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBroadcastSmsRequest": {
+            "type": "object",
+            "properties": {
+                "set_branch_desc": {
+                    "type": "string"
+                },
+                "set_client_type": {
+                    "type": "string"
+                },
+                "set_inbox_desc": {
+                    "type": "string"
+                },
+                "set_period_end": {
+                    "type": "string"
+                },
+                "set_period_start": {
+                    "type": "string"
+                },
+                "set_subject": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateBroadcastSmsResponse": {
+            "type": "object",
+            "properties": {
+                "create_broadcastsms": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCenterRequest": {
+            "type": "object",
+            "properties": {
+                "set_center_code": {
+                    "type": "string"
+                },
+                "set_center_desc": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCenterResponse": {
+            "type": "object",
+            "properties": {
+                "create_center": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCommissionRequest": {
+            "type": "object",
+            "properties": {
+                "set_agent_income": {
+                    "type": "string"
+                },
+                "set_bank_income": {
+                    "type": "string"
+                },
+                "set_bank_partner_income": {
+                    "type": "string"
+                },
+                "set_commission_type": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_customer_income": {
+                    "type": "string"
+                },
+                "set_trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCommissionResponse": {
+            "type": "object",
+            "properties": {
+                "create_commission": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateConcernTypeRequest": {
+            "type": "object",
+            "properties": {
+                "set_concern_desc": {
+                    "type": "string"
+                },
+                "set_concern_level": {
+                    "type": "string"
+                },
+                "set_concern_name": {
+                    "type": "string"
+                },
+                "set_concern_time": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateConcernTypeResponse": {
+            "type": "object",
+            "properties": {
+                "create_concerntype": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCsrHotlineRequest": {
+            "type": "object",
+            "properties": {
+                "set_contact_number": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_inst_desc": {
+                    "type": "string"
+                },
+                "set_network_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateCsrHotlineResponse": {
+            "type": "object",
+            "properties": {
+                "create_csrhotline": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateFeeStructureRequest": {
+            "type": "object",
+            "properties": {
+                "set_agent_income": {
+                    "type": "integer"
+                },
+                "set_agent_target_income": {
+                    "type": "integer"
+                },
+                "set_bancnet_income": {
+                    "type": "integer"
+                },
+                "set_bank_income": {
+                    "type": "integer"
+                },
+                "set_client_type": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_end_range": {
+                    "type": "integer"
+                },
+                "set_start_range": {
+                    "type": "integer"
+                },
+                "set_total_charge": {
+                    "type": "integer"
+                },
+                "set_trans_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateFeeStructureResponse": {
+            "type": "object",
+            "properties": {
+                "create_feestructure": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateHeirarchyRequest": {
+            "type": "object",
+            "properties": {
+                "set_branch_code": {
+                    "type": "string"
+                },
+                "set_branch_desc": {
+                    "type": "string"
+                },
+                "set_center_code": {
+                    "type": "string"
+                },
+                "set_center_desc": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_unit_code": {
+                    "type": "string"
+                },
+                "set_unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateHeirarchyResponse": {
+            "type": "object",
+            "properties": {
+                "create_heirarchy": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateInstiRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_inst_code": {
+                    "type": "string"
+                },
+                "set_inst_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateInstiResponse": {
+            "type": "object",
+            "properties": {
+                "create_insti": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateLoadProductRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_description": {
+                    "type": "string"
+                },
+                "set_load_product_id": {
+                    "type": "integer"
+                },
+                "set_load_product_name": {
+                    "type": "string"
+                },
+                "set_product_category_name": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateLoadProductResponse": {
+            "type": "object",
+            "properties": {
+                "create_loadproduct": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateParamConfigRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_param_desc": {
+                    "type": "string"
+                },
+                "set_param_name": {
+                    "type": "string"
+                },
+                "set_param_type": {
+                    "type": "string"
+                },
+                "set_param_value": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateParamConfigResponse": {
+            "type": "object",
+            "properties": {
+                "create_paramconfig": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreatePartnerListRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_merchant_id_prefix": {
+                    "type": "string"
+                },
+                "set_merchant_payment_callback_url": {
+                    "type": "string"
+                },
+                "set_mri_group": {
+                    "type": "integer"
+                },
+                "set_partner_account": {
+                    "type": "string"
+                },
+                "set_partner_api_url": {
+                    "type": "string"
+                },
+                "set_partner_desc": {
+                    "type": "string"
+                },
+                "set_partner_id": {
+                    "type": "string"
+                },
+                "set_partner_name": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreatePartnerListResponse": {
+            "type": "object",
+            "properties": {
+                "create_partner": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateProductCategoryRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_description": {
+                    "type": "string"
+                },
+                "set_product_category_id": {
+                    "type": "integer"
+                },
+                "set_product_category_name": {
+                    "type": "string"
+                },
+                "set_product_type_name": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateProductCategoryResponse": {
+            "type": "object",
+            "properties": {
+                "create_productcategory": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateProductServicesRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_service_banner": {
+                    "type": "string"
+                },
+                "set_service_description": {
+                    "type": "string"
+                },
+                "set_service_name": {
+                    "type": "string"
+                },
+                "set_show": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.CreateProductServicesResponse": {
+            "type": "object",
+            "properties": {
+                "create_productandservices": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateProductTypeRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_description": {
+                    "type": "string"
+                },
+                "set_product_type_id": {
+                    "type": "integer"
+                },
+                "set_product_type_name": {
+                    "type": "string"
+                },
+                "set_provider_name": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateProductTypeResponse": {
+            "type": "object",
+            "properties": {
+                "create_product_type": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateProviderRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_description": {
+                    "type": "string"
+                },
+                "set_provider_alias": {
+                    "type": "string"
+                },
+                "set_provider_name": {
+                    "type": "string"
+                },
+                "set_status": {
+                    "type": "integer"
+                }
+            }
+        },
+        "models.CreateProviderResponse": {
+            "type": "object",
+            "properties": {
+                "create_provider": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateServiceDowntimeRequest": {
+            "type": "object",
+            "properties": {
+                "set_client_type": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_downtime_desc": {
+                    "type": "string"
+                },
+                "set_downtime_end": {
+                    "type": "string"
+                },
+                "set_downtime_start": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateServiceDowntimeResponse": {
+            "type": "object",
+            "properties": {
+                "create_servicedowntime": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateSplashScreenRequest": {
+            "type": "object",
+            "properties": {
+                "set_action": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_img_url": {
+                    "type": "string"
+                },
+                "set_message": {
+                    "type": "string"
+                },
+                "set_show": {
+                    "type": "string"
+                },
+                "set_sub_message": {
+                    "type": "string"
+                },
+                "set_title": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateSplashScreenResponse": {
+            "type": "object",
+            "properties": {
+                "create_splashscreen": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateUnitRequest": {
+            "type": "object",
+            "properties": {
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_created_date": {
+                    "type": "string"
+                },
+                "set_unit_code": {
+                    "type": "string"
+                },
+                "set_unit_desc": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateUnitResponse": {
+            "type": "object",
+            "properties": {
+                "create_unit": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateUserManagementRequest": {
+            "type": "object",
+            "properties": {
+                "set_branch_desc": {
+                    "type": "string"
+                },
+                "set_check_status": {
+                    "type": "string"
+                },
+                "set_created_at": {
+                    "type": "string"
+                },
+                "set_created_by": {
+                    "type": "integer"
+                },
+                "set_given_name": {
+                    "type": "string"
+                },
+                "set_inst_desc": {
+                    "type": "string"
+                },
+                "set_last_name": {
+                    "type": "string"
+                },
+                "set_middle_name": {
+                    "type": "string"
+                },
+                "set_role": {
+                    "type": "string"
+                },
+                "set_user_email": {
+                    "type": "string"
+                },
+                "set_user_name": {
+                    "type": "string"
+                },
+                "set_user_password": {
+                    "type": "string"
+                },
+                "set_user_phone": {
+                    "type": "string"
+                },
+                "set_user_status": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CreateUserManagementResponse": {
+            "type": "object",
+            "properties": {
+                "create_usermanagement": {
                     "type": "string"
                 }
             }

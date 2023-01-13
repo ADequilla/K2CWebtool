@@ -963,6 +963,534 @@ definitions:
       concern_time:
         type: string
     type: object
+  models.CreateAtmLocRequest:
+    properties:
+      set_atm_address:
+        type: string
+      set_atm_city:
+        type: string
+      set_atm_description:
+        type: string
+      set_atm_latitude:
+        type: string
+      set_atm_longitude:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_insti_desc:
+        type: string
+    type: object
+  models.CreateAtmLocResponse:
+    properties:
+      create_atmloc:
+        type: string
+    type: object
+  models.CreateBankListRequest:
+    properties:
+      set_bank_bic:
+        type: string
+      set_bank_code:
+        type: string
+      set_bank_name:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_short_name:
+        type: string
+    type: object
+  models.CreateBankListResponse:
+    properties:
+      create_bank:
+        type: string
+    type: object
+  models.CreateBankNewsRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_product_description:
+        type: string
+      set_product_img_name:
+        type: string
+      set_product_name:
+        type: string
+      set_product_periode_end:
+        type: string
+      set_product_periode_start:
+        type: string
+    type: object
+  models.CreateBankNewsResponse:
+    properties:
+      create_banknews:
+        type: string
+    type: object
+  models.CreateBillerProductRequest:
+    properties:
+      set_bank_commission:
+        type: string
+      set_biller_product_id:
+        type: integer
+      set_biller_product_name:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_description:
+        type: string
+      set_product_category_name:
+        type: string
+      set_service_fee:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreateBillerProductResponse:
+    properties:
+      create_billerproduct:
+        type: string
+    type: object
+  models.CreateBranchRequest:
+    properties:
+      set_branch_code:
+        type: string
+      set_branch_desc:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+    type: object
+  models.CreateBranchResponse:
+    properties:
+      create_branch:
+        type: string
+    type: object
+  models.CreateBroadcastSmsRequest:
+    properties:
+      set_branch_desc:
+        type: string
+      set_client_type:
+        type: string
+      set_inbox_desc:
+        type: string
+      set_period_end:
+        type: string
+      set_period_start:
+        type: string
+      set_subject:
+        type: string
+    type: object
+  models.CreateBroadcastSmsResponse:
+    properties:
+      create_broadcastsms:
+        type: string
+    type: object
+  models.CreateCenterRequest:
+    properties:
+      set_center_code:
+        type: string
+      set_center_desc:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+    type: object
+  models.CreateCenterResponse:
+    properties:
+      create_center:
+        type: string
+    type: object
+  models.CreateCommissionRequest:
+    properties:
+      set_agent_income:
+        type: string
+      set_bank_income:
+        type: string
+      set_bank_partner_income:
+        type: string
+      set_commission_type:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_customer_income:
+        type: string
+      set_trans_type:
+        type: string
+    type: object
+  models.CreateCommissionResponse:
+    properties:
+      create_commission:
+        type: string
+    type: object
+  models.CreateConcernTypeRequest:
+    properties:
+      set_concern_desc:
+        type: string
+      set_concern_level:
+        type: string
+      set_concern_name:
+        type: string
+      set_concern_time:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+    type: object
+  models.CreateConcernTypeResponse:
+    properties:
+      create_concerntype:
+        type: string
+    type: object
+  models.CreateCsrHotlineRequest:
+    properties:
+      set_contact_number:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_inst_desc:
+        type: string
+      set_network_provider:
+        type: string
+    type: object
+  models.CreateCsrHotlineResponse:
+    properties:
+      create_csrhotline:
+        type: string
+    type: object
+  models.CreateFeeStructureRequest:
+    properties:
+      set_agent_income:
+        type: integer
+      set_agent_target_income:
+        type: integer
+      set_bancnet_income:
+        type: integer
+      set_bank_income:
+        type: integer
+      set_client_type:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_end_range:
+        type: integer
+      set_start_range:
+        type: integer
+      set_total_charge:
+        type: integer
+      set_trans_type:
+        type: string
+    type: object
+  models.CreateFeeStructureResponse:
+    properties:
+      create_feestructure:
+        type: string
+    type: object
+  models.CreateHeirarchyRequest:
+    properties:
+      set_branch_code:
+        type: string
+      set_branch_desc:
+        type: string
+      set_center_code:
+        type: string
+      set_center_desc:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_unit_code:
+        type: string
+      set_unit_desc:
+        type: string
+    type: object
+  models.CreateHeirarchyResponse:
+    properties:
+      create_heirarchy:
+        type: string
+    type: object
+  models.CreateInstiRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_inst_code:
+        type: string
+      set_inst_desc:
+        type: string
+    type: object
+  models.CreateInstiResponse:
+    properties:
+      create_insti:
+        type: string
+    type: object
+  models.CreateLoadProductRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_description:
+        type: string
+      set_load_product_id:
+        type: integer
+      set_load_product_name:
+        type: string
+      set_product_category_name:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreateLoadProductResponse:
+    properties:
+      create_loadproduct:
+        type: string
+    type: object
+  models.CreateParamConfigRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_param_desc:
+        type: string
+      set_param_name:
+        type: string
+      set_param_type:
+        type: string
+      set_param_value:
+        type: string
+    type: object
+  models.CreateParamConfigResponse:
+    properties:
+      create_paramconfig:
+        type: string
+    type: object
+  models.CreatePartnerListRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_merchant_id_prefix:
+        type: string
+      set_merchant_payment_callback_url:
+        type: string
+      set_mri_group:
+        type: integer
+      set_partner_account:
+        type: string
+      set_partner_api_url:
+        type: string
+      set_partner_desc:
+        type: string
+      set_partner_id:
+        type: string
+      set_partner_name:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreatePartnerListResponse:
+    properties:
+      create_partner:
+        type: string
+    type: object
+  models.CreateProductCategoryRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_description:
+        type: string
+      set_product_category_id:
+        type: integer
+      set_product_category_name:
+        type: string
+      set_product_type_name:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreateProductCategoryResponse:
+    properties:
+      create_productcategory:
+        type: string
+    type: object
+  models.CreateProductServicesRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_service_banner:
+        type: string
+      set_service_description:
+        type: string
+      set_service_name:
+        type: string
+      set_show:
+        type: boolean
+    type: object
+  models.CreateProductServicesResponse:
+    properties:
+      create_productandservices:
+        type: string
+    type: object
+  models.CreateProductTypeRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_description:
+        type: string
+      set_product_type_id:
+        type: integer
+      set_product_type_name:
+        type: string
+      set_provider_name:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreateProductTypeResponse:
+    properties:
+      create_product_type:
+        type: string
+    type: object
+  models.CreateProviderRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_description:
+        type: string
+      set_provider_alias:
+        type: string
+      set_provider_name:
+        type: string
+      set_status:
+        type: integer
+    type: object
+  models.CreateProviderResponse:
+    properties:
+      create_provider:
+        type: string
+    type: object
+  models.CreateServiceDowntimeRequest:
+    properties:
+      set_client_type:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_downtime_desc:
+        type: string
+      set_downtime_end:
+        type: string
+      set_downtime_start:
+        type: string
+    type: object
+  models.CreateServiceDowntimeResponse:
+    properties:
+      create_servicedowntime:
+        type: string
+    type: object
+  models.CreateSplashScreenRequest:
+    properties:
+      set_action:
+        type: string
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_img_url:
+        type: string
+      set_message:
+        type: string
+      set_show:
+        type: string
+      set_sub_message:
+        type: string
+      set_title:
+        type: string
+    type: object
+  models.CreateSplashScreenResponse:
+    properties:
+      create_splashscreen:
+        type: string
+    type: object
+  models.CreateUnitRequest:
+    properties:
+      set_created_by:
+        type: integer
+      set_created_date:
+        type: string
+      set_unit_code:
+        type: string
+      set_unit_desc:
+        type: string
+    type: object
+  models.CreateUnitResponse:
+    properties:
+      create_unit:
+        type: string
+    type: object
+  models.CreateUserManagementRequest:
+    properties:
+      set_branch_desc:
+        type: string
+      set_check_status:
+        type: string
+      set_created_at:
+        type: string
+      set_created_by:
+        type: integer
+      set_given_name:
+        type: string
+      set_inst_desc:
+        type: string
+      set_last_name:
+        type: string
+      set_middle_name:
+        type: string
+      set_role:
+        type: string
+      set_user_email:
+        type: string
+      set_user_name:
+        type: string
+      set_user_password:
+        type: string
+      set_user_phone:
+        type: string
+      set_user_status:
+        type: string
+    type: object
+  models.CreateUserManagementResponse:
+    properties:
+      create_usermanagement:
+        type: string
+    type: object
   models.CsDashboardReportRequest:
     properties:
       branch_desc:
@@ -3501,6 +4029,630 @@ paths:
       summary: Fetch User Data
       tags:
       - Webtool
+  /create_atmloc/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: AtmLoc Input
+        in: body
+        name: createAtmLocInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateAtmLocRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateAtmLocResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_bank/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: BankList Input
+        in: body
+        name: createBankListInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBankListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateBankListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_banknews/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: BankNews Input
+        in: body
+        name: createBankNewsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBankNewsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateBankNewsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_billerproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: BillerProduct Input
+        in: body
+        name: createBillerProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBillerProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateBillerProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_branch/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Branch Input
+        in: body
+        name: createBranchInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBranchRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateBranchResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_broadcastsms/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: BroadcastSms Input
+        in: body
+        name: createBroadcastSmsInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateBroadcastSmsRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateBroadcastSmsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_center/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Center Input
+        in: body
+        name: createCenterInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCenterRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateCenterResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_commission/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Commission Input
+        in: body
+        name: createCommissionInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCommissionRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateCommissionResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_concerntype/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ConcernType Input
+        in: body
+        name: createConcernTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateConcernTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateConcernTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_csrhotline/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CsrHotline Input
+        in: body
+        name: createCsrHotlineInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateCsrHotlineRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateCsrHotlineResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_feestructure/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: FeeStructure Input
+        in: body
+        name: createFeeStructureInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateFeeStructureRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateFeeStructureResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_heirarchy/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CreateHeirarchy Input
+        in: body
+        name: createHeirarchyInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateHeirarchyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateHeirarchyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_insti/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Insti Input
+        in: body
+        name: createInstiInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateInstiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateInstiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_loadproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: LoadProduct Input
+        in: body
+        name: createLoadProductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateLoadProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateLoadProductResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_paramconfig/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ParamConfig Input
+        in: body
+        name: createParamConfigInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateParamConfigRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateParamConfigResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_partner/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: PartnerList Input
+        in: body
+        name: createPartnerListInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreatePartnerListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreatePartnerListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_product_type/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ProductType Input
+        in: body
+        name: createProductTypeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateProductTypeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateProductTypeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_productcategory/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ProductCategory Input
+        in: body
+        name: createProductCategoryInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateProductCategoryRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateProductCategoryResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_productservices/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ProductServices Input
+        in: body
+        name: createProductServicesInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateProductServicesRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateProductServicesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_provider/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Provider Input
+        in: body
+        name: createProviderInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateProviderRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateProviderResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_servicedowntime/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: ServiceDowntime Input
+        in: body
+        name: createServiceDowntimeInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateServiceDowntimeRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateServiceDowntimeResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_splashscreen/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: SplashScreen Input
+        in: body
+        name: createSplashScreenInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateSplashScreenRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateSplashScreenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_unit/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: Unit Input
+        in: body
+        name: createUnitInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUnitRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateUnitResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /create_usermanagement/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: CreateUser Input
+        in: body
+        name: createUserInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUserManagementRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.CreateUserManagementResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
   /drop_atmloc/:
     post:
       consumes:
@@ -3585,19 +4737,19 @@ paths:
       - application/json
       description: Fetch User Data
       parameters:
-      - description: DropLoadProductInput
+      - description: DropBillerProductInput
         in: body
         name: dropbillerproductInput
         required: true
         schema:
-          $ref: '#/definitions/models.DropLoadProductRequest'
+          $ref: '#/definitions/models.DropBillerProductRequest'
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.DropLoadProductResponse'
+            $ref: '#/definitions/models.DropBillerProductResponse'
         "400":
           description: Bad Request
           schema:
@@ -3832,6 +4984,32 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/models.DropInstiResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ResponseModel'
+      summary: Fetch User Data
+      tags:
+      - Webtool
+  /drop_loadproduct/:
+    post:
+      consumes:
+      - application/json
+      description: Fetch User Data
+      parameters:
+      - description: DropLoadProductInput
+        in: body
+        name: dropbillerproductInput
+        required: true
+        schema:
+          $ref: '#/definitions/models.DropLoadProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.DropLoadProductResponse'
         "400":
           description: Bad Request
           schema:

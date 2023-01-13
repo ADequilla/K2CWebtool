@@ -2,6 +2,7 @@ package controller
 
 import (
 	"net/http"
+	"time"
 	"webtool-api/middleware"
 	"webtool-api/models"
 
@@ -173,6 +174,48 @@ func DropFeeStructure(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createFeeStructureInput body models.CreateFeeStructureRequest true "FeeStructure Input"
+// @Success		  	200 {object} models.CreateFeeStructureResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_feestructure/ [post]
+func CreateFeeStructure(c *fiber.Ctx) error {
+	createInput := models.CreateFeeStructureRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	createInput.Set_total_charge = createInput.Set_agent_income + createInput.Set_bank_income + createInput.Set_agent_target_income
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateFeeStructureResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_feestructure(?,?,?,?,?,?,?,?,?,?,?)", createInput.Set_start_range, createInput.Set_end_range, createInput.Set_total_charge, createInput.Set_agent_income, createInput.Set_bank_income, createInput.Set_created_date, createInput.Set_created_by, createInput.Set_trans_type, createInput.Set_client_type, createInput.Set_agent_target_income, createInput.Set_bancnet_income).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	paramconfigInput body models.ParamConfigRequest true "ParamConfig Input"
 // @Success		  	200 {object} models.ParamConfigResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -289,6 +332,46 @@ func EditParamConfig(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createParamConfigInput body models.CreateParamConfigRequest true "ParamConfig Input"
+// @Success		  	200 {object} models.CreateParamConfigResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_paramconfig/ [post]
+func CreateParamConfig(c *fiber.Ctx) error {
+	createInput := models.CreateParamConfigRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateParamConfigResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_paramconfig(?,?,?,?,?,?)", createInput.Set_param_type, createInput.Set_param_name, createInput.Set_param_value, createInput.Set_param_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -457,6 +540,46 @@ func DropAtmLoc(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createAtmLocInput body models.CreateAtmLocRequest true "AtmLoc Input"
+// @Success		  	200 {object} models.CreateAtmLocResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_atmloc/ [post]
+func CreateAtmLoc(c *fiber.Ctx) error {
+	createInput := models.CreateAtmLocRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateAtmLocResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_atmloc(?,?,?,?,?,?,?,?)", createInput.Set_atm_description, createInput.Set_atm_address, createInput.Set_atm_city, createInput.Set_atm_longitude, createInput.Set_atm_latitude, createInput.Set_insti_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	productservicesInput body models.ProductServicesRequest true "ProductServices Input"
 // @Success		  	200 {object} models.ProductServicesResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -609,6 +732,46 @@ func DropProductServices(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createProductServicesInput body models.CreateProductServicesRequest true "ProductServices Input"
+// @Success		  	200 {object} models.CreateProductServicesResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_productservices/ [post]
+func CreateProductServices(c *fiber.Ctx) error {
+	createInput := models.CreateProductServicesRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateProductServicesResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_productandservices(?,?,?,?,?,?)", createInput.Set_service_name, createInput.Set_service_description, createInput.Set_service_banner, createInput.Set_created_date, createInput.Set_created_by, createInput.Set_show).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -777,6 +940,46 @@ func DropServiceDowntime(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createServiceDowntimeInput body models.CreateServiceDowntimeRequest true "ServiceDowntime Input"
+// @Success		  	200 {object} models.CreateServiceDowntimeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_servicedowntime/ [post]
+func CreateServiceDowntime(c *fiber.Ctx) error {
+	createInput := models.CreateServiceDowntimeRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateServiceDowntimeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_servicedowntime(?,?,?,?,?,?)", createInput.Set_downtime_start, createInput.Set_downtime_end, createInput.Set_downtime_desc, createInput.Set_created_date, createInput.Set_created_by, createInput.Set_client_type).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	backnewsInput body models.BankNewsRequest true "BankNews Input"
 // @Success		  	200 {object} models.BankNewsResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -929,6 +1132,46 @@ func DropBankNews(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createBankNewsInput body models.CreateBankNewsRequest true "BankNews Input"
+// @Success		  	200 {object} models.CreateBankNewsResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_banknews/ [post]
+func CreateBankNews(c *fiber.Ctx) error {
+	createInput := models.CreateBankNewsRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateBankNewsResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_banknews(?,?,?,?,?,?,?)", createInput.Set_product_name, createInput.Set_product_description, createInput.Set_product_periode_start, createInput.Set_product_periode_end, createInput.Set_product_img_name, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -1097,6 +1340,46 @@ func DropInstitution(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createInstiInput body models.CreateInstiRequest true "Insti Input"
+// @Success		  	200 {object} models.CreateInstiResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_insti/ [post]
+func CreateInsti(c *fiber.Ctx) error {
+	createInput := models.CreateInstiRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateInstiResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_insti(?,?,?,?)", createInput.Set_inst_code, createInput.Set_inst_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	branchInput body models.BranchRequest true "Branch Input"
 // @Success		  	200 {object} models.BranchResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1249,6 +1532,46 @@ func DropBranch(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createBranchInput body models.CreateBranchRequest true "Branch Input"
+// @Success		  	200 {object} models.CreateBranchResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_branch/ [post]
+func CreateBranch(c *fiber.Ctx) error {
+	createInput := models.CreateBranchRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateBranchResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_branch(?,?,?,?)", createInput.Set_branch_code, createInput.Set_branch_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -1417,6 +1740,46 @@ func DropUnit(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createUnitInput body models.CreateUnitRequest true "Unit Input"
+// @Success		  	200 {object} models.CreateUnitResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_unit/ [post]
+func CreateUnit(c *fiber.Ctx) error {
+	createInput := models.CreateUnitRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateUnitResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_unit(?,?,?,?)", createInput.Set_unit_code, createInput.Set_unit_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	centerInput body models.CenterRequest true "Center Input"
 // @Success		  	200 {object} models.CenterResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1569,6 +1932,46 @@ func DropCenter(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createCenterInput body models.CreateCenterRequest true "Center Input"
+// @Success		  	200 {object} models.CreateCenterResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_center/ [post]
+func CreateCenter(c *fiber.Ctx) error {
+	createInput := models.CreateCenterRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateCenterResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_center(?,?,?,?)", createInput.Set_center_code, createInput.Set_center_desc, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -1737,6 +2140,46 @@ func DropProvider(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createProviderInput body models.CreateProviderRequest true "Provider Input"
+// @Success		  	200 {object} models.CreateProviderResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_provider/ [post]
+func CreateProvider(c *fiber.Ctx) error {
+	createInput := models.CreateProviderRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateProviderResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_provider(?,?,?,?,?,?)", createInput.Set_provider_name, createInput.Set_description, createInput.Set_provider_alias, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	producttypeInput body models.ProductTypeRequest true "ProductType Input"
 // @Success		  	200 {object} models.ProductTypeResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -1889,6 +2332,46 @@ func DropProductType(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createProductTypeInput body models.CreateProductTypeRequest true "ProductType Input"
+// @Success		  	200 {object} models.CreateProductTypeResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_product_type/ [post]
+func CreateProductType(c *fiber.Ctx) error {
+	createInput := models.CreateProductTypeRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateProductTypeResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_product_type(?,?,?,?,?,?,?)", createInput.Set_provider_name, createInput.Set_product_type_id, createInput.Set_product_type_name, createInput.Set_description, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -2057,6 +2540,46 @@ func DropProductCategory(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createProductCategoryInput body models.CreateProductCategoryRequest true "ProductCategory Input"
+// @Success		  	200 {object} models.CreateProductCategoryResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_productcategory/ [post]
+func CreateProductCategory(c *fiber.Ctx) error {
+	createInput := models.CreateProductCategoryRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateProductCategoryResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_productcategory(?,?,?,?,?,?,?)", createInput.Set_product_type_name, createInput.Set_product_category_id, createInput.Set_product_category_name, createInput.Set_description, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	billerproductInput body models.BillerProductRequest true "BillerProduct Input"
 // @Success		  	200 {object} models.BillerProductResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2217,6 +2740,46 @@ func DropBillerProduct(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createBillerProductInput body models.CreateBillerProductRequest true "BillerProduct Input"
+// @Success		  	200 {object} models.CreateBillerProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_billerproduct/ [post]
+func CreateBillerProduct(c *fiber.Ctx) error {
+	createInput := models.CreateBillerProductRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateBillerProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_billerproduct(?,?,?,?,?,?,?,?,?)", createInput.Set_product_category_name, createInput.Set_biller_product_id, createInput.Set_biller_product_name, createInput.Set_description, createInput.Set_bank_commission, createInput.Set_service_fee, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	loadproductInput body models.LoadProductRequest true "LoadProduct Input"
 // @Success		  	200 {object} models.LoadProductResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2344,7 +2907,7 @@ func EditLoadProduct(c *fiber.Ctx) error {
 // @Param       	dropbillerproductInput body models.DropLoadProductRequest true "DropLoadProductInput"
 // @Success		  	200 {object} models.DropLoadProductResponse
 // @Failure 		400 {object} models.ResponseModel
-// @Router			/drop_billerproduct/ [post]
+// @Router			/drop_loadproduct/ [post]
 func DropLoadProduct(c *fiber.Ctx) error {
 	droploadproductInput := models.DropLoadProductRequest{}
 
@@ -2369,6 +2932,46 @@ func DropLoadProduct(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createLoadProductInput body models.CreateLoadProductRequest true "LoadProduct Input"
+// @Success		  	200 {object} models.CreateLoadProductResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_loadproduct/ [post]
+func CreateLoadProduct(c *fiber.Ctx) error {
+	createInput := models.CreateLoadProductRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateLoadProductResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_loadproduct(?,?,?,?,?,?,?)", createInput.Set_product_category_name, createInput.Set_load_product_id, createInput.Set_load_product_name, createInput.Set_description, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -2537,6 +3140,46 @@ func DropCommission(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createCommissionInput body models.CreateCommissionRequest true "Commission Input"
+// @Success		  	200 {object} models.CreateCommissionResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_commission/ [post]
+func CreateCommission(c *fiber.Ctx) error {
+	createInput := models.CreateCommissionRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateCommissionResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_commission(?,?,?,?,?,?,?,?)", createInput.Set_trans_type, createInput.Set_commission_type, createInput.Set_customer_income, createInput.Set_agent_income, createInput.Set_bank_income, createInput.Set_bank_partner_income, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	banklistInput body models.BankListRequest true "BankList Input"
 // @Success		  	200 {object} models.BankListResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -2689,6 +3332,46 @@ func DropBanklist(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createBankListInput body models.CreateBankListRequest true "BankList Input"
+// @Success		  	200 {object} models.CreateBankListResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_bank/ [post]
+func CreateBankList(c *fiber.Ctx) error {
+	createInput := models.CreateBankListRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateBankListResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_bank(?,?,?,?,?,?)", createInput.Set_bank_code, createInput.Set_bank_name, createInput.Set_short_name, createInput.Set_bank_bic, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
 
@@ -2857,6 +3540,46 @@ func DropPartnerList(c *fiber.Ctx) error {
 // @Tags		  	Webtool
 // @Accept		  	json
 // @Produce		  	json
+// @Param       	createPartnerListInput body models.CreatePartnerListRequest true "PartnerList Input"
+// @Success		  	200 {object} models.CreatePartnerListResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_partner/ [post]
+func CreatePartnerList(c *fiber.Ctx) error {
+	createInput := models.CreatePartnerListRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreatePartnerListResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_partner(?,?,?,?,?,?,?,?,?,?,?)", createInput.Set_partner_id, createInput.Set_partner_name, createInput.Set_partner_desc, createInput.Set_partner_account, createInput.Set_partner_api_url, createInput.Set_merchant_payment_callback_url, createInput.Set_merchant_id_prefix, createInput.Set_mri_group, createInput.Set_status, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
 // @Param       	splashscreenInput body models.SplashScreenRequest true "SplashScreen Input"
 // @Success		  	200 {object} models.SplashScreenResponse
 // @Failure 		400 {object} models.ResponseModel
@@ -3009,5 +3732,45 @@ func DropSplashScreen(c *fiber.Ctx) error {
 	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
 		RetCode: "200",
 		Message: "Updated Successfully",
+	})
+}
+
+// @summary 	  	Fetch User Data
+// @Description	  	Fetch User Data
+// @Tags		  	Webtool
+// @Accept		  	json
+// @Produce		  	json
+// @Param       	createSplashScreenInput body models.CreateSplashScreenRequest true "SplashScreen Input"
+// @Success		  	200 {object} models.CreateSplashScreenResponse
+// @Failure 		400 {object} models.ResponseModel
+// @Router			/create_splashscreen/ [post]
+func CreateSplashScreen(c *fiber.Ctx) error {
+	createInput := models.CreateSplashScreenRequest{}
+
+	if parErr := c.BodyParser(&createInput); parErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "401",
+			Message: "Error",
+			Data:    parErr.Error(),
+		})
+	}
+
+	if createInput.Set_created_date == "" {
+		createInput.Set_created_date = time.Now().Format("Jan 2, 2006")
+	}
+
+	createModel := models.CreateSplashScreenResponse{}
+
+	if dbErr := middleware.DBConn.Debug().Raw("select * from mfs.create_splashscreen(?,?,?,?,?,?,?,?)", createInput.Set_action, createInput.Set_title, createInput.Set_message, createInput.Set_sub_message, createInput.Set_show, createInput.Set_set_img_url, createInput.Set_created_date, createInput.Set_created_by).Scan(&createModel).Error; dbErr != nil {
+		return c.Status(http.StatusCreated).JSON(models.ResponseModel{
+			RetCode: "400",
+			Message: "Database Error",
+			Data:    dbErr.Error(),
+		})
+	}
+
+	return c.Status(http.StatusCreated).JSON(models.ResponseWoModel{
+		RetCode: "200",
+		Message: "Created Successfully",
 	})
 }
